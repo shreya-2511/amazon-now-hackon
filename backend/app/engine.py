@@ -189,7 +189,7 @@ _STOP = {"the", "and", "for", "with", "recipe", "how", "make", "cook", "want",
          "https", "http", "www", "com", "meal", "recipes"}
 
 
-def speak_resolve(query: str) -> dict:
+def _keyword_resolve(query: str) -> dict:
     raw = query or ""
     q = raw.lower().strip()
     sc = data.scenarios()["nowspeak"]
@@ -313,7 +313,7 @@ def _best_match(term: str):
     return best
 
 
-def _match_recipe(text: str):
+def _find_recipe_id(text: str) -> str | None:
     toks = {t for t in re.split(r"[^a-z]+", text.lower()) if len(t) > 3 and t not in _STOP}
     best, best_score = None, 0
     for r in data.recipes():
@@ -321,7 +321,170 @@ def _match_recipe(text: str):
         score = len(toks & rtoks)
         if score > best_score:
             best, best_score = r, score
-    return recipe_scaled(best["id"], 4) if best else None
+    return best["id"] if best else None
+
+
+def _match_recipe(text: str):
+    rid = _find_recipe_id(text)
+    return recipe_scaled(rid, 4) if rid else None
+
+
+# --------------------------------------------------------------------------
+# NowSpeak — real agent (Amazon Bedrock). One model, a small tool set, a
+# capped tool loop. The model understands the request and PICKS; deterministic
+# code does all retrieval and enforces allergens. Any failure (throttle, no
+# creds, empty result) falls back to the keyword resolver above — the demo
+# never breaks.
+# --------------------------------------------------------------------------
+
+_AGENT_SYSTEM = """You are NowSpeak, the shopping agent for Amazon Now, a quick-commerce \
+grocery app in India (prices in ₹). You turn a shopper's request into a ready cart of REAL \
+products from our catalog.
+
+Shopper: {name}. Allergens to AVOID at all costs: {allergens}. Dietary preference: {diet}.
+
+Hard rules:
+- You may ONLY add products that were returned by the search_catalog or find_recipe tools. \
+NEVER invent a product name or id.
+- Never add anything containing the shopper's allergens.
+- Keep it tight: search for the items, pick the single best match for each (prefer higher \
+rating and the shopper's diet), then finalise.
+
+How to work:
+1. Break the request into concrete product terms.
+2. Call search_catalog with those terms (batch several in one call via the `queries` list).
+3. For "what can I cook" / dish or recipe requests, call find_recipe and add its ingredients.
+4. Call add_to_cart ONCE with your final picks (ids from the tool results only).
+5. Then write ONE short, warm sentence to the shopper about what you added. No lists, no markdown."""
+
+_AGENT_TOOLS = [
+    {"toolSpec": {
+        "name": "search_catalog",
+        "description": "Search the real grocery catalog. Pass concrete product terms.",
+        "inputSchema": {"json": {
+            "type": "object",
+            "properties": {
+                "queries": {"type": "array", "items": {"type": "string"},
+                            "description": "Product terms to search, e.g. ['milk','spaghetti','eggs']"},
+                "category": {"type": "string", "description": "Optional category id to narrow results"},
+            },
+            "required": ["queries"]}}}},
+    {"toolSpec": {
+        "name": "find_recipe",
+        "description": "Find a real recipe and its ingredient products for a dish or 'what can I cook' request.",
+        "inputSchema": {"json": {
+            "type": "object",
+            "properties": {
+                "query": {"type": "string", "description": "Dish or cuisine, e.g. 'carbonara'"},
+                "servings": {"type": "integer", "description": "Servings to scale to (default 4)"},
+            },
+            "required": ["query"]}}}},
+    {"toolSpec": {
+        "name": "add_to_cart",
+        "description": "Finalise the cart with the chosen products.",
+        "inputSchema": {"json": {
+            "type": "object",
+            "properties": {
+                "items": {"type": "array", "items": {
+                    "type": "object",
+                    "properties": {"product_id": {"type": "string"},
+                                   "qty": {"type": "integer"}},
+                    "required": ["product_id"]}},
+            },
+            "required": ["items"]}}}},
+]
+
+
+def _agent_handlers(state: dict, block: list[str]):
+    def h_search(inp: dict) -> dict:
+        qs = inp.get("queries") or ([inp["query"]] if inp.get("query") else [])
+        cat = inp.get("category", "")
+        results = {}
+        for q in [str(x) for x in qs][:8]:
+            rows = data.retrieve(q, cat, limit=8, exclude_allergens=block)
+            results[q] = rows
+            state["searched"].extend(rows)
+        return {"results": results}
+
+    def h_recipe(inp: dict) -> dict:
+        rid = _find_recipe_id(inp.get("query", ""))
+        if not rid:
+            return {"found": False}
+        servings = int(inp.get("servings") or 4)
+        rec = recipe_scaled(rid, max(1, min(12, servings)))
+        state["recipe_id"], state["servings"] = rid, servings
+        ings = [{"product_id": i["product"]["id"], "name": i["name"],
+                 "display_qty": i["display_qty"]}
+                for i in rec["ingredients"] if i.get("product")]
+        return {"found": True, "name": rec["name"], "servings": servings, "ingredients": ings}
+
+    def h_add(inp: dict) -> dict:
+        for it in inp.get("items", []):
+            pid = it.get("product_id")
+            if data.product(pid):  # validate against real catalog — drop hallucinated ids
+                state["picks"].append({"product_id": pid,
+                                       "qty": max(1, int(it.get("qty") or 1))})
+        return {"ok": True, "added": len(state["picks"])}
+
+    return {"search_catalog": h_search, "find_recipe": h_recipe, "add_to_cart": h_add}
+
+
+def _final_text(messages: list[dict]) -> str:
+    for m in reversed(messages):
+        if m.get("role") == "assistant":
+            txt = " ".join(b["text"] for b in m.get("content", []) if "text" in b).strip()
+            if txt:
+                return txt
+    return ""
+
+
+def _agent_resolve(query: str) -> dict:
+    from . import bedrock  # local import: keep keyword path import-light
+    user = data.active_user()
+    diet = user.get("dietary", {})
+    block = diet.get("allergens", [])
+    system = _AGENT_SYSTEM.format(
+        name=user.get("first_name", "there"),
+        allergens=", ".join(block) or "none",
+        diet=", ".join(diet.get("preferences", [])) or "no restriction",
+    )
+    state = {"picks": [], "searched": [], "recipe_id": None, "servings": 4}
+    messages = [{"role": "user", "content": [{"text": query}]}]
+    messages, _calls = bedrock.run_tools(messages, system, _AGENT_TOOLS,
+                                         _agent_handlers(state, block), max_calls=10)
+
+    seen, prods = set(), []
+    for it in state["picks"]:
+        if it["product_id"] in seen:
+            continue
+        p = data.product(it["product_id"])
+        if not p:
+            continue
+        if data.allergen_conflict(p, block):  # safety gate — never deliver an allergen
+            continue
+        dec = data.decorate(p, user)
+        seen.add(it["product_id"])
+        prods.append(dec)
+
+    recipe = recipe_scaled(state["recipe_id"], state["servings"]) if state["recipe_id"] else None
+    if not prods and not recipe:
+        raise RuntimeError("agent produced no grounded cart")  # -> keyword fallback
+
+    return {
+        "reply": _final_text(messages) or "Here's your cart — tap add for anything you need.",
+        "products": prods,
+        "recipe": recipe,
+        "note": f"{len(prods)} items" if prods else (recipe["name"] if recipe else ""),
+        "total": sum(p["price"] for p in prods),
+    }
+
+
+def speak_resolve(query: str) -> dict:
+    """NowSpeak entry point: real Bedrock agent, keyword resolver as fallback."""
+    try:
+        return _agent_resolve(query)
+    except Exception:  # noqa: BLE001 — any agent failure degrades gracefully
+        return _keyword_resolve(query)
 
 
 # --------------------------------------------------------------------------

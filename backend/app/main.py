@@ -9,7 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 
-from . import data, engine, group
+from . import bedrock, data, engine, group
 
 app = FastAPI(title="Amazon Now API", version="1.0")
 app.add_middleware(
@@ -23,6 +23,16 @@ app.add_middleware(
 @app.get("/health")
 def health():
     return {"ok": True, "products": len(data.catalog()), "recipes": len(data.recipes())}
+
+
+@app.get("/api/bedrock/ping")
+def bedrock_ping(q: str = "Reply with just the word OK."):
+    """Connectivity probe for the Bedrock LLM. Surfaces errors verbatim."""
+    try:
+        return bedrock.ping(q)
+    except Exception as e:  # noqa: BLE001 — probe must report any failure
+        return {"ok": False, "region": bedrock.REGION,
+                "model_id": bedrock.MODEL_ID, "error": str(e)}
 
 
 @app.get("/api/bootstrap")

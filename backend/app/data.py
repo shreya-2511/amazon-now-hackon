@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 from datetime import datetime
 from functools import lru_cache
 from pathlib import Path
@@ -144,6 +145,103 @@ def search(q: str = "", category: str = "", limit: int = 40) -> list[dict]:
     else:
         rows = sorted(rows, key=lambda p: -p["rating"])
     return [decorate(p) for p in rows[:limit]]
+
+
+# ---- LLM-facing retrieval -------------------------------------------------
+# One deterministic scorer the NowSpeak agent calls as a tool. The model never
+# sees all 300 products — it searches, reads the top matches, and picks.
+
+# Indian-grocery synonyms: map what users type -> extra terms to also match.
+_SYNONYMS = {
+    "curd": ["yogurt", "dahi"], "yogurt": ["curd", "dahi"],
+    "capsicum": ["bell pepper"], "bell pepper": ["capsicum"],
+    "brinjal": ["eggplant", "aubergine"], "eggplant": ["brinjal"],
+    "lady finger": ["okra", "bhindi"], "okra": ["bhindi", "lady finger"],
+    "coriander": ["cilantro", "dhania"], "cilantro": ["coriander"],
+    "atta": ["flour", "wheat"], "maida": ["flour"],
+    "paneer": ["cottage cheese"], "jeera": ["cumin"],
+    "chillies": ["chilli", "chili"], "spring onion": ["scallion"],
+}
+
+
+def _expand(term: str) -> list[str]:
+    t = term.strip().lower()
+    return [t, *_SYNONYMS.get(t, [])]
+
+
+# Allergen keyword backstop — catalog allergen_tags are incomplete (many nut
+# products are untagged), so safety can't depend on tags alone. Names are
+# specific to avoid false positives ("coconut"/"nutmeg"/"chestnut" are NOT nuts).
+_ALLERGEN_KEYWORDS = {
+    "nuts": ["cashew", "almond", "peanut", "walnut", "pista", "pistachio",
+             "hazelnut", "pecan", "pine nut", "pine-nut", "macadamia", "praline"],
+    "dairy": ["milk", "cheese", "butter", "paneer", "ghee", "cream", "yogurt", "curd"],
+    "gluten": ["wheat", "atta", "maida", "bread", "pasta", "noodle", "barley"],
+    "soy": ["soy", "tofu", "edamame"],
+    "shellfish": ["prawn", "shrimp", "crab", "lobster"],
+    "eggs": ["egg"],
+}
+
+
+def allergen_conflict(p: dict, block) -> bool:
+    """True if product p conflicts with any allergen in `block` — via tag OR name."""
+    block = set(block or [])
+    if not block:
+        return False
+    if block & set(p.get("allergen_tags", [])):
+        return True
+    name = p["name"].lower()
+    return any(any(k in name for k in _ALLERGEN_KEYWORDS.get(a, [])) for a in block)
+
+
+def _score(p: dict, terms: list[str]) -> int:
+    name = p["name"].lower()
+    words = set(re.split(r"[^a-z]+", name))
+    mk = (p.get("match_key") or "").lower()
+    hay = f"{name} {p['brand']} {p['category']}".lower()
+    score = 0
+    for term in terms:
+        sing = term[:-1] if term.endswith("s") else term
+        if mk and mk in (term, sing):
+            score += 12
+        if term in words or sing in words:
+            score += 8
+        if name.startswith(term):
+            score += 4
+        elif term in hay:
+            score += 2
+        if mk and (term in mk or sing in mk):
+            score += 3
+    return score
+
+
+def compact(p: dict) -> dict:
+    """Token-lean product view for the LLM tool result (no description/image)."""
+    return {"id": p["id"], "name": p["name"], "brand": p["brand"],
+            "price": p["price"], "size": p.get("size", ""),
+            "category": p["category"], "rating": p["rating"],
+            "dietary_tags": p.get("dietary_tags", []),
+            "allergen_tags": p.get("allergen_tags", [])}
+
+
+def retrieve(query: str, category: str = "", limit: int = 8,
+             exclude_allergens: list[str] | None = None) -> list[dict]:
+    """Deterministic ranked search for one query. Allergen-conflict items are
+    dropped before results are returned, so the agent never sees them."""
+    terms = _expand(query)
+    cat = (category or "").strip()
+    block = exclude_allergens or []
+    scored = []
+    for p in catalog():
+        if cat and p["category"] != cat:
+            continue
+        if allergen_conflict(p, block):
+            continue
+        s = _score(p, terms)
+        if s:
+            scored.append((s, p))
+    scored.sort(key=lambda x: (-x[0], -x[1]["rating"], -x[1].get("rating_count", 0)))
+    return [compact(p) for _, p in scored[:limit]]
 
 
 CATEGORIES = [
