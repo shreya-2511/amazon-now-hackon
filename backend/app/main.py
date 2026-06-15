@@ -127,14 +127,25 @@ class OrderItem(BaseModel):
     qty: int = 1
 
 
+class CouponReq(BaseModel):
+    items: list[OrderItem]
+    payment: str = "upi"
+
+
+@app.post("/api/coupons")
+def coupons(req: CouponReq):
+    return engine.evaluate_coupons([i.model_dump() for i in req.items], req.payment)
+
+
 class OrderReq(BaseModel):
     items: list[OrderItem]
     eta_min: int | None = None
+    coupon_code: str | None = None
 
 
 @app.post("/api/order")
 def order(req: OrderReq):
-    return engine.create_order([i.model_dump() for i in req.items], req.eta_min)
+    return engine.create_order([i.model_dump() for i in req.items], req.eta_min, req.coupon_code)
 
 
 @app.get("/api/order/{oid}")

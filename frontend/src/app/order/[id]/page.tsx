@@ -109,9 +109,14 @@ export default function OrderPage() {
 
         {/* items */}
         <div className="bg-white mx-3 mt-3 rounded-2xl border border-line p-4">
-          <p className="text-[13px] font-bold flex items-center gap-1.5 mb-2">
+          <p className="text-[13px] font-bold flex items-center gap-1.5 mb-1">
             <PackageCheck size={16} /> {order.item_count} items · {rupee(order.total)}
           </p>
+          {order.savings ? (
+            <p className="text-[12px] text-amzn-green font-semibold mb-2">
+              Saved {rupee(order.savings)} with {order.coupon?.code}
+            </p>
+          ) : null}
           <div className="flex flex-wrap gap-2">
             {order.items.map((l) => (
               <div key={l.product.id} className="h-12 w-12 rounded-lg bg-paper grid place-items-center overflow-hidden">

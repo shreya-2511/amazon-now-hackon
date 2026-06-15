@@ -178,12 +178,37 @@ export type GroupCart = {
   total: number;
 };
 
+export type Coupon = {
+  code: string;
+  title: string;
+  type: string;
+  value: number;
+  min_order: number;
+  desc: string;
+  category?: string;
+  max_discount?: number;
+  payment?: string;
+  eligible: boolean;
+  reason: string;
+  discount: number;
+};
+
+export type CouponEval = {
+  subtotal: number;
+  delivery_fee: number;
+  best_code: string | null;
+  coupons: Coupon[];
+};
+
 export type Order = {
   order_id: string;
   items: { product: Product; qty: number; line_total: number }[];
   item_count: number;
   subtotal: number;
   delivery_fee: number;
+  discount?: number;
+  coupon?: { code: string; title: string; discount: number } | null;
+  savings?: number;
   total: number;
   eta_min: number;
   address: { line1: string; line2: string; city: string; pincode: string };

@@ -1,5 +1,6 @@
 import type {
   Bootstrap,
+  CouponEval,
   GroupCart,
   NowCast,
   Dietary,
@@ -39,11 +40,17 @@ export const api = {
     get<Recipe>(`/api/recipe/${id}?servings=${servings}`),
   speakStarters: () => get<{ chips: string[] }>("/api/nowspeak/starters"),
   speak: (q: string) => get<SpeakResult>(`/api/nowspeak?q=${encodeURIComponent(q)}`),
-  order: (items: { product_id: string; qty: number }[], eta_min?: number) =>
+  coupons: (items: { product_id: string; qty: number }[], payment = "upi") =>
+    fetch(`${BASE}/api/coupons`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ items, payment }),
+    }).then((r) => r.json() as Promise<CouponEval>),
+  order: (items: { product_id: string; qty: number }[], eta_min?: number, coupon_code?: string) =>
     fetch(`${BASE}/api/order`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ items, eta_min }),
+      body: JSON.stringify({ items, eta_min, coupon_code }),
     }).then((r) => r.json() as Promise<Order>),
   getOrder: (id: string) => get<Order>(`/api/order/${id}`),
   streamUrl: (q: string) => `${BASE}/api/nowspeak/stream?q=${encodeURIComponent(q)}`,

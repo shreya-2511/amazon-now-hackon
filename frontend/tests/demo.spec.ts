@@ -33,6 +33,8 @@ test("Act 1 — NowCast triggers build the cart, then order", async ({ page }) =
   await page.getByRole("button", { name: /View cart/ }).click();
   await expect(page).toHaveURL(/checkout/);
   await expect(page.getByText(/Arriving in/)).toBeVisible();
+  // best coupon auto-applied
+  await expect(page.getByText(/applied — you save/i)).toBeVisible({ timeout: 6000 });
   await shot(page, "act1-04-checkout");
 
   await page.getByRole("button", { name: /Pay .* Face ID/ }).click();

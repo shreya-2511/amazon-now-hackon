@@ -121,6 +121,34 @@ def test_search_and_category():
     assert all(p["category"] == "medicine_health" for p in meds)
 
 
+def test_coupons_pick_best():
+    ev = client.post("/api/coupons", json={"items": [
+        {"product_id": "spaghetti", "qty": 2}, {"product_id": "red-wine", "qty": 1}]}).json()
+    assert ev["best_code"] == "SAVE15"  # 15% of ~1140 capped 150 beats flat 100
+    save15 = next(c for c in ev["coupons"] if c["code"] == "SAVE15")
+    assert save15["discount"] == 150
+    # category coupon with no matching items is ineligible
+    fresh = next(c for c in ev["coupons"] if c["code"] == "FRESH20")
+    assert fresh["eligible"] is False
+
+
+def test_coupons_category_and_min_order():
+    ev = client.post("/api/coupons", json={"items": [{"product_id": "tomato-500g", "qty": 1}]}).json()
+    welcome = next(c for c in ev["coupons"] if c["code"] == "WELCOME100")
+    assert welcome["eligible"] is False and "more" in welcome["reason"].lower()
+    fresh = next(c for c in ev["coupons"] if c["code"] == "FRESH20")
+    assert fresh["eligible"] is True and fresh["discount"] > 0
+
+
+def test_order_applies_coupon():
+    r = client.post("/api/order", json={
+        "items": [{"product_id": "spaghetti", "qty": 2}, {"product_id": "red-wine", "qty": 1}],
+        "coupon_code": "SAVE15"}).json()
+    assert r["discount"] == 150
+    assert r["coupon"]["code"] == "SAVE15"
+    assert r["total"] == r["subtotal"] + r["delivery_fee"] - 150
+
+
 def test_order_lifecycle():
     r = client.post("/api/order", json={"items": [{"product_id": "amul-milk-500ml", "qty": 2}]}).json()
     assert r["order_id"].startswith("AN")

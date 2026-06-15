@@ -50,6 +50,11 @@ def family() -> dict:
 
 
 @lru_cache(maxsize=1)
+def coupons() -> list[dict]:
+    return _load("coupons.json")["coupons"]
+
+
+@lru_cache(maxsize=1)
 def catalog() -> list[dict]:
     return _load("catalog.json")["products"]
 

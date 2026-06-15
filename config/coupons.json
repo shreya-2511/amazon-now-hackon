@@ -1,0 +1,11 @@
+{
+  "_comment": "Coupons evaluated against the cart at checkout. Best (max savings) is auto-applied. types: flat | percent | category_percent | free_delivery. payment (optional) restricts to a payment type.",
+  "coupons": [
+    { "code": "WELCOME100", "title": "₹100 off", "type": "flat", "value": 100, "min_order": 499, "desc": "Flat ₹100 off orders above ₹499" },
+    { "code": "SAVE15", "title": "15% off up to ₹150", "type": "percent", "value": 15, "max_discount": 150, "min_order": 399, "desc": "15% off, max ₹150, above ₹399" },
+    { "code": "FRESH20", "title": "20% off fresh produce", "type": "category_percent", "value": 20, "category": "fresh_produce", "max_discount": 120, "min_order": 0, "desc": "20% off all Fresh items" },
+    { "code": "SNACK25", "title": "25% off snacks", "type": "category_percent", "value": 25, "category": "snacks", "max_discount": 80, "min_order": 0, "desc": "25% off all Snacks" },
+    { "code": "AMZPAY50", "title": "₹50 cashback · Amazon Pay", "type": "flat", "value": 50, "min_order": 299, "payment": "upi", "desc": "₹50 back with Amazon Pay UPI" },
+    { "code": "FREESHIP", "title": "Free delivery", "type": "free_delivery", "value": 0, "min_order": 0, "desc": "Delivery fee waived" }
+  ]
+}

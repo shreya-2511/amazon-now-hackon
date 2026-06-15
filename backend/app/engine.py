@@ -325,6 +325,64 @@ def _match_recipe(text: str):
 
 
 # --------------------------------------------------------------------------
+# Coupons — evaluate all against the cart, auto-pick the biggest saving
+# --------------------------------------------------------------------------
+
+def _cart_totals(items: list[dict]):
+    subtotal, by_cat = 0, {}
+    for it in items:
+        p = data.product(it["product_id"])
+        if not p:
+            continue
+        line = p["price"] * max(1, int(it.get("qty", 1)))
+        subtotal += line
+        by_cat[p["category"]] = by_cat.get(p["category"], 0) + line
+    return subtotal, by_cat
+
+
+def _coupon_discount(c: dict, subtotal: int, by_cat: dict, delivery_fee: int) -> float:
+    t = c["type"]
+    if t == "flat":
+        return c["value"]
+    if t == "percent":
+        return min(subtotal * c["value"] / 100, c.get("max_discount", 1e9))
+    if t == "category_percent":
+        return min(by_cat.get(c["category"], 0) * c["value"] / 100, c.get("max_discount", 1e9))
+    if t == "free_delivery":
+        return delivery_fee
+    return 0
+
+
+def evaluate_coupons(items: list[dict], payment: str = "upi") -> dict:
+    st = data.settings()
+    subtotal, by_cat = _cart_totals(items)
+    delivery_fee = 0 if subtotal >= st["free_delivery_above"] else st["delivery_fee"]
+    out = []
+    for c in data.coupons():
+        eligible, reason = True, ""
+        if subtotal < c.get("min_order", 0):
+            eligible = False
+            reason = f"Add ₹{c['min_order'] - subtotal} more to unlock"
+        elif c.get("payment") and c["payment"] != payment:
+            eligible, reason = False, "Amazon Pay UPI only"
+        elif c["type"] == "category_percent" and by_cat.get(c["category"], 0) == 0:
+            eligible, reason = False, "No matching items in cart"
+        elif c["type"] == "free_delivery" and delivery_fee == 0:
+            eligible, reason = False, "Delivery already free"
+        disc = round(_coupon_discount(c, subtotal, by_cat, delivery_fee)) if eligible else 0
+        out.append({**c, "eligible": eligible, "reason": reason, "discount": disc})
+    out.sort(key=lambda x: (-int(x["eligible"]), -x["discount"]))
+    best = next((x["code"] for x in out if x["eligible"] and x["discount"] > 0), None)
+    return {"subtotal": subtotal, "delivery_fee": delivery_fee, "best_code": best, "coupons": out}
+
+
+def coupon_for(items: list[dict], code: str, payment: str = "upi") -> dict | None:
+    ev = evaluate_coupons(items, payment)
+    c = next((x for x in ev["coupons"] if x["code"] == code and x["eligible"] and x["discount"] >= 0), None)
+    return c
+
+
+# --------------------------------------------------------------------------
 # Orders
 # --------------------------------------------------------------------------
 
@@ -332,7 +390,8 @@ _ORDERS: dict[str, dict] = {}
 _SEQ = [1000]
 
 
-def create_order(items: list[dict], eta_min: int | None = None) -> dict:
+def create_order(items: list[dict], eta_min: int | None = None,
+                 coupon_code: str | None = None) -> dict:
     _SEQ[0] += 1
     oid = f"AN{_SEQ[0]}"
     st = data.settings()
@@ -347,13 +406,24 @@ def create_order(items: list[dict], eta_min: int | None = None) -> dict:
         subtotal += p["price"] * qty
     fee = 0 if subtotal >= st["free_delivery_above"] else st["delivery_fee"]
     eta = eta_min or st["eta_default_min"]
+
+    discount, coupon = 0, None
+    if coupon_code:
+        c = coupon_for(items, coupon_code)
+        if c:
+            discount = c["discount"]
+            coupon = {"code": c["code"], "title": c["title"], "discount": discount}
+
     order = {
         "order_id": oid,
         "items": lines,
         "item_count": sum(l["qty"] for l in lines),
         "subtotal": subtotal,
         "delivery_fee": fee,
-        "total": subtotal + fee,
+        "discount": discount,
+        "coupon": coupon,
+        "total": max(0, subtotal + fee - discount),
+        "savings": discount,
         "eta_min": eta,
         "address": data.active_user().get("address"),
         "store": st["dark_store"],
