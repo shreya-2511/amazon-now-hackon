@@ -130,6 +130,33 @@ export type Bootstrap = {
   categories: { id: string; label: string; emoji: string }[];
 };
 
+export type GroupMember = {
+  name: string;
+  color: string;
+  relation: string;
+  host: boolean;
+  subtotal: number;
+  item_count: number;
+};
+
+export type GroupItem = {
+  product: Product;
+  qty: number;
+  added_by: string;
+  added_by_color: string;
+  line_total: number;
+};
+
+export type GroupCart = {
+  id: string;
+  code: string;
+  host: string;
+  members: GroupMember[];
+  items: GroupItem[];
+  item_count: number;
+  total: number;
+};
+
 export type Order = {
   order_id: string;
   items: { product: Product; qty: number; line_total: number }[];

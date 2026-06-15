@@ -45,6 +45,11 @@ def scenarios() -> dict:
 
 
 @lru_cache(maxsize=1)
+def family() -> dict:
+    return _load("family.json")
+
+
+@lru_cache(maxsize=1)
 def catalog() -> list[dict]:
     return _load("catalog.json")["products"]
 

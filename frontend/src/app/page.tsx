@@ -54,6 +54,20 @@ export default function HomePage() {
           </button>
         </section>
 
+        {/* group cart banner */}
+        <section className="px-4 mt-3">
+          <button
+            onClick={() => router.push("/group")}
+            className="w-full rounded-2xl bg-gradient-to-r from-amzn-purple to-indigo-700 text-white p-4 flex items-center justify-between text-left active:scale-[0.99] transition"
+          >
+            <div>
+              <p className="font-bold text-[15px]">Shop together 👨‍👩‍👧</p>
+              <p className="text-[12px] text-white/80">One family cart — everyone adds, one delivery</p>
+            </div>
+            <span className="text-2xl">→</span>
+          </button>
+        </section>
+
         {/* trending */}
         <section className="mt-6">
           <h2 className="text-[15px] font-bold mb-2 px-4">Snacks for tonight 🍿</h2>

@@ -61,6 +61,31 @@ test("Act 2b — NowSpeak carbonara recipe scaling", async ({ page }) => {
   await shot(page, "act2-03-carbonara");
 });
 
+// ---- Group cart: create → family fills live → checkout together -----------
+test("Group cart — create, family joins live, combine", async ({ page }) => {
+  await page.goto("/group");
+  await expect(page.getByText("One cart, the whole family")).toBeVisible();
+  await shot(page, "group-01-entry");
+
+  await page.getByRole("button", { name: /Create & invite/ }).click();
+  await expect(page).toHaveURL(/\/group\/FAM/);
+  // share sheet auto-opens
+  await expect(page.getByText(/Cart code/)).toBeVisible();
+  await shot(page, "group-02-share");
+  await page.locator(".bg-black\\/50").click({ position: { x: 10, y: 10 } });
+
+  // family members stream in and the cart fills
+  await page.waitForTimeout(7500);
+  await expect(page.getByText("Mom", { exact: false }).first()).toBeVisible();
+  await expect(page.getByRole("button", { name: /Checkout together/ })).toBeVisible();
+  await shot(page, "group-03-filled");
+
+  await page.getByRole("button", { name: /Checkout together/ }).click();
+  await expect(page).toHaveURL(/\/order\//, { timeout: 8000 });
+  await expect(page.getByText("Order confirmed!")).toBeVisible();
+  await shot(page, "group-04-confirmed");
+});
+
 // ---- Supporting: recipes + search -----------------------------------------
 test("Recipes gallery + scaling", async ({ page }) => {
   await page.goto("/recipes");

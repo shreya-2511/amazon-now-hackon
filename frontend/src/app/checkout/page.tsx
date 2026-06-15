@@ -1,6 +1,6 @@
 "use client";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronLeft, Clock, MapPin, ScanFace, ShoppingBag, Wallet } from "lucide-react";
+import { ChevronLeft, Clock, MapPin, ScanFace, ShoppingBag, Users, Wallet } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { api } from "@/lib/api";
@@ -54,6 +54,19 @@ export default function CheckoutPage() {
           <Clock size={18} className="text-amzn-green" />
           <span className="text-[13px] font-semibold text-amzn-green">Arriving in {eta} minutes</span>
         </div>
+
+        {/* group cart entry */}
+        <button
+          onClick={() => router.push("/group")}
+          className="mx-3 mt-3 w-[calc(100%-1.5rem)] rounded-2xl border border-amzn-purple/30 bg-amzn-purple/5 px-4 py-3 flex items-center gap-2.5 text-left"
+        >
+          <Users size={18} className="text-amzn-purple" />
+          <div className="flex-1">
+            <p className="text-[13px] font-semibold text-amzn-purple">Shopping for the family?</p>
+            <p className="text-[11px] text-ink2">Turn this into a group cart — everyone adds, one delivery</p>
+          </div>
+          <span className="text-amzn-purple">→</span>
+        </button>
 
         {/* items */}
         <div className="bg-white mx-3 mt-3 rounded-2xl border border-line px-3 divide-y divide-line/70">

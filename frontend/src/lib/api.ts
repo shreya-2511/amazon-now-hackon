@@ -1,5 +1,6 @@
 import type {
   Bootstrap,
+  GroupCart,
   NowCast,
   Order,
   Product,
@@ -37,6 +38,28 @@ export const api = {
     }).then((r) => r.json() as Promise<Order>),
   getOrder: (id: string) => get<Order>(`/api/order/${id}`),
   streamUrl: (q: string) => `${BASE}/api/nowspeak/stream?q=${encodeURIComponent(q)}`,
+
+  groupCreate: (items: { product_id: string; qty: number }[]) =>
+    fetch(`${BASE}/api/group/create`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ items }),
+    }).then((r) => r.json() as Promise<GroupCart>),
+  groupGet: (id: string) => get<GroupCart>(`/api/group/${id}`),
+  groupJoin: (id: string, name: string) =>
+    fetch(`${BASE}/api/group/${id}/join`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name }),
+    }).then((r) => r.json() as Promise<GroupCart>),
+  groupAdd: (id: string, product_id: string, qty: number, added_by: string) =>
+    fetch(`${BASE}/api/group/${id}/add`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ product_id, qty, added_by }),
+    }).then((r) => r.json() as Promise<GroupCart>),
+  groupStreamUrl: (id: string, play = false) =>
+    `${BASE}/api/group/${id}/stream${play ? "?play=1" : ""}`,
 };
 
 export const img = (path: string) => (path ? `${path}` : "");

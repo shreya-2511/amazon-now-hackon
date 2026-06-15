@@ -9,7 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 
-from . import data, engine
+from . import data, engine, group
 
 app = FastAPI(title="Amazon Now API", version="1.0")
 app.add_middleware(
@@ -115,6 +115,73 @@ def order(req: OrderReq):
 @app.get("/api/order/{oid}")
 def order_get(oid: str):
     return engine.get_order(oid) or {"error": "not found"}
+
+
+class GroupCreateReq(BaseModel):
+    items: list[OrderItem] = []
+
+
+class GroupJoinReq(BaseModel):
+    name: str
+
+
+class GroupAddReq(BaseModel):
+    product_id: str
+    qty: int = 1
+    added_by: str
+
+
+@app.post("/api/group/create")
+def group_create(req: GroupCreateReq):
+    u = data.active_user()
+    return group.create(u["first_name"], u["avatar_color"],
+                        [i.model_dump() for i in req.items])
+
+
+@app.get("/api/group/{gid}")
+def group_get(gid: str):
+    return group.enrich(gid) or {"error": "not found"}
+
+
+@app.post("/api/group/{gid}/join")
+def group_join(gid: str, req: GroupJoinReq):
+    return group.join(gid, req.name) or {"error": "not found"}
+
+
+@app.post("/api/group/{gid}/add")
+def group_add(gid: str, req: GroupAddReq):
+    return group.add_item(gid, req.product_id, req.qty, req.added_by) or {"error": "not found"}
+
+
+@app.get("/api/group/{gid}/stream")
+async def group_stream(gid: str, play: int = 0):
+    """SSE: emit state; when play=1, run the scripted family live-fill on a timer."""
+    state = group.enrich(gid)
+    if not state:
+        async def err():
+            yield 'event: error\ndata: {"error":"not found"}\n\n'
+        return StreamingResponse(err(), media_type="text/event-stream")
+
+    g = group.get(gid)
+    should_play = bool(play) and not g.get("played")
+
+    async def gen():
+        yield f"event: state\ndata: {json.dumps(state)}\n\n"
+        if should_play:
+            g["played"] = True
+            elapsed = 0
+            for m in group.family_script():
+                delay = max(0, m.get("joins_after", 0) - elapsed) / 1000
+                await asyncio.sleep(delay)
+                elapsed = m.get("joins_after", 0)
+                updated = group.play_member(gid, m)
+                ev = {"state": updated, "joined": {"name": m["name"], "relation": m.get("relation"),
+                                                   "color": m.get("color"), "count": len(m.get("items", []))}}
+                yield f"event: update\ndata: {json.dumps(ev)}\n\n"
+        yield "event: done\ndata: {}\n\n"
+
+    return StreamingResponse(gen(), media_type="text/event-stream",
+                             headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"})
 
 
 @app.get("/api/fridge")
