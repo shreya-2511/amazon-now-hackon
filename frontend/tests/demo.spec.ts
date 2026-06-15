@@ -102,6 +102,19 @@ test("Profile — avatar opens profile, edit dietary", async ({ page }) => {
   await shot(page, "profile-02-saved");
 });
 
+// ---- Orders: one-tap reorder ----------------------------------------------
+test("Orders — reorder a past order in one tap", async ({ page }) => {
+  await page.goto("/orders");
+  await expect(page.getByText("Your orders")).toBeVisible();
+  await expect(page.getByText("Delivered").first()).toBeVisible({ timeout: 8000 });
+  await shot(page, "orders-01-history");
+
+  await page.getByRole("button", { name: /Reorder/ }).first().click();
+  await expect(page).toHaveURL(/checkout/);
+  await expect(page.getByText(/Arriving in/)).toBeVisible();
+  await shot(page, "orders-02-reordered");
+});
+
 // ---- Supporting: recipes + search -----------------------------------------
 test("Recipes gallery + scaling", async ({ page }) => {
   await page.goto("/recipes");

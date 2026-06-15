@@ -5,6 +5,7 @@ import type {
   NowCast,
   Dietary,
   Order,
+  PastOrder,
   Product,
   Profile,
   Recipe,
@@ -53,6 +54,7 @@ export const api = {
       body: JSON.stringify({ items, eta_min, coupon_code }),
     }).then((r) => r.json() as Promise<Order>),
   getOrder: (id: string) => get<Order>(`/api/order/${id}`),
+  orders: () => get<{ orders: PastOrder[] }>("/api/orders"),
   streamUrl: (q: string) => `${BASE}/api/nowspeak/stream?q=${encodeURIComponent(q)}`,
 
   groupCreate: (items: { product_id: string; qty: number }[]) =>

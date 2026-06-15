@@ -158,6 +158,15 @@ def test_order_lifecycle():
     assert got["order_id"] == r["order_id"]
 
 
+def test_order_history_for_reorder():
+    d = client.get("/api/orders").json()["orders"]
+    assert len(d) >= 1
+    o = d[0]
+    assert o["status"] == "Delivered"
+    assert o["item_count"] == len(o["items"]) > 0
+    assert o["items"][0]["product"]["image"].startswith("/products/")
+
+
 def test_sse_stream_emits_tokens_and_result():
     with client.stream("GET", "/api/nowspeak/stream", params={"q": "a guest is vegan"}) as s:
         body = "".join(chunk for chunk in s.iter_text())

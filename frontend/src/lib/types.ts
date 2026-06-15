@@ -178,6 +178,15 @@ export type GroupCart = {
   total: number;
 };
 
+export type PastOrder = {
+  order_id: string;
+  date: string;
+  status: string;
+  items: { product: Product; qty: number }[];
+  item_count: number;
+  total: number;
+};
+
 export type Coupon = {
   code: string;
   title: string;

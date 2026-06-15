@@ -6,6 +6,7 @@ import {
   ChevronLeft,
   Leaf,
   MapPin,
+  Package,
   Wallet,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -66,6 +67,9 @@ export default function ProfilePage() {
         <div className="bg-white rounded-2xl border border-line shadow-card mt-3 divide-y divide-line">
           <Row icon={<MapPin size={17} className="text-amzn-orange" />} title={`Deliver to ${p.address.label ?? "Home"}`} sub={`${p.address.line1}, ${p.address.line2}`} />
           <Row icon={<Wallet size={17} className="text-amzn-orange" />} title={p.payment.label} sub={p.payment.masked} />
+          <button onClick={() => router.push("/orders")} className="w-full">
+            <Row icon={<Package size={17} className="text-amzn-orange" />} title="Your orders" sub="Track & reorder in one tap" chevron />
+          </button>
         </div>
 
         {/* dietary preferences */}

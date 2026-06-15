@@ -435,3 +435,23 @@ def create_order(items: list[dict], eta_min: int | None = None,
 
 def get_order(oid: str) -> dict | None:
     return _ORDERS.get(oid)
+
+
+def order_history() -> list[dict]:
+    """Past delivered orders (from purchase history) for the Orders screen + reorder."""
+    out = []
+    for i, o in enumerate(data.history().get("recent_orders", [])):
+        lines = []
+        for pid in o["items"]:
+            p = data.product(pid)
+            if p:
+                lines.append({"product": data.decorate(p), "qty": 1})
+        out.append({
+            "order_id": f"AN{9000 + i}",
+            "date": o["date"],
+            "status": "Delivered",
+            "items": lines,
+            "item_count": len(lines),
+            "total": o["total"],
+        })
+    return out

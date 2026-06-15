@@ -148,6 +148,11 @@ def order(req: OrderReq):
     return engine.create_order([i.model_dump() for i in req.items], req.eta_min, req.coupon_code)
 
 
+@app.get("/api/orders")
+def orders_list():
+    return {"orders": engine.order_history()}
+
+
 @app.get("/api/order/{oid}")
 def order_get(oid: str):
     return engine.get_order(oid) or {"error": "not found"}
