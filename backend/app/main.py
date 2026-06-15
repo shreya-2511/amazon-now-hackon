@@ -40,6 +40,31 @@ def bootstrap():
     }
 
 
+@app.get("/api/profile")
+def profile():
+    u = data.active_user()
+    return {
+        "name": u["name"], "first_name": u["first_name"], "age": u.get("age"),
+        "avatar_color": u["avatar_color"], "household": u.get("household"),
+        "address": u.get("address"), "payment": u.get("payment"),
+        "dietary": u.get("dietary"),
+        "diet_options": ["vegetarian", "vegan", "eggetarian", "keto", "halal", "gluten-free"],
+        "allergen_options": ["nuts", "gluten", "dairy", "soy", "shellfish", "eggs"],
+    }
+
+
+class DietaryReq(BaseModel):
+    preferences: list[str] = []
+    allergens: list[str] = []
+    exclude_keywords: list[str] = []
+
+
+@app.post("/api/profile/dietary")
+def update_dietary(req: DietaryReq):
+    data.set_dietary(req.model_dump())
+    return data.active_user()["dietary"]
+
+
 @app.get("/api/nowcast")
 def nowcast():
     return engine.nowcast()

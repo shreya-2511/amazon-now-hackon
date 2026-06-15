@@ -96,6 +96,25 @@ def test_allergen_flagging():
     assert any("nuts" in w for w in p["warnings"])
 
 
+def test_profile_endpoint():
+    pr = client.get("/api/profile").json()
+    assert pr["first_name"] == "Aarav"
+    assert "nuts" in pr["allergen_options"]
+    assert "vegan" in pr["diet_options"]
+
+
+def test_dietary_update_reflects_in_flagging():
+    # remove the nut allergy -> cashews should no longer conflict
+    client.post("/api/profile/dietary", json={"preferences": [], "allergens": [], "exclude_keywords": []})
+    assert client.get("/api/product/cashews-200g").json()["allergen_conflict"] is False
+    # add vegan -> a meat product gets flagged
+    client.post("/api/profile/dietary", json={"preferences": ["vegan"], "allergens": ["nuts"], "exclude_keywords": []})
+    chick = client.get("/api/product/chicken-breast-500g").json()
+    assert any("vegan" in w.lower() for w in chick["warnings"])
+    # restore
+    client.post("/api/profile/dietary", json={"preferences": [], "allergens": ["nuts"], "exclude_keywords": []})
+
+
 def test_search_and_category():
     assert len(client.get("/api/catalog", params={"q": "milk"}).json()["products"]) > 0
     meds = client.get("/api/catalog", params={"category": "medicine_health"}).json()["products"]

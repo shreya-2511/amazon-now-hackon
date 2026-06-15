@@ -68,10 +68,24 @@ def product(pid: str) -> dict | None:
     return _catalog_index().get(pid)
 
 
+_dietary_override: dict | None = None
+
+
+def set_dietary(d: dict) -> None:
+    """Runtime override for the active user's dietary profile (from the Profile screen)."""
+    global _dietary_override
+    prefs = d.get("preferences", [])
+    label = ", ".join(p.capitalize() for p in prefs) if prefs else "No diet restriction"
+    _dietary_override = {**d, "preferences_label": label}
+
+
 def active_user() -> dict:
     p = personas()
     uid = p["active_user"]
-    return next(u for u in p["users"] if u["id"] == uid)
+    u = next(x for x in p["users"] if x["id"] == uid)
+    if _dietary_override is not None:
+        u = {**u, "dietary": {**u.get("dietary", {}), **_dietary_override}}
+    return u
 
 
 def now() -> datetime:

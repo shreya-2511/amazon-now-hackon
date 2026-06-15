@@ -130,6 +130,27 @@ export type Bootstrap = {
   categories: { id: string; label: string; emoji: string }[];
 };
 
+export type Dietary = {
+  preferences: string[];
+  preferences_label: string;
+  allergens: string[];
+  exclude_keywords: string[];
+  note?: string;
+};
+
+export type Profile = {
+  name: string;
+  first_name: string;
+  age: number;
+  avatar_color: string;
+  household: string;
+  address: { label?: string; line1: string; line2: string; city: string; pincode: string };
+  payment: { type: string; label: string; masked: string };
+  dietary: Dietary;
+  diet_options: string[];
+  allergen_options: string[];
+};
+
 export type GroupMember = {
   name: string;
   color: string;

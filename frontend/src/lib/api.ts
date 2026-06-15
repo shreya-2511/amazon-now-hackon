@@ -2,8 +2,10 @@ import type {
   Bootstrap,
   GroupCart,
   NowCast,
+  Dietary,
   Order,
   Product,
+  Profile,
   Recipe,
   RecipeSummary,
   SpeakResult,
@@ -20,6 +22,13 @@ async function get<T>(path: string): Promise<T> {
 export const api = {
   base: BASE,
   bootstrap: () => get<Bootstrap>("/api/bootstrap"),
+  profile: () => get<Profile>("/api/profile"),
+  updateDietary: (d: { preferences: string[]; allergens: string[]; exclude_keywords: string[] }) =>
+    fetch(`${BASE}/api/profile/dietary`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(d),
+    }).then((r) => r.json() as Promise<Dietary>),
   nowcast: () => get<NowCast>("/api/nowcast"),
   catalog: (q = "", category = "", limit = 40) =>
     get<{ products: Product[] }>(

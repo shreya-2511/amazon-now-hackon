@@ -14,17 +14,28 @@ export default function GroupCartPage() {
   const params = useSearchParams();
   const boot = useBoot();
   const me = params.get("me") || boot?.user.first_name || "You";
-  const play = params.get("play") === "1";
+  const host = params.get("host") === "1";
 
   const [cart, setCart] = useState<GroupCart | null>(null);
-  const [shareOpen, setShareOpen] = useState(play);
+  const [shareOpen, setShareOpen] = useState(host);
   const [pickerOpen, setPickerOpen] = useState(false);
+  const [waiting, setWaiting] = useState(false);
   const [toast, setToast] = useState<{ name: string; relation: string; color: string } | null>(null);
   const [copied, setCopied] = useState(false);
+  const startedRef = useRef(false);
   const esRef = useRef<EventSource | null>(null);
 
+  // initial state only — the family live-fill is triggered by sharing the link
   useEffect(() => {
-    const es = new EventSource(api.groupStreamUrl(id, play));
+    api.groupGet(id).then(setCart).catch(() => {});
+    return () => esRef.current?.close();
+  }, [id]);
+
+  const startFamily = () => {
+    if (startedRef.current) return;
+    startedRef.current = true;
+    setShareOpen(false);
+    const es = new EventSource(api.groupStreamUrl(id, true));
     esRef.current = es;
     es.addEventListener("state", (e: MessageEvent) => setCart(JSON.parse(e.data)));
     es.addEventListener("update", (e: MessageEvent) => {
@@ -37,8 +48,7 @@ export default function GroupCartPage() {
     });
     es.addEventListener("done", () => es.close());
     es.onerror = () => es.close();
-    return () => es.close();
-  }, [id, play]);
+  };
 
   const addToGroup = async (p: Product) => {
     const updated = await api.groupAdd(id, p.id, 1, me);
@@ -54,7 +64,8 @@ export default function GroupCartPage() {
   const copyCode = () => {
     navigator.clipboard?.writeText(`${location.origin}/group?code=${id}`).catch(() => {});
     setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
+    setWaiting(true);
+    setTimeout(() => startFamily(), 2000); // give time to share before family streams in
   };
 
   if (!cart) return <div className="flex-1 grid place-items-center text-ink2">Opening cart…</div>;
@@ -183,8 +194,13 @@ export default function GroupCartPage() {
           <p className="text-[11px] text-ink2">Cart code</p>
           <p className="text-[26px] font-extrabold tracking-widest">{cart.code}</p>
         </div>
-        <button onClick={copyCode} className="mt-3 w-full rounded-xl bg-amzn-dark text-white font-bold py-3 flex items-center justify-center gap-2">
-          {copied ? <Check size={18} /> : <Copy size={18} />} {copied ? "Link copied!" : "Copy invite link"}
+        <button
+          onClick={copyCode}
+          disabled={waiting}
+          className="mt-3 w-full rounded-xl bg-amzn-dark text-white font-bold py-3 flex items-center justify-center gap-2 disabled:opacity-80"
+        >
+          {copied ? <Check size={18} /> : <Copy size={18} />}
+          {waiting ? "Shared! Family is joining…" : copied ? "Link copied!" : "Copy invite link"}
         </button>
         <div className="grid grid-cols-3 gap-2 mt-2">
           {["WhatsApp", "Messages", "More"].map((s) => (

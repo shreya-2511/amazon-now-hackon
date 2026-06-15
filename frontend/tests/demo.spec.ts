@@ -69,13 +69,13 @@ test("Group cart — create, family joins live, combine", async ({ page }) => {
 
   await page.getByRole("button", { name: /Create & invite/ }).click();
   await expect(page).toHaveURL(/\/group\/FAM/);
-  // share sheet auto-opens
+  // share sheet auto-opens; family fill only starts after copying the link
   await expect(page.getByText(/Cart code/)).toBeVisible();
   await shot(page, "group-02-share");
-  await page.locator(".bg-black\\/50").click({ position: { x: 10, y: 10 } });
+  await page.getByRole("button", { name: /Copy invite link/ }).click();
 
-  // family members stream in and the cart fills
-  await page.waitForTimeout(7500);
+  // 2s grace, then family members stream in and the cart fills
+  await page.waitForTimeout(9500);
   await expect(page.getByText("Mom", { exact: false }).first()).toBeVisible();
   await expect(page.getByRole("button", { name: /Checkout together/ })).toBeVisible();
   await shot(page, "group-03-filled");
@@ -84,6 +84,20 @@ test("Group cart — create, family joins live, combine", async ({ page }) => {
   await expect(page).toHaveURL(/\/order\//, { timeout: 8000 });
   await expect(page.getByText("Order confirmed!")).toBeVisible();
   await shot(page, "group-04-confirmed");
+});
+
+// ---- Profile: edit dietary, applies app-wide ------------------------------
+test("Profile — avatar opens profile, edit dietary", async ({ page }) => {
+  await page.goto("/");
+  await page.getByRole("button", { name: "Your profile" }).click();
+  await expect(page).toHaveURL(/profile/);
+  await expect(page.getByText("Dietary preferences")).toBeVisible();
+  await shot(page, "profile-01");
+
+  await page.getByRole("button", { name: "vegetarian", exact: true }).click();
+  await page.getByRole("button", { name: /Save preferences/ }).click();
+  await expect(page.getByText(/Saved/)).toBeVisible();
+  await shot(page, "profile-02-saved");
 });
 
 // ---- Supporting: recipes + search -----------------------------------------

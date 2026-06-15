@@ -21,12 +21,14 @@ export default function AppHeader({ greeting }: { greeting?: string }) {
             </span>
           </span>
         </button>
-        <div
-          className="h-9 w-9 rounded-full grid place-items-center text-sm font-bold text-amzn-dark"
+        <button
+          onClick={() => router.push("/profile")}
+          aria-label="Your profile"
+          className="h-9 w-9 rounded-full grid place-items-center text-sm font-bold text-amzn-dark active:scale-95 transition"
           style={{ background: boot?.user.avatar_color ?? "#FF9900" }}
         >
           {boot?.user.first_name?.[0] ?? "A"}
-        </div>
+        </button>
       </div>
 
       <button

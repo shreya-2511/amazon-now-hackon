@@ -20,7 +20,7 @@ function GroupEntry() {
   const create = async () => {
     setBusy(true);
     const cart = await api.groupCreate(items.map((i) => ({ product_id: i.product.id, qty: i.qty })));
-    router.push(`/group/${cart.id}?play=1`);
+    router.push(`/group/${cart.id}?host=1`);
   };
 
   const join = async () => {
