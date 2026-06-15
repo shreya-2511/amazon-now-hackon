@@ -1,0 +1,133 @@
+"""Amazon Now demo API — config-driven, deterministic, no external LLM at runtime."""
+from __future__ import annotations
+
+import asyncio
+import json
+
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
+from pydantic import BaseModel
+
+from . import data, engine
+
+app = FastAPI(title="Amazon Now API", version="1.0")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+@app.get("/health")
+def health():
+    return {"ok": True, "products": len(data.catalog()), "recipes": len(data.recipes())}
+
+
+@app.get("/api/bootstrap")
+def bootstrap():
+    """Everything the shell needs on load: settings, active user, categories."""
+    u = data.active_user()
+    return {
+        "settings": data.settings(),
+        "user": {
+            "id": u["id"], "name": u["name"], "first_name": u["first_name"],
+            "avatar_color": u["avatar_color"], "address": u.get("address"),
+            "payment": u.get("payment"), "dietary": u.get("dietary"),
+        },
+        "categories": [{"id": c, "label": l, "emoji": e} for c, l, e in data.CATEGORIES],
+    }
+
+
+@app.get("/api/nowcast")
+def nowcast():
+    return engine.nowcast()
+
+
+@app.get("/api/catalog")
+def catalog(q: str = "", category: str = "", limit: int = 40):
+    return {"products": data.search(q, category, limit)}
+
+
+@app.get("/api/product/{pid}")
+def product(pid: str):
+    p = data.product(pid)
+    return data.decorate(p) if p else {"error": "not found"}
+
+
+@app.get("/api/recipes")
+def recipes():
+    return {"recipes": engine.recipe_list()}
+
+
+@app.get("/api/recipe/{rid}")
+def recipe(rid: str, servings: int = 4):
+    r = engine.recipe_scaled(rid, max(1, min(12, servings)))
+    return r or {"error": "not found"}
+
+
+@app.get("/api/nowspeak/starters")
+def speak_starters():
+    return {"chips": data.scenarios()["nowspeak"]["starter_chips"]}
+
+
+@app.get("/api/nowspeak")
+def nowspeak(q: str):
+    return engine.speak_resolve(q)
+
+
+@app.get("/api/nowspeak/stream")
+async def nowspeak_stream(q: str):
+    """SSE: stream the reply word-by-word, then a final 'result' event with products."""
+    result = engine.speak_resolve(q)
+    reply = result.pop("reply", "")
+
+    async def gen():
+        words = reply.split(" ")
+        for i, w in enumerate(words):
+            chunk = w + (" " if i < len(words) - 1 else "")
+            yield f"event: token\ndata: {json.dumps({'t': chunk})}\n\n"
+            await asyncio.sleep(0.035)
+        yield f"event: result\ndata: {json.dumps(result)}\n\n"
+        yield "event: done\ndata: {}\n\n"
+
+    return StreamingResponse(gen(), media_type="text/event-stream",
+                             headers={"Cache-Control": "no-cache",
+                                      "X-Accel-Buffering": "no"})
+
+
+class OrderItem(BaseModel):
+    product_id: str
+    qty: int = 1
+
+
+class OrderReq(BaseModel):
+    items: list[OrderItem]
+    eta_min: int | None = None
+
+
+@app.post("/api/order")
+def order(req: OrderReq):
+    return engine.create_order([i.model_dump() for i in req.items], req.eta_min)
+
+
+@app.get("/api/order/{oid}")
+def order_get(oid: str):
+    return engine.get_order(oid) or {"error": "not found"}
+
+
+@app.get("/api/fridge")
+def fridge():
+    user = data.active_user()
+    items = []
+    for it in data.fridge()["items"]:
+        p = data.product(it["product_id"])
+        if p:
+            items.append({**it, "product": data.decorate(p, user)})
+    return {"updated_label": data.fridge()["updated_label"], "items": items}
+
+
+@app.get("/api/calendar")
+def calendar():
+    return data.calendar()

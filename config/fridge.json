@@ -1,0 +1,15 @@
+{
+  "_comment": "Current smart-fridge / pantry inventory. status: out | low | ok. NowCast surfaces out+low.",
+  "updated_label": "Synced 8 min ago · Samsung Family Hub",
+  "items": [
+    { "product_id": "amul-milk-500ml",   "qty_left": 1, "typical_qty": 4, "status": "low", "note": "1 carton left" },
+    { "product_id": "farm-eggs-6",        "qty_left": 0, "typical_qty": 6, "status": "out", "note": "empty tray" },
+    { "product_id": "brown-bread",        "qty_left": 2, "typical_qty": 8, "status": "low", "note": "2 slices left" },
+    { "product_id": "amul-butter-100g",   "qty_left": 1, "typical_qty": 1, "status": "ok",  "note": "" },
+    { "product_id": "tomato-500g",        "qty_left": 0, "typical_qty": 1, "status": "out", "note": "none left" },
+    { "product_id": "onion-1kg",          "qty_left": 1, "typical_qty": 1, "status": "ok",  "note": "" },
+    { "product_id": "parmesan-150g",      "qty_left": 0, "typical_qty": 1, "status": "out", "note": "none left" },
+    { "product_id": "nestle-curd-400g",   "qty_left": 1, "typical_qty": 2, "status": "low", "note": "half tub" },
+    { "product_id": "amul-paneer-200g",   "qty_left": 1, "typical_qty": 1, "status": "ok",  "note": "" }
+  ]
+}

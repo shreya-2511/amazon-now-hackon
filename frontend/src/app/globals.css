@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-amzn-dark: #131921;
+  --color-amzn-blue: #232f3e;
+  --color-amzn-blue2: #37475a;
+  --color-amzn-orange: #ff9900;
+  --color-amzn-yellow: #febd69;
+  --color-amzn-yellow2: #f3a847;
+  --color-amzn-green: #067d62;
+  --color-amzn-greenlite: #e7f6f1;
+  --color-amzn-red: #e11d48;
+  --color-amzn-purple: #7c3aed;
+  --color-ink: #0f1111;
+  --color-ink2: #565959;
+  --color-line: #e6e6e6;
+  --color-paper: #f3f4f6;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-card: 0 1px 3px rgba(15, 17, 17, 0.08), 0 1px 2px rgba(15, 17, 17, 0.04);
+  --shadow-pop: 0 10px 30px rgba(15, 17, 17, 0.18);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(900px 500px at 15% -10%, #2a3a4d 0%, transparent 55%),
+    radial-gradient(800px 600px at 110% 10%, #1c2733 0%, transparent 50%),
+    #0b1016;
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* hide scrollbars inside the device for a clean recording */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  animation: shimmer 1.4s infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 22px rgba(225, 29, 72, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(225, 29, 72, 0);
+  }
+}
+.pulse-ring {
+  animation: pulse-ring 1.8s infinite;
+}

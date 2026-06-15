@@ -1,0 +1,45 @@
+{
+  "_comment": "Scripted intents for NowSpeak (Act 2). Deterministic so the demo never depends on a live LLM. Matched on lowercased substring of the query; falls back to catalog search.",
+  "nowspeak": {
+    "starter_chips": [
+      "Making carbonara for 6 tonight",
+      "A guest is vegan — what can I make?",
+      "milk, eggs, bread, coffee, 2 onions",
+      "https://www.themealdb.com/meal/lasagne",
+      "Got a headache and we're out of coffee",
+      "I want to cook biryani"
+    ],
+    "intents": [
+      {
+        "match": ["carbonara", "pasta for", "dinner party"],
+        "reply": "Got it — Spaghetti Carbonara for 6. I scaled the recipe 3× and added everything you don't already have. Pancetta, parmesan and eggs are the essentials; you're out of parmesan and eggs, so those are in.",
+        "recipe_id": "spaghetti-alla-carbonara",
+        "servings": 6,
+        "product_ids": ["spaghetti", "bacon-200g", "parmesan-150g", "farm-eggs-6", "black-pepper-100g", "olive-oil-500ml"],
+        "note": "Scaled for 6 · ready to add"
+      },
+      {
+        "match": ["vegan", "guest is veg", "plant based", "plant-based"],
+        "reply": "One vegan guest? Ratatouille works for the whole table — naturally vegan, nut-free, and pairs with your pasta night. I filtered out anything with dairy or egg and pulled the fresh veg you'll need.",
+        "recipe_id": "ratatouille",
+        "servings": 6,
+        "product_ids": ["aubergine", "courgettes", "tomato-500g", "capsicum", "onion-1kg", "garlic-200g", "olive-oil-500ml", "basil"],
+        "dietary_note": "Vegan ✓ · Nut-free ✓ — safe for everyone tonight",
+        "note": "Vegan-safe for all 6"
+      },
+      {
+        "match": ["headache", "coffee", "out of coffee", "tired"],
+        "reply": "Two things, one tap: Dolo 650 for the headache, and your coffee beans — you reorder these every 9 days and it's day 9. Adding both.",
+        "product_ids": ["paracetamol", "coffee-beans-250g", "water-1l"],
+        "note": "Relief + your usual reorder"
+      },
+      {
+        "match": ["high-protein", "high protein", "protein dinner", "gym", "quick dinner"],
+        "reply": "High-protein dinner for two: grilled chicken with paneer and a quick salad. ~45g protein a plate, on your doorstep in minutes.",
+        "product_ids": ["chicken-breast-500g", "amul-paneer-200g", "spinach", "greek-yogurt-100g", "lemon-4"],
+        "note": "~45g protein / serving"
+      }
+    ],
+    "fallback_reply": "Here's what I found for that — tap to add anything you need."
+  }
+}

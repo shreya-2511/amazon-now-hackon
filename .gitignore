@@ -1,0 +1,22 @@
+# node / next
+node_modules/
+.next/
+out/
+.turbo/
+
+# python
+__pycache__/
+*.pyc
+.venv/
+
+# env
+.env*.local
+
+# playwright
+test-results/
+playwright-report/
+frontend/test-shots/
+
+# misc
+.DS_Store
+*.log

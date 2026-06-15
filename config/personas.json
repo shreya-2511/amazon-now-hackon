@@ -1,0 +1,47 @@
+{
+  "active_user": "aarav",
+  "users": [
+    {
+      "id": "aarav",
+      "name": "Aarav Mehta",
+      "first_name": "Aarav",
+      "age": 29,
+      "avatar_color": "#FF9900",
+      "household": "Lives with partner Diya in Koramangala",
+      "address": {
+        "label": "Home",
+        "line1": "402, Prestige Acropolis",
+        "line2": "5th Block, Koramangala",
+        "city": "Bengaluru",
+        "pincode": "560095"
+      },
+      "payment": {
+        "type": "upi",
+        "label": "Amazon Pay UPI",
+        "masked": "aarav@apl"
+      },
+      "dietary": {
+        "preferences": [],
+        "preferences_label": "No diet restriction",
+        "allergens": ["nuts"],
+        "exclude_keywords": [],
+        "note": "Mild tree-nut allergy — flag cashews, almonds, peanuts."
+      }
+    },
+    {
+      "id": "diya",
+      "name": "Diya Rao",
+      "first_name": "Diya",
+      "age": 28,
+      "avatar_color": "#7C3AED",
+      "household": "Aarav's partner",
+      "dietary": {
+        "preferences": ["vegetarian"],
+        "preferences_label": "Vegetarian",
+        "allergens": ["nuts"],
+        "exclude_keywords": [],
+        "note": "Vegetarian + tree-nut allergy."
+      }
+    }
+  ]
+}

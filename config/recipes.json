@@ -1,0 +1,2865 @@
+{
+  "recipes": [
+    {
+      "id": "lamb-biryani",
+      "name": "Lamb Biryani",
+      "cuisine": "India",
+      "category": "Lamb",
+      "image": "/recipes/lamb-biryani.jpg",
+      "base_servings": 2,
+      "time_min": 75,
+      "dietary_tags": [],
+      "ingredient_count": 20,
+      "ingredients": [
+        {
+          "product_id": "cashews-200g",
+          "name": "Roasted Cashews",
+          "qty": 12.0,
+          "unit": "",
+          "measure": "12",
+          "image": "/products/cashews-200g.png",
+          "price": 220
+        },
+        {
+          "product_id": "khus-khus",
+          "name": "Khus Khus",
+          "qty": 0.5,
+          "unit": "tbsp",
+          "measure": "½ tbsp",
+          "image": "/products/khus-khus.png",
+          "price": 175
+        },
+        {
+          "product_id": "cumin-seeds",
+          "name": "Cumin / Jeera",
+          "qty": 0.5,
+          "unit": "tbsp",
+          "measure": "½ tbsp",
+          "image": "/products/cumin-seeds.png",
+          "price": 55
+        },
+        {
+          "product_id": "onion-1kg",
+          "name": "Onion",
+          "qty": 3.0,
+          "unit": "sliced thinly",
+          "measure": "3 sliced thinly",
+          "image": "/products/onion-1kg.png",
+          "price": 39
+        },
+        {
+          "product_id": "garlic-200g",
+          "name": "Garlic",
+          "qty": 2.0,
+          "unit": "tsp",
+          "measure": "2 tsp",
+          "image": "/products/garlic-200g.png",
+          "price": 38
+        },
+        {
+          "product_id": "garlic-200g",
+          "name": "Garlic",
+          "qty": 4.0,
+          "unit": "whole",
+          "measure": "4 whole",
+          "image": "/products/garlic-200g.png",
+          "price": 38
+        },
+        {
+          "product_id": "mint",
+          "name": "Mint",
+          "qty": null,
+          "unit": "Leaves",
+          "measure": "Leaves",
+          "image": "/products/mint.png",
+          "price": 75
+        },
+        {
+          "product_id": "cilantro",
+          "name": "Cilantro",
+          "qty": null,
+          "unit": "Leaves",
+          "measure": "Leaves",
+          "image": "/products/cilantro.png",
+          "price": 160
+        },
+        {
+          "product_id": "saffron",
+          "name": "Saffron",
+          "qty": 0.5,
+          "unit": "tsp dissolved in  0.5 cup warm milk",
+          "measure": "½ tsp dissolved in ½ cup warm milk",
+          "image": "/products/saffron.png",
+          "price": 130
+        },
+        {
+          "product_id": "amul-ghee-500ml",
+          "name": "Pure Ghee",
+          "qty": 2.0,
+          "unit": "tbsp",
+          "measure": "2 tbsp",
+          "image": "/products/amul-ghee-500ml.png",
+          "price": 320
+        },
+        {
+          "product_id": "basmati-rice-1kg",
+          "name": "India Gate Basmati Rice",
+          "qty": 2.0,
+          "unit": "Cups",
+          "measure": "2 Cups",
+          "image": "/products/basmati-rice-1kg.png",
+          "price": 145
+        },
+        {
+          "product_id": "nestle-curd-400g",
+          "name": "Dahi / Curd",
+          "qty": 0.5,
+          "unit": "cup",
+          "measure": "½ cup",
+          "image": "/products/nestle-curd-400g.png",
+          "price": 45
+        },
+        {
+          "product_id": "cumin-seeds",
+          "name": "Cumin / Jeera",
+          "qty": 1.0,
+          "unit": "tbsp",
+          "measure": "1 tbsp",
+          "image": "/products/cumin-seeds.png",
+          "price": 55
+        },
+        {
+          "product_id": "bay-leaf",
+          "name": "Bay Leaf",
+          "qty": 0.5,
+          "unit": "",
+          "measure": "½",
+          "image": "/products/bay-leaf.png",
+          "price": 75
+        },
+        {
+          "product_id": "cinnamon",
+          "name": "Cinnamon",
+          "qty": 1.0,
+          "unit": "thin piece",
+          "measure": "1 thin piece",
+          "image": "/products/cinnamon.png",
+          "price": 195
+        },
+        {
+          "product_id": "cloves",
+          "name": "Cloves",
+          "qty": 3.0,
+          "unit": "",
+          "measure": "3",
+          "image": "/products/cloves.png",
+          "price": 180
+        },
+        {
+          "product_id": "cardamom",
+          "name": "Cardamom",
+          "qty": 2.0,
+          "unit": "",
+          "measure": "2",
+          "image": "/products/cardamom.png",
+          "price": 25
+        },
+        {
+          "product_id": "mutton-500g",
+          "name": "Mutton Curry Cut",
+          "qty": 1.0,
+          "unit": "lb",
+          "measure": "1 lb",
+          "image": "/products/mutton-500g.png",
+          "price": 460
+        },
+        {
+          "product_id": "green-chilli",
+          "name": "Green Chilli",
+          "qty": 1.0,
+          "unit": "tsp",
+          "measure": "1 tsp",
+          "image": "/products/green-chilli.png",
+          "price": 15
+        },
+        {
+          "product_id": "biryani-masala",
+          "name": "Biryani Masala",
+          "qty": 1.0,
+          "unit": "tbsp",
+          "measure": "1 tbsp",
+          "image": "/products/biryani-masala.png",
+          "price": 60
+        }
+      ],
+      "steps": [
+        "Grind the cashew, poppy seeds and cumin seeds into a smooth paste, using as little water as possible.",
+        "Deep fry the sliced onions when it is hot.",
+        "Don’t overcrowd the oil.",
+        "When the onions turn light brown, remove from oil and drain on paper towel.",
+        "The fried onion will crisp up as it drains.",
+        "Also fry the cashewnuts till golden brown.",
+        "Wash the rice and soak in water for twenty minutes.",
+        "Meanwhile, take a big wide pan, add oil in medium heat, add the sliced onions, add the blended paste, to it add the green chillies, ginger garlic paste and garlic and fry for a minute.",
+        "Then add the tomatoes and sauté them well till they are cooked and not mushy.",
+        "Then to it add the red chilli powder, biryani powder, mint, coriander leaves and sauté them well.",
+        "Add the yogurt and mix well.",
+        "I always move the skillet away from the heat when adding yogurt which prevents it from curdling.",
+        "Now after returning the skillet back to the stove, add the washed lamb and salt and ½ cup water and mix well.",
+        "Cook for 1 hour and cook it covered in medium low heat or put it in a pressure cooker for 6 whistles."
+      ]
+    },
+    {
+      "id": "lamb-rogan-josh",
+      "name": "Lamb Rogan josh",
+      "cuisine": "India",
+      "category": "Lamb",
+      "image": "/recipes/lamb-rogan-josh.jpg",
+      "base_servings": 2,
+      "time_min": 71,
+      "dietary_tags": [],
+      "ingredient_count": 14,
+      "ingredients": [
+        {
+          "product_id": "onion-1kg",
+          "name": "Onion",
+          "qty": 2.0,
+          "unit": "quartered",
+          "measure": "2 quartered",
+          "image": "/products/onion-1kg.png",
+          "price": 39
+        },
+        {
+          "product_id": "sunflower-oil",
+          "name": "Sunflower Oil",
+          "qty": 4.0,
+          "unit": "tbsp",
+          "measure": "4 tbsp",
+          "image": "/products/sunflower-oil.png",
+          "price": 50
+        },
+        {
+          "product_id": "garlic-200g",
+          "name": "Garlic",
+          "qty": 4.0,
+          "unit": "cloves",
+          "measure": "4 cloves",
+          "image": "/products/garlic-200g.png",
+          "price": 38
+        },
+        {
+          "product_id": "ginger-150g",
+          "name": "Ginger",
+          "qty": null,
+          "unit": "Thumb sized peeled and very finely grated",
+          "measure": "Thumb sized peeled and very finely grated",
+          "image": "/products/ginger-150g.png",
+          "price": 28
+        },
+        {
+          "product_id": "madras-paste",
+          "name": "Madras Paste",
+          "qty": 2.0,
+          "unit": "tbsp",
+          "measure": "2 tbsp",
+          "image": "/products/madras-paste.png",
+          "price": 30
+        },
+        {
+          "product_id": "paprika",
+          "name": "Paprika",
+          "qty": 2.0,
+          "unit": "tsp",
+          "measure": "2 tsp",
+          "image": "/products/paprika.png",
+          "price": 155
+        },
+        {
+          "product_id": "cinnamon",
+          "name": "Cinnamon",
+          "qty": 1.0,
+          "unit": "",
+          "measure": "1",
+          "image": "/products/cinnamon.png",
+          "price": 195
+        },
+        {
+          "product_id": "cardamom",
+          "name": "Cardamom",
+          "qty": 6.0,
+          "unit": "bashed to break shells",
+          "measure": "6 bashed to break shells",
+          "image": "/products/cardamom.png",
+          "price": 25
+        },
+        {
+          "product_id": "cloves",
+          "name": "Cloves",
+          "qty": 4.0,
+          "unit": "",
+          "measure": "4",
+          "image": "/products/cloves.png",
+          "price": 180
+        },
+        {
+          "product_id": "bay-leaf",
+          "name": "Bay Leaf",
+          "qty": 2.0,
+          "unit": "",
+          "measure": "2",
+          "image": "/products/bay-leaf.png",
+          "price": 75
+        },
+        {
+          "product_id": "tomato-pur-e",
+          "name": "Tomato Purée",
+          "qty": 1.0,
+          "unit": "tbsp",
+          "measure": "1 tbsp",
+          "image": "/products/tomato-pur-e.png",
+          "price": 175
+        },
+        {
+          "product_id": "mutton-500g",
+          "name": "Mutton Curry Cut",
+          "qty": 1.0,
+          "unit": "kg cubed",
+          "measure": "1kg cubed",
+          "image": "/products/mutton-500g.png",
+          "price": 460
+        },
+        {
+          "product_id": "greek-yogurt-100g",
+          "name": "Greek Yogurt",
+          "qty": 150.0,
+          "unit": "ml",
+          "measure": "150ml",
+          "image": "/products/greek-yogurt-100g.png",
+          "price": 60
+        },
+        {
+          "product_id": "coriander",
+          "name": "Coriander Leaves",
+          "qty": null,
+          "unit": "Garnish chopped",
+          "measure": "Garnish chopped",
+          "image": "/products/coriander.png",
+          "price": 12
+        }
+      ],
+      "steps": [
+        "Put the onions in a food processor and whizz until very finely chopped.",
+        "Heat the oil in a large heavy-based pan, then fry the onion with the lid on, stirring every now and then, until it is really golden and soft.",
+        "Add the garlic and ginger, then fry for 5 mins more.",
+        "Tip the curry paste, all the spices and the bay leaves into the pan, with the tomato purée.",
+        "Stir well over the heat for about 30 secs, then add the meat and 300ml water.",
+        "Stir to mix, turn down the heat, then add the yogurt.",
+        "Cover the pan, then gently simmer for 40-60 mins until the meat is tender and the sauce nice and thick.",
+        "Serve scattered with coriander, with plain basmati or pilau rice."
+      ]
+    },
+    {
+      "id": "dal-fry",
+      "name": "Dal fry",
+      "cuisine": "India",
+      "category": "Vegetarian",
+      "image": "/recipes/dal-fry.jpg",
+      "base_servings": 2,
+      "time_min": 75,
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "ingredient_count": 16,
+      "ingredients": [
+        {
+          "product_id": "toor-dal",
+          "name": "Toor Dal",
+          "qty": 1.0,
+          "unit": "cup",
+          "measure": "1 cup",
+          "image": "/products/toor-dal.png",
+          "price": 160
+        },
+        {
+          "product_id": "water-1l",
+          "name": "Packaged Drinking Water",
+          "qty": 2.0,
+          "unit": "-1/2 cups",
+          "measure": "2-1/2 cups",
+          "image": "/products/water-1l.png",
+          "price": 20
+        },
+        {
+          "product_id": "salt-1kg",
+          "name": "Iodised Salt",
+          "qty": 1.0,
+          "unit": "tsp",
+          "measure": "1 tsp",
+          "image": "/products/salt-1kg.png",
+          "price": 28
+        },
+        {
+          "product_id": "turmeric-200g",
+          "name": "Turmeric Powder",
+          "qty": 0.25,
+          "unit": "tsp",
+          "measure": "1/4 tsp",
+          "image": "/products/turmeric-200g.png",
+          "price": 60
+        },
+        {
+          "product_id": "amul-ghee-500ml",
+          "name": "Pure Ghee",
+          "qty": 3.0,
+          "unit": "tbs",
+          "measure": "3 tbs",
+          "image": "/products/amul-ghee-500ml.png",
+          "price": 320
+        },
+        {
+          "product_id": "tomato-500g",
+          "name": "Tomato",
+          "qty": 1.0,
+          "unit": "cup",
+          "measure": "1 cup",
+          "image": "/products/tomato-500g.png",
+          "price": 25
+        },
+        {
+          "product_id": "cumin-seeds",
+          "name": "Cumin / Jeera",
+          "qty": 0.5,
+          "unit": "tsp",
+          "measure": "1/2 tsp",
+          "image": "/products/cumin-seeds.png",
+          "price": 55
+        },
+        {
+          "product_id": "mustard-seeds",
+          "name": "Mustard Seeds",
+          "qty": 0.5,
+          "unit": "tsp",
+          "measure": "1/2 tsp",
+          "image": "/products/mustard-seeds.png",
+          "price": 100
+        },
+        {
+          "product_id": "bay-leaf",
+          "name": "Bay Leaf",
+          "qty": 2.0,
+          "unit": "",
+          "measure": "2",
+          "image": "/products/bay-leaf.png",
+          "price": 75
+        },
+        {
+          "product_id": "green-chilli",
+          "name": "Green Chilli",
+          "qty": 1.0,
+          "unit": "tbs chopped",
+          "measure": "1 tbs chopped",
+          "image": "/products/green-chilli.png",
+          "price": 15
+        },
+        {
+          "product_id": "ginger-150g",
+          "name": "Ginger",
+          "qty": 2.0,
+          "unit": "tsp shredded",
+          "measure": "2 tsp shredded",
+          "image": "/products/ginger-150g.png",
+          "price": 28
+        },
+        {
+          "product_id": "cilantro",
+          "name": "Cilantro",
+          "qty": 2.0,
+          "unit": "tbs",
+          "measure": "2 tbs",
+          "image": "/products/cilantro.png",
+          "price": 160
+        },
+        {
+          "product_id": "capsicum",
+          "name": "Capsicum (Green)",
+          "qty": 0.5,
+          "unit": "tsp",
+          "measure": "1/2 tsp",
+          "image": "/products/capsicum.png",
+          "price": 30
+        },
+        {
+          "product_id": "salt-1kg",
+          "name": "Iodised Salt",
+          "qty": 0.5,
+          "unit": "tsp",
+          "measure": "1/2 tsp",
+          "image": "/products/salt-1kg.png",
+          "price": 28
+        },
+        {
+          "product_id": "sugar-1kg",
+          "name": "Sugar",
+          "qty": 1.0,
+          "unit": "tsp",
+          "measure": "1 tsp",
+          "image": "/products/sugar-1kg.png",
+          "price": 48
+        },
+        {
+          "product_id": "garam-masala",
+          "name": "Garam Masala",
+          "qty": 0.25,
+          "unit": "tsp",
+          "measure": "1/4 tsp",
+          "image": "/products/garam-masala.png",
+          "price": 75
+        }
+      ],
+      "steps": [
+        "Wash and soak toor dal in approx.",
+        "3 cups of water, for at least one hours.",
+        "Dal will be double in volume after soaking.",
+        "Drain the water.",
+        "Cook dal with 2-1/2 cups water and add salt, turmeric, on medium high heat, until soft in texture (approximately 30 mins) it should be like thick soup.",
+        "In a frying pan, heat the ghee.",
+        "Add cumin seeds, and mustard seeds.",
+        "After the seeds crack, add bay leaves, green chili, ginger and chili powder.",
+        "Stir for a few seconds.",
+        "Add tomatoes, salt and sugar stir and cook until tomatoes are tender and mushy.",
+        "Add cilantro and garam masala cook for about one minute.",
+        "Pour the seasoning over dal mix it well and cook for another minute.",
+        "Serve with Naan."
+      ]
+    },
+    {
+      "id": "tandoori-chicken",
+      "name": "Tandoori chicken",
+      "cuisine": "India",
+      "category": "Chicken",
+      "image": "/recipes/tandoori-chicken.jpg",
+      "base_servings": 2,
+      "time_min": 63,
+      "dietary_tags": [],
+      "ingredient_count": 12,
+      "ingredients": [
+        {
+          "product_id": "lemon-4",
+          "name": "Lemon",
+          "qty": 2.0,
+          "unit": "Juice",
+          "measure": "2 Juice",
+          "image": "/products/lemon-4.png",
+          "price": 24
+        },
+        {
+          "product_id": "paprika",
+          "name": "Paprika",
+          "qty": 4.0,
+          "unit": "tsp",
+          "measure": "4 tsp",
+          "image": "/products/paprika.png",
+          "price": 155
+        },
+        {
+          "product_id": "onion-1kg",
+          "name": "Onion",
+          "qty": 2.0,
+          "unit": "finely chopped",
+          "measure": "2 finely chopped",
+          "image": "/products/onion-1kg.png",
+          "price": 39
+        },
+        {
+          "product_id": "chicken-currycut-1kg",
+          "name": "Chicken Curry Cut",
+          "qty": 16.0,
+          "unit": "skinnless",
+          "measure": "16 skinnless",
+          "image": "/products/chicken-currycut-1kg.png",
+          "price": 285
+        },
+        {
+          "product_id": "sunflower-oil-1l",
+          "name": "Sunflower Oil",
+          "qty": null,
+          "unit": "For brushing",
+          "measure": "For brushing",
+          "image": "/products/sunflower-oil-1l.png",
+          "price": 140
+        },
+        {
+          "product_id": "greek-yogurt-100g",
+          "name": "Greek Yogurt",
+          "qty": 300.0,
+          "unit": "ml",
+          "measure": "300ml",
+          "image": "/products/greek-yogurt-100g.png",
+          "price": 60
+        },
+        {
+          "product_id": "ginger-150g",
+          "name": "Ginger",
+          "qty": null,
+          "unit": "large piece",
+          "measure": "large piece",
+          "image": "/products/ginger-150g.png",
+          "price": 28
+        },
+        {
+          "product_id": "garlic-200g",
+          "name": "Garlic",
+          "qty": 4.0,
+          "unit": "",
+          "measure": "4",
+          "image": "/products/garlic-200g.png",
+          "price": 38
+        },
+        {
+          "product_id": "garam-masala",
+          "name": "Garam Masala",
+          "qty": 0.75,
+          "unit": "tsp",
+          "measure": "¾ tsp",
+          "image": "/products/garam-masala.png",
+          "price": 75
+        },
+        {
+          "product_id": "cumin-seeds",
+          "name": "Cumin / Jeera",
+          "qty": 0.75,
+          "unit": "tsp",
+          "measure": "¾ tsp",
+          "image": "/products/cumin-seeds.png",
+          "price": 55
+        },
+        {
+          "product_id": "green-chilli",
+          "name": "Green Chilli",
+          "qty": 0.5,
+          "unit": "tsp",
+          "measure": "½ tsp",
+          "image": "/products/green-chilli.png",
+          "price": 15
+        },
+        {
+          "product_id": "turmeric-200g",
+          "name": "Turmeric Powder",
+          "qty": 0.25,
+          "unit": "tsp",
+          "measure": "¼ tsp",
+          "image": "/products/turmeric-200g.png",
+          "price": 60
+        }
+      ],
+      "steps": [
+        "Mix the lemon juice with the paprika and red onions in a large shallow dish.",
+        "Slash each chicken thigh three times, then turn them in the juice and set aside for 10 mins.",
+        "Mix all of the marinade ingredients together and pour over the chicken.",
+        "Give everything a good mix, then cover and chill for at least 1 hr.",
+        "This can be done up to a day in advance.",
+        "Heat the grill.",
+        "Lift the chicken pieces onto a rack over a baking tray.",
+        "Brush over a little oil and grill for 8 mins on each side or until lightly charred and completely cooked through."
+      ]
+    },
+    {
+      "id": "pad-thai",
+      "name": "Pad Thai",
+      "cuisine": "Thai",
+      "category": "Seafood",
+      "image": "/recipes/pad-thai.jpg",
+      "base_servings": 2,
+      "time_min": 67,
+      "dietary_tags": [],
+      "ingredient_count": 13,
+      "ingredients": [
+        {
+          "product_id": "rice-noodles",
+          "name": "Rice Noodles",
+          "qty": 125.0,
+          "unit": "g",
+          "measure": "125g",
+          "image": "/products/rice-noodles.png",
+          "price": 175
+        },
+        {
+          "product_id": "lime",
+          "name": "Lime",
+          "qty": null,
+          "unit": "Juice of 3",
+          "measure": "Juice of 3",
+          "image": "/products/lime.png",
+          "price": 150
+        },
+        {
+          "product_id": "cayenne-pepper",
+          "name": "Cayenne Pepper",
+          "qty": 0.5,
+          "unit": "teaspoon",
+          "measure": "1/2 teaspoon",
+          "image": "/products/cayenne-pepper.png",
+          "price": 180
+        },
+        {
+          "product_id": "sugar-1kg",
+          "name": "Sugar",
+          "qty": 2.0,
+          "unit": "teaspoons",
+          "measure": "2 teaspoons",
+          "image": "/products/sugar-1kg.png",
+          "price": 48
+        },
+        {
+          "product_id": "fish-sauce",
+          "name": "Fish Sauce",
+          "qty": 2.0,
+          "unit": "tablespoons",
+          "measure": "2 tablespoons",
+          "image": "/products/fish-sauce.png",
+          "price": 20
+        },
+        {
+          "product_id": "sunflower-oil-1l",
+          "name": "Sunflower Oil",
+          "qty": 2.0,
+          "unit": "tablespoons",
+          "measure": "2 tablespoons",
+          "image": "/products/sunflower-oil-1l.png",
+          "price": 140
+        },
+        {
+          "product_id": "prawns-250g",
+          "name": "Prawns (Cleaned)",
+          "qty": 200.0,
+          "unit": "g",
+          "measure": "200g",
+          "image": "/products/prawns-250g.png",
+          "price": 320
+        },
+        {
+          "product_id": "onion-1kg",
+          "name": "Onion",
+          "qty": 4.0,
+          "unit": "finely sliced",
+          "measure": "4 finely sliced",
+          "image": "/products/onion-1kg.png",
+          "price": 39
+        },
+        {
+          "product_id": "bean-sprouts",
+          "name": "Bean Sprouts",
+          "qty": 140.0,
+          "unit": "g",
+          "measure": "140g",
+          "image": "/products/bean-sprouts.png",
+          "price": 85
+        },
+        {
+          "product_id": "peanuts",
+          "name": "Peanuts",
+          "qty": 25.0,
+          "unit": "g",
+          "measure": "25g",
+          "image": "/products/peanuts.png",
+          "price": 65
+        },
+        {
+          "product_id": "coriander",
+          "name": "Coriander Leaves",
+          "qty": null,
+          "unit": "Handful",
+          "measure": "Handful",
+          "image": "/products/coriander.png",
+          "price": 12
+        },
+        {
+          "product_id": "lime",
+          "name": "Lime",
+          "qty": 2.0,
+          "unit": "",
+          "measure": "2",
+          "image": "/products/lime.png",
+          "price": 150
+        },
+        {
+          "product_id": "green-chilli",
+          "name": "Green Chilli",
+          "qty": null,
+          "unit": "To serve",
+          "measure": "To serve",
+          "image": "/products/green-chilli.png",
+          "price": 15
+        }
+      ],
+      "steps": [
+        "Put the noodles in a large heatproof bowl, pour boiling water over them and leave for 4 minutes, then drain and refresh under cold running water.",
+        "Put the lime juice, cayenne, sugar and fish sauce in a bowl and mix well.",
+        "Have all the other ingredients ready by the cooker.",
+        "Heat the oil and fry the prawns until warmed through.",
+        "Add the spring onions and noodles and toss around.",
+        "Tip in the lime juice mixture, then stir in the beansprouts and half the peanuts and coriander.",
+        "Cook for 1 minute until everything is heated through.",
+        "Pile into a large dish, scatter with the rest of the peanuts and coriander, and serve with lime wedges and sweet chilli sauce."
+      ]
+    },
+    {
+      "id": "tonkatsu-pork",
+      "name": "Tonkatsu pork",
+      "cuisine": "Japanese",
+      "category": "Pork",
+      "image": "/recipes/tonkatsu-pork.jpg",
+      "base_servings": 2,
+      "time_min": 51,
+      "dietary_tags": [],
+      "ingredient_count": 9,
+      "ingredients": [
+        {
+          "product_id": "pork-chops",
+          "name": "Pork Chops",
+          "qty": 4.0,
+          "unit": "",
+          "measure": "4",
+          "image": "/products/pork-chops.png",
+          "price": 140
+        },
+        {
+          "product_id": "atta-5kg",
+          "name": "Aashirvaad Atta",
+          "qty": 100.0,
+          "unit": "g",
+          "measure": "100g",
+          "image": "/products/atta-5kg.png",
+          "price": 270
+        },
+        {
+          "product_id": "farm-eggs-6",
+          "name": "Farm Fresh Brown Eggs",
+          "qty": 2.0,
+          "unit": "Beaten",
+          "measure": "2 Beaten",
+          "image": "/products/farm-eggs-6.png",
+          "price": 84
+        },
+        {
+          "product_id": "brown-bread",
+          "name": "Whole Wheat Brown Bread",
+          "qty": 100.0,
+          "unit": "g",
+          "measure": "100g",
+          "image": "/products/brown-bread.png",
+          "price": 45
+        },
+        {
+          "product_id": "sunflower-oil-1l",
+          "name": "Sunflower Oil",
+          "qty": null,
+          "unit": "Fry",
+          "measure": "Fry",
+          "image": "/products/sunflower-oil-1l.png",
+          "price": 140
+        },
+        {
+          "product_id": "tomato-ketchup",
+          "name": "Tomato Ketchup",
+          "qty": 2.0,
+          "unit": "tbs",
+          "measure": "2 tbs",
+          "image": "/products/tomato-ketchup.png",
+          "price": 180
+        },
+        {
+          "product_id": "worcestershire-sauce",
+          "name": "Worcestershire Sauce",
+          "qty": 2.0,
+          "unit": "tbs",
+          "measure": "2 tbs",
+          "image": "/products/worcestershire-sauce.png",
+          "price": 100
+        },
+        {
+          "product_id": "oyster-sauce",
+          "name": "Oyster Sauce",
+          "qty": 1.0,
+          "unit": "tbs",
+          "measure": "1 tbs",
+          "image": "/products/oyster-sauce.png",
+          "price": 100
+        },
+        {
+          "product_id": "sugar-1kg",
+          "name": "Sugar",
+          "qty": 2.0,
+          "unit": "tblsp",
+          "measure": "2 tblsp",
+          "image": "/products/sugar-1kg.png",
+          "price": 48
+        }
+      ],
+      "steps": [
+        "Remove the large piece of fat on the edge of each pork loin, then bash each of the loins between two pieces of baking parchment until around 1cm in thickness – you can do this using a meat tenderiser or a rolling pin.",
+        "Once bashed, use your hands to reshape the meat to its original shape and thickness – this step will ensure the meat is as succulent as possible.",
+        "Put the flour, eggs and panko breadcrumbs into three separate wide-rimmed bowls.",
+        "Season the meat, then dip first in the flour, followed by the eggs, then the breadcrumbs.",
+        "In a large frying or sauté pan, add enough oil to come 2cm up the side of the pan.",
+        "Heat the oil to 180C – if you don’t have a thermometer, drop a bit of panko into the oil and if it sinks a little then starts to fry, the oil is ready.",
+        "Add two pork chops and cook for 1 min 30 secs on each side, then remove and leave to rest on a wire rack for 5 mins.",
+        "Repeat with the remaining pork chops.",
+        "While the pork is resting, make the sauce by whisking the ingredients together, adding a splash of water if it’s particularly thick.",
+        "Slice the tonkatsu and serve drizzled with the sauce."
+      ]
+    },
+    {
+      "id": "massaman-beef-curry",
+      "name": "Massaman Beef curry",
+      "cuisine": "Thai",
+      "category": "Beef",
+      "image": "/recipes/massaman-beef-curry.jpg",
+      "base_servings": 2,
+      "time_min": 67,
+      "dietary_tags": [],
+      "ingredient_count": 13,
+      "ingredients": [
+        {
+          "product_id": "peanuts",
+          "name": "Peanuts",
+          "qty": 85.0,
+          "unit": "g",
+          "measure": "85g",
+          "image": "/products/peanuts.png",
+          "price": 65
+        },
+        {
+          "product_id": "coconut-cream",
+          "name": "Coconut Cream",
+          "qty": 400.0,
+          "unit": "ml can",
+          "measure": "400ml can",
+          "image": "/products/coconut-cream.png",
+          "price": 45
+        },
+        {
+          "product_id": "massaman-curry-paste",
+          "name": "Massaman Curry Paste",
+          "qty": 4.0,
+          "unit": "tbsp",
+          "measure": "4 tbsp",
+          "image": "/products/massaman-curry-paste.png",
+          "price": 195
+        },
+        {
+          "product_id": "beef",
+          "name": "Beef",
+          "qty": 600.0,
+          "unit": "g stewing cut into strips",
+          "measure": "600g stewing cut into strips",
+          "image": "/products/beef.png",
+          "price": 85
+        },
+        {
+          "product_id": "potato-1kg",
+          "name": "Potato",
+          "qty": 450.0,
+          "unit": "g waxy",
+          "measure": "450g waxy",
+          "image": "/products/potato-1kg.png",
+          "price": 32
+        },
+        {
+          "product_id": "onion-1kg",
+          "name": "Onion",
+          "qty": 1.0,
+          "unit": "cut thin wedges",
+          "measure": "1 cut thin wedges",
+          "image": "/products/onion-1kg.png",
+          "price": 39
+        },
+        {
+          "product_id": "lime",
+          "name": "Lime",
+          "qty": 4.0,
+          "unit": "leaves",
+          "measure": "4 leaves",
+          "image": "/products/lime.png",
+          "price": 150
+        },
+        {
+          "product_id": "cinnamon",
+          "name": "Cinnamon",
+          "qty": 1.0,
+          "unit": "",
+          "measure": "1",
+          "image": "/products/cinnamon.png",
+          "price": 195
+        },
+        {
+          "product_id": "tamarind-paste",
+          "name": "Tamarind Paste",
+          "qty": 1.0,
+          "unit": "tbsp",
+          "measure": "1 tbsp",
+          "image": "/products/tamarind-paste.png",
+          "price": 100
+        },
+        {
+          "product_id": "sugar-1kg",
+          "name": "Sugar",
+          "qty": 1.0,
+          "unit": "tbsp palm or soft light",
+          "measure": "1 tbsp palm or soft light",
+          "image": "/products/sugar-1kg.png",
+          "price": 48
+        },
+        {
+          "product_id": "fish-sauce",
+          "name": "Fish Sauce",
+          "qty": 1.0,
+          "unit": "tbsp",
+          "measure": "1 tbsp",
+          "image": "/products/fish-sauce.png",
+          "price": 20
+        },
+        {
+          "product_id": "green-chilli",
+          "name": "Green Chilli",
+          "qty": 1.0,
+          "unit": "red deseeded and finely sliced, to serve",
+          "measure": "1 red deseeded and finely sliced, to serve",
+          "image": "/products/green-chilli.png",
+          "price": 15
+        },
+        {
+          "product_id": "jasmine-rice",
+          "name": "Jasmine Rice",
+          "qty": null,
+          "unit": "to serve",
+          "measure": "to serve",
+          "image": "/products/jasmine-rice.png",
+          "price": 95
+        }
+      ],
+      "steps": [
+        "Heat oven to 200C/180C fan/gas 6, then roast the peanuts on a baking tray for 5 mins until golden brown.",
+        "When cool enough to handle, roughly chop.",
+        "Reduce oven to 180C/160C fan/gas 4.",
+        "Heat 2 tbsp coconut cream in a large casserole dish with a lid.",
+        "Add the curry paste and fry for 1 min, then stir in the beef and fry until well coated and sealed.",
+        "Stir in the rest of the coconut with half a can of water, the potatoes, onion, lime leaves, cinnamon, tamarind, sugar, fish sauce and most of the peanuts.",
+        "Bring to a simmer, then cover and cook for 2 hrs in the oven until the beef is tender.",
+        "Sprinkle with sliced chilli and the remaining peanuts, then serve straight from the dish with jasmine rice."
+      ]
+    },
+    {
+      "id": "spaghetti-alla-carbonara",
+      "name": "Spaghetti alla Carbonara",
+      "cuisine": "Italian",
+      "category": "Pasta",
+      "image": "/recipes/spaghetti-alla-carbonara.jpg",
+      "base_servings": 2,
+      "time_min": 39,
+      "dietary_tags": [],
+      "ingredient_count": 6,
+      "ingredients": [
+        {
+          "product_id": "spaghetti",
+          "name": "Durum Wheat Spaghetti",
+          "qty": 320.0,
+          "unit": "g",
+          "measure": "320g",
+          "image": "/products/spaghetti.png",
+          "price": 110
+        },
+        {
+          "product_id": "egg-yolks",
+          "name": "Egg Yolks",
+          "qty": 6.0,
+          "unit": "",
+          "measure": "6",
+          "image": "/products/egg-yolks.png",
+          "price": 175
+        },
+        {
+          "product_id": "salt-1kg",
+          "name": "Iodised Salt",
+          "qty": null,
+          "unit": "As required",
+          "measure": "As required",
+          "image": "/products/salt-1kg.png",
+          "price": 28
+        },
+        {
+          "product_id": "bacon-200g",
+          "name": "Pork Bacon Rashers",
+          "qty": 150.0,
+          "unit": "g",
+          "measure": "150g",
+          "image": "/products/bacon-200g.png",
+          "price": 290
+        },
+        {
+          "product_id": "pecorino",
+          "name": "Pecorino",
+          "qty": 50.0,
+          "unit": "g",
+          "measure": "50g",
+          "image": "/products/pecorino.png",
+          "price": 135
+        },
+        {
+          "product_id": "black-pepper-100g",
+          "name": "Black Pepper",
+          "qty": null,
+          "unit": "As required",
+          "measure": "As required",
+          "image": "/products/black-pepper-100g.png",
+          "price": 130
+        }
+      ],
+      "steps": [
+        "Put a large saucepan of water on to boil.",
+        "Finely chop the 100g pancetta, having first removed any rind.",
+        "Finely grate 50g pecorino cheese and 50g parmesan and mix them together.",
+        "Beat the 3 large eggs in a medium bowl and season with a little freshly grated black pepper.",
+        "Set everything aside.",
+        "Add 1 tsp salt to the boiling water, add 350g spaghetti and when the water comes back to the boil, cook at a constant simmer, covered, for 10 minutes or until al dente (just cooked).",
+        "Squash 2 peeled plump garlic cloves with the blade of a knife, just to bruise it.",
+        "While the spaghetti is cooking, fry the pancetta with the garlic.",
+        "Drop 50g unsalted butter into a large frying pan or wok and, as soon as the butter has melted, tip in the pancetta and garlic.",
+        "Leave to cook on a medium heat for about 5 minutes, stirring often, until the pancetta is golden and crisp.",
+        "The garlic has now imparted its flavour, so take it out with a slotted spoon and discard.",
+        "Keep the heat under the pancetta on low.",
+        "When the pasta is ready, lift it from the water with a pasta fork or tongs and put it in the frying pan with the pancetta.",
+        "Don’t worry if a little water drops in the pan as well (you want this to happen) and don’t throw the pasta water away yet."
+      ]
+    },
+    {
+      "id": "lasagne",
+      "name": "Lasagne",
+      "cuisine": "Italian",
+      "category": "Pasta",
+      "image": "/recipes/lasagne.jpg",
+      "base_servings": 2,
+      "time_min": 75,
+      "dietary_tags": [],
+      "ingredient_count": 15,
+      "ingredients": [
+        {
+          "product_id": "olive-oil-500ml",
+          "name": "Extra Virgin Olive Oil",
+          "qty": 1.0,
+          "unit": "tblsp",
+          "measure": "1 tblsp",
+          "image": "/products/olive-oil-500ml.png",
+          "price": 480
+        },
+        {
+          "product_id": "bacon-200g",
+          "name": "Pork Bacon Rashers",
+          "qty": 2.0,
+          "unit": "",
+          "measure": "2",
+          "image": "/products/bacon-200g.png",
+          "price": 290
+        },
+        {
+          "product_id": "onion-1kg",
+          "name": "Onion",
+          "qty": 1.0,
+          "unit": "finely chopped",
+          "measure": "1 finely chopped",
+          "image": "/products/onion-1kg.png",
+          "price": 39
+        },
+        {
+          "product_id": "celery",
+          "name": "Celery",
+          "qty": 1.0,
+          "unit": "Stick",
+          "measure": "1 Stick",
+          "image": "/products/celery.png",
+          "price": 30
+        },
+        {
+          "product_id": "carrot-500g",
+          "name": "Carrot",
+          "qty": 1.0,
+          "unit": "medium",
+          "measure": "1 medium",
+          "image": "/products/carrot-500g.png",
+          "price": 35
+        },
+        {
+          "product_id": "garlic-200g",
+          "name": "Garlic",
+          "qty": 2.0,
+          "unit": "cloves chopped",
+          "measure": "2 cloves chopped",
+          "image": "/products/garlic-200g.png",
+          "price": 38
+        },
+        {
+          "product_id": "beef",
+          "name": "Beef",
+          "qty": 500.0,
+          "unit": "g",
+          "measure": "500g",
+          "image": "/products/beef.png",
+          "price": 85
+        },
+        {
+          "product_id": "tomato-puree",
+          "name": "Tomato Puree",
+          "qty": 1.0,
+          "unit": "tbls",
+          "measure": "1 tbls",
+          "image": "/products/tomato-puree.png",
+          "price": 180
+        },
+        {
+          "product_id": "tomato-500g",
+          "name": "Tomato",
+          "qty": 800.0,
+          "unit": "g",
+          "measure": "800g",
+          "image": "/products/tomato-500g.png",
+          "price": 25
+        },
+        {
+          "product_id": "honey",
+          "name": "Honey",
+          "qty": 1.0,
+          "unit": "tblsp",
+          "measure": "1 tblsp",
+          "image": "/products/honey.png",
+          "price": 50
+        },
+        {
+          "product_id": "lasagne-sheets",
+          "name": "Lasagne Sheets",
+          "qty": 500.0,
+          "unit": "g",
+          "measure": "500g",
+          "image": "/products/lasagne-sheets.png",
+          "price": 185
+        },
+        {
+          "product_id": "creme-fraiche",
+          "name": "Creme Fraiche",
+          "qty": 400.0,
+          "unit": "ml",
+          "measure": "400ml",
+          "image": "/products/creme-fraiche.png",
+          "price": 35
+        },
+        {
+          "product_id": "mozzarella-200g",
+          "name": "Mozzarella Cheese",
+          "qty": 125.0,
+          "unit": "g",
+          "measure": "125g",
+          "image": "/products/mozzarella-200g.png",
+          "price": 199
+        },
+        {
+          "product_id": "amul-cheese-slices",
+          "name": "Cheese Slices",
+          "qty": 50.0,
+          "unit": "g",
+          "measure": "50g",
+          "image": "/products/amul-cheese-slices.png",
+          "price": 130
+        },
+        {
+          "product_id": "basil",
+          "name": "Fresh Basil",
+          "qty": null,
+          "unit": "Topping",
+          "measure": "Topping",
+          "image": "/products/basil.png",
+          "price": 49
+        }
+      ],
+      "steps": [
+        "Heat the oil in a large saucepan.",
+        "Use kitchen scissors to snip the bacon into small pieces, or use a sharp knife to chop it on a chopping board.",
+        "Add the bacon to the pan and cook for just a few mins until starting to turn golden.",
+        "Add the onion, celery and carrot, and cook over a medium heat for 5 mins, stirring occasionally, until softened.",
+        "Add the garlic and cook for 1 min, then tip in the mince and cook, stirring and breaking it up with a wooden spoon, for about 6 mins until browned all over.",
+        "Stir in the tomato purée and cook for 1 min, mixing in well with the beef and vegetables.",
+        "Tip in the chopped tomatoes.",
+        "Fill each can half full with water to rinse out any tomatoes left in the can, and add to the pan.",
+        "Add the honey and season to taste.",
+        "Simmer for 20 mins.",
+        "Heat oven to 200C/180C fan/gas 6.",
+        "To assemble the lasagne, ladle a little of the ragu sauce into the bottom of the roasting tin or casserole dish, spreading the sauce all over the base.",
+        "Place 2 sheets of lasagne on top of the sauce overlapping to make it fit, then repeat with more sauce and another layer of pasta.",
+        "Repeat with a further 2 layers of sauce and pasta, finishing with a layer of pasta."
+      ]
+    },
+    {
+      "id": "salmon-prawn-risotto",
+      "name": "Salmon Prawn Risotto",
+      "cuisine": "Italian",
+      "category": "Seafood",
+      "image": "/recipes/salmon-prawn-risotto.jpg",
+      "base_servings": 2,
+      "time_min": 59,
+      "dietary_tags": [],
+      "ingredient_count": 11,
+      "ingredients": [
+        {
+          "product_id": "amul-butter-100g",
+          "name": "Amul Butter",
+          "qty": 50.0,
+          "unit": "g/2oz",
+          "measure": "50g/2oz",
+          "image": "/products/amul-butter-100g.png",
+          "price": 56
+        },
+        {
+          "product_id": "onion-1kg",
+          "name": "Onion",
+          "qty": 1.0,
+          "unit": "finely chopped",
+          "measure": "1 finely chopped",
+          "image": "/products/onion-1kg.png",
+          "price": 39
+        },
+        {
+          "product_id": "basmati-rice-1kg",
+          "name": "India Gate Basmati Rice",
+          "qty": 150.0,
+          "unit": "g",
+          "measure": "150g",
+          "image": "/products/basmati-rice-1kg.png",
+          "price": 145
+        },
+        {
+          "product_id": "white-wine",
+          "name": "Sauvignon Blanc White Wine",
+          "qty": 125.0,
+          "unit": "ml",
+          "measure": "125ml",
+          "image": "/products/white-wine.png",
+          "price": 850
+        },
+        {
+          "product_id": "vegetable-stock",
+          "name": "Vegetable Stock",
+          "qty": 1.0,
+          "unit": "litre hot",
+          "measure": "1 litre hot",
+          "image": "/products/vegetable-stock.png",
+          "price": 60
+        },
+        {
+          "product_id": "lemon-4",
+          "name": "Lemon",
+          "qty": null,
+          "unit": "The juice and zest of one",
+          "measure": "The juice and zest of one",
+          "image": "/products/lemon-4.png",
+          "price": 24
+        },
+        {
+          "product_id": "prawns-250g",
+          "name": "Prawns (Cleaned)",
+          "qty": 240.0,
+          "unit": "g large",
+          "measure": "240g large",
+          "image": "/products/prawns-250g.png",
+          "price": 320
+        },
+        {
+          "product_id": "salmon-300g",
+          "name": "Norwegian Salmon",
+          "qty": 150.0,
+          "unit": "g",
+          "measure": "150g",
+          "image": "/products/salmon-300g.png",
+          "price": 540
+        },
+        {
+          "product_id": "asparagus",
+          "name": "Asparagus",
+          "qty": 100.0,
+          "unit": "g tips blanched briefly in boiling water",
+          "measure": "100g tips blanched briefly in boiling water",
+          "image": "/products/asparagus.png",
+          "price": 70
+        },
+        {
+          "product_id": "black-pepper-100g",
+          "name": "Black Pepper",
+          "qty": null,
+          "unit": "ground",
+          "measure": "ground",
+          "image": "/products/black-pepper-100g.png",
+          "price": 130
+        },
+        {
+          "product_id": "parmesan-150g",
+          "name": "Parmesan Cheese",
+          "qty": 50.0,
+          "unit": "g shavings",
+          "measure": "50g shavings",
+          "image": "/products/parmesan-150g.png",
+          "price": 320
+        }
+      ],
+      "steps": [
+        "Melt the butter in a thick-based pan and gently cook the onion without colour until it is soft.",
+        "Add the rice and stir to coat all the grains in the butter",
+        "Add the wine and cook gently stirring until it is absorbed",
+        "Gradually add the hot stock, stirring until each addition is absorbed.",
+        "Keep stirring until the rice is tender",
+        "Season with the lemon juice and zest, and pepper to taste.",
+        "(there will probably be sufficient saltiness from the salmon to not need to add salt) Stir gently to heat through",
+        "Serve scattered with the Parmesan and seasonal vegetables.",
+        "Grill the salmon and gently place onto the risotto with the prawns and asparagus"
+      ]
+    },
+    {
+      "id": "pizza-express-margherita",
+      "name": "Pizza Express Margherita",
+      "cuisine": "Italian",
+      "category": "Miscellaneous",
+      "image": "/recipes/pizza-express-margherita.jpg",
+      "base_servings": 2,
+      "time_min": 59,
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "ingredient_count": 11,
+      "ingredients": [
+        {
+          "product_id": "water-1l",
+          "name": "Packaged Drinking Water",
+          "qty": 150.0,
+          "unit": "ml",
+          "measure": "150ml",
+          "image": "/products/water-1l.png",
+          "price": 20
+        },
+        {
+          "product_id": "sugar-1kg",
+          "name": "Sugar",
+          "qty": 1.0,
+          "unit": "tsp",
+          "measure": "1 tsp",
+          "image": "/products/sugar-1kg.png",
+          "price": 48
+        },
+        {
+          "product_id": "yeast",
+          "name": "Yeast",
+          "qty": 15.0,
+          "unit": "g",
+          "measure": "15g",
+          "image": "/products/yeast.png",
+          "price": 55
+        },
+        {
+          "product_id": "maida-1kg",
+          "name": "Maida / Refined Flour",
+          "qty": 225.0,
+          "unit": "g",
+          "measure": "225g",
+          "image": "/products/maida-1kg.png",
+          "price": 52
+        },
+        {
+          "product_id": "salt-1kg",
+          "name": "Iodised Salt",
+          "qty": 1.5,
+          "unit": "tsp",
+          "measure": "1 1/2 tsp",
+          "image": "/products/salt-1kg.png",
+          "price": 28
+        },
+        {
+          "product_id": "olive-oil-500ml",
+          "name": "Extra Virgin Olive Oil",
+          "qty": null,
+          "unit": "Drizzle",
+          "measure": "Drizzle",
+          "image": "/products/olive-oil-500ml.png",
+          "price": 480
+        },
+        {
+          "product_id": "passata",
+          "name": "Passata",
+          "qty": 80.0,
+          "unit": "g",
+          "measure": "80g",
+          "image": "/products/passata.png",
+          "price": 190
+        },
+        {
+          "product_id": "mozzarella-200g",
+          "name": "Mozzarella Cheese",
+          "qty": 70.0,
+          "unit": "g",
+          "measure": "70g",
+          "image": "/products/mozzarella-200g.png",
+          "price": 199
+        },
+        {
+          "product_id": "oregano",
+          "name": "Oregano",
+          "qty": null,
+          "unit": "Peeled and Sliced",
+          "measure": "Peeled and Sliced",
+          "image": "/products/oregano.png",
+          "price": 65
+        },
+        {
+          "product_id": "basil",
+          "name": "Fresh Basil",
+          "qty": null,
+          "unit": "Leaves",
+          "measure": "Leaves",
+          "image": "/products/basil.png",
+          "price": 49
+        },
+        {
+          "product_id": "black-pepper-100g",
+          "name": "Black Pepper",
+          "qty": null,
+          "unit": "Pinch",
+          "measure": "Pinch",
+          "image": "/products/black-pepper-100g.png",
+          "price": 130
+        }
+      ],
+      "steps": [
+        "1 Preheat the oven to 230°C.",
+        "2 Add the sugar and crumble the fresh yeast into warm water.",
+        "3 Allow the mixture to stand for 10 – 15 minutes in a warm place (we find a windowsill on a sunny day works best) until froth develops on the surface.",
+        "4 Sift the flour and salt into a large mixing bowl, make a well in the middle and pour in the yeast mixture and olive oil.",
+        "5 Lightly flour your hands, and slowly mix the ingredients together until they bind.",
+        "6 Generously dust your surface with flour.",
+        "7 Throw down the dough and begin kneading for 10 minutes until smooth, silky and soft.",
+        "8 Place in a lightly oiled, non-stick baking tray (we use a round one, but any shape will do!)",
+        "9 Spread the passata on top making sure you go to the edge.",
+        "10 Evenly place the mozzarella (or other cheese) on top, season with the oregano and black pepper, then drizzle with a little olive oil.",
+        "11 Cook in the oven for 10 – 12 minutes until the cheese slightly colours.",
+        "12 When ready, place the basil leaf on top and tuck in!"
+      ]
+    },
+    {
+      "id": "spaghetti-bolognese",
+      "name": "Spaghetti Bolognese",
+      "cuisine": "Italian",
+      "category": "Beef",
+      "image": "/recipes/spaghetti-bolognese.jpg",
+      "base_servings": 2,
+      "time_min": 63,
+      "dietary_tags": [],
+      "ingredient_count": 12,
+      "ingredients": [
+        {
+          "product_id": "onion-1kg",
+          "name": "Onion",
+          "qty": 2.0,
+          "unit": "",
+          "measure": "2",
+          "image": "/products/onion-1kg.png",
+          "price": 39
+        },
+        {
+          "product_id": "olive-oil-500ml",
+          "name": "Extra Virgin Olive Oil",
+          "qty": 1.0,
+          "unit": "tbsp",
+          "measure": "1tbsp",
+          "image": "/products/olive-oil-500ml.png",
+          "price": 480
+        },
+        {
+          "product_id": "garlic-200g",
+          "name": "Garlic",
+          "qty": 1.0,
+          "unit": "clove",
+          "measure": "1 clove",
+          "image": "/products/garlic-200g.png",
+          "price": 38
+        },
+        {
+          "product_id": "beef",
+          "name": "Beef",
+          "qty": 500.0,
+          "unit": "g",
+          "measure": "500g",
+          "image": "/products/beef.png",
+          "price": 85
+        },
+        {
+          "product_id": "mushroom-200g",
+          "name": "Button Mushrooms",
+          "qty": 90.0,
+          "unit": "g",
+          "measure": "90g",
+          "image": "/products/mushroom-200g.png",
+          "price": 49
+        },
+        {
+          "product_id": "oregano",
+          "name": "Oregano",
+          "qty": 1.0,
+          "unit": "tsp",
+          "measure": "1tsp",
+          "image": "/products/oregano.png",
+          "price": 65
+        },
+        {
+          "product_id": "tomato-500g",
+          "name": "Tomato",
+          "qty": 400.0,
+          "unit": "g can",
+          "measure": "400g can",
+          "image": "/products/tomato-500g.png",
+          "price": 25
+        },
+        {
+          "product_id": "beef",
+          "name": "Beef",
+          "qty": 300.0,
+          "unit": "ml",
+          "measure": "300ml",
+          "image": "/products/beef.png",
+          "price": 85
+        },
+        {
+          "product_id": "tomato-puree",
+          "name": "Tomato Puree",
+          "qty": 1.0,
+          "unit": "tbsp",
+          "measure": "1tbsp",
+          "image": "/products/tomato-puree.png",
+          "price": 180
+        },
+        {
+          "product_id": "worcestershire-sauce",
+          "name": "Worcestershire Sauce",
+          "qty": 1.0,
+          "unit": "tbsp",
+          "measure": "1tbsp",
+          "image": "/products/worcestershire-sauce.png",
+          "price": 100
+        },
+        {
+          "product_id": "spaghetti",
+          "name": "Durum Wheat Spaghetti",
+          "qty": 350.0,
+          "unit": "g",
+          "measure": "350g",
+          "image": "/products/spaghetti.png",
+          "price": 110
+        },
+        {
+          "product_id": "parmesan-150g",
+          "name": "Parmesan Cheese",
+          "qty": null,
+          "unit": "Topping",
+          "measure": "Topping",
+          "image": "/products/parmesan-150g.png",
+          "price": 320
+        }
+      ],
+      "steps": [
+        "Put the onion and oil in a large pan and fry over a fairly high heat for 3-4 mins.",
+        "Add the garlic and mince and fry until they both brown.",
+        "Add the mushrooms and herbs, and cook for another couple of mins.",
+        "Stir in the tomatoes, beef stock, tomato ketchup or purée, Worcestershire sauce and seasoning.",
+        "Bring to the boil, then reduce the heat, cover and simmer, stirring occasionally, for 30 mins.",
+        "Meanwhile, cook the spaghetti in a large pan of boiling, salted water, according to packet instructions.",
+        "Drain well, run hot water through it, put it back in the pan and add a dash of olive oil, if you like, then stir in the meat sauce.",
+        "Serve in hot bowls and hand round Parmesan cheese, for sprinkling on top."
+      ]
+    },
+    {
+      "id": "ratatouille",
+      "name": "Ratatouille",
+      "cuisine": "France",
+      "category": "Vegetarian",
+      "image": "/recipes/ratatouille.jpg",
+      "base_servings": 2,
+      "time_min": 55,
+      "dietary_tags": [
+        "vegetarian",
+        "vegan"
+      ],
+      "ingredient_count": 10,
+      "ingredients": [
+        {
+          "product_id": "aubergine",
+          "name": "Aubergine",
+          "qty": 2.0,
+          "unit": "large",
+          "measure": "2 large",
+          "image": "/products/aubergine.png",
+          "price": 110
+        },
+        {
+          "product_id": "courgettes",
+          "name": "Courgettes",
+          "qty": 4.0,
+          "unit": "",
+          "measure": "4",
+          "image": "/products/courgettes.png",
+          "price": 145
+        },
+        {
+          "product_id": "yellow-pepper",
+          "name": "Yellow Pepper",
+          "qty": 2.0,
+          "unit": "",
+          "measure": "2",
+          "image": "/products/yellow-pepper.png",
+          "price": 60
+        },
+        {
+          "product_id": "tomato-500g",
+          "name": "Tomato",
+          "qty": 4.0,
+          "unit": "large",
+          "measure": "4 large",
+          "image": "/products/tomato-500g.png",
+          "price": 25
+        },
+        {
+          "product_id": "olive-oil-500ml",
+          "name": "Extra Virgin Olive Oil",
+          "qty": 5.0,
+          "unit": "tbs",
+          "measure": "5 tbs",
+          "image": "/products/olive-oil-500ml.png",
+          "price": 480
+        },
+        {
+          "product_id": "basil",
+          "name": "Fresh Basil",
+          "qty": null,
+          "unit": "Bunch",
+          "measure": "Bunch",
+          "image": "/products/basil.png",
+          "price": 49
+        },
+        {
+          "product_id": "onion-1kg",
+          "name": "Onion",
+          "qty": 1.0,
+          "unit": "medium",
+          "measure": "1 medium",
+          "image": "/products/onion-1kg.png",
+          "price": 39
+        },
+        {
+          "product_id": "garlic-200g",
+          "name": "Garlic",
+          "qty": 3.0,
+          "unit": "finely chopped",
+          "measure": "3 finely chopped",
+          "image": "/products/garlic-200g.png",
+          "price": 38
+        },
+        {
+          "product_id": "red-wine-vinegar",
+          "name": "Red Wine Vinegar",
+          "qty": 1.0,
+          "unit": "tsp",
+          "measure": "1 tsp",
+          "image": "/products/red-wine-vinegar.png",
+          "price": 45
+        },
+        {
+          "product_id": "sugar-1kg",
+          "name": "Sugar",
+          "qty": 1.0,
+          "unit": "tsp",
+          "measure": "1 tsp",
+          "image": "/products/sugar-1kg.png",
+          "price": 48
+        }
+      ],
+      "steps": [
+        "Cut the aubergines in half lengthways.",
+        "Place them on the board, cut side down, slice in half lengthways again and then across into 1.5cm chunks.",
+        "Cut off the courgettes ends, then across into 1.5cm slices.",
+        "Peel the peppers from stalk to bottom.",
+        "Hold upright, cut around the stalk, then cut into 3 pieces.",
+        "Cut away any membrane, then chop into bite-size chunks.",
+        "Score a small cross on the base of each tomato, then put them into a heatproof bowl.",
+        "Pour boiling water over the tomatoes, leave for 20 secs, then remove.",
+        "Pour the water away, replace the tomatoes and cover with cold water.",
+        "Leave to cool, then peel the skin away.",
+        "Quarter the tomatoes, scrape away the seeds with a spoon, then roughly chop the flesh.",
+        "Set a sauté pan over medium heat and when hot, pour in 2 tbsp olive oil.",
+        "Brown the aubergines for 5 mins on each side until the pieces are soft.",
+        "Set them aside and fry the courgettes in another tbsp oil for 5 mins, until golden on both sides."
+      ]
+    },
+    {
+      "id": "fish-pie",
+      "name": "Fish pie",
+      "cuisine": "British",
+      "category": "Seafood",
+      "image": "/recipes/fish-pie.jpg",
+      "base_servings": 2,
+      "time_min": 75,
+      "dietary_tags": [],
+      "ingredient_count": 15,
+      "ingredients": [
+        {
+          "product_id": "potato-1kg",
+          "name": "Potato",
+          "qty": 900.0,
+          "unit": "g",
+          "measure": "900g",
+          "image": "/products/potato-1kg.png",
+          "price": 32
+        },
+        {
+          "product_id": "olive-oil-500ml",
+          "name": "Extra Virgin Olive Oil",
+          "qty": 2.0,
+          "unit": "tbsp",
+          "measure": "2 tbsp",
+          "image": "/products/olive-oil-500ml.png",
+          "price": 480
+        },
+        {
+          "product_id": "amul-milk-500ml",
+          "name": "Amul Taaza Toned Milk",
+          "qty": 600.0,
+          "unit": "ml",
+          "measure": "600ml",
+          "image": "/products/amul-milk-500ml.png",
+          "price": 28
+        },
+        {
+          "product_id": "white-fish-fillets",
+          "name": "White Fish Fillets",
+          "qty": 800.0,
+          "unit": "g",
+          "measure": "800g",
+          "image": "/products/white-fish-fillets.png",
+          "price": 25
+        },
+        {
+          "product_id": "maida-1kg",
+          "name": "Maida / Refined Flour",
+          "qty": 1.0,
+          "unit": "tbsp",
+          "measure": "1 tbsp",
+          "image": "/products/maida-1kg.png",
+          "price": 52
+        },
+        {
+          "product_id": "nutmeg",
+          "name": "Nutmeg",
+          "qty": null,
+          "unit": "Grating",
+          "measure": "Grating",
+          "image": "/products/nutmeg.png",
+          "price": 85
+        },
+        {
+          "product_id": "fresh-cream-200ml",
+          "name": "Fresh Cream",
+          "qty": 3.0,
+          "unit": "tbsp",
+          "measure": "3 tbsp",
+          "image": "/products/fresh-cream-200ml.png",
+          "price": 72
+        },
+        {
+          "product_id": "jerusalem-artichokes",
+          "name": "Jerusalem Artichokes",
+          "qty": 200.0,
+          "unit": "g",
+          "measure": "200g",
+          "image": "/products/jerusalem-artichokes.png",
+          "price": 120
+        },
+        {
+          "product_id": "leek",
+          "name": "Leek",
+          "qty": 1.0,
+          "unit": "finely sliced",
+          "measure": "1 finely sliced",
+          "image": "/products/leek.png",
+          "price": 70
+        },
+        {
+          "product_id": "prawns-250g",
+          "name": "Prawns (Cleaned)",
+          "qty": 200.0,
+          "unit": "g peeled raw",
+          "measure": "200g peeled raw",
+          "image": "/products/prawns-250g.png",
+          "price": 320
+        },
+        {
+          "product_id": "parsley",
+          "name": "Parsley",
+          "qty": null,
+          "unit": "Large handful",
+          "measure": "Large handful",
+          "image": "/products/parsley.png",
+          "price": 55
+        },
+        {
+          "product_id": "dill",
+          "name": "Dill",
+          "qty": null,
+          "unit": "Handful",
+          "measure": "Handful",
+          "image": "/products/dill.png",
+          "price": 195
+        },
+        {
+          "product_id": "lemon-4",
+          "name": "Lemon",
+          "qty": null,
+          "unit": "Grated zest of 1",
+          "measure": "Grated zest of 1",
+          "image": "/products/lemon-4.png",
+          "price": 24
+        },
+        {
+          "product_id": "gruy-re",
+          "name": "Gruyère",
+          "qty": 25.0,
+          "unit": "g grated",
+          "measure": "25g grated",
+          "image": "/products/gruy-re.png",
+          "price": 55
+        },
+        {
+          "product_id": "lemon-4",
+          "name": "Lemon",
+          "qty": null,
+          "unit": "Juice of 1",
+          "measure": "Juice of 1",
+          "image": "/products/lemon-4.png",
+          "price": 24
+        }
+      ],
+      "steps": [
+        "01.Put the potatoes in a large pan of cold salted water and bring to the boil.",
+        "Lower the heat, cover, then simmer gently for 15 minutes until tender.",
+        "Drain, then return to the pan over a low heat for 30 seconds to drive off any excess water.",
+        "Mash with 1 tbsp olive oil, then season.",
+        "02.Meanwhile put the milk in a large sauté pan, add the fish and bring to the boil.",
+        "Remove from the heat, cover and stand for 3 minutes.",
+        "Remove the fish (reserving the milk) and pat dry with kitchen paper, then gently flake into an ovenproof dish, discarding the skin and any bones.",
+        "03.Heat the remaining oil in a pan, stir in the flour and cook for 30 seconds.",
+        "Gradually stir in 200-250ml of the reserved milk (discard the rest).",
+        "Grate in nutmeg, season, then bubble until thick.",
+        "Stir in the cream.",
+        "04.Preheat the oven to 190°C/fan170°C/gas 5.",
+        "Grate the artichokes and add to the dish with the leek, prawns and herbs.",
+        "Stir the lemon zest and juice into the sauce, then pour over."
+      ]
+    },
+    {
+      "id": "falafel",
+      "name": "Falafel",
+      "cuisine": "Turkish",
+      "category": "Vegetarian",
+      "image": "/recipes/falafel.jpg",
+      "base_servings": 2,
+      "time_min": 47,
+      "dietary_tags": [
+        "eggetarian"
+      ],
+      "ingredient_count": 8,
+      "ingredients": [
+        {
+          "product_id": "sunflower-oil",
+          "name": "Sunflower Oil",
+          "qty": 2.0,
+          "unit": "tablespoons",
+          "measure": "2 tablespoons",
+          "image": "/products/sunflower-oil.png",
+          "price": 50
+        },
+        {
+          "product_id": "onion-1kg",
+          "name": "Onion",
+          "qty": 1.0,
+          "unit": "chopped",
+          "measure": "1 chopped",
+          "image": "/products/onion-1kg.png",
+          "price": 39
+        },
+        {
+          "product_id": "garlic-200g",
+          "name": "Garlic",
+          "qty": 1.0,
+          "unit": "clove peeled crushed",
+          "measure": "1 clove peeled crushed",
+          "image": "/products/garlic-200g.png",
+          "price": 38
+        },
+        {
+          "product_id": "chana-dal",
+          "name": "Chana Dal",
+          "qty": 400.0,
+          "unit": "g",
+          "measure": "400g",
+          "image": "/products/chana-dal.png",
+          "price": 95
+        },
+        {
+          "product_id": "cumin-seeds",
+          "name": "Cumin / Jeera",
+          "qty": 1.0,
+          "unit": "tsp",
+          "measure": "1 tsp",
+          "image": "/products/cumin-seeds.png",
+          "price": 55
+        },
+        {
+          "product_id": "coriander",
+          "name": "Coriander Leaves",
+          "qty": 1.0,
+          "unit": "tsp",
+          "measure": "1 tsp",
+          "image": "/products/coriander.png",
+          "price": 12
+        },
+        {
+          "product_id": "parsley",
+          "name": "Parsley",
+          "qty": null,
+          "unit": "Handful",
+          "measure": "Handful",
+          "image": "/products/parsley.png",
+          "price": 55
+        },
+        {
+          "product_id": "farm-eggs-6",
+          "name": "Farm Fresh Brown Eggs",
+          "qty": 1.0,
+          "unit": "beaten",
+          "measure": "1 beaten",
+          "image": "/products/farm-eggs-6.png",
+          "price": 84
+        }
+      ],
+      "steps": [
+        "Heat 1 tbsp oil in a large pan, then fry the onion and garlic over a low heat for 5 mins until softened.",
+        "Tip into a large mixing bowl with the chickpeas and spices, then mash together with a fork or potato masher until the chickpeas are totally broken down.",
+        "Stir in the parsley or dried herbs, with seasoning to taste.",
+        "Add the egg, then squish the mixture together with your hands.",
+        "Mould the mix into 6 balls, then flatten into patties.",
+        "Heat the remaining oil in the pan, then fry the falafels on a medium heat for 3 mins on each side, until golden brown and firm.",
+        "Serve hot or cold with couscous, pitta bread or salad."
+      ]
+    },
+    {
+      "id": "shakshuka",
+      "name": "Shakshuka",
+      "cuisine": "Egyptian",
+      "category": "Vegetarian",
+      "image": "/recipes/shakshuka.jpg",
+      "base_servings": 2,
+      "time_min": 51,
+      "dietary_tags": [
+        "eggetarian"
+      ],
+      "ingredient_count": 9,
+      "ingredients": [
+        {
+          "product_id": "olive-oil-500ml",
+          "name": "Extra Virgin Olive Oil",
+          "qty": 1.0,
+          "unit": "tbs",
+          "measure": "1 tbs",
+          "image": "/products/olive-oil-500ml.png",
+          "price": 480
+        },
+        {
+          "product_id": "onion-1kg",
+          "name": "Onion",
+          "qty": 2.0,
+          "unit": "chopped",
+          "measure": "2 chopped",
+          "image": "/products/onion-1kg.png",
+          "price": 39
+        },
+        {
+          "product_id": "green-chilli",
+          "name": "Green Chilli",
+          "qty": 1.0,
+          "unit": "finely chopped",
+          "measure": "1 finely chopped",
+          "image": "/products/green-chilli.png",
+          "price": 15
+        },
+        {
+          "product_id": "garlic-200g",
+          "name": "Garlic",
+          "qty": 1.0,
+          "unit": "clove",
+          "measure": "1 clove",
+          "image": "/products/garlic-200g.png",
+          "price": 38
+        },
+        {
+          "product_id": "coriander",
+          "name": "Coriander Leaves",
+          "qty": null,
+          "unit": "Chopped",
+          "measure": "Chopped",
+          "image": "/products/coriander.png",
+          "price": 12
+        },
+        {
+          "product_id": "tomato-500g",
+          "name": "Tomato",
+          "qty": 800.0,
+          "unit": "g",
+          "measure": "800g",
+          "image": "/products/tomato-500g.png",
+          "price": 25
+        },
+        {
+          "product_id": "sugar-1kg",
+          "name": "Sugar",
+          "qty": 1.0,
+          "unit": "tbs",
+          "measure": "1 tbs",
+          "image": "/products/sugar-1kg.png",
+          "price": 48
+        },
+        {
+          "product_id": "farm-eggs-6",
+          "name": "Farm Fresh Brown Eggs",
+          "qty": 4.0,
+          "unit": "",
+          "measure": "4",
+          "image": "/products/farm-eggs-6.png",
+          "price": 84
+        },
+        {
+          "product_id": "feta",
+          "name": "Feta",
+          "qty": null,
+          "unit": "Spinkling",
+          "measure": "Spinkling",
+          "image": "/products/feta.png",
+          "price": 30
+        }
+      ],
+      "steps": [
+        "Heat the oil in a frying pan that has a lid, then soften the onions, chilli, garlic and coriander stalks for 5 mins until soft.",
+        "Stir in the tomatoes and sugar, then bubble for 8-10 mins until thick.",
+        "Can be frozen for 1 month.",
+        "Using the back of a large spoon, make 4 dips in the sauce, then crack an egg into each one.",
+        "Put a lid on the pan, then cook over a low heat for 6-8 mins, until the eggs are done to your liking.",
+        "Scatter with the coriander leaves and serve with crusty bread."
+      ]
+    },
+    {
+      "id": "pancakes",
+      "name": "Pancakes",
+      "cuisine": "United States",
+      "category": "Dessert",
+      "image": "/recipes/pancakes.jpg",
+      "base_servings": 2,
+      "time_min": 43,
+      "dietary_tags": [
+        "eggetarian"
+      ],
+      "ingredient_count": 7,
+      "ingredients": [
+        {
+          "product_id": "atta-5kg",
+          "name": "Aashirvaad Atta",
+          "qty": 100.0,
+          "unit": "g",
+          "measure": "100g",
+          "image": "/products/atta-5kg.png",
+          "price": 270
+        },
+        {
+          "product_id": "farm-eggs-6",
+          "name": "Farm Fresh Brown Eggs",
+          "qty": 2.0,
+          "unit": "large",
+          "measure": "2 large",
+          "image": "/products/farm-eggs-6.png",
+          "price": 84
+        },
+        {
+          "product_id": "amul-milk-500ml",
+          "name": "Amul Taaza Toned Milk",
+          "qty": 300.0,
+          "unit": "ml",
+          "measure": "300ml",
+          "image": "/products/amul-milk-500ml.png",
+          "price": 28
+        },
+        {
+          "product_id": "sunflower-oil",
+          "name": "Sunflower Oil",
+          "qty": 1.0,
+          "unit": "tbls",
+          "measure": "1 tbls",
+          "image": "/products/sunflower-oil.png",
+          "price": 50
+        },
+        {
+          "product_id": "sugar-1kg",
+          "name": "Sugar",
+          "qty": null,
+          "unit": "to serve",
+          "measure": "to serve",
+          "image": "/products/sugar-1kg.png",
+          "price": 48
+        },
+        {
+          "product_id": "raspberries",
+          "name": "Raspberries",
+          "qty": null,
+          "unit": "to serve",
+          "measure": "to serve",
+          "image": "/products/raspberries.png",
+          "price": 70
+        },
+        {
+          "product_id": "blueberries",
+          "name": "Blueberries",
+          "qty": null,
+          "unit": "to serve",
+          "measure": "to serve",
+          "image": "/products/blueberries.png",
+          "price": 75
+        }
+      ],
+      "steps": [
+        "Put the flour, eggs, milk, 1 tbsp oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.",
+        "Set aside for 30 mins to rest if you have time, or start cooking straight away.",
+        "Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.",
+        "When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.",
+        "Serve with lemon wedges and sugar, or your favourite filling.",
+        "Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months."
+      ]
+    },
+    {
+      "id": "cassava-pizza",
+      "name": "Cassava pizza",
+      "cuisine": "Venezuela",
+      "category": "Pork",
+      "image": "/recipes/cassava-pizza.jpg",
+      "base_servings": 2,
+      "time_min": 47,
+      "dietary_tags": [],
+      "ingredient_count": 8,
+      "ingredients": [
+        {
+          "product_id": "casabe",
+          "name": "Casabe",
+          "qty": 6.0,
+          "unit": "cut thick slices",
+          "measure": "6 cut thick slices",
+          "image": "/products/casabe.png",
+          "price": 30
+        },
+        {
+          "product_id": "tomato-sauce",
+          "name": "Tomato Sauce",
+          "qty": 450.0,
+          "unit": "g",
+          "measure": "450g",
+          "image": "/products/tomato-sauce.png",
+          "price": 55
+        },
+        {
+          "product_id": "chorizo",
+          "name": "Chorizo",
+          "qty": 225.0,
+          "unit": "g",
+          "measure": "225g",
+          "image": "/products/chorizo.png",
+          "price": 85
+        },
+        {
+          "product_id": "turkey-ham",
+          "name": "Turkey Ham",
+          "qty": 225.0,
+          "unit": "g",
+          "measure": "225g",
+          "image": "/products/turkey-ham.png",
+          "price": 95
+        },
+        {
+          "product_id": "popcorn",
+          "name": "Microwave Popcorn",
+          "qty": 75.0,
+          "unit": "g",
+          "measure": "75g",
+          "image": "/products/popcorn.png",
+          "price": 45
+        },
+        {
+          "product_id": "green-olives",
+          "name": "Green Olives",
+          "qty": 40.0,
+          "unit": "g",
+          "measure": "40g",
+          "image": "/products/green-olives.png",
+          "price": 65
+        },
+        {
+          "product_id": "paprika",
+          "name": "Paprika",
+          "qty": 55.0,
+          "unit": "g",
+          "measure": "55g",
+          "image": "/products/paprika.png",
+          "price": 155
+        },
+        {
+          "product_id": "mozzarella-200g",
+          "name": "Mozzarella Cheese",
+          "qty": 50.0,
+          "unit": "g",
+          "measure": "50g",
+          "image": "/products/mozzarella-200g.png",
+          "price": 199
+        }
+      ],
+      "steps": [
+        "Preheat the oven to 200ºC.",
+        "Cut the bacon or chorizo into medium pieces and the paprika into strips.",
+        "Spread a little tomato sauce and mozzarella cheese on each portion of cassava.",
+        "Add the bacon or chorizo, corn, turkey ham, some olives and paprika.",
+        "Bake for 7 to 10 minutes.",
+        "Remove from the oven and enjoy."
+      ]
+    },
+    {
+      "id": "sushi",
+      "name": "Sushi",
+      "cuisine": "Japanese",
+      "category": "Seafood",
+      "image": "/recipes/sushi.jpg",
+      "base_servings": 2,
+      "time_min": 43,
+      "dietary_tags": [
+        "vegetarian",
+        "vegan"
+      ],
+      "ingredient_count": 7,
+      "ingredients": [
+        {
+          "product_id": "sushi-rice",
+          "name": "Sushi Rice",
+          "qty": 300.0,
+          "unit": "ml",
+          "measure": "300ml",
+          "image": "/products/sushi-rice.png",
+          "price": 155
+        },
+        {
+          "product_id": "rice-wine",
+          "name": "Rice Wine",
+          "qty": 100.0,
+          "unit": "ml",
+          "measure": "100ml",
+          "image": "/products/rice-wine.png",
+          "price": 75
+        },
+        {
+          "product_id": "sugar-1kg",
+          "name": "Sugar",
+          "qty": 2.0,
+          "unit": "tbs",
+          "measure": "2 tbs",
+          "image": "/products/sugar-1kg.png",
+          "price": 48
+        },
+        {
+          "product_id": "mayonnaise",
+          "name": "Mayonnaise",
+          "qty": 3.0,
+          "unit": "tbs",
+          "measure": "3 tbs",
+          "image": "/products/mayonnaise.png",
+          "price": 115
+        },
+        {
+          "product_id": "rice-wine",
+          "name": "Rice Wine",
+          "qty": 1.0,
+          "unit": "tbs",
+          "measure": "1 tbs",
+          "image": "/products/rice-wine.png",
+          "price": 75
+        },
+        {
+          "product_id": "soy-sauce",
+          "name": "Soy Sauce",
+          "qty": 1.0,
+          "unit": "tbs",
+          "measure": "1 tbs",
+          "image": "/products/soy-sauce.png",
+          "price": 140
+        },
+        {
+          "product_id": "cucumber",
+          "name": "Cucumber",
+          "qty": 1.0,
+          "unit": "",
+          "measure": "1",
+          "image": "/products/cucumber.png",
+          "price": 145
+        }
+      ],
+      "steps": [
+        "TO MAKE SUSHI ROLLS: Pat out some rice.",
+        "Lay a nori sheet on the mat, shiny-side down.",
+        "Dip your hands in the vinegared water, then pat handfuls of rice on top in a 1cm thick layer, leaving the furthest edge from you clear.",
+        "Spread over some Japanese mayonnaise.",
+        "Use a spoon to spread out a thin layer of mayonnaise down the middle of the rice.",
+        "Add the filling.",
+        "Get your child to top the mayonnaise with a line of their favourite fillings – here we’ve used tuna and cucumber.",
+        "Lift the edge of the mat over the rice, applying a little pressure to keep everything in a tight roll.",
+        "Stick down the sides like a stamp.",
+        "When you get to the edge without any rice, brush with a little water and continue to roll into a tight roll.",
+        "Wrap in cling film.",
+        "Remove the mat and roll tightly in cling film before a grown-up cuts the sushi into thick slices, then unravel the cling film.",
+        "TO MAKE PRESSED SUSHI: Layer over some smoked salmon.",
+        "Line a loaf tin with cling film, then place a thin layer of smoked salmon inside on top of the cling film."
+      ]
+    },
+    {
+      "id": "paella",
+      "name": "Paella",
+      "cuisine": "Spanish",
+      "category": "Seafood",
+      "image": "/recipes/paella.jpg",
+      "base_servings": 2,
+      "time_min": 71,
+      "dietary_tags": [],
+      "ingredient_count": 14,
+      "ingredients": [
+        {
+          "product_id": "olive-oil-500ml",
+          "name": "Extra Virgin Olive Oil",
+          "qty": 3.0,
+          "unit": "tablespoons",
+          "measure": "3 tablespoons",
+          "image": "/products/olive-oil-500ml.png",
+          "price": 480
+        },
+        {
+          "product_id": "prawns-250g",
+          "name": "Prawns (Cleaned)",
+          "qty": 10.0,
+          "unit": "",
+          "measure": "10",
+          "image": "/products/prawns-250g.png",
+          "price": 320
+        },
+        {
+          "product_id": "parsley",
+          "name": "Parsley",
+          "qty": null,
+          "unit": "Bunch",
+          "measure": "Bunch",
+          "image": "/products/parsley.png",
+          "price": 55
+        },
+        {
+          "product_id": "dry-sherry",
+          "name": "Dry Sherry",
+          "qty": 100.0,
+          "unit": "ml",
+          "measure": "100 ml",
+          "image": "/products/dry-sherry.png",
+          "price": 150
+        },
+        {
+          "product_id": "mussels",
+          "name": "Mussels",
+          "qty": 500.0,
+          "unit": "g",
+          "measure": "500g",
+          "image": "/products/mussels.png",
+          "price": 135
+        },
+        {
+          "product_id": "saffron",
+          "name": "Saffron",
+          "qty": null,
+          "unit": "Pinch",
+          "measure": "Pinch",
+          "image": "/products/saffron.png",
+          "price": 130
+        },
+        {
+          "product_id": "chorizo",
+          "name": "Chorizo",
+          "qty": 150.0,
+          "unit": "g",
+          "measure": "150g",
+          "image": "/products/chorizo.png",
+          "price": 85
+        },
+        {
+          "product_id": "onion-1kg",
+          "name": "Onion",
+          "qty": 1.0,
+          "unit": "chopped",
+          "measure": "1 chopped",
+          "image": "/products/onion-1kg.png",
+          "price": 39
+        },
+        {
+          "product_id": "garlic-200g",
+          "name": "Garlic",
+          "qty": 3.0,
+          "unit": "cloves",
+          "measure": "3 cloves",
+          "image": "/products/garlic-200g.png",
+          "price": 38
+        },
+        {
+          "product_id": "squid",
+          "name": "Squid",
+          "qty": 1.0,
+          "unit": "medium",
+          "measure": "1 medium",
+          "image": "/products/squid.png",
+          "price": 40
+        },
+        {
+          "product_id": "tomato-500g",
+          "name": "Tomato",
+          "qty": 2.0,
+          "unit": "",
+          "measure": "2",
+          "image": "/products/tomato-500g.png",
+          "price": 25
+        },
+        {
+          "product_id": "paella-rice",
+          "name": "Paella Rice",
+          "qty": 250.0,
+          "unit": "g",
+          "measure": "250g",
+          "image": "/products/paella-rice.png",
+          "price": 30
+        },
+        {
+          "product_id": "broad-beans",
+          "name": "Broad Beans",
+          "qty": 100.0,
+          "unit": "g",
+          "measure": "100g",
+          "image": "/products/broad-beans.png",
+          "price": 105
+        },
+        {
+          "product_id": "lemon-4",
+          "name": "Lemon",
+          "qty": 1.0,
+          "unit": "",
+          "measure": "1",
+          "image": "/products/lemon-4.png",
+          "price": 24
+        }
+      ],
+      "steps": [
+        "Heat 1 tbsp of the oil in a wide, shallow pan.",
+        "Add the prawn heads and parsley stalks and sizzle until the heads turn pink, then mash with a potato masher.",
+        "Pour over the sherry or wine and 300ml water, season with salt and simmer for 10 mins to make a stock, mashing the prawn heads as they cook.",
+        "Scatter the mussels into the pan, cover the pan loosely with a lid or tea towel, then put over a high heat for 3-4 mins until the mussels just open.",
+        "Stir to release the mussel juices, then pour the contents of the pan into a colander set over a large bowl containing the saffron.",
+        "Let the saffron steep in the stock – you will need 700ml in total, so top up with water if needed and give everything a good stir.",
+        "Pick the mussels out from the colander, then set aside.",
+        "Wipe out the pan and add the rest of the olive oil.",
+        "Sizzle the chorizo until it releases its oil, then add the onion and garlic and cook until softened.",
+        "Add the squid and turn over until it turns white.",
+        "Add the tomatoes and cook down for a minute, then pour over most of the stock, give everything a good stir and bring to the boil.",
+        "Scatter the rice over the stock, stir well once, then boil vigorously for 5 mins.",
+        "Reduce the heat to the lowest setting and slowly simmer for 10 mins without stirring until the rice has absorbed most of the liquid.",
+        "Tuck the prawn tails into the rice and simmer for 5 mins, turning them over until cooked through."
+      ]
+    },
+    {
+      "id": "wontons",
+      "name": "Wontons",
+      "cuisine": "Chinese",
+      "category": "Pork",
+      "image": "/recipes/wontons.jpg",
+      "base_servings": 2,
+      "time_min": 59,
+      "dietary_tags": [],
+      "ingredient_count": 11,
+      "ingredients": [
+        {
+          "product_id": "pork-chops",
+          "name": "Pork Chops",
+          "qty": 1.0,
+          "unit": "lb",
+          "measure": "1lb",
+          "image": "/products/pork-chops.png",
+          "price": 140
+        },
+        {
+          "product_id": "garlic-200g",
+          "name": "Garlic",
+          "qty": 3.0,
+          "unit": "chopped",
+          "measure": "3 chopped",
+          "image": "/products/garlic-200g.png",
+          "price": 38
+        },
+        {
+          "product_id": "ginger-150g",
+          "name": "Ginger",
+          "qty": 1.0,
+          "unit": "tsp",
+          "measure": "1 tsp",
+          "image": "/products/ginger-150g.png",
+          "price": 28
+        },
+        {
+          "product_id": "soy-sauce",
+          "name": "Soy Sauce",
+          "qty": 1.0,
+          "unit": "tbs",
+          "measure": "1 tbs",
+          "image": "/products/soy-sauce.png",
+          "price": 140
+        },
+        {
+          "product_id": "sesame-seed-oil",
+          "name": "Sesame Seed Oil",
+          "qty": 1.0,
+          "unit": "tsp",
+          "measure": "1 tsp",
+          "image": "/products/sesame-seed-oil.png",
+          "price": 105
+        },
+        {
+          "product_id": "carrot-500g",
+          "name": "Carrot",
+          "qty": 3.0,
+          "unit": "finely chopped",
+          "measure": "3 finely chopped",
+          "image": "/products/carrot-500g.png",
+          "price": 35
+        },
+        {
+          "product_id": "celery",
+          "name": "Celery",
+          "qty": 3.0,
+          "unit": "finely chopped",
+          "measure": "3 finely chopped",
+          "image": "/products/celery.png",
+          "price": 30
+        },
+        {
+          "product_id": "onion-1kg",
+          "name": "Onion",
+          "qty": 6.0,
+          "unit": "chopped",
+          "measure": "6 chopped",
+          "image": "/products/onion-1kg.png",
+          "price": 39
+        },
+        {
+          "product_id": "wonton-skin",
+          "name": "Wonton Skin",
+          "qty": 1.0,
+          "unit": "Packet",
+          "measure": "1 Packet",
+          "image": "/products/wonton-skin.png",
+          "price": 55
+        },
+        {
+          "product_id": "olive-oil-500ml",
+          "name": "Extra Virgin Olive Oil",
+          "qty": null,
+          "unit": "Fry",
+          "measure": "Fry",
+          "image": "/products/olive-oil-500ml.png",
+          "price": 480
+        },
+        {
+          "product_id": "water-1l",
+          "name": "Packaged Drinking Water",
+          "qty": null,
+          "unit": "Bottle",
+          "measure": "Bottle",
+          "image": "/products/water-1l.png",
+          "price": 20
+        }
+      ],
+      "steps": [
+        "Combine pork, garlic, ginger, soy sauce, sesame oil, and vegetables in a bowl.",
+        "Separate wonton skins.",
+        "Place a heaping teaspoon of filling in the center of the wonton.",
+        "Brush water on 2 borders of the skin, covering 1/4 inch from the edge.",
+        "Fold skin over to form a triangle, sealing edges.",
+        "Pinch the two long outside points together.",
+        "Heat oil to 450 degrees and fry 4 to 5 at a time until golden.",
+        "Drain and serve with sauce."
+      ]
+    },
+    {
+      "id": "tirolean-dumplings",
+      "name": "Tirolean Dumplings",
+      "cuisine": null,
+      "category": "Pork",
+      "image": "/recipes/tirolean-dumplings.jpg",
+      "base_servings": 2,
+      "time_min": 67,
+      "dietary_tags": [],
+      "ingredient_count": 13,
+      "ingredients": [
+        {
+          "product_id": "brown-bread",
+          "name": "Whole Wheat Brown Bread",
+          "qty": 200.0,
+          "unit": "g",
+          "measure": "200g",
+          "image": "/products/brown-bread.png",
+          "price": 45
+        },
+        {
+          "product_id": "amul-milk-500ml",
+          "name": "Amul Taaza Toned Milk",
+          "qty": 200.0,
+          "unit": "ml",
+          "measure": "200ml",
+          "image": "/products/amul-milk-500ml.png",
+          "price": 28
+        },
+        {
+          "product_id": "smoked-ham",
+          "name": "Smoked Ham",
+          "qty": 100.0,
+          "unit": "g",
+          "measure": "100g",
+          "image": "",
+          "price": 140
+        },
+        {
+          "product_id": "farm-eggs-6",
+          "name": "Farm Fresh Brown Eggs",
+          "qty": 3.0,
+          "unit": "",
+          "measure": "3",
+          "image": "/products/farm-eggs-6.png",
+          "price": 84
+        },
+        {
+          "product_id": "shallots",
+          "name": "Shallots",
+          "qty": 2.0,
+          "unit": "",
+          "measure": "2",
+          "image": "/products/shallots.png",
+          "price": 35
+        },
+        {
+          "product_id": "amul-butter-100g",
+          "name": "Amul Butter",
+          "qty": null,
+          "unit": "Knob",
+          "measure": "Knob",
+          "image": "/products/amul-butter-100g.png",
+          "price": 56
+        },
+        {
+          "product_id": "parsley",
+          "name": "Parsley",
+          "qty": 2.0,
+          "unit": "tablespoons",
+          "measure": "2 tablespoons",
+          "image": "/products/parsley.png",
+          "price": 55
+        },
+        {
+          "product_id": "atta-5kg",
+          "name": "Aashirvaad Atta",
+          "qty": 2.0,
+          "unit": "tablespoons",
+          "measure": "2 tablespoons",
+          "image": "/products/atta-5kg.png",
+          "price": 270
+        },
+        {
+          "product_id": "salt-1kg",
+          "name": "Iodised Salt",
+          "qty": null,
+          "unit": "To taste",
+          "measure": "To taste",
+          "image": "/products/salt-1kg.png",
+          "price": 28
+        },
+        {
+          "product_id": "capsicum",
+          "name": "Capsicum (Green)",
+          "qty": null,
+          "unit": "To taste",
+          "measure": "To taste",
+          "image": "/products/capsicum.png",
+          "price": 30
+        },
+        {
+          "product_id": "nutmeg",
+          "name": "Nutmeg",
+          "qty": null,
+          "unit": "Pinch",
+          "measure": "Pinch",
+          "image": "/products/nutmeg.png",
+          "price": 85
+        },
+        {
+          "product_id": "amul-butter-100g",
+          "name": "Amul Butter",
+          "qty": null,
+          "unit": "Garnish",
+          "measure": "Garnish",
+          "image": "/products/amul-butter-100g.png",
+          "price": 56
+        },
+        {
+          "product_id": "parsley",
+          "name": "Parsley",
+          "qty": null,
+          "unit": "Garnish",
+          "measure": "Garnish",
+          "image": "/products/parsley.png",
+          "price": 55
+        }
+      ],
+      "steps": [
+        "Finely chop the shallots, and dice the smoked ham or sausage into small cubes.",
+        "Heat some butter or clarified butter in a pan and sweat the onions in it until translucent.",
+        "Add the meat and the parsley and fry together briefly before removing from the heat.",
+        "Place the bread in a bowl.",
+        "Beat the milk with the eggs and season well with salt, pepper and nutmeg.",
+        "Pour over the bread.",
+        "Stir in the sausage and onion paste and mix in the flour.",
+        "Mix together to form a relatively firm paste (adding more bread or flour if necessary) and season again according to taste.",
+        "Smooth the surface of the dough out and leave to stand for approx.",
+        "Heat up a good quantity of salted water in a large pan.",
+        "Use the paste to form smaller dumplings (for use as a garnish in soups) or medium-sized dumplings, as required.",
+        "Moisten the hands regularly with cold water during this stage so that the dumplings take on smooth forms.",
+        "Place in boiling water, bring back to the boil, turn down the heat, and simmer gently for 8-20 minutes, depending on the size.",
+        "Remove from the water, dry off well and serve up garnished with chopped parsley and melted butter (which has been taken on a nut-brown colour)."
+      ]
+    }
+  ]
+}

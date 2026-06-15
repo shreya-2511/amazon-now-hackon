@@ -1,0 +1,51 @@
+{
+  "_comment": "Calendar signal. The Sat 7pm dinner party is the hero event. needs[] map to products with reasons so NowCast can assemble + explain the party portion of the cart.",
+  "events": [
+    {
+      "id": "dinner-party",
+      "title": "Dinner party 🍝",
+      "start": "2026-06-13T19:00:00+05:30",
+      "when_label": "Today, 7:00 PM",
+      "type": "social",
+      "guests": 6,
+      "is_hero": true,
+      "summary": "6 guests · pasta night",
+      "linked_recipe": "spaghetti-alla-carbonara",
+      "needs": [
+        { "product_id": "spaghetti",        "qty": 2, "reason": "Carbonara for 6" },
+        { "product_id": "bacon-200g",        "qty": 2, "reason": "Carbonara for 6" },
+        { "product_id": "parmesan-150g",     "qty": 1, "reason": "Carbonara + you're out" },
+        { "product_id": "red-wine",          "qty": 2, "reason": "6 guests" },
+        { "product_id": "white-wine",        "qty": 1, "reason": "6 guests" },
+        { "product_id": "mascarpone-250g",   "qty": 1, "reason": "Tiramisu dessert" },
+        { "product_id": "digestive-biscuits","qty": 1, "reason": "Tiramisu dessert" },
+        { "product_id": "mozzarella-200g",   "qty": 1, "reason": "Starter — garlic bread" }
+      ]
+    },
+    {
+      "id": "standup",
+      "title": "Team standup",
+      "start": "2026-06-15T09:30:00+05:30",
+      "when_label": "Mon, 9:30 AM",
+      "type": "work",
+      "is_hero": false
+    },
+    {
+      "id": "moms-bday",
+      "title": "Mom's birthday 🎂",
+      "start": "2026-06-19T00:00:00+05:30",
+      "when_label": "Fri, Jun 19",
+      "type": "social",
+      "is_hero": false,
+      "summary": "Order cake + flowers soon"
+    },
+    {
+      "id": "gym",
+      "title": "Gym — leg day",
+      "start": "2026-06-14T07:00:00+05:30",
+      "when_label": "Tomorrow, 7:00 AM",
+      "type": "personal",
+      "is_hero": false
+    }
+  ]
+}
