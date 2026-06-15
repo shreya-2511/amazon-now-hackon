@@ -123,7 +123,7 @@ export type Bootstrap = {
     name: string;
     first_name: string;
     avatar_color: string;
-    address: { line1: string; line2: string; city: string; pincode: string };
+    address: { label?: string; line1: string; line2: string; city: string; pincode: string };
     payment: { type: string; label: string; masked: string };
     dietary: { preferences: string[]; preferences_label: string; allergens: string[]; note: string };
   };
