@@ -5,14 +5,23 @@ import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { api } from "@/lib/api";
 import { useBoot } from "@/lib/boot";
+import { useCart } from "@/lib/cart";
 import { rupee } from "@/lib/format";
 import type { GroupCart, Product } from "@/lib/types";
+
+type ActivityToast = {
+  name: string;
+  color: string;
+  text: string;
+  pending?: boolean;
+};
 
 export default function GroupCartPage() {
   const { id } = useParams<{ id: string }>();
   const router = useRouter();
   const params = useSearchParams();
   const boot = useBoot();
+  const { addMany } = useCart();
   const me = params.get("me") || boot?.user.first_name || "You";
   const host = params.get("host") === "1";
 
@@ -20,16 +29,27 @@ export default function GroupCartPage() {
   const [shareOpen, setShareOpen] = useState(host);
   const [pickerOpen, setPickerOpen] = useState(false);
   const [waiting, setWaiting] = useState(false);
-  const [toast, setToast] = useState<{ name: string; relation: string; color: string } | null>(null);
+  const [toast, setToast] = useState<ActivityToast | null>(null);
   const [copied, setCopied] = useState(false);
   const startedRef = useRef(false);
   const esRef = useRef<EventSource | null>(null);
+  const toastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [updatingLine, setUpdatingLine] = useState<string | null>(null);
 
   // initial state only — the family live-fill is triggered by sharing the link
   useEffect(() => {
     api.groupGet(id).then(setCart).catch(() => {});
-    return () => esRef.current?.close();
+    return () => {
+      esRef.current?.close();
+      if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
+    };
   }, [id]);
+
+  const showToast = (next: ActivityToast, ms = 2600) => {
+    if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
+    setToast(next);
+    toastTimerRef.current = setTimeout(() => setToast(null), ms);
+  };
 
   const startFamily = () => {
     if (startedRef.current) return;
@@ -42,8 +62,14 @@ export default function GroupCartPage() {
       const { state, joined } = JSON.parse(e.data);
       setCart(state);
       if (joined) {
-        setToast(joined);
-        setTimeout(() => setToast(null), 2600);
+        const added = state.items.filter((it: GroupCart["items"][number]) => it.added_by === joined.name);
+        const first = added[0]?.product.name;
+        const text = first
+          ? added.length > 1
+            ? `added ${first} + ${added.length - 1} more`
+            : `added ${first}`
+          : `joined the cart`;
+        showToast({ name: joined.name, color: joined.color, text });
       }
     });
     es.addEventListener("done", () => es.close());
@@ -51,14 +77,30 @@ export default function GroupCartPage() {
   };
 
   const addToGroup = async (p: Product) => {
+    const color = cart?.members.find((m) => m.name === me)?.color || boot?.user.avatar_color || "#FF9900";
+    showToast({ name: me, color, text: `is adding ${p.name}`, pending: true }, 1800);
     const updated = await api.groupAdd(id, p.id, 1, me);
     setCart(updated);
+    showToast({ name: me, color, text: `added ${p.name}` });
   };
 
-  const checkout = async () => {
+  const changeGroupQty = async (it: GroupCart["items"][number], delta: number) => {
+    if (delta < 0 && it.qty <= 0) return;
+    const lineKey = `${it.product.id}-${it.added_by}`;
+    if (updatingLine === lineKey) return;
+    setUpdatingLine(lineKey);
+    try {
+      const updated = await api.groupAdd(id, it.product.id, delta, it.added_by);
+      setCart(updated);
+    } finally {
+      setUpdatingLine(null);
+    }
+  };
+
+  const checkout = () => {
     if (!cart) return;
-    const order = await api.order(cart.items.map((i) => ({ product_id: i.product.id, qty: i.qty })));
-    router.push(`/order/${order.order_id}`);
+    addMany(cart.items.map((i) => ({ product: i.product, qty: i.qty })), true);
+    router.push("/checkout?src=group");
   };
 
   const copyCode = () => {
@@ -115,33 +157,60 @@ export default function GroupCartPage() {
       {/* items */}
       <div className="flex-1 overflow-y-auto no-scrollbar px-3 py-3 pb-40">
         <AnimatePresence initial={false}>
-          {cart.items.map((it) => (
-            <motion.div
-              key={`${it.product.id}-${it.added_by}`}
-              layout
-              initial={{ opacity: 0, y: 12, scale: 0.96 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              className="flex items-center gap-3 bg-white rounded-2xl border border-line p-2.5 mb-2 shadow-card"
-            >
-              <div className="h-12 w-12 rounded-lg bg-paper grid place-items-center overflow-hidden shrink-0">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={it.product.image} alt="" className="h-[85%] w-[85%] object-contain" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-[13px] font-semibold leading-tight truncate">
-                  {it.product.name}
-                  {it.qty > 1 && <span className="text-ink2 font-medium"> ×{it.qty}</span>}
-                </p>
-                <span className="inline-flex items-center gap-1 text-[11px] mt-0.5" style={{ color: it.added_by_color }}>
-                  <span className="h-3.5 w-3.5 rounded-full grid place-items-center text-[8px] font-bold text-white" style={{ background: it.added_by_color }}>
-                    {it.added_by[0]}
+          {cart.items.map((it) => {
+            const lineKey = `${it.product.id}-${it.added_by}`;
+            const busy = updatingLine === lineKey;
+            const off = it.qty <= 0;
+            return (
+              <motion.div
+                key={lineKey}
+                layout
+                initial={{ opacity: 0, y: 12, scale: 0.96 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                className="flex items-center gap-3 bg-white rounded-2xl border border-line p-2.5 mb-2 shadow-card"
+              >
+                <div className={`h-12 w-12 rounded-lg bg-paper grid place-items-center overflow-hidden shrink-0 ${off ? "opacity-40" : ""}`}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={it.product.image} alt="" className="h-[85%] w-[85%] object-contain" />
+                </div>
+                <div className={`flex-1 min-w-0 ${off ? "opacity-40" : ""}`}>
+                  <p className="text-[13px] font-semibold leading-tight truncate">
+                    {it.product.name}
+                  </p>
+                  <span className="inline-flex items-center gap-1 text-[11px] mt-0.5" style={{ color: it.added_by_color }}>
+                    <span className="h-3.5 w-3.5 rounded-full grid place-items-center text-[8px] font-bold text-white" style={{ background: it.added_by_color }}>
+                      {it.added_by[0]}
+                    </span>
+                    {it.added_by}
                   </span>
-                  {it.added_by}
-                </span>
-              </div>
-              <span className="text-[13px] font-bold shrink-0">{rupee(it.line_total)}</span>
-            </motion.div>
-          ))}
+                </div>
+                <div className={`shrink-0 flex flex-col items-end gap-1 ${off ? "opacity-50" : ""}`}>
+                  <span className={`text-[13px] font-bold ${off ? "line-through" : ""}`}>{rupee(it.line_total)}</span>
+                  <div className="h-7 w-[78px] rounded-lg bg-amzn-green text-white text-[12px] font-bold flex items-center justify-between px-1">
+                    <button
+                      onClick={() => changeGroupQty(it, -1)}
+                      disabled={busy || it.qty <= 0}
+                      className="grid place-items-center h-full w-6 disabled:opacity-45"
+                      aria-label={`decrease ${it.product.name}`}
+                    >
+                      -
+                    </button>
+                    <motion.span key={it.qty} initial={{ scale: 0.75 }} animate={{ scale: 1 }}>
+                      {it.qty}
+                    </motion.span>
+                    <button
+                      onClick={() => changeGroupQty(it, 1)}
+                      disabled={busy}
+                      className="grid place-items-center h-full w-6 disabled:opacity-45"
+                      aria-label={`increase ${it.product.name}`}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </AnimatePresence>
 
         <button
@@ -167,7 +236,7 @@ export default function GroupCartPage() {
         </button>
       </div>
 
-      {/* join toast */}
+      {/* activity toast */}
       <AnimatePresence>
         {toast && (
           <motion.div
@@ -179,8 +248,12 @@ export default function GroupCartPage() {
             <span className="h-9 w-9 rounded-full grid place-items-center text-white font-bold" style={{ background: toast.color }}>
               {toast.name[0]}
             </span>
-            <p className="text-[13px] font-semibold">
-              {toast.name} <span className="font-normal text-ink2">({toast.relation}) joined & added items</span>
+            <p className="min-w-0 text-[13px] font-semibold">
+              {toast.name}{" "}
+              <span className="font-normal text-ink2">
+                {toast.text}
+                {toast.pending ? "..." : ""}
+              </span>
             </p>
           </motion.div>
         )}

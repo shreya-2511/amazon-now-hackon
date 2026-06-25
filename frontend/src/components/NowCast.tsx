@@ -4,7 +4,6 @@ import {
   Calendar,
   Check,
   ChevronRight,
-  Clock,
   Refrigerator,
   RefreshCw,
   Sparkles,
@@ -55,10 +54,6 @@ export default function NowCast() {
           <SignalCard key={g.signal} group={g} event={g.signal === "calendar" ? data.event : null} index={i} />
         ))}
       </div>
-
-      <p className="text-center text-[11px] text-ink2 mt-3">
-        Delivered in {data.eta_min} min from {data.store}
-      </p>
     </section>
   );
 }
@@ -75,12 +70,15 @@ function SignalCard({
   const { addMany } = useCart();
   const [open, setOpen] = useState(false);
   const [added, setAdded] = useState(false);
-  const [excluded, setExcluded] = useState<Set<string>>(new Set());
+  const [qtyById, setQtyById] = useState<Record<string, number>>({});
 
   const Icon = SIGNAL_ICON[group.signal];
-  const included = group.items.filter((l) => !excluded.has(l.product.id));
-  const count = included.reduce((s, l) => s + l.qty, 0);
-  const total = included.reduce((s, l) => s + l.line_total, 0);
+  const qtyOf = (id: string, fallback: number) => qtyById[id] ?? fallback;
+  const included = group.items
+    .map((l) => ({ ...l, selected_qty: qtyOf(l.product.id, l.qty) }))
+    .filter((l) => l.selected_qty > 0);
+  const count = included.reduce((s, l) => s + l.selected_qty, 0);
+  const total = included.reduce((s, l) => s + l.product.price * l.selected_qty, 0);
 
   const subtitle = added
     ? `Added ${count} item${count > 1 ? "s" : ""} to cart`
@@ -88,15 +86,14 @@ function SignalCard({
       ? `${event.when_label} · ${event.guests} guests · ${group.items.length} items`
       : `${group.items.length} items · ${group.blurb}`;
 
-  const toggle = (id: string) =>
-    setExcluded((cur) => {
-      const n = new Set(cur);
-      n.has(id) ? n.delete(id) : n.add(id);
-      return n;
-    });
+  const setLineQty = (id: string, qty: number) =>
+    setQtyById((cur) => ({ ...cur, [id]: Math.max(0, Math.min(99, qty)) }));
+
+  const toggle = (id: string, fallback: number) =>
+    setLineQty(id, qtyOf(id, fallback) > 0 ? 0 : fallback);
 
   const addToCart = () => {
-    addMany(included.map((l) => ({ product: l.product, qty: l.qty })));
+    addMany(included.map((l) => ({ product: l.product, qty: l.selected_qty })));
     setAdded(true);
     setOpen(false);
   };
@@ -147,11 +144,12 @@ function SignalCard({
             <div className="px-3.5 pb-3.5">
               <div className="border-t border-line divide-y divide-line/70">
                 {group.items.map((l) => {
-                  const off = excluded.has(l.product.id);
+                  const qty = qtyOf(l.product.id, l.qty);
+                  const off = qty <= 0;
                   return (
                     <div key={l.product.id} className="flex items-center gap-2.5 py-2">
                       <button
-                        onClick={() => toggle(l.product.id)}
+                        onClick={() => toggle(l.product.id, l.qty)}
                         disabled={added}
                         className={`h-5 w-5 rounded-md border-2 grid place-items-center shrink-0 ${
                           off ? "border-line bg-white" : "border-amzn-green bg-amzn-green"
@@ -166,13 +164,35 @@ function SignalCard({
                       <div className={`flex-1 min-w-0 ${off ? "opacity-40" : ""}`}>
                         <p className="text-[12.5px] font-semibold leading-tight truncate">
                           {l.product.name}
-                          {l.qty > 1 && <span className="text-ink2 font-medium"> ×{l.qty}</span>}
                         </p>
                         <p className="text-[11px] text-ink2 truncate">{l.reason}</p>
                       </div>
-                      <span className={`text-[12.5px] font-bold shrink-0 ${off ? "opacity-40 line-through" : ""}`}>
-                        {rupee(l.line_total)}
-                      </span>
+                      <div className={`shrink-0 flex flex-col items-end gap-1 ${off ? "opacity-50" : ""}`}>
+                        <span className={`text-[12.5px] font-bold ${off ? "line-through" : ""}`}>
+                          {rupee(l.product.price * qty)}
+                        </span>
+                        {!added && (
+                          <div className="h-7 w-[78px] rounded-lg bg-amzn-green text-white text-[12px] font-bold flex items-center justify-between px-1">
+                            <button
+                              onClick={() => setLineQty(l.product.id, qty - 1)}
+                              className="grid place-items-center h-full w-6"
+                              aria-label={`decrease ${l.product.name}`}
+                            >
+                              -
+                            </button>
+                            <motion.span key={qty} initial={{ scale: 0.75 }} animate={{ scale: 1 }}>
+                              {qty}
+                            </motion.span>
+                            <button
+                              onClick={() => setLineQty(l.product.id, qty + 1)}
+                              className="grid place-items-center h-full w-6"
+                              aria-label={`increase ${l.product.name}`}
+                            >
+                              +
+                            </button>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   );
                 })}

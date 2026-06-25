@@ -8,7 +8,7 @@ _SEQ = [1000]
 
 
 def _palette(i: int) -> str:
-    return ["#FF9900", "#7C3AED", "#0EA5E9", "#F59E0B", "#067d62", "#e11d48"][i % 6]
+    return ["#FF9900", "#7C3AED", "#0EA5E9", "#714C0D", "#067d62", "#e11d48"][i % 6]
 
 
 def create(host_name: str, host_color: str, seed_items: list[dict] | None = None) -> dict:
@@ -51,8 +51,10 @@ def _add_item(g: dict, product_id: str, qty: int, added_by: str) -> None:
         return
     ex = next((i for i in g["items"] if i["product_id"] == product_id and i["added_by"] == added_by), None)
     if ex:
-        ex["qty"] += qty
-    else:
+        ex["qty"] = max(0, ex["qty"] + qty)
+        if ex["qty"] <= 0:
+            g["items"].remove(ex)
+    elif qty > 0:
         g["items"].append({"product_id": product_id, "qty": qty, "added_by": added_by})
 
 
@@ -72,6 +74,8 @@ def enrich(gid: str) -> dict | None:
     items, total, count = [], 0, 0
     by_member = {m["name"]: 0 for m in g["members"]}
     for it in g["items"]:
+        if it.get("qty", 0) <= 0:
+            continue
         p = data.product(it["product_id"])
         if not p:
             continue

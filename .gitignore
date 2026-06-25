@@ -10,7 +10,11 @@ __pycache__/
 .venv/
 
 # env
+.env
+.env.local
+.env.*.local
 .env*.local
+.env.example
 
 # playwright
 test-results/
@@ -20,3 +24,6 @@ frontend/test-shots/
 # misc
 .DS_Store
 *.log
+
+
+LOCAL_SETUP.md

@@ -5,7 +5,7 @@ import CartBar from "./CartBar";
 
 export default function PhoneFrame({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen w-full flex items-center justify-center p-0 sm:p-6">
+    <div className="min-h-screen w-full flex items-center justify-center p-0 ">
       <div
         className="relative w-full bg-white overflow-hidden flex flex-col
                    sm:rounded-[42px] sm:border-[10px] sm:border-black sm:shadow-pop"

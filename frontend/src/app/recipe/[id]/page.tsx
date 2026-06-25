@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { ChevronLeft, Clock, Minus, Plus, Users } from "lucide-react";
+import { Check, ChevronLeft, Clock, Minus, Plus, Users } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import VegMark from "@/components/VegMark";
@@ -15,16 +15,24 @@ export default function RecipeDetail() {
   const { addMany } = useCart();
   const [servings, setServings] = useState(4);
   const [recipe, setRecipe] = useState<Recipe | null>(null);
+  const [qtyById, setQtyById] = useState<Record<string, number>>({});
 
   useEffect(() => {
     api.recipe(id, servings).then(setRecipe).catch(() => {});
   }, [id, servings]);
 
+  const qtyOf = (id: string) => qtyById[id] ?? 1;
+  const setLineQty = (id: string, qty: number) =>
+    setQtyById((cur) => ({ ...cur, [id]: Math.max(0, Math.min(99, qty)) }));
+  const selectedIngredients = recipe?.ingredients
+    .filter((i) => i.product && qtyOf(i.product.id) > 0)
+    .map((i) => ({ product: i.product!, qty: qtyOf(i.product!.id), price: i.price })) ?? [];
+  const selectedCount = selectedIngredients.reduce((sum, i) => sum + i.qty, 0);
+  const selectedTotal = selectedIngredients.reduce((sum, i) => sum + i.price * i.qty, 0);
+
   const addAll = () => {
     if (!recipe) return;
-    addMany(
-      recipe.ingredients.filter((i) => i.product).map((i) => ({ product: i.product!, qty: 1 })),
-    );
+    addMany(selectedIngredients.map((i) => ({ product: i.product, qty: i.qty })));
     router.push("/checkout?src=recipe");
   };
 
@@ -80,24 +88,64 @@ export default function RecipeDetail() {
         <div className="bg-white mx-3 mt-3 rounded-2xl border border-line px-3">
           <p className="text-[13px] font-bold pt-3">Ingredients · scaled for {servings}</p>
           <div className="divide-y divide-line/70">
-            {recipe.ingredients.map((ing, i) => (
-              <div key={i} className="flex items-center gap-3 py-2.5">
+            {recipe.ingredients.map((ing, i) => {
+              const id = ing.product?.id ?? `ingredient-${i}`;
+              const qty = ing.product ? qtyOf(id) : 0;
+              const off = ing.product ? qty <= 0 : false;
+              return (
+              <div key={i} className="flex items-center gap-2.5 py-2.5">
+                {ing.product && (
+                  <button
+                    onClick={() => setLineQty(id, off ? 1 : 0)}
+                    className={`h-5 w-5 rounded-md border-2 grid place-items-center shrink-0 ${
+                      off ? "border-line bg-white" : "border-amzn-green bg-amzn-green"
+                    }`}
+                  >
+                    {!off && <Check size={13} className="text-white" strokeWidth={3} />}
+                  </button>
+                )}
                 <div className="h-11 w-11 rounded-lg bg-paper grid place-items-center overflow-hidden shrink-0">
                   {ing.product?.image ? (
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img src={ing.product.image} alt="" className="h-[85%] w-[85%] object-contain" />
+                    <img src={ing.product.image} alt="" className={`h-[85%] w-[85%] object-contain ${off ? "opacity-40" : ""}`} />
                   ) : null}
                 </div>
-                <div className="flex-1 min-w-0">
+                <div className={`flex-1 min-w-0 ${off ? "opacity-40" : ""}`}>
                   <div className="flex items-center gap-1">
                     {ing.product && <VegMark product={ing.product} size={12} />}
                     <p className="text-[13px] font-semibold truncate">{ing.name}</p>
                   </div>
                   <p className="text-[11px] text-ink2">{ing.display_qty}</p>
                 </div>
-                <span className="text-[12px] font-bold shrink-0">{rupee(ing.price)}</span>
+                <div className={`shrink-0 flex flex-col items-end gap-1 ${off ? "opacity-50" : ""}`}>
+                  <span className={`text-[12px] font-bold ${off ? "line-through" : ""}`}>
+                    {rupee(ing.price * Math.max(0, qty || 1))}
+                  </span>
+                  {ing.product && (
+                    <div className="h-7 w-[78px] rounded-lg bg-amzn-green text-white text-[12px] font-bold flex items-center justify-between px-1">
+                      <button
+                        onClick={() => setLineQty(id, qty - 1)}
+                        className="grid place-items-center h-full w-6"
+                        aria-label={`decrease ${ing.name}`}
+                      >
+                        -
+                      </button>
+                      <motion.span key={qty} initial={{ scale: 0.75 }} animate={{ scale: 1 }}>
+                        {qty}
+                      </motion.span>
+                      <button
+                        onClick={() => setLineQty(id, qty + 1)}
+                        className="grid place-items-center h-full w-6"
+                        aria-label={`increase ${ing.name}`}
+                      >
+                        +
+                      </button>
+                    </div>
+                  )}
+                </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
@@ -122,9 +170,10 @@ export default function RecipeDetail() {
       <div className="absolute bottom-16 inset-x-0 z-20 bg-white border-t border-line p-3">
         <button
           onClick={addAll}
-          className="w-full rounded-2xl bg-amzn-yellow2 text-amzn-dark font-bold py-3.5 flex items-center justify-center gap-2"
+          disabled={selectedCount === 0}
+          className="w-full rounded-2xl bg-amzn-yellow2 text-amzn-dark font-bold py-3.5 flex items-center justify-center gap-2 disabled:opacity-50"
         >
-          Add all ingredients · {rupee(recipe.total)}
+          Add {selectedCount} item{selectedCount > 1 ? "s" : ""} · {rupee(selectedTotal)}
         </button>
       </div>
     </div>

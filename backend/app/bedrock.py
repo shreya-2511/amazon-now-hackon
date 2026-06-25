@@ -8,8 +8,34 @@ on free tier.
 from __future__ import annotations
 
 import os
+from pathlib import Path
 
 import boto3
+
+
+def _load_env_file(path: Path) -> None:
+    """Load KEY=VALUE lines without overriding variables already exported."""
+    if not path.exists():
+        return
+    for raw in path.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#"):
+            continue
+        if line.startswith("export "):
+            line = line[len("export "):].strip()
+        if "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        key = key.strip()
+        value = value.strip().strip("\"'")
+        if key and key not in os.environ:
+            os.environ[key] = value
+
+
+ROOT = Path(__file__).resolve().parents[2]
+for env_path in (ROOT / ".env", ROOT / ".env.local", ROOT / "backend" / ".env",
+                 ROOT / "backend" / ".env.local"):
+    _load_env_file(env_path)
 
 REGION = os.environ.get("BEDROCK_REGION", "ap-south-1")
 MODEL_ID = os.environ.get("BEDROCK_MODEL_ID", "apac.amazon.nova-lite-v1:0")

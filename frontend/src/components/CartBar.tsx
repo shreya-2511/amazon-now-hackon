@@ -5,7 +5,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { useCart } from "@/lib/cart";
 import { rupee } from "@/lib/format";
 
-const HIDE_ON = ["/checkout", "/order"];
+const HIDE_ON = ["/checkout", "/order", "/profile", "/group", "/recipe"];
 
 export default function CartBar() {
   const { count, subtotal } = useCart();

@@ -77,3 +77,7 @@ body {
 .pulse-ring {
   animation: pulse-ring 1.8s infinite;
 }
+
+body {
+  overflow: hidden;
+}
