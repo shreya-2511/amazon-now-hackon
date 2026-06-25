@@ -58,6 +58,6 @@ jobs:
           # Compile the Next.js production build
           npx pnpm exec next build
 
-          # Kill old frontend server processes and launch fresh on production Port 3000
+          # Kill old frontend server processes and launch fresh on production Port 3100
           pkill -f "next-server" || true
-          nohup npx pnpm exec next start -p 3000 > next.log 2>&1 &
+          nohup npx pnpm exec next start -p 3100 > next.log 2>&1 &
