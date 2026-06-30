@@ -37,10 +37,30 @@ for env_path in (ROOT / ".env", ROOT / ".env.local", ROOT / "backend" / ".env",
                  ROOT / "backend" / ".env.local"):
     _load_env_file(env_path)
 
-REGION = os.environ.get("BEDROCK_REGION", "ap-south-1")
-MODEL_ID = os.environ.get("BEDROCK_MODEL_ID", "apac.amazon.nova-lite-v1:0")
+REGION = os.environ.get("BEDROCK_REGION", "us-east-1")
+MODEL_ID = os.environ.get("BEDROCK_MODEL_ID", "zai.glm-4.7-flash")
 
 _client = None
+
+
+def available() -> bool:
+    """Check if Bedrock is accessible. Returns True even when throttled (daily
+    quota exhausted) — the runner loop will try and fail gracefully."""
+    try:
+        c = client()
+        c.converse(
+            modelId=MODEL_ID,
+            messages=[{"role": "user", "content": [{"text": "ping"}]}],
+            inferenceConfig={"maxTokens": 2},
+        )
+        return True
+    except Exception as e:
+        err = str(e)
+        # Throttling = configured but rate-limited; still return True so the
+        # runner tries it. Credential/AccessDenied = not usable.
+        if "Throttling" in err or "Too many tokens" in err:
+            return True
+        return False
 
 
 def client():
@@ -81,11 +101,11 @@ def run_tools(messages: list[dict], system: str, tools: list[dict],
             calls += 1
             fn = handlers.get(u["name"])
             try:
-                payload = fn(u.get("input", {})) if fn else {"error": "unknown tool"}
+                payload = fn(u.get("input") or {}) if fn else {"error": "unknown tool"}
             except Exception as e:  # noqa: BLE001 — surface tool failure to model
                 payload = {"error": str(e)}
             results.append({"toolResult": {"toolUseId": u["toolUseId"],
-                                           "content": [{"json": payload}]}})
+                                           "content": [{"document": payload}]}})
         messages.append({"role": "user", "content": results})
     return messages, calls
 

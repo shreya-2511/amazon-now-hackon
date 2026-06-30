@@ -122,34 +122,85 @@ def decorate(p: dict, user: dict | None = None) -> dict:
     out["allergen_conflict"] = bool(hit)
     return out
 
+import re
 
 def search(q: str = "", category: str = "", limit: int = 40) -> list[dict]:
     q = (q or "").strip().lower()
     cat = (category or "").strip()
+
     rows = catalog()
+
     if cat:
         rows = [p for p in rows if p["category"] == cat]
-    if q:
-        toks = q.split()
-        scored = []
-        for p in rows:
-            hay = f"{p['name']} {p['brand']} {p['category']} {p.get('match_key','')}".lower()
-            score = sum(1 for t in toks if t in hay)
-            # prefer name-start matches
-            if p["name"].lower().startswith(q):
-                score += 3
-            if score:
-                scored.append((score, p))
-        scored.sort(key=lambda x: (-x[0], -x[1]["rating"]))
-        rows = [p for _, p in scored]
-    else:
-        rows = sorted(rows, key=lambda p: -p["rating"])
-    return [decorate(p) for p in rows[:limit]]
 
+    if not q:
+        return rows[:limit]
 
-# ---- LLM-facing retrieval -------------------------------------------------
-# One deterministic scorer the NowSpeak agent calls as a tool. The model never
-# sees all 300 products — it searches, reads the top matches, and picks.
+    q_words = set(re.findall(r"[a-z]+", q))
+
+    scored = []
+
+    for p in rows:
+        name = p["name"].lower()
+        brand = p["brand"].lower()
+        category_name = p["category"].lower()
+        match_key = (p.get("match_key") or "").lower()
+
+        name_words = set(re.findall(r"[a-z]+", name))
+        brand_words = set(re.findall(r"[a-z]+", brand))
+        category_words = set(re.findall(r"[a-z]+", category_name))
+        match_words = set(re.findall(r"[a-z]+", match_key))
+
+        score = 0
+
+        # exact product name
+        if q == name:
+            score += 200
+
+        # exact keyword match
+        if q in name_words:
+            score += 150
+
+        if q in match_words:
+            score += 120
+
+        if q in brand_words:
+            score += 50
+
+        if q in category_words:
+            score += 30
+
+        # token overlap
+        overlap = len(
+            q_words &
+            (name_words | brand_words | category_words | match_words)
+        )
+
+        score += overlap * 20
+
+        # weak substring fallback
+        if score == 0:
+            if name.startswith(q):
+                score += 15
+
+            elif q in name:
+                score += 5
+
+        if score >= 20:
+            scored.append((score, p))
+
+    scored.sort(
+        key=lambda x: (-x[0], -x[1]["rating"])
+    )
+
+    rows = [p for _, p in scored]
+
+    print(
+        f"[SEARCH DEBUG] {q}:",
+        [(s, p["name"]) for s, p in scored[:5]]
+    )
+
+    return rows[:limit]
 
 # Indian-grocery synonyms: map what users type -> extra terms to also match.
 _SYNONYMS = {
@@ -161,6 +212,39 @@ _SYNONYMS = {
     "atta": ["flour", "wheat"], "maida": ["flour"],
     "paneer": ["cottage cheese"], "jeera": ["cumin"],
     "chillies": ["chilli", "chili"], "spring onion": ["scallion"],
+     "biscuits": ["cookies"],
+    "cookies": ["biscuits"],
+
+    "cold drink": ["coke", "pepsi", "soft drink", "soda"],
+
+    "samosa": ["snack", "frozen snack"],
+
+    "flowers": ["roses", "bouquet"],
+
+    "candle": ["scented candle"],
+
+    "tea": ["chai"],
+
+    "handwash": ["liquid handwash", "hand wash", "soap"],
+    "hand wash": ["handwash", "liquid handwash", "soap"],
+
+    "napkin": ["napkins", "tissue", "paper napkin", "paper napkins"],
+    "napkins": ["tissue", "paper napkins", "napkin"],
+    "plate": ["plates", "paper plate", "paper plates", "disposable plate", "disposable plates"],
+    "plates": ["paper plates", "disposable plates", "plate"],
+        # Tablecloth / party supplies
+    "tablecloth": ["table cover", "plastic table cover"],
+    "table cloth": ["table cover", "plastic table cover"],
+    
+    # Rice precision — stops "rice" matching "rice stick noodles"
+    # by giving it a strong preferred match
+    "rice": ["basmati rice", "basmati"],
+    "basmati": ["basmati rice", "rice"],
+    
+    # More party supply gaps
+    "forks": ["disposable forks", "plastic forks"],
+    "plates": ["paper plates", "disposable plates"],
+    "candles": ["birthday candles", "candle"],
 }
 
 
@@ -169,9 +253,23 @@ def _expand(term: str) -> list[str]:
     return [t, *_SYNONYMS.get(t, [])]
 
 
-# Allergen keyword backstop — catalog allergen_tags are incomplete (many nut
-# products are untagged), so safety can't depend on tags alone. Names are
-# specific to avoid false positives ("coconut"/"nutmeg"/"chestnut" are NOT nuts).
+    # Allergen keyword backstop — catalog allergen_tags are incomplete (many nut
+    # products are untagged), so safety can't depend on tags alone. Names are
+    # specific to avoid false positives ("coconut"/"nutmeg"/"chestnut" are NOT nuts).
+
+# Category fallback — when a search term matches a high-level intent (e.g.
+# "cleaning", "hurt", "party"), return the top-rated products from that
+# category instead of nothing.
+_CATEGORY_FALLBACK = {
+    "household_cleaning": ["clean", "cleaning", "household"],
+    "medicine_health": ["medicine", "first aid", "pain", "hurt", "injury",
+                        "sick", "ill", "wound", "tablet", "bandage"],
+    "party_festive": ["party", "birthday", "celebration", "festive", "decoration"],
+    "snacks": ["snack", "snacks", "munchies"],
+    "beverages": ["drink", "drinks", "beverage"],
+    "fresh_produce": ["vegetable", "vegetables", "fruit", "fruits", "produce"],
+    "personal_care": ["handwash", "soap", "shampoo", "sanitizer", "deodorant"],
+}
 _ALLERGEN_KEYWORDS = {
     "nuts": ["cashew", "almond", "peanut", "walnut", "pista", "pistachio",
              "hazelnut", "pecan", "pine nut", "pine-nut", "macadamia", "praline"],
@@ -190,9 +288,13 @@ def allergen_conflict(p: dict, block) -> bool:
         return False
     if block & set(p.get("allergen_tags", [])):
         return True
-    name = p["name"].lower()
-    return any(any(k in name for k in _ALLERGEN_KEYWORDS.get(a, [])) for a in block)
-
+    # Fix: Split name into full word boundaries to avoid false positives (e.g. 'wheat' vs 'buckwheat')
+    name_words = set(re.split(r"[^a-z]+", p["name"].lower()))
+    for a in block:
+        keywords = _ALLERGEN_KEYWORDS.get(a, [])
+        if any(k in name_words for k in keywords):
+            return True
+    return False
 
 def _score(p: dict, terms: list[str]) -> int:
     name = p["name"].lower()
@@ -224,22 +326,70 @@ def compact(p: dict) -> dict:
             "allergen_tags": p.get("allergen_tags", [])}
 
 
+# def retrieve(query: str, category: str = "", limit: int = 8,
+#              exclude_allergens: list[str] | None = None) -> list[dict]:
+#     """Deterministic ranked search for one query. Allergen-conflict items are
+#     dropped before results are returned, so the agent never sees them."""
+#     terms = _expand(query)
+#     cat = (category or "").strip()
+#     block = exclude_allergens or []
+#     scored = []
+#     for p in catalog():
+#         if cat and p["category"] != cat:
+#             continue
+#         if allergen_conflict(p, block):
+#             continue
+#         s = _score(p, terms)
+#         if s:
+#             scored.append((s, p))
+#     scored.sort(key=lambda x: (-x[0], -x[1]["rating"], -x[1].get("rating_count", 0)))
+#     return [compact(p) for _, p in scored[:limit]]
+
 def retrieve(query: str, category: str = "", limit: int = 8,
              exclude_allergens: list[str] | None = None) -> list[dict]:
-    """Deterministic ranked search for one query. Allergen-conflict items are
-    dropped before results are returned, so the agent never sees them."""
+    """Deterministic ranked search for one query with fallback substring matching."""
     terms = _expand(query)
     cat = (category or "").strip()
     block = exclude_allergens or []
     scored = []
+    
+    # Pre-clean the query string for substring fallback matching
+    q_clean = query.lower().strip()
+    
     for p in catalog():
         if cat and p["category"] != cat:
             continue
         if allergen_conflict(p, block):
             continue
+            
         s = _score(p, terms)
+        
+        # --- SMART FALLBACK ---
+        # If the official scoring returns 0, manually check if the query is hidden 
+        # inside the match_key, product name, or description.
+        if not s and q_clean:
+            match_key = str(p.get("match_key", "")).lower()
+            p_name = str(p.get("name", "")).lower()
+            p_desc = str(p.get("description", "")).lower()
+            
+            if q_clean in match_key or q_clean in p_name or q_clean in p_desc:
+                s = 1  # Give it a base structural score so it gets included
+                
         if s:
             scored.append((s, p))
+            
+    # --- CATEGORY FALLBACK ---
+    # If nothing scored, check if the query is a high-level intent keyword
+    # and return top products from that category.
+    if not scored:
+        for cat, keywords in _CATEGORY_FALLBACK.items():
+            if any(kw in q_clean for kw in keywords):
+                cat_prods = [p for p in catalog() if p["category"] == cat]
+                cat_prods.sort(key=lambda p: (-p.get("rating", 0), -p.get("rating_count", 0)))
+                scored = [(50, p) for p in cat_prods[:limit]]
+                print(f"[CATEGORY FALLBACK] '{q_clean}' → {cat} ({len(scored)} products)")
+                break
+
     scored.sort(key=lambda x: (-x[0], -x[1]["rating"], -x[1].get("rating_count", 0)))
     return [compact(p) for _, p in scored[:limit]]
 
@@ -257,4 +407,6 @@ CATEGORIES = [
     ("personal_care", "Personal Care", "🧴"),
     ("household_cleaning", "Household", "🧽"),
     ("baby_care", "Baby", "🍼"),
+    ("home_decor_lifestyle", "Lifestyle & Flowers", "🌸"),
+    ("party_festive", "Party Supplies", "🎉"),
 ]
