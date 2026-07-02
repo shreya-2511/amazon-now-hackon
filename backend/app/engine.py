@@ -235,11 +235,27 @@ def recipe_list(show_excluded: bool = False) -> list[dict]:
     user = data.active_user()
     prefs = user.get("dietary", {}).get("preferences", [])
 
+    # result = []
+    # for r in data.recipes():
+    #     excluded = _is_recipe_excluded(r, prefs)
+    #     if excluded and not show_excluded:
+    #         continue
+    #     result.append({
+    #         "id": r["id"],
+    #         "name": r["name"],
+    #         "cuisine": r["cuisine"],
+    #         "category": r.get("category", ""),
+    #         "image": r["image"],
+    #         "time_min": r["time_min"],
+    #         "dietary_tags": r["dietary_tags"],
+    #         "ingredient_count": r["ingredient_count"],
+    #         "diet_excluded": excluded,
+    #     })
+    # return result
+
     result = []
     for r in data.recipes():
         excluded = _is_recipe_excluded(r, prefs)
-        if excluded and not show_excluded:
-            continue
         result.append({
             "id": r["id"],
             "name": r["name"],

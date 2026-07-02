@@ -43,10 +43,9 @@ export default function NextBuy() {
   }, []);
 
 useEffect(() => {
-  if (gcal.state === "connected") {
-    fetchNextbuy();
-  }
-}, [gcal.state, fetchNextbuy]);
+  // Always fetch if we want it to load, but differentiate based on auth state if necessary
+  fetchNextbuy();
+}, [fetchNextbuy]);
 
   if (!data && !loadError) return <NextBuySkeleton />;
 
@@ -74,7 +73,7 @@ useEffect(() => {
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        className="rounded-3xl bg-gradient-to-br from-amzn-dark to-amzn-blue2 text-white p-4 pl-4"
+        className="rounded-3xl bg-gradient-to-br from-amzn-dark to-amzn-blue2 text-white p-4 pl-4 mb-2"
       >
         <div className="flex items-center gap-1.5 text-amzn-yellow text-[12px] font-bold tracking-wide uppercase mb-1">
           <Sparkles size={14} /> NextBuy

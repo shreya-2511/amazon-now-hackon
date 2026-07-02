@@ -24,17 +24,17 @@ export default function HomePage() {
         <NextBuy />
 
         {/* categories */}
-        <section className="px-5 mt-6">
-          <h2 className="text-[15px] font-bold mb-2">Shop by category</h2>
-          <div className="grid grid-cols-4 gap-2">
+        <section className="mt-6">
+          <h2 className="text-[15px] font-bold mb-2 px-5">Shop by category</h2>
+          <div className="flex gap-2 overflow-x-auto no-scrollbar px-5 pb-2">
             {(boot?.categories ?? []).map((c) => (
               <button
                 key={c.id}
                 onClick={() => router.push(`/search?category=${c.id}`)}
-                className="bg-white rounded-2xl border border-line p-2 flex flex-col items-center gap-1 shadow-card active:scale-95 transition"
+                className="bg-white rounded-2xl border border-line p-3 flex flex-col items-center gap-1 shadow-card active:scale-95 transition shrink-0 w-20"
               >
                 <span className="text-2xl">{c.emoji}</span>
-                <span className="text-[10px] font-medium text-center leading-tight">{c.label}</span>
+                <span className="text-[10px] font-medium text-center leading-tight truncate w-full">{c.label}</span>
               </button>
             ))}
           </div>

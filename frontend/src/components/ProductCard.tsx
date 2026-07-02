@@ -21,21 +21,18 @@ export function ProductCard({ product }: { product: Product }) {
         )}
       </div>
       <div className="flex items-center gap-1 mt-2">
-        <VegMark product={product} />
         <span className="text-[10px] text-ink2 truncate">{product.brand}</span>
       </div>
       <p className="text-[13px] font-semibold leading-tight line-clamp-2 min-h-[34px] mt-0.5">
         {product.name}
       </p>
       <div className="flex items-center gap-1 text-[10px] text-ink2 mt-0.5">
-        <span className="flex items-center gap-0.5 bg-amzn-green text-white px-1 rounded">
-          {product.rating.toFixed(1)} <Star size={8} fill="white" />
-        </span>
         <span>{product.size}</span>
       </div>
-      {/* Extra dietary tags (GF, Keto, Halal) */}
-      <div className="mt-1">
+      {/* Dietary and Allergen badges */}
+      <div className="flex flex-wrap gap-1 mt-1">
         <DietaryTags product={product} />
+        <AllergenBadge product={product} />
       </div>
       <div className="flex items-center justify-between mt-2">
         <span className="text-sm font-bold">{rupee(product.price)}</span>
@@ -55,12 +52,10 @@ export function ProductRow({
   product,
   qty,
   reason,
-  badge,
 }: {
   product: Product;
   qty?: number;
   reason?: string;
-  badge?: React.ReactNode;
 }) {
   const { qtyOf, add, setQty } = useCart();
   const q = qtyOf(product.id);
@@ -72,7 +67,6 @@ export function ProductRow({
       </div>
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-1">
-          <VegMark product={product} size={12} />
           <p className="text-[13px] font-semibold leading-tight truncate">{product.name}</p>
         </div>
         <p className="text-[11px] text-ink2">
@@ -80,9 +74,10 @@ export function ProductRow({
           {qty && qty > 1 ? ` · ×${qty}` : ""}
         </p>
         {reason && <p className="text-[11px] text-ink2 mt-0.5 truncate">{reason}</p>}
-        {badge}
-        <DietaryTags product={product} />
-        <AllergenBadge product={product} />
+        <div className="flex flex-wrap gap-1 mt-1">
+            <DietaryTags product={product} />
+            <AllergenBadge product={product} />
+        </div>
       </div>
       <div className="flex flex-col items-end gap-1 shrink-0">
         <span className="text-sm font-bold">{rupee(product.price)}</span>

@@ -22,12 +22,13 @@ function SearchInner() {
 
   useEffect(() => {
     const t = setTimeout(() => {
-      api.catalog(q, cat, 40, showExcluded)
+      // showExcluded is always true to get all products
+      api.catalog(q, cat, 40, true)
         .then((d) => setProducts(d.products))
         .catch(() => {});
     }, 180);
     return () => clearTimeout(t);
-  }, [q, cat, showExcluded]);
+  }, [q, cat]);
 
   const catLabel = useMemo(
     () => boot?.categories.find((c) => c.id === cat)?.label,
@@ -70,29 +71,18 @@ function SearchInner() {
       </header>
 
       <main className="flex-1 overflow-y-auto no-scrollbar pb-28">
-        {/* Diet filter bar — only shown when user has a preference set */}
+        {/* Diet filter bar — changed to indicator only */}
         {hasDietFilter && (
-          <div className="flex items-center justify-between px-3 py-2 bg-amzn-greenlite border-b border-amzn-green/20">
-            <span className="text-[11.5px] font-semibold text-amzn-green">
-              🌿 Filtered for {dietLabel}
+          <div className="flex items-center justify-between px-3 py-2 bg-paper border-b border-line">
+            <span className="text-[11.5px] font-semibold text-ink2">
+              Viewing all items (Diet: {dietLabel})
             </span>
-            <button
-              onClick={() => setShowExcluded((v) => !v)}
-              className={`text-[11px] font-bold px-2.5 py-1 rounded-full border transition ${
-                showExcluded
-                  ? "bg-amzn-red/10 text-amzn-red border-amzn-red/30"
-                  : "bg-white text-ink2 border-line"
-              }`}
-            >
-              {showExcluded ? "Hide non-veg" : "Show all"}
-            </button>
           </div>
         )}
 
         <div className="p-3">
           <p className="text-[12px] text-ink2 mb-2">
             {catLabel ? catLabel : q ? `Results for "${q}"` : "Popular right now"} · {products.length} items
-            {hasDietFilter && !showExcluded ? " (filtered)" : ""}
           </p>
           <div className="grid grid-cols-2 gap-2.5">
             {products.map((p) => (

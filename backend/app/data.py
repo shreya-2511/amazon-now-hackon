@@ -269,10 +269,13 @@ def search(q: str = "", category: str = "", limit: int = 40,
     else:
         rows = sorted(rows, key=lambda p: -p["rating"])
 
-    decorated = [decorate(p, user) for p in rows[:limit * 2]]  # extra headroom for filtering
+    # decorated = [decorate(p, user) for p in rows[:limit * 2]]  # extra headroom for filtering
+    #
+    # if not show_excluded and prefs:
+    #     decorated = [p for p in decorated if not p.get("diet_excluded")]
+    # return decorated[:limit]
 
-    if not show_excluded and prefs:
-        decorated = [p for p in decorated if not p.get("diet_excluded")]
+    decorated = [decorate(p, user) for p in rows[:limit * 2]]
     return decorated[:limit]
 
     print(
@@ -354,7 +357,7 @@ _ALLERGEN_KEYWORDS = {
     "nuts": ["cashew", "cashews", "almond", "almonds", "peanut", "peanuts",
              "walnut", "walnuts", "pista", "pistachio", "pistachios",
              "hazelnut", "pecan", "pine nut", "pine-nut", "macadamia", "praline",
-             "nuts"],
+             "nuts", "cashewnut", "cashewnuts", "almondmilk"],
     "dairy": ["milk", "cheese", "butter", "paneer", "ghee", "cream", "yogurt", "curd"],
     "gluten": ["wheat", "atta", "maida", "bread", "pasta", "noodle", "barley"],
     "soy": ["soy", "tofu", "edamame"],

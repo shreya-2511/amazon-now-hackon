@@ -32,17 +32,7 @@ export default function VegMark({ product, size = 14 }: { product: Product; size
   const label = isNonVeg ? "non-veg" : isEgg ? "eggetarian" : "veg";
 
   return (
-    <span
-      className="inline-grid place-items-center border-[1.5px] rounded-[3px] shrink-0"
-      style={{ width: size, height: size, borderColor: color }}
-      aria-label={label}
-      title={label}
-    >
-      <span
-        className="rounded-full"
-        style={{ width: size * 0.45, height: size * 0.45, background: color }}
-      />
-    </span>
+    <div></div>
   );
 }
 
@@ -66,18 +56,21 @@ export function DietaryTags({
   const userPrefs = new Set(boot?.user?.dietary?.preferences ?? []);
 
   const visibleTags = (product.dietary_tags ?? []).filter((t) => {
-    // Skip veg/eggetarian — VegMark handles those
-    if (["vegan", "vegetarian", "eggetarian"].includes(t)) return false;
-    // For preference-gated tags: only show if user has that preference selected
-    if (PREFERENCE_GATED.has(t)) return userPrefs.has(t);
-    // Unknown tags: don't show
-    return false;
+    // DEBUG: Log to see what values are coming in
+    console.log(`[DietaryTags] Product: ${product.name}, Tag: ${t}, User Prefs: ${Array.from(userPrefs).join(', ')}, Has Tag: ${userPrefs.has(t)}`);
+    // For preference tags: show if user has that preference selected
+    // Explicitly exclude "vegetarian" if "vegan" is selected to avoid duplicate labelling
+    if (t === "vegetarian" && userPrefs.has("vegan")) {
+      console.log(`[DietaryTags] Filtering out 'vegetarian' for ${product.name} because 'vegan' is preferred.`);
+      return false;
+    }
+    return userPrefs.has(t);
   });
 
   if (visibleTags.length === 0) return null;
 
   return (
-    <span className="flex flex-wrap gap-1">
+    <span className="flex flex-wrap gap-1 mt-1">
       {visibleTags.slice(0, max).map((t) => {
         const cfg = TAG_CONFIG[t];
         if (!cfg) return null;
@@ -101,7 +94,7 @@ export function DietaryTags({
 export function AllergenBadge({ product }: { product: Product }) {
   if (!product.allergen_conflict || !product.warnings?.length) return null;
   return (
-    <span className="inline-flex items-center gap-0.5 text-[10px] text-amzn-red font-semibold">
+    <span className="inline-flex items-center gap-0.5 text-[10px] bg-red-100 text-amzn-red font-bold px-1.5 py-0.5 rounded-full border border-amzn-red/20">
       ⚠ {product.warnings[0]}
     </span>
   );

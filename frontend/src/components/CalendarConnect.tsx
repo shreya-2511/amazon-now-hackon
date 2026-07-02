@@ -72,26 +72,25 @@ export default function CalendarConnect({
           <>
             {/* Header */}
             <div className="flex items-center justify-between">
-              <p className="text-[12px] font-semibold text-amzn-dark">
-                ✨ What you'll get
-              </p>
 
               {state === "connected" ? (
-                <div className="flex items-center gap-2 rounded-full bg-emerald-100 px-3 py-1">
-                  <CheckCircle2
-                    size={14}
-                    className="text-emerald-600"
-                  />
-
-                  <span className="text-[11px] font-semibold text-emerald-700">
-                    Connected
-                  </span>
+                <div className="">
                 </div>
               ) : (
+                <div className="flex flex-row gap-2">
+               <div>                 <p className="text-[12px] font-semibold text-amzn-dark">
+                ✨ What you'll get
+              </p>
+                    <ul className="mt-3 space-y-2 text-[11px] text-ink2">
+                    <li>• Dinner party grocery suggestions</li>
+                    <li>• Guest arrival essentials</li>
+                    <li>• Automatic NextBuy recommendations</li>
+                  </ul>
+                  </div>
                 <button
                   onClick={connect}
                   disabled={isLoading || state === "checking"}
-                  className="rounded-full bg-amzn-yellow2 px-4 py-2 text-[12px] font-semibold text-amzn-dark transition hover:brightness-95 disabled:opacity-50"
+                  className="rounded-full bg-amzn-yellow2 px-4 mb-15 text-[12px] font-semibold text-amzn-dark transition hover:brightness-95 disabled:opacity-50"
                 >
                   {isLoading || state === "checking" ? (
                     <span className="flex items-center gap-2">
@@ -105,23 +104,19 @@ export default function CalendarConnect({
                     "Connect"
                   )}
                 </button>
+                </div>
               )}
             </div>
 
             {/* Benefits */}
-            <ul className="mt-3 space-y-2 text-[11px] text-ink2">
-              <li>• Dinner party grocery suggestions</li>
-              <li>• Guest arrival essentials</li>
-              <li>• Automatic NextBuy recommendations</li>
-            </ul>
 
             {/* Connected actions */}
             {state === "connected" && (
-              <div className="mt-4 flex gap-2">
+              <div className=" flex gap-5">
                 <button
                   onClick={handleRefresh}
                   disabled={isLoading}
-                  className="flex-1 rounded-xl border border-line py-2 text-[12px] font-semibold transition hover:bg-gray-50 disabled:opacity-50"
+                  className="flex-1 rounded-xl border border-gray-400 py-2 text-[12px] font-semibold transition hover:bg-gray-50 disabled:opacity-50"
                 >
                   {isLoading ? (
                     <span className="flex items-center justify-center gap-2">
@@ -133,7 +128,6 @@ export default function CalendarConnect({
                     </span>
                   ) : (
                     <span className="flex items-center justify-center gap-2">
-                      <RefreshCw size={13} />
                       Refresh
                     </span>
                   )}
@@ -142,10 +136,9 @@ export default function CalendarConnect({
                 <button
                   onClick={disconnect}
                   disabled={isLoading}
-                  className="flex-1 rounded-xl bg-red-50 py-2 text-[12px] font-semibold text-red-600 transition hover:bg-red-100 disabled:opacity-50"
+                  className="flex-1 rounded-xl bg-red-50 py-1 text-[12px] border border-red-600 font-semibold text-red-600 transition hover:bg-red-100 disabled:opacity-50"
                 >
                   <span className="flex items-center justify-center gap-2">
-                    <Unlink size={13} />
                     Disconnect
                   </span>
                 </button>
@@ -195,29 +188,36 @@ export default function CalendarConnect({
               <button
                 onClick={connect}
                 disabled={isLoading || state === "checking"}
-                className="flex w-full items-center gap-3 rounded-2xl border border-line bg-white p-4 text-left transition hover:shadow-md disabled:opacity-50"
+                className="w-full rounded-2xl border border-line bg-white p-4 text-left transition hover:shadow-md disabled:opacity-50"
               >
-                {isLoading ? (
-                  <Loader2
-                    size={20}
-                    className="animate-spin text-amzn-orange"
-                  />
-                ) : (
-                  <Calendar
-                    size={20}
-                    className="text-amzn-orange"
-                  />
-                )}
+                <div className="flex items-center gap-3 mb-3">
+                  {isLoading ? (
+                    <Loader2
+                      size={24}
+                      className="animate-spin text-amzn-orange"
+                    />
+                  ) : (
+                    <div className="p-2 rounded-xl bg-amzn-orange/10">
+                      <Calendar
+                        size={20}
+                        className="text-amzn-orange"
+                      />
+                    </div>
+                  )}
 
-                <div className="flex-1">
-                  <p className="text-[14px] font-semibold">
-                    Connect your Calendar
+                  <p className="text-[14px] font-bold">
+                    Smart Event Planning
                   </p>
+                </div>
+                
+                <p className="text-[12px] text-ink2 mb-4">
+                  Never miss groceries for upcoming events.
+                </p>
 
-                  <p className="text-[12px] text-ink2">
-                    Prepare groceries automatically before
-                    upcoming events.
-                  </p>
+                <div className="w-full rounded-xl bg-orange-50 p-3">
+                  <span className="block text-center text-[13px] font-bold text-amzn-orange">
+                    Connect
+                  </span>
                 </div>
               </button>
             )}
