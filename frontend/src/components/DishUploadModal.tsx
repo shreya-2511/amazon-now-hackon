@@ -253,7 +253,7 @@ export default function DishUploadModal({ open, onClose }: Props) {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 8 }}
                     onClick={analyze}
-                    disabled={stage === "analyzing"}
+                    disabled={(stage as string) === "analyzing"}
                     className="mt-3 w-full rounded-2xl bg-amzn-green text-white font-bold py-3.5
                                flex items-center justify-center gap-2 disabled:opacity-60"
                   >
