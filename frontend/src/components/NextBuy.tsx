@@ -42,10 +42,9 @@ export default function NextBuy() {
       .catch(() => setLoadError(true));
   }, []);
 
-useEffect(() => {
-  // Always fetch if we want it to load, but differentiate based on auth state if necessary
-  fetchNextbuy();
-}, [fetchNextbuy]);
+  useEffect(() => {
+    fetchNextbuy();
+  }, [fetchNextbuy]);
 
   if (!data && !loadError) return <NextBuySkeleton />;
 
@@ -73,10 +72,10 @@ useEffect(() => {
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        className="rounded-3xl bg-gradient-to-br from-amzn-dark to-amzn-blue2 text-white p-4 pl-4 mb-2"
+        className="rounded-3xl bg-gradient-to-br from-amzn-dark to-amzn-blue2 text-white p-4 pl-4"
       >
         <div className="flex items-center gap-1.5 text-amzn-yellow text-[12px] font-bold tracking-wide uppercase mb-1">
-          <Sparkles size={14} /> NextBuy
+          <Sparkles size={14} /> NEXTBUY
         </div>
         <h1 className="text-[18px] font-bold leading-tight">3 things we lined up for you</h1>
         <p className="text-[12px] text-white/70 mt-1 line-height-0.5">
@@ -84,11 +83,11 @@ useEffect(() => {
         </p>
       </motion.div>
 
-      {/* Google Calendar hint — links to profile for OAuth setup
+      {/* Google Calendar hint — links to profile for OAuth setup */}
     {gcal.state !== "connected" && (
       <Link
         href="/profile"
-        className="speaknow"
+        className="mt-2.5 flex items-center gap-2.5 rounded-2xl border border-dashed border-amzn-purple/40 bg-amzn-purple/5 px-3.5 py-2.5"
       >
         <span className="h-8 w-8 rounded-xl grid place-items-center shrink-0 bg-amzn-purple/10">
           <Calendar size={16} className="text-amzn-purple" />
@@ -109,7 +108,7 @@ useEffect(() => {
           className="text-amzn-purple shrink-0"
         />
       </Link>
-    )} */}
+    )}
 
       {/* signal cards */}
       <div className="mt-1 space-y-2">
