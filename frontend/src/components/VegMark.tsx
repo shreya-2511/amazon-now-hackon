@@ -1,5 +1,12 @@
 import { useBoot } from "@/lib/boot";
-import type { Product } from "@/lib/types";
+
+export type ProductLike = {
+  dietary_tags?: string[];
+  name?: string;
+  category?: string;
+  allergen_conflict?: boolean;
+  warnings?: string[];
+};
 
 // ---------------------------------------------------------------------------
 // Tag display config
@@ -20,7 +27,7 @@ const PREFERENCE_GATED = new Set(["gluten-free", "keto", "halal", "vegan"]);
 // VegMark — classic Indian square-dot indicator
 // Green = veg/vegan  |  Amber = eggetarian  |  Red = non-veg
 // ---------------------------------------------------------------------------
-export default function VegMark({ product, size = 14 }: { product: Product; size?: number }) {
+export default function VegMark({ product, size = 14 }: { product: ProductLike; size?: number }) {
   const tags = product.dietary_tags ?? [];
   const isVeg  = tags.includes("vegan") || tags.includes("vegetarian");
   const isEgg  = tags.includes("eggetarian");
@@ -31,8 +38,18 @@ export default function VegMark({ product, size = 14 }: { product: Product; size
   const color = isNonVeg ? "#b91c1c" : isEgg ? "#d97706" : "#067d62";
   const label = isNonVeg ? "non-veg" : isEgg ? "eggetarian" : "veg";
 
+  const dotSize = Math.max(6, size * 0.45);
   return (
-    <div></div>
+    <span
+      className="inline-flex items-center justify-center shrink-0"
+      style={{ width: size, height: size, borderRadius: 2, border: `1.5px solid ${color}` }}
+      aria-label={label}
+    >
+      <span
+        className="rounded-full"
+        style={{ width: dotSize, height: dotSize, backgroundColor: color }}
+      />
+    </span>
   );
 }
 
@@ -49,21 +66,13 @@ export function DietaryTags({
   product,
   max = 2,
 }: {
-  product: Product;
+  product: ProductLike;
   max?: number;
 }) {
   const boot = useBoot();
   const userPrefs = new Set(boot?.user?.dietary?.preferences ?? []);
 
   const visibleTags = (product.dietary_tags ?? []).filter((t) => {
-    // DEBUG: Log to see what values are coming in
-    console.log(`[DietaryTags] Product: ${product.name}, Tag: ${t}, User Prefs: ${Array.from(userPrefs).join(', ')}, Has Tag: ${userPrefs.has(t)}`);
-    // For preference tags: show if user has that preference selected
-    // Explicitly exclude "vegetarian" if "vegan" is selected to avoid duplicate labelling
-    if (t === "vegetarian" && userPrefs.has("vegan")) {
-      console.log(`[DietaryTags] Filtering out 'vegetarian' for ${product.name} because 'vegan' is preferred.`);
-      return false;
-    }
     return userPrefs.has(t);
   });
 
@@ -91,7 +100,7 @@ export function DietaryTags({
 // ---------------------------------------------------------------------------
 // AllergenBadge — inline red warning for allergen conflicts
 // ---------------------------------------------------------------------------
-export function AllergenBadge({ product }: { product: Product }) {
+export function AllergenBadge({ product }: { product: ProductLike }) {
   if (!product.allergen_conflict || !product.warnings?.length) return null;
   return (
     <span className="inline-flex items-center gap-0.5 text-[10px] bg-red-100 text-amzn-red font-bold px-1.5 py-0.5 rounded-full border border-amzn-red/20">

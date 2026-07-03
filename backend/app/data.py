@@ -32,7 +32,6 @@ def settings() -> dict:
     return _load("settings.json")
 
 
-@lru_cache(maxsize=1)
 def personas() -> dict:
     try:
         # Try to scan/query DynamoDB for personas if possible, but keep local fallback
@@ -328,29 +327,12 @@ def search(q: str = "", category: str = "", limit: int = 40,
         if score >= 20:
             scored.append((score, p))
 
-        scored.sort(
-            key=lambda x: (-x[0], -x[1]["rating"])
-        )
-
+    if scored:
+        scored.sort(key=lambda x: (-x[0], -x[1]["rating"]))
         rows = [p for _, p in scored]
-    else:
-        rows = sorted(rows, key=lambda p: -p["rating"])
-
-    # decorated = [decorate(p, user) for p in rows[:limit * 2]]  # extra headroom for filtering
-    #
-    # if not show_excluded and prefs:
-    #     decorated = [p for p in decorated if not p.get("diet_excluded")]
-    # return decorated[:limit]
 
     decorated = [decorate(p, user) for p in rows[:limit * 2]]
     return decorated[:limit]
-
-    print(
-        f"[SEARCH DEBUG] {q}:",
-        [(s, p["name"]) for s, p in scored[:5]]
-    )
-
-    return rows[:limit]
 
 # Indian-grocery synonyms: map what users type -> extra terms to also match.
 _SYNONYMS = {
@@ -523,8 +505,6 @@ def retrieve(query: str, category: str = "", limit: int = 8,
             continue
         if prefs and _is_diet_excluded(p, prefs):
             continue
-        if prefs and _is_diet_excluded(p, prefs):
-            continue     
         s = _score(p, terms)
         
         # --- SMART FALLBACK ---

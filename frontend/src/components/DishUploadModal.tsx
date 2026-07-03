@@ -247,7 +247,7 @@ export default function DishUploadModal({ open, onClose }: Props) {
 
               {/* Analyze button — only shown when an image is selected */}
               <AnimatePresence>
-                {(stage === "preview" || stage === "error") && selectedFile && (
+                {selectedFile && (
                   <motion.button
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}

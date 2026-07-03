@@ -85,8 +85,8 @@ export default function RecipesPage() {
                   </p>
                   {/* Dietary and Allergen badges */}
                   <div className="flex gap-1 mt-1 flex-wrap">
-                    <DietaryTags product={r as any} />
-                    <AllergenBadge product={r as any} />
+                    <DietaryTags product={r} />
+                    <AllergenBadge product={r} />
                   </div>
                 </div>
               </Link>

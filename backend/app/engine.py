@@ -1,4 +1,4 @@
-﻿"""Core demo logic: NextBuy prediction, recipe scaling, SpeakNow intent, NowSOS."""
+"""Core demo logic: NextBuy prediction, recipe scaling, SpeakNow intent, NowSOS."""
 from __future__ import annotations
 
 import json
