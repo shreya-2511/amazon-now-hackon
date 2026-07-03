@@ -13,7 +13,7 @@ import {
   Sparkles,
   Users,
 } from "lucide-react";
-import { useCallback, useState } from "react";
+import { useCallback, useState,useEffect } from "react";
 import useSWR from "swr";
 import { api } from "@/lib/api";
 import { useCart } from "@/lib/cart";
@@ -32,21 +32,21 @@ const SIGNAL_COLOR = {
 const CTA = { calendar: "Prepare cart", fridge: "Add what's low", history: "Top up supplies" } as const;
 
 export default function NextBuy() {
-  const { data, error, mutate } = useSWR(
-    "nextbuy_cache",
-    () => api.nextbuy(),
-    {
-      revalidateOnFocus: false,      // Prevent refetching when switching browser tabs
-      revalidateOnMount: true,       // Update data quietly in the background if stale
-      dedupingInterval: 30000,       // Reuse cached results completely for 30 seconds
-      keepPreviousData: true,        // Keep showing old cached data during background revalidation
-    }
-  );
+  const [data, setData] = useState<NextBuyT | null>(null);
+  const [loadError, setLoadError] = useState(false);
+  const gcal = useGoogleCalendar();
 
-  // FIXED: Map data and error cleanly without redeclaring 'data'
-  const nextBuyData = data || null;
-  const loadError = !!error;
+  const fetchNextbuy = useCallback(() => {
+    setLoadError(false);
+    api.nextbuy()
+      .then(setData)
+      .catch(() => setLoadError(true));
+  }, []);
 
+useEffect(() => {
+  // Always fetch if we want it to load, but differentiate based on auth state if necessary
+  fetchNextbuy();
+}, [fetchNextbuy]);
 
   if (!data && !loadError) return <NextBuySkeleton />;
 
@@ -74,16 +74,43 @@ export default function NextBuy() {
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        className="rounded-3xl bg-gradient-to-br from-amzn-dark to-amzn-blue2 text-white p-4 pl-4 mb-2"
+        className="rounded-3xl bg-gradient-to-br from-amzn-dark to-amzn-blue2 text-white p-4 pl-4"
       >
         <div className="flex items-center gap-1.5 text-amzn-yellow text-[12px] font-bold tracking-wide uppercase mb-1">
-          <Sparkles size={14} /> NextBuy
+          <Sparkles size={14} /> NEXTBUY
         </div>
         <h1 className="text-[18px] font-bold leading-tight">3 things we lined up for you</h1>
         <p className="text-[12px] text-white/70 mt-1 line-height-0.5">
           From your calendar, fridge & habits. Tap to build your cart.
         </p>
       </motion.div>
+
+      {/* Google Calendar hint — links to profile for OAuth setup
+    {gcal.state !== "connected" && (
+      <Link
+        href="/profile"
+        className="speaknow"
+      >
+        <span className="h-8 w-8 rounded-xl grid place-items-center shrink-0 bg-amzn-purple/10">
+          <Calendar size={16} className="text-amzn-purple" />
+        </span>
+
+        <div className="flex-1 min-w-0">
+          <p className="text-[12.5px] font-bold text-amzn-purple">
+            Connect your Google Calendar
+          </p>
+
+          <p className="text-[11px] text-amzn-purple/70">
+            Auto-detect events &amp; prep your cart
+          </p>
+        </div>
+
+        <ChevronRight
+          size={15}
+          className="text-amzn-purple shrink-0"
+        />
+      </Link>
+    )} */}
 
       {/* signal cards */}
       <div className="mt-1 space-y-2">

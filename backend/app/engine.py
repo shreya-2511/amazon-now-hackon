@@ -1,4 +1,4 @@
-"""Core demo logic: NextBuy prediction, recipe scaling, SpeakNow intent, NowSOS."""
+﻿"""Core demo logic: NextBuy prediction, recipe scaling, SpeakNow intent, NowSOS."""
 from __future__ import annotations
 
 import json
@@ -91,7 +91,6 @@ _ORDER = ["calendar", "fridge", "history"]
 
 def nextbuy() -> dict:
     user = data.active_user()
-
     groups: dict[str, list] = {k: [] for k in _ORDER}
     total = 0
     count = 0
@@ -104,6 +103,9 @@ def nextbuy() -> dict:
             if not p:
                 continue
             item = data.decorate(p, user)
+            # Skip products excluded by user's dietary preferences
+            if item.get("diet_excluded"):
+                continue
             line = {
                 "product": item,
                 "qty": s["qty"],
@@ -155,6 +157,9 @@ def nextbuy() -> dict:
         "eta_min": st["eta_default_min"],
         "store": st["dark_store"],
     }
+
+
+# Backward-compat alias — any legacy call to engine.nowcast() still works
 
 
 # --------------------------------------------------------------------------
@@ -226,37 +231,17 @@ def recipe_scaled(rid: str, servings: int) -> dict | None:
             "ingredients": ings, "ingredient_count": len(ings), "total": total}
 
 
-def recipe_list(show_excluded: bool = False) -> list[dict]:
-    """Return the recipe list, filtered by the active user's dietary preferences.
-
-    Set show_excluded=True to return all recipes regardless of preferences
-    (with diet_excluded flag set so the frontend can still indicate them).
-    """
+def recipe_list() -> list[dict]:
+    """Return all recipes, with preferred ones ranked first."""
     user = data.active_user()
     prefs = user.get("dietary", {}).get("preferences", [])
 
-    # result = []
-    # for r in data.recipes():
-    #     excluded = _is_recipe_excluded(r, prefs)
-    #     if excluded and not show_excluded:
-    #         continue
-    #     result.append({
-    #         "id": r["id"],
-    #         "name": r["name"],
-    #         "cuisine": r["cuisine"],
-    #         "category": r.get("category", ""),
-    #         "image": r["image"],
-    #         "time_min": r["time_min"],
-    #         "dietary_tags": r["dietary_tags"],
-    #         "ingredient_count": r["ingredient_count"],
-    #         "diet_excluded": excluded,
-    #     })
-    # return result
+    recipes = []
 
-    result = []
     for r in data.recipes():
         excluded = _is_recipe_excluded(r, prefs)
-        result.append({
+
+        recipes.append({
             "id": r["id"],
             "name": r["name"],
             "cuisine": r["cuisine"],
@@ -267,7 +252,11 @@ def recipe_list(show_excluded: bool = False) -> list[dict]:
             "ingredient_count": r["ingredient_count"],
             "diet_excluded": excluded,
         })
-    return result
+
+    # Preferred recipes first
+    recipes.sort(key=lambda r: r["diet_excluded"])
+
+    return recipes
 
 
 # --------------------------------------------------------------------------

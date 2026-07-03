@@ -14,11 +14,6 @@ export function ProductCard({ product }: { product: Product }) {
       <div className="relative aspect-square rounded-xl bg-paper overflow-hidden grid place-items-center">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={product.image} alt={product.name} className="h-[82%] w-[82%] object-contain" loading="lazy" />
-        {product.allergen_conflict && (
-          <span className="absolute top-1.5 left-1.5 bg-amzn-red text-white text-[9px] font-bold px-1.5 py-0.5 rounded-md">
-            ⚠ {product.warnings?.[0]}
-          </span>
-        )}
       </div>
       <div className="flex items-center gap-1 mt-2">
         <span className="text-[10px] text-ink2 truncate">{product.brand}</span>

@@ -1,49 +1,43 @@
 {
-  "_comment": "Calendar signal. The Sat 7pm dinner party is the hero event. needs[] map to products with reasons so NextBuy can assemble + explain the party portion of the cart.",
+  "_comment": "Calendar signal. The demo hero event is a birthday party on hackathon day. needs[] map to real catalog products.",
   "events": [
     {
-      "id": "dinner-party",
-      "title": "Dinner party 🍝",
-      "start": "2026-06-13T19:00:00+05:30",
+      "id": "birthday-party",
+      "title": "Birthday Party 🎂",
+      "start": "2026-07-16T19:00:00+05:30",
       "when_label": "Today, 7:00 PM",
       "type": "social",
-      "guests": 6,
+      "guests": 10,
       "is_hero": true,
-      "summary": "6 guests · pasta night",
-      "linked_recipe": "spaghetti-alla-carbonara",
+      "summary": "10 guests · birthday celebration",
       "needs": [
-        { "product_id": "spaghetti",        "qty": 2, "reason": "Carbonara for 6" },
-        { "product_id": "bacon-200g",        "qty": 2, "reason": "Carbonara for 6" },
-        { "product_id": "parmesan-150g",     "qty": 1, "reason": "Carbonara + you're out" },
-        { "product_id": "red-wine",          "qty": 2, "reason": "6 guests" },
-        { "product_id": "white-wine",        "qty": 1, "reason": "6 guests" },
-        { "product_id": "mascarpone-250g",   "qty": 1, "reason": "Tiramisu dessert" },
-        { "product_id": "digestive-biscuits","qty": 1, "reason": "Tiramisu dessert" },
-        { "product_id": "mozzarella-200g",   "qty": 1, "reason": "Starter — garlic bread" }
+        { "product_id": "chocolate-cake",       "qty": 1, "reason": "Birthday cake" },
+        { "product_id": "vegan-chocolate-cake", "qty": 1, "reason": "Birthday cake (vegan)" },
+        { "product_id": "latex-balloons",       "qty": 1, "reason": "Party decorations" },
+        { "product_id": "birthday-candles",     "qty": 1, "reason": "Candles for the cake" },
+        { "product_id": "red-plastic-cups",     "qty": 3, "reason": "Disposable cups for 10 guests" },
+        { "product_id": "cola-750ml",           "qty": 5, "reason": "Soft drinks for 10" },
+        { "product_id": "chips-classic",        "qty": 5, "reason": "Party snacks" },
+        { "product_id": "cupcakes-6",           "qty": 2, "reason": "Cupcakes for guests" },
+        { "product_id": "vegan-cupcakes-6",     "qty": 2, "reason": "Vegan cupcakes for guests" },
+        { "product_id": "ice-cream",            "qty": 3, "reason": "Ice cream for everyone" },
+        { "product_id": "vegan-ice-cream",      "qty": 3, "reason": "Vegan ice cream" },
+        { "product_id": "gift-bag",             "qty": 1, "reason": "Gift wrapping" }
       ]
     },
     {
       "id": "standup",
       "title": "Team standup",
-      "start": "2026-06-15T09:30:00+05:30",
-      "when_label": "Mon, 9:30 AM",
+      "start": "2026-07-17T09:30:00+05:30",
+      "when_label": "Tomorrow, 9:30 AM",
       "type": "work",
       "is_hero": false
     },
     {
-      "id": "moms-bday",
-      "title": "Mom's birthday 🎂",
-      "start": "2026-06-19T00:00:00+05:30",
-      "when_label": "Fri, Jun 19",
-      "type": "social",
-      "is_hero": false,
-      "summary": "Order cake + flowers soon"
-    },
-    {
       "id": "gym",
       "title": "Gym — leg day",
-      "start": "2026-06-14T07:00:00+05:30",
-      "when_label": "Tomorrow, 7:00 AM",
+      "start": "2026-07-18T07:00:00+05:30",
+      "when_label": "Fri, 7:00 AM",
       "type": "personal",
       "is_hero": false
     }

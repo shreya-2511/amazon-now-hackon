@@ -55,8 +55,11 @@ GCAL_SCOPE = "https://www.googleapis.com/auth/calendar.readonly"
 
 # ---------------------------------------------------------------------------
 # In-memory session token store
+# Tokens are persisted to .gcal_tokens.json so they survive backend restarts.
 # In production, swap this with a proper session store / DB.
 # ---------------------------------------------------------------------------
+
+TOKEN_FILE = ROOT / "backend" / ".gcal_tokens.json"
 
 _token_store: dict[str, Any] = {
     "access_token": None,
@@ -64,6 +67,45 @@ _token_store: dict[str, Any] = {
     "expiry": None,       # datetime in UTC
     "connected": False,
 }
+
+
+def _save_tokens_to_disk() -> None:
+    """Persist tokens to disk so they survive backend restarts."""
+    try:
+        TOKEN_FILE.parent.mkdir(parents=True, exist_ok=True)
+        with open(TOKEN_FILE, "w", encoding="utf-8") as f:
+            json.dump({
+                "access_token":  _token_store["access_token"],
+                "refresh_token": _token_store["refresh_token"],
+                "expiry":        _token_store["expiry"].isoformat()
+                                 if _token_store["expiry"] else None,
+                "connected":     _token_store["connected"],
+            }, f)
+        logger.info("Google Calendar tokens saved to disk: %s", TOKEN_FILE)
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("Could not save tokens to disk: %s", exc)
+
+
+def _load_tokens_from_disk() -> None:
+    """Load persisted tokens on startup. Silently skips if file doesn't exist."""
+    try:
+        if not TOKEN_FILE.exists():
+            return
+        data = json.loads(TOKEN_FILE.read_text(encoding="utf-8"))
+        _token_store["access_token"]  = data.get("access_token")
+        _token_store["refresh_token"] = data.get("refresh_token")
+        _token_store["connected"]     = bool(data.get("refresh_token"))
+        raw_expiry = data.get("expiry")
+        if raw_expiry:
+            _token_store["expiry"] = datetime.fromisoformat(raw_expiry)
+        logger.info("Google Calendar tokens loaded from disk (connected=%s)",
+                    _token_store["connected"])
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("Could not load tokens from disk: %s", exc)
+
+
+# Load persisted tokens immediately at import time
+_load_tokens_from_disk()
 
 
 def is_connected() -> bool:
@@ -87,13 +129,20 @@ def store_tokens(access_token: str, refresh_token: str | None,
     )
     _token_store["connected"] = True
     logger.info("Google Calendar tokens stored, expires ~%s", _token_store["expiry"])
+    _save_tokens_to_disk()
 
 
 def clear_tokens() -> None:
-    """Disconnect — wipe token store."""
+    """Disconnect — wipe token store and remove persisted file."""
     _token_store.update(
         access_token=None, refresh_token=None, expiry=None, connected=False
     )
+    try:
+        if TOKEN_FILE.exists():
+            TOKEN_FILE.unlink()
+            logger.info("Google Calendar token file deleted: %s", TOKEN_FILE)
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("Could not delete token file: %s", exc)
     logger.info("Google Calendar tokens cleared")
 
 
@@ -144,6 +193,7 @@ def _refresh_access_token() -> str | None:
                 seconds=int(data.get("expires_in", 3600)) - 60
             )
             logger.info("Google Calendar access token refreshed successfully")
+            _save_tokens_to_disk()
             return new_token
         else:
             logger.error("Token refresh response missing access_token: %s", data)
@@ -480,7 +530,7 @@ def select_hero(events: list[dict]) -> dict | None:
 _PRODUCT_HINTS = """
 Available catalog categories: fresh_produce, dairy_eggs, bakery, staples_grocery,
 meat_seafood, beverages, snacks, frozen, medicine_health, personal_care,
-household_cleaning, baby_care.
+household_cleaning, baby_care, party_festive.
 
 Verified product IDs — use ONLY these exact strings:
 Pasta/Italian: spaghetti, penne, farfalle
@@ -489,13 +539,13 @@ Drinks (non-alcoholic): orange-juice-1l, cola-750ml, water-1l, amul-milk-500ml
 Drinks (alcoholic): red-wine, white-wine, beer-6
 Snacks: digestive-biscuits, chips-classic, namkeen, dark-chocolate, milk-chocolate, popcorn, cashews-200g, almonds-200g
 Bread/Bakery: white-bread, brown-bread, pav-buns, burger-buns, croissant
-Cakes/Desserts: chocolate-cake, vanilla-cake, cupcakes-6, brownie-box, ice-cream
+Cakes/Desserts: chocolate-cake, ice-cream
 Vegetables: tomato-500g, onion-1kg, potato-1kg, capsicum, garlic-200g, ginger-150g, spinach, mushroom-200g
 Fruits: banana-6, apple-4, lemon-4
 Meat: chicken-currycut-1kg, chicken-breast-500g, bacon-200g, farm-eggs-12
 Staples: basmati-rice-1kg, atta-5kg, sugar-1kg, salt-1kg, sunflower-oil-1l, olive-oil-500ml
 Condiments: barbeque-sauce, tomato-ketchup, mayonnaise, honey
-Party supplies: balloons-pack, birthday-candles, birthday-banner, party-streamers, party-plates, party-cups, party-poppers, return-gifts-bag
+Party supplies: latex-balloons, red-plastic-cups, chocolate-cake, soan-papdi-500g, gift-bag
 Household: tissue-box, garbage-bags
 """
 
@@ -595,6 +645,25 @@ def infer_needs_via_llm(event: dict) -> list[dict]:
 # For each event type: list of (product_id, base_qty, reason, scale_with_guests)
 # scale_with_guests=True → qty grows with guest count; False → always base_qty
 _KEYWORD_NEEDS_MAP = [
+    # ── Birthday party — FIRST so "birthday" beats "italian food" in description
+    (["birthday", "bday"],
+     [
+         ("chocolate-cake",      1, "Birthday cake",               False),
+         ("vegan-chocolate-cake",1, "Birthday cake (vegan)",        False),
+         ("birthday-candles",    1, "Candles for the cake",         False),
+         ("latex-balloons",      1, "Party decorations",            False),
+         ("birthday-banner",     1, "Happy Birthday banner",        False),
+         ("cupcakes-6",          1, "Cupcakes for guests",          True),
+         ("vegan-cupcakes-6",    1, "Vegan cupcakes for guests",    True),
+         ("ice-cream",           1, "Ice cream for everyone",       True),
+         ("vegan-ice-cream",     1, "Vegan ice cream",              True),
+         ("chips-classic",       2, "Party snacks",                 True),
+         ("cola-750ml",          2, "Soft drinks",                  True),
+         ("red-plastic-cups",    1, "Disposable cups",              False),
+         ("party-plates",        1, "Disposable plates",            False),
+         ("party-poppers",       1, "Celebration poppers",          False),
+     ]),
+
     # ── Italian dinner / pasta night ─────────────────────────────────────────
     (["dinner", "pasta", "carbonara", "italian", "spaghetti"],
      [
@@ -603,22 +672,6 @@ _KEYWORD_NEEDS_MAP = [
          ("amul-butter-100g", 1, "For cooking",               False),
          ("red-wine",         1, "Dinner drinks",             True),
          ("dark-chocolate",   1, "Dessert",                   False),
-     ]),
-
-    # ── Birthday party ────────────────────────────────────────────────────────
-    (["birthday", "bday"],
-     [
-         ("chocolate-cake",   1, "Birthday cake",             False),
-         ("birthday-candles", 1, "Candles for the cake",      False),
-         ("balloons-pack",    1, "Party decorations",         False),
-         ("birthday-banner",  1, "Happy Birthday banner",     False),
-         ("cupcakes-6",       1, "Cupcakes for guests",       True),
-         ("ice-cream",        1, "Ice cream for everyone",    True),
-         ("chips-classic",    2, "Party snacks",              True),
-         ("cola-750ml",       2, "Soft drinks",               True),
-         ("party-plates",     1, "Disposable plates",         False),
-         ("party-cups",       1, "Disposable cups",           False),
-         ("party-poppers",    1, "Celebration poppers",       False),
      ]),
 
     # ── Potluck / office party ───────────────────────────────────────────────
@@ -656,15 +709,15 @@ _KEYWORD_NEEDS_MAP = [
     # ── General party / gathering / celebration ───────────────────────────────
     (["party", "gathering", "celebration", "get-together"],
      [
-         ("balloons-pack",    1, "Party decorations",         False),
-         ("party-streamers",  1, "Streamers & confetti",      False),
+         ("latex-balloons",   1, "Party decorations",         False),
+         ("vegan-cake-slice", 1, "Celebration cake (vegan)",  False),
          ("chips-classic",    2, "Party snacks",              True),
          ("namkeen",          1, "Savoury mix",               True),
          ("cola-750ml",       2, "Soft drinks",               True),
          ("orange-juice-1l",  1, "Juice option",              True),
          ("dark-chocolate",   1, "Chocolate treats",          False),
+         ("red-plastic-cups", 1, "Disposable cups",           False),
          ("party-plates",     1, "Disposable plates",         False),
-         ("party-cups",       1, "Disposable cups",           False),
      ]),
 
     # ── Breakfast / brunch ───────────────────────────────────────────────────
@@ -758,7 +811,17 @@ def get_calendar_data(use_ai: bool = True) -> dict:
 
     if hero:
         if hero.get("needs_shopping", False):
-            hero["needs"] = infer_needs_via_llm(hero) if use_ai else _keyword_needs(hero)
+            # Try keyword matching first — it's faster, cheaper, and more accurate
+            # for well-known event types. Only fall back to LLM if keywords return nothing.
+            keyword_needs = _keyword_needs(hero)
+            if keyword_needs:
+                hero["needs"] = keyword_needs
+                logger.info("Calendar: used keyword_needs for '%s' (%d items)",
+                            hero.get("title"), len(keyword_needs))
+            elif use_ai:
+                hero["needs"] = infer_needs_via_llm(hero)
+            else:
+                hero["needs"] = []
         else:
             hero["needs"] = _keyword_needs(hero)
         events = [hero if e["id"] == hero["id"] else e for e in events]
@@ -775,9 +838,8 @@ def get_calendar_data(use_ai: bool = True) -> dict:
 def get_calendar_with_fallback() -> dict:
     """Return calendar events.
 
-    - Connected + live API succeeds → live data (needs via LLM → keyword fallback)
-    - Connected but live has no events or fails → empty
-    - Disconnected → empty
+    - Connected + live Google Calendar API  → live data
+    - Disconnected or API fails             → empty (no hardcoded events)
     """
     if is_connected():
         try:
@@ -786,7 +848,7 @@ def get_calendar_with_fallback() -> dict:
                         len(result.get("events", [])))
             return result
         except Exception as exc:  # noqa: BLE001
-            logger.warning("Google Calendar fetch failed: %s", exc)
+            logger.warning("Google Calendar live fetch failed: %s", exc)
 
     return {"events": [], "source": "none", "connected": False, "has_events_today": False}
 

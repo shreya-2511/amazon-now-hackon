@@ -7,11 +7,13 @@ import re
 
 
 from fastapi import FastAPI, HTTPException, UploadFile, File
+from fastapi.responses import JSONResponse, RedirectResponse, StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
+from fastapi import FastAPI, HTTPException, Query
 
-from . import azure, bedrock, data, engine, group
+
+from . import azure, bedrock, data, engine, group, gcal
 
 app = FastAPI(title="Amazon Now API", version="1.0")
 app.add_middleware(
@@ -271,6 +273,69 @@ def fridge():
 @app.get("/api/calendar")
 def calendar():
     return data.calendar()
+
+@app.get("/api/calendar/status")
+def calendar_status():
+    """Returns whether Google Calendar is currently connected."""
+    return {
+        "connected": gcal.is_connected(),
+        "has_credentials": gcal.has_credentials(),
+    }
+
+
+@app.get("/api/calendar/debug")
+def calendar_debug():
+    """Diagnostic endpoint — shows token state without exposing secrets."""
+    return gcal.debug_status()
+
+
+@app.get("/api/calendar/auth")
+def calendar_auth(state: str = Query(default="")):
+    """Redirect the user to Google's OAuth consent screen.
+    Requires GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET env vars."""
+    if not gcal.has_credentials():
+        raise HTTPException(
+            status_code=501,
+            detail="Google Calendar credentials not configured. "
+                   "Set GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET environment variables.",
+        )
+    auth_url = gcal.build_auth_url(state=state)
+    return RedirectResponse(url=auth_url)
+
+
+@app.get("/api/calendar/callback")
+def calendar_callback(code: str = Query(default=""), error: str = Query(default="")):
+    """Handle the OAuth redirect from Google. Exchanges the code for tokens,
+    then redirects back to the frontend."""
+    # Frontend origin for the post-auth redirect
+    frontend_origin = "http://localhost:3000"
+
+    if error:
+        return RedirectResponse(url=f"{frontend_origin}/?calendar_error={error}")
+
+    if not code:
+        return RedirectResponse(url=f"{frontend_origin}/?calendar_error=no_code")
+
+    success = gcal.exchange_code(code)
+    if success:
+        return RedirectResponse(url=f"{frontend_origin}/?calendar_connected=1")
+    else:
+        return RedirectResponse(url=f"{frontend_origin}/?calendar_error=exchange_failed")
+
+
+@app.post("/api/calendar/disconnect")
+def calendar_disconnect():
+    """Revoke Google Calendar access and clear stored tokens."""
+    gcal.clear_tokens()
+    return {"ok": True, "connected": False}
+
+
+@app.get("/api/calendar/refresh")
+def calendar_refresh():
+    """Force a fresh fetch from Google Calendar (bypasses any caching).
+    Returns the latest calendar data."""
+    return gcal.get_calendar_with_fallback()
+
 
 
 # ---------------------------------------------------------------------------

@@ -72,13 +72,7 @@ function SearchInner() {
 
       <main className="flex-1 overflow-y-auto no-scrollbar pb-28">
         {/* Diet filter bar — changed to indicator only */}
-        {hasDietFilter && (
-          <div className="flex items-center justify-between px-3 py-2 bg-paper border-b border-line">
-            <span className="text-[11.5px] font-semibold text-ink2">
-              Viewing all items (Diet: {dietLabel})
-            </span>
-          </div>
-        )}
+
 
         <div className="p-3">
           <p className="text-[12px] text-ink2 mb-2">

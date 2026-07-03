@@ -166,6 +166,22 @@ def now() -> datetime:
 
 # ---- dietary / allergen flagging ------------------------------------------
 
+def _is_vegan_alternative(p: dict) -> bool:
+    """Return True if this product is a vegan-only alternative item.
+    These products should ONLY be shown when the user has selected vegan preference.
+    A product is a vegan alternative if its id starts with 'vegan-' OR
+    its name starts with 'Vegan ' AND it is only tagged vegan (not vegetarian).
+    """
+    tags = set(p.get("dietary_tags", []))
+    pid  = p.get("id", "")
+    name = p.get("name", "")
+    # Must be tagged vegan but NOT vegetarian (pure vegan alternative products)
+    is_vegan_only = "vegan" in tags and "vegetarian" not in tags
+    # Must be identifiable as an alternative (id or name marks it as vegan)
+    is_alternative = pid.startswith("vegan-") or name.lower().startswith("vegan ")
+    return is_vegan_only and is_alternative
+
+
 def _is_diet_excluded(p: dict, prefs: list[str]) -> bool:
     """Return True if this product should be excluded for the given dietary preferences.
 
@@ -174,50 +190,79 @@ def _is_diet_excluded(p: dict, prefs: list[str]) -> bool:
     - vegetarian:  only products tagged 'vegetarian' or 'vegan' are shown
                    (eggetarian and non-veg are BOTH excluded)
     - eggetarian:  products tagged 'vegetarian', 'vegan', or 'eggetarian' are shown
-    - gluten-free: products tagged 'gluten-free' are shown; others excluded
+    - gluten-free: only products tagged 'gluten-free' are shown; others excluded
     - keto/halal:  products tagged with that preference are shown; others excluded
+
+    VEGAN ALTERNATIVES RULE:
+    Products marked as vegan alternatives (id starts with 'vegan-') are ONLY shown
+    when the user has explicitly selected vegan preference. For all other users
+    (no preference, vegetarian, eggetarian), the regular version is shown instead.
     """
-    if not prefs:
-        return False
     tags = set(p.get("dietary_tags", []))
-    cat = p.get("category", "")
+    cat  = p.get("category", "")
 
     # Food categories where dietary exclusions apply
-    food_cats = {"fresh_produce", "dairy_eggs", "bakery", "staples_grocery",
-                 "meat_seafood", "beverages", "snacks", "frozen"}
+    food_cats = {
+        "fresh_produce", "dairy_eggs", "bakery", "staples_grocery",
+        "meat_seafood", "beverages", "snacks", "frozen", "party_festive",
+    }
     is_food = cat in food_cats
 
+    # Vegan-alternative products are ONLY for vegan users
+    # Hide them for everyone else (no prefs, vegetarian, eggetarian, etc.)
+    if _is_vegan_alternative(p):
+        return "vegan" not in prefs
+
+    if not prefs:
+        return False
+
+    if not is_food:
+        # Non-food categories (medicines, household, personal care, etc.)
+        # are never excluded based on dietary preference
+        return False
+
     if "vegan" in prefs:
-        # Only vegan products allowed
-        return is_food and "vegan" not in tags
+        # Only explicitly vegan-tagged products allowed
+        return "vegan" not in tags
 
     if "vegetarian" in prefs:
-        # Only vegetarian or vegan products allowed — eggetarian is NOT allowed
+        # Allowed: tagged as vegetarian OR vegan
         if cat == "meat_seafood":
             return True
-        if is_food and tags and "vegetarian" not in tags and "vegan" not in tags:
-            return True
-        # Products with empty tags in food categories are non-veg by default
-        if is_food and not tags and cat in ("snacks", "frozen", "bakery"):
+        # If tagged — must have vegetarian or vegan tag
+        if tags:
+            return "vegetarian" not in tags and "vegan" not in tags
+        # Untagged food product — exclude from these categories (likely non-veg)
+        if cat in ("snacks", "frozen", "bakery", "meat_seafood"):
             return True
         return False
 
     if "eggetarian" in prefs:
-        # Vegetarian, vegan, and eggetarian allowed — only pure non-veg excluded
+        # Allowed: vegetarian, vegan, eggetarian tags — AND eggs/dairy by category
         if cat == "meat_seafood":
             return True
-        if is_food and tags and not (tags & {"vegetarian", "vegan", "eggetarian"}):
+        if cat == "dairy_eggs":
+            return False
+        if tags:
+            return not (tags & {"vegetarian", "vegan", "eggetarian"})
+        if cat in ("snacks", "frozen", "bakery"):
             return True
         return False
 
     if "gluten-free" in prefs:
-        return is_food and tags and "gluten-free" not in tags
+        if not tags:
+            return False
+        return "gluten-free" not in tags
 
     if "keto" in prefs:
-        return is_food and tags and "keto" not in tags
+        if not tags:
+            return False
+        return "keto" not in tags
 
     if "halal" in prefs:
-        return cat == "meat_seafood" and "halal" not in tags
+        if cat == "meat_seafood":
+            return "halal" not in tags
+        return False
 
     return False
 
@@ -240,10 +285,15 @@ def decorate(p: dict, user: dict | None = None) -> dict:
 
     # Dietary preference mismatch warnings
     tags = set(p.get("dietary_tags", []))
-    if "vegetarian" in prefs and p.get("category") == "meat_seafood":
-        warnings.append("Not vegetarian")
+    if "vegetarian" in prefs:
+        if p.get("category") == "meat_seafood":
+            warnings.append("Not vegetarian")
+        elif tags and "vegetarian" not in tags and "vegan" not in tags:
+            warnings.append("Not vegetarian")
     if "vegan" in prefs and "vegan" not in tags:
         warnings.append("Not vegan")
+    if "eggetarian" in prefs and p.get("category") == "meat_seafood":
+        warnings.append("Not eggetarian")
 
     out["warnings"] = warnings
     out["allergen_conflict"] = bool(hit)
@@ -272,7 +322,8 @@ def search(q: str = "", category: str = "", limit: int = 40,
         rows = [p for p in rows if p["category"] == cat]
 
     if not q:
-        return rows[:limit]
+        decorated = [decorate(p, user) for p in rows[:limit * 2]]
+        return decorated[:limit]
 
     q_words = set(re.findall(r"[a-z]+", q))
 
@@ -330,6 +381,11 @@ def search(q: str = "", category: str = "", limit: int = 40,
     if scored:
         scored.sort(key=lambda x: (-x[0], -x[1]["rating"]))
         rows = [p for _, p in scored]
+    else:
+        rows = sorted(rows, key=lambda p: -p["rating"])
+
+    # if not show_excluded and prefs:
+    #     decorated = [p for p in decorated if not p.get("diet_excluded")]
 
     decorated = [decorate(p, user) for p in rows[:limit * 2]]
     return decorated[:limit]
@@ -406,7 +462,7 @@ _ALLERGEN_KEYWORDS = {
     "nuts": ["cashew", "cashews", "almond", "almonds", "peanut", "peanuts",
              "walnut", "walnuts", "pista", "pistachio", "pistachios",
              "hazelnut", "pecan", "pine nut", "pine-nut", "macadamia", "praline",
-             "nuts", "cashewnut", "cashewnuts", "almondmilk"],
+             "nuts"],
     "dairy": ["milk", "cheese", "butter", "paneer", "ghee", "cream", "yogurt", "curd"],
     "gluten": ["wheat", "atta", "maida", "bread", "pasta", "noodle", "barley"],
     "soy": ["soy", "tofu", "edamame"],

@@ -47,12 +47,6 @@ export default function RecipesPage() {
 
       <main className="flex-1 overflow-y-auto no-scrollbar pb-28">
         {/* Diet filter bar */}
-        {/* Removed dietary filtering here, always show all recipes */}
-        <div className="flex items-center justify-between px-3 py-2 bg-paper border-b border-line">
-            <span className="text-[11.5px] font-semibold text-ink2">
-              Showing all dishes
-            </span>
-        </div>
 
         <div className="p-3">
           <div className="grid grid-cols-2 gap-2.5">
