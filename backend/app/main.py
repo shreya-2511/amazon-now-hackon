@@ -599,7 +599,7 @@ def _map_single_ingredient(ing: dict) -> list[dict]:
             return lines
 
     # 4: AI decomposition
-    parts = _ai_decompose(name)
+    parts = _ai_decompose_batch(name)
     if parts:
         lines = [line(p.title(), _best_product(p)) for p in parts]
         if any(l["available"] for l in lines):

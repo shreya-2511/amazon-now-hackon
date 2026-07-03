@@ -19,7 +19,7 @@
         "note": "Scaled for 6 · ready to add"
       },
       {
-        "match": ["vegan", "guest is veg", "plant based", "plant-based"],
+        "match": ["vegan", "guest is veg", "guest is vegetarian", "vegetarian", "plant based", "plant-based"],
         "reply": "One vegan guest? Ratatouille works for the whole table — naturally vegan, nut-free, and pairs with your pasta night. I filtered out anything with dairy or egg and pulled the fresh veg you'll need.",
         "recipe_id": "ratatouille",
         "servings": 6,
@@ -41,14 +41,14 @@
       },
       {
         "match": ["birthday", "party for", "party this", "party on", "house party", "get together", "gathering"],
-        "reply": "Birthday party bundle coming up! I added a cake, candles, balloons, chips, dips, soft drinks, and chocolates — everything for a great celebration. Tap to add them all.",
-        "product_ids": ["spaghetti", "bacon-200g", "parmesan-150g", "farm-eggs-6", "black-pepper-100g", "olive-oil-500ml"],
+        "reply": "Birthday party bundle coming up! I added a cake, balloons, chips, soft drinks, and chocolates — everything for a great celebration. Tap to add them all.",
+        "product_ids": ["chocolate-cake", "latex-balloons", "chips-classic", "cola-750ml", "dark-chocolate", "ferrero-rocher-4pc", "gift-bag"],
         "note": "Party pack · ready to add"
       },
       {
         "match": ["movie night", "movie", "snacks", "binge", "netflix", "watch"],
-        "reply": "Movie night sorted! I got popcorn, nachos, dip, Coke, chocolates, and ice cream — the perfect couch companion bundle.",
-        "product_ids": ["spaghetti", "bacon-200g", "parmesan-150g", "farm-eggs-6"],
+        "reply": "Movie night sorted! I got popcorn, chips, Coke, chocolates, and ice cream — the perfect couch companion bundle.",
+        "product_ids": ["popcorn", "chips-classic", "cola-750ml", "dark-chocolate", "milk-chocolate", "ice-cream"],
         "note": "Snack pack · ready to add"
       },
       {
