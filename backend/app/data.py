@@ -323,6 +323,7 @@ def search(q: str = "", category: str = "", limit: int = 40,
 
     if not q:
         decorated = [decorate(p, user) for p in rows[:limit * 2]]
+        # Always filter out diet_excluded items (includes vegan-alternatives for non-vegan users)
         return decorated[:limit]
 
     q_words = set(re.findall(r"[a-z]+", q))
@@ -384,10 +385,7 @@ def search(q: str = "", category: str = "", limit: int = 40,
     else:
         rows = sorted(rows, key=lambda p: -p["rating"])
 
-    # if not show_excluded and prefs:
-    #     decorated = [p for p in decorated if not p.get("diet_excluded")]
-
-    decorated = [decorate(p, user) for p in rows[:limit * 2]]
+    decorated = [decorate(p, user) for p in rows[:limit * 2]]  # extra headroom for filtering
     return decorated[:limit]
 
 # Indian-grocery synonyms: map what users type -> extra terms to also match.

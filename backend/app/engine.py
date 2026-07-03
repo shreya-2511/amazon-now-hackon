@@ -5,6 +5,7 @@ import json
 import re
 
 from . import bedrock, gemini, azure, data, gcal
+from fastapi.encoders import jsonable_encoder
 
 
 # --------------------------------------------------------------------------
@@ -159,7 +160,7 @@ def nextbuy() -> dict:
     }
 
 
-# Backward-compat alias — any legacy call to engine.nowcast() still works
+# Backward-compat alias — any legacy call to engine.nextbuy() still works
 
 
 # --------------------------------------------------------------------------
@@ -584,7 +585,7 @@ def _agent_handlers(state: dict, block: list[str]):
                 [r["name"] for r in best]
             )
 
-        return {"results": results}
+        return jsonable_encoder({"results": results})
 
     def h_recipe(inp: dict) -> dict:
         rid = _find_recipe_id(inp.get("query", ""))

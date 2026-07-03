@@ -6,12 +6,11 @@ import json
 import re
 
 
-from fastapi import FastAPI, HTTPException, UploadFile, File
-from fastapi.responses import JSONResponse, RedirectResponse, StreamingResponse
+from fastapi import FastAPI, HTTPException, UploadFile, File, Query
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.encoders import jsonable_encoder
+from fastapi.responses import StreamingResponse, RedirectResponse, JSONResponse
 from pydantic import BaseModel
-from fastapi import FastAPI, HTTPException, Query
-
 
 from . import azure, bedrock, data, engine, group, gcal
 
@@ -133,7 +132,8 @@ async def speaknow_stream(q: str):
             yield f"event: token\ndata: {json.dumps({'t': chunk})}\n\n"
             await asyncio.sleep(0.025)   # slightly faster word drip
         
-        yield f"event: result\ndata: {json.dumps(result)}\n\n"
+        json_compatible_result = jsonable_encoder(result)
+        yield f"event: result\ndata: {json.dumps(json_compatible_result)}\n\n"
         yield "event: done\ndata: {}\n\n"
 
     return StreamingResponse(gen(), media_type="text/event-stream",
@@ -273,7 +273,6 @@ def fridge():
 @app.get("/api/calendar")
 def calendar():
     return data.calendar()
-
 @app.get("/api/calendar/status")
 def calendar_status():
     """Returns whether Google Calendar is currently connected."""
@@ -335,7 +334,6 @@ def calendar_refresh():
     """Force a fresh fetch from Google Calendar (bypasses any caching).
     Returns the latest calendar data."""
     return gcal.get_calendar_with_fallback()
-
 
 
 # ---------------------------------------------------------------------------
@@ -664,7 +662,7 @@ def _map_single_ingredient(ing: dict) -> list[dict]:
             return lines
 
     # 4: AI decomposition
-    parts = _ai_decompose_batch(name)
+    parts = _ai_decompose_batch([name])
     if parts:
         lines = [line(p.title(), _best_product(p)) for p in parts]
         if any(l["available"] for l in lines):

@@ -80,88 +80,66 @@ export default function CalendarConnect({
         )}
 
         {/* ---------------- Compact Profile UI ---------------- */}
+        {/* ---------------- Compact Profile UI ---------------- */}
         {compact && !errorMsg && (
           <>
-            {/* Header */}
-            <div className="flex items-center justify-between">
-              <p className="text-[12px] font-semibold text-amzn-dark">
-                ✨ What you'll get
-              </p>
+            {state === "connected" ? (
+              <>
 
-              {state === "connected" ? (
-                <div className="flex items-center gap-2 rounded-full bg-emerald-100 px-3 py-1">
-                  <CheckCircle2
-                    size={14}
-                    className="text-emerald-600"
-                  />
+                  <div className="grid grid-cols-2 gap-6">
+                    <button
+                      onClick={handleRefresh}
+                      disabled={isLoading}
+                      className="h-9 rounded-2xl border-2 border-gray-300 bg-white text-[12px] font-semibold text-gray-900 transition hover:bg-gray-50 disabled:opacity-50"
+                    >
+                      {isLoading ? (
+                        <span className="flex items-center justify-center gap-2">
+                          <Loader2 size={16} className="animate-spin" />
+                          Refreshing...
+                        </span>
+                      ) : (
+                        "Refresh"
+                      )}
+                    </button>
 
-                  <span className="text-[11px] font-semibold text-emerald-700">
-                    Connected
-                  </span>
+                    <button
+                      onClick={disconnect}
+                      disabled={isLoading}
+                      className="h-9 rounded-2xl border-2 border-red-500 bg-white text-[12px] font-semibold text-red-600 transition hover:bg-red-50 disabled:opacity-50"
+                    >
+                      Disconnect
+                    </button>
+                  </div>
+              </>
+            ) : (
+              <>
+                <div className="flex items-center justify-between">
+                  <p className="text-[12px] font-semibold text-amzn-dark">
+                    ✨ What you'll get
+                  </p>
+
+                  <button
+                    onClick={connect}
+                    disabled={isLoading || state === "checking"}
+                    className="rounded-full bg-amzn-yellow2 px-5 py-2 text-[12px] font-semibold text-amzn-dark transition hover:brightness-95 disabled:opacity-50"
+                  >
+                    {isLoading || state === "checking" ? (
+                      <span className="flex items-center gap-2">
+                        <Loader2 size={13} className="animate-spin" />
+                        Connecting...
+                      </span>
+                    ) : (
+                      "Connect"
+                    )}
+                  </button>
                 </div>
-              ) : (
-                <button
-                  onClick={connect}
-                  disabled={isLoading || state === "checking"}
-                  className="rounded-full bg-amzn-yellow2 px-4 py-2 text-[12px] font-semibold text-amzn-dark transition hover:brightness-95 disabled:opacity-50"
-                >
-                  {isLoading || state === "checking" ? (
-                    <span className="flex items-center gap-2">
-                      <Loader2
-                        size={13}
-                        className="animate-spin"
-                      />
-                      Connecting...
-                    </span>
-                  ) : (
-                    "Connect"
-                  )}
-                </button>
-              )}
-            </div>
 
-            {/* Benefits */}
-            <ul className="mt-3 space-y-2 text-[11px] text-ink2">
-              <li>• Dinner party grocery suggestions</li>
-              <li>• Guest arrival essentials</li>
-              <li>• Automatic NextBuy recommendations</li>
-            </ul>
-
-            {/* Connected actions */}
-            {state === "connected" && (
-              <div className="mt-4 flex gap-2">
-                <button
-                  onClick={handleRefresh}
-                  disabled={isLoading}
-                  className="flex-1 rounded-xl border border-line py-2 text-[12px] font-semibold transition hover:bg-gray-50 disabled:opacity-50"
-                >
-                  {isLoading ? (
-                    <span className="flex items-center justify-center gap-2">
-                      <Loader2
-                        size={13}
-                        className="animate-spin"
-                      />
-                      Refreshing
-                    </span>
-                  ) : (
-                    <span className="flex items-center justify-center gap-2">
-                      <RefreshCw size={13} />
-                      Refresh
-                    </span>
-                  )}
-                </button>
-
-                <button
-                  onClick={disconnect}
-                  disabled={isLoading}
-                  className="flex-1 rounded-xl bg-red-50 py-2 text-[12px] font-semibold text-red-600 transition hover:bg-red-100 disabled:opacity-50"
-                >
-                  <span className="flex items-center justify-center gap-2">
-                    <Unlink size={13} />
-                    Disconnect
-                  </span>
-                </button>
-              </div>
+                <ul className="mt-3 space-y-2 text-[11px] text-ink2">
+                  <li>• Dinner party grocery suggestions</li>
+                  <li>• Guest arrival essentials</li>
+                  <li>• Automatic NextBuy recommendations</li>
+                </ul>
+              </>
             )}
           </>
         )}
