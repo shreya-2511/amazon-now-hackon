@@ -1731,7 +1731,7 @@
       "price": 230,
       "size": "500 g",
       "category": "meat_seafood",
-      "image": "/products/chicken-breast-500g.png",
+      "image": "/products/eco-breast-fillets.png",
       "match_key": "chicken breast",
       "dietary_tags": [
         "gluten-free"
@@ -1748,7 +1748,7 @@
       "price": 285,
       "size": "1 kg",
       "category": "meat_seafood",
-      "image": "/products/chicken-currycut-1kg.png",
+      "image": "/products/eco-Chicken Curry Cut.png",
       "match_key": "chicken",
       "dietary_tags": [
         "gluten-free"
@@ -2102,6 +2102,14 @@
       "category": "medicine_health",
       "image": "/products/thermometer.png",
       "match_key": "",
+      "id": "tea-500g",
+      "name": "Premium Tea",
+      "brand": "Tata Tea Gold",
+      "price": 290,
+      "size": "500 g",
+      "category": "beverages",
+      "image": "/products/eco-tea.png",
+      "match_key": "tea",
       "dietary_tags": [
         "vegan",
         "gluten-free"
@@ -2684,7 +2692,7 @@
       "price": 30,
       "size": "90 g",
       "category": "snacks",
-      "image": "/products/chips-classic.png",
+      "image": "/products/potato-chips.png",
       "match_key": "potatoes",
       "dietary_tags": [
         "vegetarian",
@@ -3786,6 +3794,21 @@
       "description": "Fresh paprika."
     },
     {
+      "id": "tomato-pur-e",
+      "name": "Tomato Purée",
+      "brand": "Fresho",
+      "price": 135,
+      "size": "1 unit",
+      "category": "fresh_produce",
+      "image": "/products/tomato-pur-e.png",
+      "match_key": "tomato purée",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 221,
+      "description": "Fresh tomato purée."
+    },
+    {
       "id": "mustard-seeds",
       "name": "Mustard Seeds",
       "brand": "Fresho",
@@ -3814,6 +3837,51 @@
       "rating": 4.1,
       "rating_count": 746,
       "description": "Fresh rice noodles."
+    },
+    {
+      "id": "lime",
+      "name": "Lime",
+      "brand": "Fresho",
+      "price": 25,
+      "size": "1 unit",
+      "category": "fresh_produce",
+      "image": "/products/lime.png",
+      "match_key": "lime",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.1,
+      "rating_count": 1495,
+      "description": "Fresh lime."
+    },
+    {
+      "id": "cayenne-pepper",
+      "name": "Cayenne Pepper",
+      "brand": "Fresho",
+      "price": 50,
+      "size": "1 unit",
+      "category": "fresh_produce",
+      "image": "/products/cayenne-pepper.png",
+      "match_key": "cayenne pepper",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.6,
+      "rating_count": 1932,
+      "description": "Fresh cayenne pepper."
+    },
+    {
+      "id": "fish-sauce",
+      "name": "Fish Sauce",
+      "brand": "Fresho",
+      "price": 175,
+      "size": "1 unit",
+      "category": "meat_seafood",
+      "image": "/products/eco-fish-sauce.png",
+      "match_key": "fish sauce",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.4,
+      "rating_count": 1493,
+      "description": "Fresh fish sauce."
     },
     {
       "id": "bean-sprouts",
@@ -4432,18 +4500,18 @@
     },
     {
       "id": "gruy-re",
-      "name": "Gruy\u00e8re",
+      "name": "Gruyère",
       "brand": "Fresho",
       "price": 105,
       "size": "1 unit",
       "category": "staples_grocery",
       "image": "/products/gruy-re.png",
-      "match_key": "gruy\u00e8re",
+      "match_key": "gruyère",
       "dietary_tags": [],
       "allergen_tags": [],
       "rating": 4.8,
       "rating_count": 1623,
-      "description": "Fresh gruy\u00e8re."
+      "description": "Fresh gruyère."
     },
     {
       "id": "feta",
@@ -6096,6 +6164,21 @@
       "description": "Fresh hotsauce."
     },
     {
+      "id": "italian-fennel-sausages",
+      "name": "Italian Fennel Sausages",
+      "brand": "Fresho",
+      "price": 185,
+      "size": "1 unit",
+      "category": "meat_seafood",
+      "image": "/products/eco-Italian Fennel Sausages.png",
+      "match_key": "italian fennel sausages",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.6,
+      "rating_count": 2043,
+      "description": "Fresh italian fennel sausages."
+    },
+    {
       "id": "italian-seasoning",
       "name": "Italian Seasoning",
       "brand": "Fresho",
@@ -7334,6 +7417,2253 @@
       "rating": 4.4,
       "rating_count": 2900,
       "description": "Aromatic dried rosemary for cooking."
+    }
+  ]
+}
+    },
+    {
+      "id": "sunscreen-spf50",
+      "name": "Sunscreen SPF 50",
+      "brand": "Lotus",
+      "price": 250,
+      "size": "100 ml",
+      "category": "personal_care",
+      "image": "/products/sunscreen-spf50.png",
+      "match_key": "sunscreen spf50",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 3800,
+      "description": "Broad-spectrum sunscreen with SPF 50."
+    },
+    {
+      "id": "turkey-mince",
+      "name": "Turkey Mince",
+      "brand": "Licious",
+      "price": 260,
+      "size": "500 g",
+      "category": "meat_seafood",
+      "image": "/products/turkey-mince.png",
+      "match_key": "turkey mince",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.3,
+      "rating_count": 850,
+      "description": "Lean turkey mince for healthy cooking."
+    },
+    {
+      "id": "vanilla-cake",
+      "name": "Vanilla Cake Slice",
+      "brand": "Bombay Baking",
+      "price": 100,
+      "size": "1 slice",
+      "category": "bakery",
+      "image": "/products/vanilla-cake.png",
+      "match_key": "vanilla cake",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [
+        "gluten",
+        "dairy"
+      ],
+      "rating": 4.4,
+      "rating_count": 1600,
+      "description": "Light and fluffy vanilla sponge cake."
+    },
+    {
+      "id": "walnuts",
+      "name": "Walnuts",
+      "brand": "Fresho",
+      "price": 320,
+      "size": "200 g",
+      "category": "snacks",
+      "image": "/products/walnuts.png",
+      "match_key": "walnuts",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [
+        "nuts"
+      ],
+      "rating": 4.6,
+      "rating_count": 2800,
+      "description": "Premium walnut halves."
+    },
+    {
+      "id": "wet-wipes",
+      "name": "Wet Wipes (Travel Pack)",
+      "brand": "Dettol",
+      "price": 85,
+      "size": "50 pcs",
+      "category": "baby_care",
+      "image": "/products/wet-wipes.png",
+      "match_key": "wet wipes",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.4,
+      "rating_count": 3400,
+      "description": "Antibacterial wet wipes for on-the-go freshness."
+    },
+    {
+      "id": "economy-amul-milk-500ml",
+      "name": "Amul Taaza Toned Milk",
+      "brand": "Freshday",
+      "price": 20,
+      "size": "500 ml",
+      "category": "dairy_eggs",
+      "image": "/products/eco-toned-milk.png",
+      "match_key": "milk",
+      "dietary_tags": [
+        "vegetarian",
+        "gluten-free"
+      ],
+      "allergen_tags": [
+        "dairy"
+      ],
+      "rating": 4.2,
+      "rating_count": 585.0,
+      "description": "Economy variant. Homogenised toned milk, 3% fat.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-amul-gold-1l",
+      "name": "Amul Gold Full Cream Milk",
+      "brand": "Freshday",
+      "price": 50,
+      "size": "1 L",
+      "category": "dairy_eggs",
+      "image": "/products/eco-amul-fullcream-milk.png",
+      "match_key": "milk",
+      "dietary_tags": [
+        "vegetarian",
+        "gluten-free"
+      ],
+      "allergen_tags": [
+        "dairy"
+      ],
+      "rating": 4.3,
+      "rating_count": 1122.0,
+      "description": "Economy variant. Rich full-cream milk, 6% fat.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-farm-eggs-6",
+      "name": "Farm Fresh Brown Eggs",
+      "brand": "Freshday",
+      "price": 55,
+      "size": "6 pcs",
+      "category": "dairy_eggs",
+      "image": "/products/eco-brown-eggs.png",
+      "match_key": "eggs",
+      "dietary_tags": [
+        "gluten-free"
+      ],
+      "allergen_tags": [
+        "eggs"
+      ],
+      "rating": 4.1,
+      "rating_count": 1593.0,
+      "description": "Economy variant. Cage-free brown eggs, protein-rich.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-farm-eggs-12",
+      "name": "Farm Fresh Eggs",
+      "brand": "Freshday",
+      "price": 65,
+      "size": "12 pcs",
+      "category": "dairy_eggs",
+      "image": "/products/farm-eggs-12.png",
+      "match_key": "eggs",
+      "dietary_tags": [
+        "gluten-free"
+      ],
+      "allergen_tags": [
+        "eggs"
+      ],
+      "rating": 4.1,
+      "rating_count": 612.0,
+      "description": "Economy variant. A dozen farm-fresh white eggs.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-amul-butter-100g",
+      "name": "Amul Butter",
+      "brand": "Freshday",
+      "price": 40,
+      "size": "100 g",
+      "category": "dairy_eggs",
+      "image": "/products/eco-amul-butter.png",
+      "match_key": "butter",
+      "dietary_tags": [
+        "vegetarian",
+        "gluten-free"
+      ],
+      "allergen_tags": [
+        "dairy"
+      ],
+      "rating": 4.4,
+      "rating_count": 449.0,
+      "description": "Economy variant. Utterly butterly delicious salted butter.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-amul-paneer-200g",
+      "name": "Amul Malai Paneer",
+      "brand": "Freshday",
+      "price": 65,
+      "size": "200 g",
+      "category": "dairy_eggs",
+      "image": "/products/eco-paneer.png",
+      "match_key": "paneer",
+      "dietary_tags": [
+        "vegetarian",
+        "gluten-free"
+      ],
+      "allergen_tags": [
+        "dairy"
+      ],
+      "rating": 4.2,
+      "rating_count": 1073.0,
+      "description": "Economy variant. Soft fresh cottage cheese.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-nestle-curd-400g",
+      "name": "Dahi / Curd",
+      "brand": "Freshday",
+      "price": 30,
+      "size": "400 g",
+      "category": "dairy_eggs",
+      "image": "/products/eco-curd.png",
+      "match_key": "yogurt",
+      "dietary_tags": [
+        "vegetarian",
+        "gluten-free"
+      ],
+      "allergen_tags": [
+        "dairy"
+      ],
+      "rating": 4.0,
+      "rating_count": 705.0,
+      "description": "Economy variant. Thick set fresh curd.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-greek-yogurt-100g",
+      "name": "Greek Yogurt",
+      "brand": "Freshday",
+      "price": 40,
+      "size": "90 g",
+      "category": "dairy_eggs",
+      "image": "/products/eco-greek-yogurt.png",
+      "match_key": "greek yogurt",
+      "dietary_tags": [
+        "vegetarian",
+        "gluten-free"
+      ],
+      "allergen_tags": [
+        "dairy"
+      ],
+      "rating": 4.1,
+      "rating_count": 1057.0,
+      "description": "Economy variant. High-protein creamy Greek yogurt.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-amul-cheese-slices",
+      "name": "Cheese Slices",
+      "brand": "Freshday",
+      "price": 85,
+      "size": "100 g",
+      "category": "dairy_eggs",
+      "image": "/products/eco-cheese-slice.png",
+      "match_key": "cheese",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [
+        "dairy"
+      ],
+      "rating": 4.1,
+      "rating_count": 1865.0,
+      "description": "Economy variant. Processed cheese slices, 10 pcs.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-mozzarella-200g",
+      "name": "Mozzarella Cheese",
+      "brand": "Freshday",
+      "price": 130,
+      "size": "200 g",
+      "category": "dairy_eggs",
+      "image": "/products/eco-Mozzarella Cheese.png",
+      "match_key": "mozzarella",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [
+        "dairy"
+      ],
+      "rating": 4.2,
+      "rating_count": 1658.0,
+      "description": "Economy variant. Stretchy pizza-style mozzarella.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-parmesan-150g",
+      "name": "Parmesan Cheese",
+      "brand": "Freshday",
+      "price": 210,
+      "size": "150 g",
+      "category": "dairy_eggs",
+      "image": "/products/eco-Parmesan Cheese.png",
+      "match_key": "parmesan",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [
+        "dairy"
+      ],
+      "rating": 4.3,
+      "rating_count": 1295.0,
+      "description": "Economy variant. Aged hard cheese, grated.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-mascarpone-250g",
+      "name": "Mascarpone Cheese",
+      "brand": "Freshday",
+      "price": 250,
+      "size": "250 g",
+      "category": "dairy_eggs",
+      "image": "/products/eco-Mascarpone Cheese.png",
+      "match_key": "mascarpone",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [
+        "dairy"
+      ],
+      "rating": 4.2,
+      "rating_count": 234.0,
+      "description": "Economy variant. Italian soft cheese for desserts.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-fresh-cream-200ml",
+      "name": "Fresh Cream",
+      "brand": "Freshday",
+      "price": 50,
+      "size": "200 ml",
+      "category": "dairy_eggs",
+      "image": "/products/eco-fresh-cream.png",
+      "match_key": "double cream",
+      "dietary_tags": [
+        "vegetarian",
+        "gluten-free"
+      ],
+      "allergen_tags": [
+        "dairy"
+      ],
+      "rating": 4.1,
+      "rating_count": 605.0,
+      "description": "Economy variant. 25% fat fresh dairy cream.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-amul-ghee-500ml",
+      "name": "Pure Ghee",
+      "brand": "Freshday",
+      "price": 210,
+      "size": "500 ml",
+      "category": "dairy_eggs",
+      "image": "/products/eco-Pure Ghee.png",
+      "match_key": "ghee",
+      "dietary_tags": [
+        "vegetarian",
+        "gluten-free"
+      ],
+      "allergen_tags": [
+        "dairy"
+      ],
+      "rating": 4.4,
+      "rating_count": 1944.0,
+      "description": "Economy variant. Clarified butter, rich aroma.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-onion-1kg",
+      "name": "Onion",
+      "brand": "FarmBasket",
+      "price": 30,
+      "size": "1 kg",
+      "category": "fresh_produce",
+      "image": "/products/eco-onion.png",
+      "match_key": "onion",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 3.8,
+      "rating_count": 1056.0,
+      "description": "Economy variant. Fresh red onions.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-tomato-500g",
+      "name": "Tomato",
+      "brand": "FarmBasket",
+      "price": 20,
+      "size": "500 g",
+      "category": "fresh_produce",
+      "image": "/products/eco-tomato.png",
+      "match_key": "tomatoes",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 3.7,
+      "rating_count": 1693.0,
+      "description": "Economy variant. Ripe red tomatoes.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-potato-1kg",
+      "name": "Potato",
+      "brand": "FarmBasket",
+      "price": 25,
+      "size": "1 kg",
+      "category": "fresh_produce",
+      "image": "/products/potato-1kg.png",
+      "match_key": "potatoes",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 3.8,
+      "rating_count": 362.0,
+      "description": "Economy variant. Everyday cooking potatoes.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-garlic-200g",
+      "name": "Garlic",
+      "brand": "FarmBasket",
+      "price": 25,
+      "size": "200 g",
+      "category": "fresh_produce",
+      "image": "/products/garlic-200g.png",
+      "match_key": "garlic",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 3.9,
+      "rating_count": 587.0,
+      "description": "Economy variant. Fresh garlic bulbs.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-ginger-150g",
+      "name": "Ginger",
+      "brand": "FarmBasket",
+      "price": 20,
+      "size": "150 g",
+      "category": "fresh_produce",
+      "image": "/products/economy-ginger.png",
+      "match_key": "ginger",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 3.9,
+      "rating_count": 974.0,
+      "description": "Economy variant. Fresh ginger root.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-spinach",
+      "name": "Palak / Spinach",
+      "brand": "FarmBasket",
+      "price": 15,
+      "size": "250 g",
+      "category": "fresh_produce",
+      "image": "/products/spinach.png",
+      "match_key": "spinach",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 3.8,
+      "rating_count": 633.0,
+      "description": "Economy variant. Tender green spinach.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-capsicum",
+      "name": "Capsicum (Green)",
+      "brand": "FarmBasket",
+      "price": 20,
+      "size": "250 g",
+      "category": "fresh_produce",
+      "image": "/products/economy-capsicum.png",
+      "match_key": "red pepper",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 3.7,
+      "rating_count": 1136.0,
+      "description": "Economy variant. Crunchy green bell peppers.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-mushroom-200g",
+      "name": "Button Mushrooms",
+      "brand": "FarmBasket",
+      "price": 35,
+      "size": "200 g",
+      "category": "fresh_produce",
+      "image": "/products/economy-mushroom.png",
+      "match_key": "mushrooms",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.0,
+      "rating_count": 1779.0,
+      "description": "Economy variant. Fresh white button mushrooms.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-lemon-4",
+      "name": "Lemon",
+      "brand": "FarmBasket",
+      "price": 20,
+      "size": "4 pcs",
+      "category": "fresh_produce",
+      "image": "/products/eco-lemon.png",
+      "match_key": "lemon",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 3.8,
+      "rating_count": 313.0,
+      "description": "Economy variant. Juicy lemons.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-banana-6",
+      "name": "Banana (Robusta)",
+      "brand": "FarmBasket",
+      "price": 25,
+      "size": "6 pcs",
+      "category": "fresh_produce",
+      "image": "/products/banana-6.png",
+      "match_key": "banana",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 3.9,
+      "rating_count": 1817.0,
+      "description": "Economy variant. Ripe sweet bananas.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-apple-4",
+      "name": "Royal Gala Apple",
+      "brand": "FarmBasket",
+      "price": 95,
+      "size": "4 pcs",
+      "category": "fresh_produce",
+      "image": "/products/eco-royal-gala-apple.png",
+      "match_key": "apple",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.0,
+      "rating_count": 1123.0,
+      "description": "Economy variant. Crisp imported apples.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-carrot-500g",
+      "name": "Carrot",
+      "brand": "FarmBasket",
+      "price": 25,
+      "size": "500 g",
+      "category": "fresh_produce",
+      "image": "/products/economy-carrot.png",
+      "match_key": "carrots",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 3.9,
+      "rating_count": 846.0,
+      "description": "Economy variant. Sweet orange carrots.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-coriander",
+      "name": "Coriander Leaves",
+      "brand": "FarmBasket",
+      "price": 10,
+      "size": "100 g",
+      "category": "fresh_produce",
+      "image": "/products/coriander.png",
+      "match_key": "coriander",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 3.7,
+      "rating_count": 1500.0,
+      "description": "Economy variant. Fresh dhania for garnish.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-green-chilli",
+      "name": "Green Chilli",
+      "brand": "FarmBasket",
+      "price": 10,
+      "size": "100 g",
+      "category": "fresh_produce",
+      "image": "/products/eco-green-chilli.png",
+      "match_key": "chilli",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 3.7,
+      "rating_count": 1637.0,
+      "description": "Economy variant. Spicy green chillies.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-basil",
+      "name": "Fresh Basil",
+      "brand": "FarmBasket",
+      "price": 35,
+      "size": "25 g",
+      "category": "fresh_produce",
+      "image": "/products/economy-basil.png",
+      "match_key": "basil",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 3.9,
+      "rating_count": 1284.0,
+      "description": "Economy variant. Aromatic basil leaves.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-chicken-breast-500g",
+      "name": "Chicken Breast (Boneless)",
+      "brand": "FreshCatch",
+      "price": 150,
+      "size": "500 g",
+      "category": "meat_seafood",
+      "image": "/products/chicken-breast-500g.png",
+      "match_key": "chicken breast",
+      "dietary_tags": [
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.1,
+      "rating_count": 1031.0,
+      "description": "Economy variant. Antibiotic-free boneless breast.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-chicken-currycut-1kg",
+      "name": "Chicken Curry Cut",
+      "brand": "FreshCatch",
+      "price": 190,
+      "size": "1 kg",
+      "category": "meat_seafood",
+      "image": "/products/chicken-currycut-1kg.png",
+      "match_key": "chicken",
+      "dietary_tags": [
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.1,
+      "rating_count": 64.0,
+      "description": "Economy variant. Skinless curry-cut with bone.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-mutton-500g",
+      "name": "Mutton Curry Cut",
+      "brand": "FreshCatch",
+      "price": 300,
+      "size": "500 g",
+      "category": "meat_seafood",
+      "image": "/products/eco-Mutton Curry Cut.png",
+      "match_key": "lamb",
+      "dietary_tags": [
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.0,
+      "rating_count": 595.0,
+      "description": "Economy variant. Tender goat curry cut.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-prawns-250g",
+      "name": "Prawns (Cleaned)",
+      "brand": "FreshCatch",
+      "price": 210,
+      "size": "250 g",
+      "category": "meat_seafood",
+      "image": "/products/eco-Prawns (Cleaned).png",
+      "match_key": "prawns",
+      "dietary_tags": [
+        "gluten-free"
+      ],
+      "allergen_tags": [
+        "shellfish"
+      ],
+      "rating": 4.0,
+      "rating_count": 415.0,
+      "description": "Economy variant. Deveined medium prawns.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-salmon-300g",
+      "name": "Norwegian Salmon",
+      "brand": "FreshCatch",
+      "price": 355,
+      "size": "300 g",
+      "category": "meat_seafood",
+      "image": "/products/eco-Norwegian Salmon.png",
+      "match_key": "salmon",
+      "dietary_tags": [
+        "gluten-free"
+      ],
+      "allergen_tags": [
+        "fish"
+      ],
+      "rating": 4.2,
+      "rating_count": 1872.0,
+      "description": "Economy variant. Boneless salmon fillet.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-bacon-200g",
+      "name": "Pork Bacon Rashers",
+      "brand": "FreshCatch",
+      "price": 190,
+      "size": "200 g",
+      "category": "meat_seafood",
+      "image": "/products/eco-Pork Bacon Rashers.png",
+      "match_key": "bacon",
+      "dietary_tags": [
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.0,
+      "rating_count": 1917.0,
+      "description": "Economy variant. Smoked streaky bacon.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-coffee-beans-250g",
+      "name": "Roasted Coffee Beans",
+      "brand": "QuenchBasic",
+      "price": 295,
+      "size": "250 g",
+      "category": "beverages",
+      "image": "/products/eco-Roasted Coffee Beans.png",
+      "match_key": "coffee",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.4,
+      "rating_count": 1352.0,
+      "description": "Economy variant. Single-origin medium roast beans.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-instant-coffee-100g",
+      "name": "Instant Coffee",
+      "brand": "QuenchBasic",
+      "price": 210,
+      "size": "100 g",
+      "category": "beverages",
+      "image": "/products/eco-instant-coffee.png",
+      "match_key": "coffee",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.2,
+      "rating_count": 930.0,
+      "description": "Economy variant. Rich instant coffee granules.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-tea-500g",
+      "name": "Premium Tea",
+      "brand": "QuenchBasic",
+      "price": 190,
+      "size": "500 g",
+      "category": "beverages",
+      "image": "/products/tea-500g.png",
+      "match_key": "tea",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.2,
+      "rating_count": 1138.0,
+      "description": "Economy variant. Assam blend leaf tea.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-green-tea-25",
+      "name": "Green Tea Bags",
+      "brand": "QuenchBasic",
+      "price": 100,
+      "size": "25 bags",
+      "category": "beverages",
+      "image": "/products/eco-Green Tea Bags.png",
+      "match_key": "tea",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.0,
+      "rating_count": 1637.0,
+      "description": "Economy variant. Antioxidant-rich green tea.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-orange-juice-1l",
+      "name": "Orange Juice",
+      "brand": "QuenchBasic",
+      "price": 85,
+      "size": "1 L",
+      "category": "beverages",
+      "image": "/products/eco-orange juice.png",
+      "match_key": "orange",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.0,
+      "rating_count": 882.0,
+      "description": "Economy variant. 100% not-from-concentrate juice.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-cola-750ml",
+      "name": "Pepsi",
+      "brand": "QuenchBasic",
+      "price": 30,
+      "size": "750 ml",
+      "category": "beverages",
+      "image": "/products/eco-pepsi.png",
+      "match_key": "coca-cola",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.1,
+      "rating_count": 1644.0,
+      "description": "Economy variant. Chilled cola.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-water-1l",
+      "name": "Packaged Drinking Water",
+      "brand": "QuenchBasic",
+      "price": 15,
+      "size": "1 L",
+      "category": "beverages",
+      "image": "/products/eco-water.png",
+      "match_key": "water",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.2,
+      "rating_count": 1376.0,
+      "description": "Economy variant. Mineral water.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-white-wine",
+      "name": "Sauvignon Blanc White Wine",
+      "brand": "QuenchBasic",
+      "price": 555,
+      "size": "750 ml",
+      "category": "beverages",
+      "image": "/products/eco-white whine.png",
+      "match_key": "",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.1,
+      "rating_count": 925.0,
+      "description": "Economy variant. Crisp dry white wine.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-red-wine",
+      "name": "Shiraz Red Wine",
+      "brand": "QuenchBasic",
+      "price": 600,
+      "size": "750 ml",
+      "category": "beverages",
+      "image": "/products/eco-red-wine.png",
+      "match_key": "",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.2,
+      "rating_count": 1915.0,
+      "description": "Economy variant. Bold full-bodied red wine.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-beer-6",
+      "name": "Lager Beer (6-pack)",
+      "brand": "QuenchBasic",
+      "price": 390,
+      "size": "6 x 330 ml",
+      "category": "beverages",
+      "image": "/products/eco-beer.png",
+      "match_key": "",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [
+        "gluten"
+      ],
+      "rating": 4.1,
+      "rating_count": 668.0,
+      "description": "Economy variant. Crisp white lager.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-chips-classic",
+      "name": "Potato Chips (Salted)",
+      "brand": "MunchMore",
+      "price": 20,
+      "size": "90 g",
+      "category": "snacks",
+      "image": "/products/eco-potato-chips.png",
+      "match_key": "potatoes",
+      "dietary_tags": [
+        "vegetarian",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.0,
+      "rating_count": 1139.0,
+      "description": "Economy variant. Classic salted crisps.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-digestive-biscuits",
+      "name": "Digestive Biscuits",
+      "brand": "MunchMore",
+      "price": 55,
+      "size": "250 g",
+      "category": "snacks",
+      "image": "/products/eco-digestive.png",
+      "match_key": "digestive biscuits",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [
+        "gluten"
+      ],
+      "rating": 4.1,
+      "rating_count": 1313.0,
+      "description": "Economy variant. Wholewheat digestive biscuits.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-namkeen",
+      "name": "Aloo Bhujia",
+      "brand": "MunchMore",
+      "price": 40,
+      "size": "200 g",
+      "category": "snacks",
+      "image": "/products/eco-namkeen.png",
+      "match_key": "flour",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [],
+      "rating": 4.2,
+      "rating_count": 40.0,
+      "description": "Economy variant. Spicy potato sev namkeen.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-dark-chocolate",
+      "name": "Dark Chocolate 70%",
+      "brand": "MunchMore",
+      "price": 60,
+      "size": "150 g",
+      "category": "snacks",
+      "image": "/products/eco-dark-chocolate.png",
+      "match_key": "dark chocolate",
+      "dietary_tags": [
+        "vegetarian",
+        "gluten-free"
+      ],
+      "allergen_tags": [
+        "dairy"
+      ],
+      "rating": 4.2,
+      "rating_count": 1509.0,
+      "description": "Economy variant. Intense 70% cocoa chocolate.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-milk-chocolate",
+      "name": "Milk Chocolate",
+      "brand": "MunchMore",
+      "price": 55,
+      "size": "110 g",
+      "category": "snacks",
+      "image": "/products/eco-milk-chocolate.png",
+      "match_key": "chocolate",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [
+        "dairy"
+      ],
+      "rating": 4.3,
+      "rating_count": 1575.0,
+      "description": "Economy variant. Creamy milk chocolate.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-popcorn",
+      "name": "Microwave Popcorn",
+      "brand": "MunchMore",
+      "price": 30,
+      "size": "99 g",
+      "category": "snacks",
+      "image": "/products/eco-popcorn.png",
+      "match_key": "sweetcorn",
+      "dietary_tags": [
+        "vegetarian",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 3.9,
+      "rating_count": 232.0,
+      "description": "Economy variant. Butter-flavour popcorn.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-cashews-200g",
+      "name": "Roasted Cashews",
+      "brand": "MunchMore",
+      "price": 145,
+      "size": "200 g",
+      "category": "snacks",
+      "image": "/products/eco-roasted-cashew.png",
+      "match_key": "cashew nuts",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [
+        "nuts"
+      ],
+      "rating": 4.2,
+      "rating_count": 1102.0,
+      "description": "Economy variant. Premium roasted & salted cashews.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-almonds-200g",
+      "name": "California Almonds",
+      "brand": "MunchMore",
+      "price": 160,
+      "size": "200 g",
+      "category": "snacks",
+      "image": "/products/eco-almonds.png",
+      "match_key": "almonds",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [
+        "nuts"
+      ],
+      "rating": 4.3,
+      "rating_count": 964.0,
+      "description": "Economy variant. Whole raw almonds.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-raw-coconut-water",
+      "name": "Natural Tender Coconut Water",
+      "brand": "QuenchBasic",
+      "price": 50,
+      "size": "200 ml",
+      "category": "beverages",
+      "image": "/products/eco-coconut-water.png",
+      "match_key": "coconut water",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.3,
+      "rating_count": 402.0,
+      "description": "Economy variant. 100% pure naturally hydrating electrolyte beverage.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-pintola-peanut-butter",
+      "name": "Unsweetened Creamy Peanut Butter",
+      "brand": "MunchMore",
+      "price": 110,
+      "size": "350 g",
+      "category": "snacks",
+      "image": "/products/eco-peanut-butter.png",
+      "match_key": "peanut butter",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [
+        "nuts"
+      ],
+      "rating": 4.4,
+      "rating_count": 456.0,
+      "description": "Economy variant. Pure roasted peanut paste with no added oil or sugars.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-epigamia-almond-milk",
+      "name": "Unsweetened Plant Almond Milk",
+      "brand": "Freshday",
+      "price": 95,
+      "size": "1 L",
+      "category": "dairy_eggs",
+      "image": "/products/eco-Unsweetened Plant Almond Milk.png",
+      "match_key": "almond milk",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [
+        "nuts"
+      ],
+      "rating": 4.0,
+      "rating_count": 1756.0,
+      "description": "Economy variant. Creamy plant-based dairy milk alternative.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-ferrero-rocher-4pc",
+      "name": "Ferrero Rocher Premium Chocolates",
+      "brand": "MunchMore",
+      "price": 100,
+      "size": "4 pcs",
+      "category": "snacks",
+      "image": "/products/eco-roacher.png",
+      "match_key": "chocolate",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [
+        "dairy",
+        "nuts",
+        "gluten"
+      ],
+      "rating": 4.5,
+      "rating_count": 482.0,
+      "description": "Economy variant. Crispy hazelnut chocolate truffles.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-red-plastic-cups",
+      "name": "Red Party Plastic Cups",
+      "brand": "FestBasic",
+      "price": 60,
+      "size": "25 pcs",
+      "category": "party_festive",
+      "image": "/products/eco-Red Party Plastic Cups.png",
+      "match_key": "",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 3.9,
+      "rating_count": 1952.0,
+      "description": "Economy variant. Disposable premium red cups for cold beverages.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-soan-papdi-500g",
+      "name": "Premium Soan Papdi Sweet Box",
+      "brand": "FestBasic",
+      "price": 105,
+      "size": "500 g",
+      "category": "party_festive",
+      "image": "/products/eco-soan-papdi.png",
+      "match_key": "flour",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [
+        "gluten",
+        "nuts",
+        "dairy"
+      ],
+      "rating": 4.2,
+      "rating_count": 902.0,
+      "description": "Economy variant. Flaky traditional sweet made with ghee and dry fruits.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-gift-bag",
+      "name": "Elegant Birthday Gift Bag",
+      "brand": "FestBasic",
+      "price": 40,
+      "size": "1 unit",
+      "category": "party_festive",
+      "image": "/products/eco-gift-bag.png",
+      "match_key": "",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.0,
+      "rating_count": 1760.0,
+      "description": "Economy variant. Thick glossy gift wrapping bag with ribbon handles.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-chocolate-cake",
+      "name": "Rich Chocolate Cake Slice",
+      "brand": "FestBasic",
+      "price": 80,
+      "size": "1 slice",
+      "category": "party_festive",
+      "image": "/products/eco-Rich Chocolate Cake Slice.png",
+      "match_key": "",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [
+        "gluten",
+        "dairy"
+      ],
+      "rating": 4.3,
+      "rating_count": 484.0,
+      "description": "Economy variant. Moist layered chocolate cake with chocolate ganache.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-latex-balloons",
+      "name": "Colourful Latex Balloons",
+      "brand": "FestBasic",
+      "price": 40,
+      "size": "12 pcs",
+      "category": "party_festive",
+      "image": "/products/eco-balloons.png",
+      "match_key": "",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.0,
+      "rating_count": 1228.0,
+      "description": "Economy variant. Assorted bright-coloured 12-inch latex balloons.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-tomato-pur-e",
+      "name": "Tomato Purée",
+      "brand": "FarmBasket",
+      "price": 90,
+      "size": "1 unit",
+      "category": "fresh_produce",
+      "image": "/products/eco-tomato-pur-e.png",
+      "match_key": "tomato purée",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.2,
+      "rating_count": 88.0,
+      "description": "Economy variant. Fresh tomato purée.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-lime",
+      "name": "Lime",
+      "brand": "FarmBasket",
+      "price": 20,
+      "size": "1 unit",
+      "category": "fresh_produce",
+      "image": "/products/eco-lime.png",
+      "match_key": "lime",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 3.8,
+      "rating_count": 598.0,
+      "description": "Economy variant. Fresh lime.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-cayenne-pepper",
+      "name": "Cayenne Pepper",
+      "brand": "FarmBasket",
+      "price": 35,
+      "size": "1 unit",
+      "category": "fresh_produce",
+      "image": "/products/economy-cayenne-pepper.png",
+      "match_key": "cayenne pepper",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.3,
+      "rating_count": 773.0,
+      "description": "Economy variant. Fresh cayenne pepper.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-fish-sauce",
+      "name": "Fish Sauce",
+      "brand": "FreshCatch",
+      "price": 115,
+      "size": "1 unit",
+      "category": "meat_seafood",
+      "image": "/products/fish-sauce.png",
+      "match_key": "fish sauce",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.1,
+      "rating_count": 597.0,
+      "description": "Economy variant. Fresh fish sauce.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-pork-chops",
+      "name": "Pork Chops",
+      "brand": "FreshCatch",
+      "price": 25,
+      "size": "1 unit",
+      "category": "meat_seafood",
+      "image": "/products/eco-pork-chops.png",
+      "match_key": "pork chops",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.0,
+      "rating_count": 508.0,
+      "description": "Economy variant. Fresh pork chops.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-tomato-ketchup",
+      "name": "Tomato Ketchup",
+      "brand": "FarmBasket",
+      "price": 105,
+      "size": "1 unit",
+      "category": "fresh_produce",
+      "image": "/products/eco-tomato-ketchup.png",
+      "match_key": "tomato ketchup",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 3.7,
+      "rating_count": 634.0,
+      "description": "Economy variant. Fresh tomato ketchup.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-coconut-cream",
+      "name": "Coconut Cream",
+      "brand": "Freshday",
+      "price": 60,
+      "size": "1 unit",
+      "category": "dairy_eggs",
+      "image": "/products/eco-coconut-cream.png",
+      "match_key": "coconut cream",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.2,
+      "rating_count": 453.0,
+      "description": "Economy variant. Fresh coconut cream.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-beef",
+      "name": "Beef",
+      "brand": "FreshCatch",
+      "price": 115,
+      "size": "1 unit",
+      "category": "meat_seafood",
+      "image": "/products/eco-beef.png",
+      "match_key": "beef",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.0,
+      "rating_count": 800.0,
+      "description": "Economy variant. Fresh beef.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-egg-yolks",
+      "name": "Egg Yolks",
+      "brand": "Freshday",
+      "price": 100,
+      "size": "1 unit",
+      "category": "dairy_eggs",
+      "image": "/products/egg-yolks.png",
+      "match_key": "egg yolks",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 88.0,
+      "description": "Economy variant. Fresh egg yolks.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-celery",
+      "name": "Celery",
+      "brand": "FarmBasket",
+      "price": 20,
+      "size": "1 unit",
+      "category": "fresh_produce",
+      "image": "/products/economy-celery.png",
+      "match_key": "celery",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 3.8,
+      "rating_count": 316.0,
+      "description": "Economy variant. Fresh celery.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-tomato-puree",
+      "name": "Tomato Puree",
+      "brand": "FarmBasket",
+      "price": 130,
+      "size": "1 unit",
+      "category": "fresh_produce",
+      "image": "/products/tomato-puree.png",
+      "match_key": "tomato puree",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 368.0,
+      "description": "Economy variant. Fresh tomato puree.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-yellow-pepper",
+      "name": "Yellow Pepper",
+      "brand": "FarmBasket",
+      "price": 50,
+      "size": "1 unit",
+      "category": "fresh_produce",
+      "image": "/products/eco-yellow-pepper.png",
+      "match_key": "yellow pepper",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 3.9,
+      "rating_count": 412.0,
+      "description": "Economy variant. Fresh yellow pepper.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-white-fish-fillets",
+      "name": "White Fish Fillets",
+      "brand": "FreshCatch",
+      "price": 105,
+      "size": "1 unit",
+      "category": "meat_seafood",
+      "image": "/products/eco-White Fish Fillets.png",
+      "match_key": "white fish fillets",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 3.8,
+      "rating_count": 242.0,
+      "description": "Economy variant. Fresh white fish fillets.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-leek",
+      "name": "Leek",
+      "brand": "FarmBasket",
+      "price": 110,
+      "size": "1 unit",
+      "category": "fresh_produce",
+      "image": "/products/eco-leek.png",
+      "match_key": "leek",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 3.9,
+      "rating_count": 220.0,
+      "description": "Economy variant. Fresh leek.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-parsley",
+      "name": "Parsley",
+      "brand": "FarmBasket",
+      "price": 60,
+      "size": "1 unit",
+      "category": "fresh_produce",
+      "image": "/products/eco-parsley.png",
+      "match_key": "parsley",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.1,
+      "rating_count": 473.0,
+      "description": "Economy variant. Fresh parsley.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-tomato-sauce",
+      "name": "Tomato Sauce",
+      "brand": "FarmBasket",
+      "price": 110,
+      "size": "1 unit",
+      "category": "fresh_produce",
+      "image": "/products/eco-tomato-sauce.png",
+      "match_key": "tomato sauce",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 3.9,
+      "rating_count": 393.0,
+      "description": "Economy variant. Fresh tomato sauce.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-chorizo",
+      "name": "Chorizo",
+      "brand": "FreshCatch",
+      "price": 65,
+      "size": "1 unit",
+      "category": "meat_seafood",
+      "image": "/products/eco-chorizo.png",
+      "match_key": "chorizo",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.4,
+      "rating_count": 183.0,
+      "description": "Economy variant. Fresh chorizo.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-turkey-ham",
+      "name": "Turkey Ham",
+      "brand": "FreshCatch",
+      "price": 105,
+      "size": "1 unit",
+      "category": "meat_seafood",
+      "image": "/products/eco-Turkey Ham.png",
+      "match_key": "turkey ham",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 3.7,
+      "rating_count": 410.0,
+      "description": "Economy variant. Fresh turkey ham.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-cucumber",
+      "name": "Cucumber",
+      "brand": "FarmBasket",
+      "price": 115,
+      "size": "1 unit",
+      "category": "fresh_produce",
+      "image": "/products/economy-cucumber.png",
+      "match_key": "cucumber",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.1,
+      "rating_count": 360.0,
+      "description": "Economy variant. Fresh cucumber.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-chestnut-mushroom",
+      "name": "Chestnut Mushroom",
+      "brand": "FarmBasket",
+      "price": 25,
+      "size": "1 unit",
+      "category": "fresh_produce",
+      "image": "/products/chestnut-mushroom.png",
+      "match_key": "chestnut mushroom",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.0,
+      "rating_count": 584.0,
+      "description": "Economy variant. Fresh chestnut mushroom.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-doner-meat",
+      "name": "Doner Meat",
+      "brand": "FreshCatch",
+      "price": 65,
+      "size": "1 unit",
+      "category": "meat_seafood",
+      "image": "/products/eco-doner-meat.png",
+      "match_key": "doner meat",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.3,
+      "rating_count": 605.0,
+      "description": "Economy variant. Fresh doner meat.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-egg-plants",
+      "name": "Egg Plants",
+      "brand": "Freshday",
+      "price": 105,
+      "size": "1 unit",
+      "category": "dairy_eggs",
+      "image": "/products/eco-egg-plant.png",
+      "match_key": "egg plants",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 3.8,
+      "rating_count": 302.0,
+      "description": "Economy variant. Fresh egg plants.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-egg-rolls",
+      "name": "Egg Rolls",
+      "brand": "Freshday",
+      "price": 110,
+      "size": "1 unit",
+      "category": "dairy_eggs",
+      "image": "/products/eco-egg-roll.png",
+      "match_key": "egg rolls",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 3.9,
+      "rating_count": 448.0,
+      "description": "Economy variant. Fresh egg rolls.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-egg-white",
+      "name": "Egg White",
+      "brand": "Freshday",
+      "price": 70,
+      "size": "1 unit",
+      "category": "dairy_eggs",
+      "image": "/products/eco-egg-white.png",
+      "match_key": "egg white",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 107.0,
+      "description": "Economy variant. Fresh egg white.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-free-range-egg-beaten",
+      "name": "Free-Range Egg, Beaten",
+      "brand": "Freshday",
+      "price": 65,
+      "size": "1 unit",
+      "category": "dairy_eggs",
+      "image": "/products/eco-free-range-eggs.png",
+      "match_key": "free-range egg, beaten",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.3,
+      "rating_count": 172.0,
+      "description": "Economy variant. Fresh free-range egg, beaten.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-heavy-cream",
+      "name": "Heavy Cream",
+      "brand": "Freshday",
+      "price": 15,
+      "size": "1 unit",
+      "category": "dairy_eggs",
+      "image": "/products/eco-heavy-cream.png",
+      "match_key": "heavy cream",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 3.7,
+      "rating_count": 754.0,
+      "description": "Economy variant. Fresh heavy cream.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-italian-fennel-sausages",
+      "name": "Italian Fennel Sausages",
+      "brand": "FreshCatch",
+      "price": 125,
+      "size": "1 unit",
+      "category": "meat_seafood",
+      "image": "/products/italian-fennel-sausages.png",
+      "match_key": "italian fennel sausages",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.3,
+      "rating_count": 817.0,
+      "description": "Economy variant. Fresh italian fennel sausages.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-lettuce",
+      "name": "Lettuce",
+      "brand": "FarmBasket",
+      "price": 55,
+      "size": "1 unit",
+      "category": "fresh_produce",
+      "image": "/products/lettuce.png",
+      "match_key": "lettuce",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.0,
+      "rating_count": 522.0,
+      "description": "Economy variant. Fresh lettuce.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-parma-ham",
+      "name": "Parma Ham",
+      "brand": "FreshCatch",
+      "price": 75,
+      "size": "1 unit",
+      "category": "meat_seafood",
+      "image": "/products/eco-Parma Ham.png",
+      "match_key": "parma ham",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 3.7,
+      "rating_count": 174.0,
+      "description": "Economy variant. Fresh parma ham.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-parmigiano-reggiano",
+      "name": "Parmigiano-Reggiano",
+      "brand": "Freshday",
+      "price": 55,
+      "size": "1 unit",
+      "category": "dairy_eggs",
+      "image": "/products/eco-Parmigiano-Reggiano.png",
+      "match_key": "parmigiano-reggiano",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.0,
+      "rating_count": 319.0,
+      "description": "Economy variant. Fresh parmigiano-reggiano.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-potato-starch",
+      "name": "Potato Starch",
+      "brand": "FarmBasket",
+      "price": 55,
+      "size": "1 unit",
+      "category": "fresh_produce",
+      "image": "/products/eco-potato-starch.png",
+      "match_key": "potato starch",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.0,
+      "rating_count": 614.0,
+      "description": "Economy variant. Fresh potato starch.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-sour-cream",
+      "name": "Sour Cream",
+      "brand": "Freshday",
+      "price": 90,
+      "size": "1 unit",
+      "category": "dairy_eggs",
+      "image": "/products/eco-Sour Cream.png",
+      "match_key": "sour cream",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.2,
+      "rating_count": 364.0,
+      "description": "Economy variant. Fresh sour cream.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-tuna",
+      "name": "Tuna",
+      "brand": "FreshCatch",
+      "price": 60,
+      "size": "1 unit",
+      "category": "meat_seafood",
+      "image": "/products/eco-tuna.png",
+      "match_key": "tuna",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.1,
+      "rating_count": 89.0,
+      "description": "Economy variant. Fresh tuna.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-clotted-cream",
+      "name": "Clotted Cream",
+      "brand": "Freshday",
+      "price": 115,
+      "size": "1 unit",
+      "category": "dairy_eggs",
+      "image": "/products/eco-clotted-cream.png",
+      "match_key": "clotted cream",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.0,
+      "rating_count": 99.0,
+      "description": "Economy variant. Fresh clotted cream.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-monkfish",
+      "name": "Monkfish",
+      "brand": "FreshCatch",
+      "price": 105,
+      "size": "1 unit",
+      "category": "meat_seafood",
+      "image": "/products/eco-monkfish.png",
+      "match_key": "monkfish",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 3.8,
+      "rating_count": 167.0,
+      "description": "Economy variant. Fresh monkfish.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-fish-stock",
+      "name": "Fish Stock",
+      "brand": "FreshCatch",
+      "price": 120,
+      "size": "1 unit",
+      "category": "meat_seafood",
+      "image": "/products/eco-fish-stock.png",
+      "match_key": "fish stock",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.2,
+      "rating_count": 767.0,
+      "description": "Economy variant. Fresh fish stock.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-duck",
+      "name": "Duck",
+      "brand": "FreshCatch",
+      "price": 40,
+      "size": "1 unit",
+      "category": "meat_seafood",
+      "image": "/products/eco-duck.png",
+      "match_key": "duck",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.4,
+      "rating_count": 200.0,
+      "description": "Economy variant. Fresh duck.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-party-plates",
+      "name": "Paper Party Plates",
+      "brand": "FestBasic",
+      "price": 65,
+      "size": "50 pcs",
+      "category": "party_festive",
+      "image": "/products/eco-Paper Party Plates.png",
+      "match_key": "paper plates",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.0,
+      "rating_count": 840.0,
+      "description": "Economy variant. Disposable paper plates for parties and events.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-party-cups",
+      "name": "Paper Party Cups",
+      "brand": "FestBasic",
+      "price": 50,
+      "size": "50 pcs",
+      "category": "party_festive",
+      "image": "/products/party-cups.png",
+      "match_key": "paper cups",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 3.9,
+      "rating_count": 720.0,
+      "description": "Economy variant. Disposable paper cups for hot and cold beverages.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-apricot",
+      "name": "Apricot",
+      "brand": "FarmBasket",
+      "price": 80,
+      "size": "500 g",
+      "category": "fresh_produce",
+      "image": "/products/economy-apricot.png",
+      "match_key": "apricot",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.0,
+      "rating_count": 356.0,
+      "description": "Economy variant. Fresh juicy apricots.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-balloons-pack",
+      "name": "Colourful Latex Balloons (Value Pack)",
+      "brand": "FestBasic",
+      "price": 80,
+      "size": "25 pcs",
+      "category": "party_festive",
+      "image": "/products/balloons-pack.png",
+      "match_key": "balloons",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 3.9,
+      "rating_count": 600.0,
+      "description": "Economy variant. Assorted colour latex balloons for decoration.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-birthday-banner",
+      "name": "Happy Birthday Banner",
+      "brand": "FestBasic",
+      "price": 55,
+      "size": "1 unit",
+      "category": "party_festive",
+      "image": "/products/eco-birthday-banner.png",
+      "match_key": "birthday banner",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.1,
+      "rating_count": 1120.0,
+      "description": "Economy variant. Colourful happy birthday party banner.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-birthday-candles",
+      "name": "Birthday Candles",
+      "brand": "FestBasic",
+      "price": 30,
+      "size": "12 pcs",
+      "category": "party_festive",
+      "image": "/products/eco-birthday-candles.png",
+      "match_key": "birthday candles",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.0,
+      "rating_count": 1400.0,
+      "description": "Economy variant. Assorted colourful birthday candles.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-birthday-card",
+      "name": "Birthday Greeting Card",
+      "brand": "FestBasic",
+      "price": 30,
+      "size": "1 unit",
+      "category": "party_festive",
+      "image": "/products/eco-birthday-greeting-card.png",
+      "match_key": "birthday card",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.2,
+      "rating_count": 1680.0,
+      "description": "Economy variant. Elegant birthday greeting card with envelope.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-brownie-box",
+      "name": "Premium Chocolate Brownie Box",
+      "brand": "FestBasic",
+      "price": 165,
+      "size": "6 pcs",
+      "category": "party_festive",
+      "image": "/products/eco-Premium Chocolate Brownie Box.png",
+      "match_key": "brownie",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [
+        "gluten",
+        "dairy"
+      ],
+      "rating": 4.3,
+      "rating_count": 720.0,
+      "description": "Economy variant. Rich fudgy chocolate brownie gift box.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-clams",
+      "name": "Fresh Clams",
+      "brand": "FreshCatch",
+      "price": 120,
+      "size": "500 g",
+      "category": "meat_seafood",
+      "image": "/products/eco-clams.png",
+      "match_key": "clams",
+      "dietary_tags": [],
+      "allergen_tags": [
+        "shellfish"
+      ],
+      "rating": 3.8,
+      "rating_count": 260.0,
+      "description": "Economy variant. Fresh cleaned clams for seafood dishes.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-fromage-frais",
+      "name": "Fromage Frais",
+      "brand": "Freshday",
+      "price": 80,
+      "size": "200 g",
+      "category": "dairy_eggs",
+      "image": "/products/fromage-frais.png",
+      "match_key": "fromage frais",
+      "dietary_tags": [
+        "vegetarian",
+        "gluten-free"
+      ],
+      "allergen_tags": [
+        "dairy"
+      ],
+      "rating": 4.0,
+      "rating_count": 380.0,
+      "description": "Economy variant. Smooth and creamy French fromage frais.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-ice-cubes-pack",
+      "name": "Ice Cubes (Party Pack)",
+      "brand": "QuenchBasic",
+      "price": 40,
+      "size": "1 kg",
+      "category": "beverages",
+      "image": "/products/eco-Ice Cubes (Party Pack).png",
+      "match_key": "ice cubes",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 3.9,
+      "rating_count": 720.0,
+      "description": "Economy variant. Ready-to-use ice cubes in resealable pack.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-party-poppers",
+      "name": "Party Poppers",
+      "brand": "FestBasic",
+      "price": 40,
+      "size": "8 pcs",
+      "category": "party_festive",
+      "image": "/products/eco-Party Poppers.png",
+      "match_key": "party poppers",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 3.8,
+      "rating_count": 920.0,
+      "description": "Economy variant. Confetti party poppers for celebrations.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-party-streamers",
+      "name": "Party Streamers",
+      "brand": "FestBasic",
+      "price": 30,
+      "size": "6 pcs",
+      "category": "party_festive",
+      "image": "/products/eco-Party Streamers.png",
+      "match_key": "party streamers",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 3.7,
+      "rating_count": 760.0,
+      "description": "Economy variant. Colourful curled party streamers.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-pecan-nuts",
+      "name": "Pecan Nuts",
+      "brand": "MunchMore",
+      "price": 185,
+      "size": "200 g",
+      "category": "snacks",
+      "image": "/products/eco-pecan-nuts.png",
+      "match_key": "pecan nuts",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [
+        "nuts"
+      ],
+      "rating": 4.2,
+      "rating_count": 560.0,
+      "description": "Economy variant. Premium pecan nut halves.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-return-gifts-bag",
+      "name": "Return Gifts Goodie Bag",
+      "brand": "FestBasic",
+      "price": 20,
+      "size": "1 unit",
+      "category": "party_festive",
+      "image": "/products/eco-return-gift-bag.png",
+      "match_key": "return gifts",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 3.9,
+      "rating_count": 640.0,
+      "description": "Economy variant. Cute goodie bag for party return gifts.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-ricotta",
+      "name": "Ricotta Cheese",
+      "brand": "Freshday",
+      "price": 95,
+      "size": "250 g",
+      "category": "dairy_eggs",
+      "image": "/products/eco-Ricotta Cheese.png",
+      "match_key": "ricotta",
+      "dietary_tags": [
+        "vegetarian",
+        "gluten-free"
+      ],
+      "allergen_tags": [
+        "dairy"
+      ],
+      "rating": 4.1,
+      "rating_count": 720.0,
+      "description": "Economy variant. Smooth Italian ricotta cheese.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-turkey-mince",
+      "name": "Turkey Mince",
+      "brand": "FreshCatch",
+      "price": 170,
+      "size": "500 g",
+      "category": "meat_seafood",
+      "image": "/products/eco-Turkey Mince.png",
+      "match_key": "turkey mince",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.0,
+      "rating_count": 340.0,
+      "description": "Economy variant. Lean turkey mince for healthy cooking.",
+      "economy_variant": true
+    },
+    {
+      "id": "economy-walnuts",
+      "name": "Walnuts",
+      "brand": "MunchMore",
+      "price": 210,
+      "size": "200 g",
+      "category": "snacks",
+      "image": "/products/eco-walnuts.png",
+      "match_key": "walnuts",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [
+        "nuts"
+      ],
+      "rating": 4.3,
+      "rating_count": 1120.0,
+      "description": "Economy variant. Premium walnut halves.",
+      "economy_variant": true
     }
   ]
 }
