@@ -24,11 +24,6 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
 
-            # Migrate deduplicated catalog to DynamoDB
-            python3 -c "import boto3" 2>/dev/null || pip3 install boto3 python-dotenv --user
-            AWS_REGION=ap-south-1 PRODUCTS_TABLE_NAME=products USERS_TABLE_NAME=user_profiles \
-              python3 scripts/migrate_to_dynamodb.py
-
             cd frontend
             pnpm install
             pnpm build
