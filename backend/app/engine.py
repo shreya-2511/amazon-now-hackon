@@ -64,19 +64,23 @@ def _calendar_signals() -> list[dict]:
     """Build NextBuy signals from the hero event's needs list.
 
     Works with both live (AI-inferred) and static needs[] arrays.
+    Resolves each need to the most expensive product in its match_key group
+    so that Saver mode in checkout can offer a visible price drop.
     """
     ev = _hero_event()
     if not ev:
         return []
-    return [
-        {
-            "product_id": n["product_id"],
+    out = []
+    for n in ev.get("needs", []):
+        best = data.most_expensive_in_group(n["product_id"])
+        pid = best["id"] if best else n["product_id"]
+        out.append({
+            "product_id": pid,
             "qty": n.get("qty", 1),
             "reason": n["reason"],
             "signal": "calendar",
-        }
-        for n in ev.get("needs", [])
-    ]
+        })
+    return out
 
 
 _SIGNAL_META = {
@@ -216,8 +220,25 @@ def recipe_scaled(rid: str, servings: int) -> dict | None:
         p = data.product(ing["product_id"])
         sq = _scale_qty(ing.get("qty"), factor)
         disp = f"{sq:g} {ing['unit']}".strip() if sq is not None else ing.get("measure", "")
-        dec = data.decorate(p, user) if p else None
-        price = p["price"] if p else ing.get("price", 0)
+        if p:
+            dec = data.decorate(p, user)
+            price = p["price"]
+        else:
+            dec = {
+                "id": ing["product_id"],
+                "name": ing["name"],
+                "image": ing.get("image", ""),
+                "price": ing.get("price", 0),
+                "brand": "",
+                "size": "",
+                "category": "",
+                "dietary_tags": [],
+                "allergen_tags": [],
+                "rating": 0,
+                "rating_count": 0,
+                "description": "",
+            }
+            price = ing.get("price", 0)
         ings.append({
             "product": dec,
             "name": ing["name"],
@@ -563,16 +584,19 @@ def _agent_handlers(state: dict, block: list[str]):
             for p in rows:
 
                 name = p["name"].lower()
+                mk = p.get("match_key", "").lower()
 
                 if (
                     q in name
                     or any(word == q for word in name.split())
-                    or q == p.get("match_key", "").lower()
+                    or q == mk
                 ):
                     filtered.append(p)
 
             if not filtered:
-                filtered = rows[:1]
+                filtered = [p for p in rows if q in p["name"].lower() or q in p.get("match_key", "").lower()]
+            if not filtered:
+                filtered = []
 
             best = filtered[:1]
 
@@ -733,7 +757,7 @@ def _resolve_recipe_products(query: str, block: list[str]) -> tuple[list[dict], 
 def _final_text(messages: list[dict]) -> str:
     for m in reversed(messages):
         if m.get("role") == "assistant":
-            txt = " ".join(b["text"] for b in m.get("content", []) if "text" in b).strip()
+            txt = "ai is analysing".join(b["text"] for b in m.get("content", []) if "text" in b).strip()
             if txt:
                 return txt
     return ""

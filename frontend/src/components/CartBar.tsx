@@ -2,13 +2,13 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, Leaf } from "lucide-react";
 import { useRouter, usePathname } from "next/navigation";
-import { useCart, ECONOMY_BUDGETS } from "@/lib/cart";
+import { useCart } from "@/lib/cart";
 import { rupee } from "@/lib/format";
 
 const HIDE_ON = ["/checkout", "/order", "/profile", "/group", "/recipe", "/speaknow", "/dish-result"];
 
 export default function CartBar() {
-  const { count, subtotal, economyMode, setEconomyMode } = useCart();
+  const { count, subtotal } = useCart();
   const router = useRouter();
   const path = usePathname();
   const hidden = count === 0 || HIDE_ON.some((p) => path.startsWith(p));
@@ -23,26 +23,12 @@ export default function CartBar() {
           transition={{ type: "spring", stiffness: 380, damping: 30 }}
           className="absolute bottom-[72px] inset-x-3 z-20 flex flex-col gap-1.5"
         >
-          {/* Economy toggle pill */}
-          <div className="flex justify-end">
-            <button
-              onClick={() => setEconomyMode(!economyMode)}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[12px] font-bold shadow-pop transition-all ${
-                economyMode
-                  ? "bg-emerald-600 text-white"
-                  : "bg-white text-emerald-700 border border-emerald-300"
-              }`}
-            >
-              <Leaf size={13} />
-              {economyMode ? "Saver ON" : " Saver mode"}
-            </button>
-          </div>
 
           {/* Main cart bar */}
           <button
             onClick={() => router.push("/checkout")}
             className={`w-full h-13 rounded-2xl text-white shadow-pop flex items-center justify-between px-4 py-3 transition-colors ${
-              economyMode ? "bg-emerald-600" : "bg-amzn-green"
+              "bg-amzn-green"
             }`}
           >
             <div className="flex items-center gap-2 text-left">
@@ -51,9 +37,6 @@ export default function CartBar() {
               </span>
               <div className="flex flex-col leading-tight">
                 <span className="text-sm font-semibold">{rupee(subtotal)}</span>
-                {economyMode && (
-                  <span className="text-[10px] text-white/80">💚 Economy cart</span>
-                )}
               </div>
             </div>
             <div className="flex items-center gap-1.5 text-sm font-bold">

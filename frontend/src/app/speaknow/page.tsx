@@ -8,7 +8,8 @@ import { api } from "@/lib/api";
 import { useCart } from "@/lib/cart";
 import { rupee } from "@/lib/format";
 import { useVoice } from "@/lib/useVoice";
-import type { SpeakResult } from "@/lib/types";
+import { useAlternatives } from "@/lib/useAlternatives";
+import type { Product, SpeakResult } from "@/lib/types";
 
 type Msg = {
   role: "user" | "assistant";
@@ -80,8 +81,8 @@ export default function SpeakNowPage() {
     };
   };
 
-  const addAll = (r: SpeakResult) => {
-    addMany(r.products.map((p) => ({ product: p, qty: 1 })));
+  const addAll = (products: Product[]) => {
+    addMany(products.map((p) => ({ product: p, qty: 1 })));
     router.push("/checkout?src=speaknow");
   };
 
@@ -140,11 +141,11 @@ export default function SpeakNowPage() {
                     <Sparkles size={14} className="text-amzn-yellow" />
                   </div>
                   <div className="bg-white border border-line rounded-2xl rounded-tl-md px-3.5 py-2.5 text-[13px] leading-relaxed shadow-card">
-                    {m.text}
-                    {m.streaming && <span className="inline-block w-1.5 h-4 align-middle bg-amzn-dark/60 ml-0.5 animate-pulse" />}
+                    {m.text || (m.streaming ? "Finding the best products for you…" : "")}
+                    {m.streaming}
                   </div>
                 </div>
-                {m.result && <ResultCard result={m.result} onAddAll={() => addAll(m.result!)} />}
+                {m.result && <ResultCard result={m.result} onAddAll={(products) => addAll(products)} />}
               </div>
             ),
           )}
@@ -190,10 +191,29 @@ export default function SpeakNowPage() {
   );
 }
 
-function ResultCard({ result, onAddAll }: { result: SpeakResult; onAddAll: () => void }) {
+function ResultCard({ result, onAddAll }: { result: SpeakResult; onAddAll: (products: Product[]) => void }) {
   // Safe validation check to handle both recipe modules and broad event notes
   const hasRecipe = !!result.recipe;
   const lifestyleNote = !hasRecipe && result.note ? result.note : null;
+  const { setQty } = useCart();
+
+  const productIds = (result.products || []).map((p) => p.id);
+  const { alternatives } = useAlternatives(productIds);
+  const [selectedAlternatives, setSelectedAlternatives] = useState<Map<string, Product>>(new Map());
+
+  const handleSelectAlternative = (originalProductId: string, selectedAlternative: Product) => {
+    setSelectedAlternatives((currentMap) => {
+      const newMap = new Map(currentMap);
+      newMap.set(originalProductId, selectedAlternative);
+      return newMap;
+    });
+    // Swap in cart: remove original, add alternative
+    setQty(originalProductId, 0);
+    setQty(selectedAlternative.id, 1);
+  };
+
+  const displayProducts = (result.products || []).map((p) => selectedAlternatives.get(p.id) || p);
+  const displayTotal = displayProducts.reduce((sum, p) => sum + p.price, 0);
 
   return (
     <motion.div
@@ -243,9 +263,40 @@ function ResultCard({ result, onAddAll }: { result: SpeakResult; onAddAll: () =>
       {/* Product Row Container */}
       <div className="px-3 divide-y divide-line/60 bg-white">
         {result.products && result.products.length > 0 ? (
-          result.products.map((p) => (
-            <ProductRow key={p.id} product={p} />
-          ))
+          result.products.map((p) => {
+            const current = selectedAlternatives.get(p.id) || p;
+            const alt = alternatives.get(p.id);
+            const alreadySelected = selectedAlternatives.has(p.id);
+            const savings = alt ? current.price - alt.price : 0;
+            return (
+              <div key={p.id}>
+                <ProductRow product={current} />
+                {alt && !alreadySelected && (
+                  <div className="pl-4 pb-1">
+                    <button
+                      onClick={() => handleSelectAlternative(p.id, alt)}
+                      className="flex items-center gap-2 p-1.5 rounded-xl border border-line bg-paper hover:border-amzn-green transition-colors w-full"
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={alt.image} alt={alt.name} className="h-8 w-8 object-contain shrink-0" />
+                      <div className="flex-1 min-w-0 text-left">
+                        <p className="text-[10px] font-semibold truncate">{alt.name}</p>
+                        <p className="text-[9px] text-ink2">{alt.brand}</p>
+                      </div>
+                      <div className="flex flex-col items-end shrink-0">
+                        <p className="text-[10px] font-bold text-amzn-green">{rupee(alt.price)}</p>
+                        {savings > 0 && (
+                          <p className="text-[8px] font-bold text-amzn-green bg-amzn-greenlite px-1 rounded-full">
+                            Save {rupee(savings)}
+                          </p>
+                        )}
+                      </div>
+                    </button>
+                  </div>
+                )}
+              </div>
+            );
+          })
         ) : (
           <div className="py-4 text-center text-ink2 text-[12px]">No directly matching inventory items found.</div>
         )}
@@ -254,11 +305,11 @@ function ResultCard({ result, onAddAll }: { result: SpeakResult; onAddAll: () =>
       {/* Collective Checkout Action */}
       {result.products && result.products.length > 0 && (
         <button
-          onClick={onAddAll}
+          onClick={() => onAddAll(displayProducts)}
           className="m-3 w-[calc(100%-1.5rem)] rounded-xl bg-amzn-yellow2 hover:bg-amzn-yellow text-amzn-dark font-bold py-3 text-[14px] flex items-center justify-center gap-2 shadow-sm transition active:scale-[0.99]"
         >
           <ShoppingBag size={15} />
-          <span>Add all {result.products.length} · {rupee(result.total)}</span>
+          <span>Add all {displayProducts.length} · {rupee(displayTotal)}</span>
         </button>
       )}
     </motion.div>

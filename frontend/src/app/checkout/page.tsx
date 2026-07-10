@@ -21,7 +21,7 @@ import { useBoot } from "@/lib/boot";
 import { useCart } from "@/lib/cart";
 import { rupee } from "@/lib/format";
 import type { CouponEval } from "@/lib/types";
-import VegMark, { AllergenBadge, DietaryTags } from "@/components/VegMark";
+import { AllergenBadge, DietaryTags } from "@/components/VegMark";
 
 export default function CheckoutPage() {
   return (
@@ -32,7 +32,7 @@ export default function CheckoutPage() {
 }
 
 function CheckoutContent() {
-  const { items, originalItems, subtotal, setQty, clear, economyMode, setEconomyMode } = useCart();
+  const { items, originalItems, subtotal, setQty, clear, economyMode, setEconomyMode, ecoMapping } = useCart();
   const boot = useBoot();
   const router = useRouter();
   const [paying, setPaying] = useState(false);
@@ -196,21 +196,19 @@ function CheckoutContent() {
         {/* items */}
         <div className="bg-white mx-3 mt-3 rounded-2xl border border-line px-3 divide-y divide-line/70">
           {items.map((i) => (
-            <div key={i.product.id} className="flex items-center gap-3 py-2.5">
+            <div key={i.product.id} className="flex items-center gap-3 py-2.5 relative">
               <div className="h-12 w-12 rounded-lg bg-paper grid place-items-center overflow-hidden shrink-0">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={i.product.image} alt="" className="h-[85%] w-[85%] object-contain" />
               </div>
+              {economyMode && ecoMapping.has(i.product.id) && (
+                <Leaf size={23} className="text-emerald-600 absolute top-2 right-0 bg-emerald-100 p-1 rounded-full"  />
+              )}
               <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-1 flex-wrap">
-                  <VegMark product={i.product} size={12} />
-                  <p className="text-[13px] font-semibold leading-tight truncate">{i.product.name}</p>
-                  {economyMode && (
-                    <span className="text-[9px] bg-emerald-100 text-emerald-700 font-bold px-1.5 py-0.5 rounded-full flex items-center gap-0.5 w-fit">
-                      <Leaf size={10} />Smart Saver
-                    </span>
-                  )}
+                <div className="flex items-center gap-1">
+                  <p className="text-[12px] font-semibold leading-tight truncate">{i.product.name}</p>
                 </div>
+                <p className="text-[11px] text-ink2">{i.product.brand}</p>
                 <p className="text-[11px] text-ink2">{i.product.size}</p>
                 <DietaryTags product={i.product} />
                 <AllergenBadge product={i.product} />
@@ -224,7 +222,7 @@ function CheckoutContent() {
                   +
                 </button>
               </div>
-              <span className="text-[13px] font-bold w-14 text-right shrink-0">{rupee(i.product.price * i.qty)}</span>
+              <span className="text-[13px] font-bold shrink-0">{rupee(i.product.price * i.qty)}</span>
             </div>
           ))}
         </div>

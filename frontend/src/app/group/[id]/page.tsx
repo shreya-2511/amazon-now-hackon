@@ -196,7 +196,7 @@ export default function GroupCartPage() {
                 <div className={`flex-1 min-w-0 ${off ? "opacity-40" : ""}`}>
                   <div className="flex items-center gap-1">
                     <VegMark product={it.product} size={12} />
-                    <p className="text-[13px] font-semibold leading-tight truncate">
+                    <p className="text-[12px] font-semibold leading-tight truncate">
                       {it.product.name}
                     </p>
                   </div>

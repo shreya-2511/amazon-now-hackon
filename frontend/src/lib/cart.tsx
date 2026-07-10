@@ -5,98 +5,32 @@ import { api } from "./api";
 
 export type CartItem = { product: Product; qty: number };
 
-// Economy mode: swap each cart item with the cheapest available product in
-// the same category. Budget presets are purely display — the cart is always
-// trimmed to the cheapest-per-category set regardless of the preset chosen.
-export const ECONOMY_BUDGETS = [150, 300, 500, 750] as const;
-export type EconomyBudget = (typeof ECONOMY_BUDGETS)[number];
-
 type CartCtx = {
   items: CartItem[];
   originalItems: CartItem[]; // always the real cart, unaffected by economy mode
   count: number;
   subtotal: number;
   economyMode: boolean;
-  economyBudget: EconomyBudget;
   setEconomyMode: (on: boolean) => void;
-  setEconomyBudget: (b: EconomyBudget) => void;
   qtyOf: (id: string) => number;
   add: (p: Product, qty?: number) => void;
   setQty: (id: string, qty: number) => void;
   addMany: (ps: { product: Product; qty?: number }[], replace?: boolean) => void;
   clear: () => void;
+  /** Maps alternative product ID → original product ID. Only populated in economy mode. */
+  ecoMapping: ReadonlyMap<string, string>;
 };
 
 const Ctx = createContext<CartCtx | null>(null);
 const KEY = "amzn-now-cart";
 const ECO_KEY = "amzn-now-economy";
 
-// ── Economy helper ────────────────────────────────────────────────────────
-const HOUSE_BRANDS: Record<string, string> = {
-  dairy_eggs:          "Freshday",
-  fresh_produce:       "FarmBasket",
-  bakery:              "BakeSimple",
-  staples_grocery:     "DailyEssentials",
-  meat_seafood:        "FreshCatch",
-  beverages:           "QuenchBasic",
-  snacks:              "MunchMore",
-  frozen:              "CoolPick",
-  medicine_health:     "CareBasics",
-  personal_care:       "PureChoice",
-  household_cleaning:  "CleanEasy",
-  baby_care:           "TenderCare",
-  home_decor_lifestyle:"SimpleHome",
-  party_festive:       "FestBasic",
-};
-
-// Cache of eco products fetched from the catalog: id -> Product
-const ecoProductCache = new Map<string, Product>();
-
-async function fetchEcoProduct(ecoId: string): Promise<Product | null> {
-  if (ecoProductCache.has(ecoId)) return ecoProductCache.get(ecoId)!;
-  try {
-    const url = `${api.base}/api/product/${encodeURIComponent(ecoId)}`;
-    const r = await fetch(url);
-    if (!r.ok) return null;
-    const p = await r.json();
-    if (!p || p.error) return null;
-    ecoProductCache.set(ecoId, p as Product);
-    return p as Product;
-  } catch {
-    return null;
-  }
-}
-
-function makeEconomyVariant(p: Product, realEco?: Product | null): Product {
-  const ecoPrice = Math.max(5, Math.ceil((p.price * 0.65) / 5) * 5);
-  const brand = HOUSE_BRANDS[p.category] ?? "Amazon Basics";
-  if (realEco) {
-    return {
-      ...p,
-      id:    realEco.id,
-      name:  realEco.name,
-      brand: realEco.brand,
-      price: realEco.price,
-      size:  realEco.size,
-      image: realEco.image,
-      dietary_tags: realEco.dietary_tags,
-      allergen_tags: realEco.allergen_tags,
-    };
-  }
-  return {
-    ...p,
-    id:    `eco-${p.id}`,
-    name:  `${p.name} (Economy)`,
-    brand,
-    price: ecoPrice,
-  };
-}
-
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [economyMode, setEconomyModeRaw] = useState(false);
-  const [economyBudget, setEconomyBudget] = useState<EconomyBudget>(300);
   const [ecoItems, setEcoItems] = useState<CartItem[]>([]);
+  // Maps alternative product ID → original product ID (only populated in economy mode)
+  const [ecoMapping, setEcoMapping] = useState<Map<string, string>>(new Map());
 
   useEffect(() => {
     try {
@@ -104,9 +38,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       if (raw) setItems(JSON.parse(raw));
       const eco = localStorage.getItem(ECO_KEY);
       if (eco) {
-        const { on, budget } = JSON.parse(eco);
+        const { on } = JSON.parse(eco);
         setEconomyModeRaw(!!on);
-        if (budget) setEconomyBudget(budget);
       }
     } catch {}
   }, []);
@@ -119,47 +52,52 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     try {
-      localStorage.setItem(ECO_KEY, JSON.stringify({ on: economyMode, budget: economyBudget }));
+      localStorage.setItem(ECO_KEY, JSON.stringify({ on: economyMode }));
     } catch {}
-  }, [economyMode, economyBudget]);
+  }, [economyMode]);
 
-  // When economy mode turns on, swap EACH cart item with the real catalog eco
-  // product (to get the correct image/price/size), falling back to a synthetic
-  // variant if no catalog eco entry exists for that product.
+  // When economy mode turns on, fetch real cheapest alternatives via batch API.
+  // Products with no cheaper alternative keep the original.
   useEffect(() => {
     if (!economyMode || items.length === 0) {
       setEcoItems([]);
+      setEcoMapping(new Map());
       return;
     }
 
     const snapshotItems = [...items];
+    const productIds = snapshotItems.map((i) => i.product.id);
 
-    Promise.all(
-      snapshotItems.map((item) => fetchEcoProduct(`eco-${item.product.id}`))
-    ).then((realEcoProducts) => {
-      const mapped: CartItem[] = snapshotItems.map((item, i) => ({
-        product: makeEconomyVariant(item.product, realEcoProducts[i]),
-        qty: item.qty,
-      }));
+    api.batchAlternatives(productIds)
+      .then((res) => {
+        const mapped: CartItem[] = [];
+        const mapping = new Map<string, string>();
 
-      // Deduplicate: merge quantities for identical eco product IDs
-      const merged = new Map<string, CartItem>();
-      for (const item of mapped) {
-        const existing = merged.get(item.product.id);
-        if (existing) {
-          merged.set(item.product.id, { ...existing, qty: existing.qty + item.qty });
-        } else {
-          merged.set(item.product.id, { ...item });
+        for (const item of snapshotItems) {
+          const alt = res.alternatives[item.product.id];
+          if (alt) {
+            mapped.push({ product: alt, qty: item.qty });
+            mapping.set(alt.id, item.product.id);
+          } else {
+            mapped.push({ ...item });
+          }
         }
-      }
 
-      // Sort by price ascending (cheapest first)
-      const sorted = Array.from(merged.values()).sort(
-        (a, b) => a.product.price - b.product.price,
-      );
+        // Sort: replaced items first
+        mapped.sort((a, b) => {
+          const aRep = mapping.has(a.product.id) ? 0 : 1;
+          const bRep = mapping.has(b.product.id) ? 0 : 1;
+          return aRep - bRep;
+        });
 
-      setEcoItems(sorted);
-    });
+        setEcoItems(mapped);
+        setEcoMapping(mapping);
+      })
+      .catch(() => {
+        // Fallback: keep originals
+        setEcoItems([...snapshotItems]);
+        setEcoMapping(new Map());
+      });
   }, [economyMode, items]);
 
   const setEconomyMode = (on: boolean) => setEconomyModeRaw(on);
@@ -174,7 +112,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         if (ex) return cur.map((i) => (i.product.id === p.id ? { ...i, qty: i.qty + qty } : i));
         return [...cur, { product: p, qty }];
       });
-    // setQty routes to ecoItems when economy mode is active, otherwise the real cart
+    // setQty routes to ecoItems when economy mode is active, otherwise the real cart.
+    // In economy mode, syncs both the eco item and the original cart item.
     const setQty: CartCtx["setQty"] = (id, qty) => {
       if (economyMode && ecoItems.length > 0) {
         setEcoItems((cur) =>
@@ -182,12 +121,14 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
             ? cur.filter((i) => i.product.id !== id)
             : cur.map((i) => (i.product.id === id ? { ...i, qty } : i)),
         );
-        // Also remove/update the corresponding original item so the real cart
-        // stays in sync — prevents eco effect from repopulating removed items.
+        // Sync the original cart item via the reverse mapping
+        const originalId = ecoMapping.get(id) ?? id;
         if (qty <= 0) {
-          // eco id is "eco-{originalId}" — strip prefix to find the original
-          const originalId = id.startsWith("eco-") ? id.slice(4) : id;
           setItems((cur) => cur.filter((i) => i.product.id !== originalId));
+        } else {
+          setItems((cur) =>
+            cur.map((i) => (i.product.id === originalId ? { ...i, qty } : i)),
+          );
         }
       } else {
         setItems((cur) =>
@@ -213,16 +154,15 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       count: activeItems.reduce((s, i) => s + i.qty, 0),
       subtotal: activeItems.reduce((s, i) => s + i.product.price * i.qty, 0),
       economyMode,
-      economyBudget,
       setEconomyMode,
-      setEconomyBudget,
+      ecoMapping,
       qtyOf,
       add,
       setQty,
       addMany,
       clear: () => setItems([]),
     };
-  }, [activeItems, items, ecoItems, economyMode, economyBudget]);
+  }, [activeItems, items, ecoItems, economyMode, ecoMapping]);
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }

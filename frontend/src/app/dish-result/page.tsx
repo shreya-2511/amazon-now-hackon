@@ -7,6 +7,7 @@ import VegMark from "@/components/VegMark";
 import { api } from "@/lib/api";
 import { useCart } from "@/lib/cart";
 import { rupee } from "@/lib/format";
+import { useAlternatives } from "@/lib/useAlternatives";
 import type { DishAnalysis, DishIngredient, Product, Recipe } from "@/lib/types";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -51,6 +52,34 @@ export default function DishResultPage() {
   // ── AI-generated path: static ingredient list from the analysis snapshot ──
   const [lineQty, setLineQty] = useState<Record<string, number>>({});
   const [selected, setSelected] = useState<Record<string, boolean>>({});
+
+  // ── Alternatives for all ingredients ──
+  const allProductIds = useMemo(() => {
+    const ids: string[] = [];
+    if (analysis?.from_stored_recipe && liveRecipe) {
+      liveRecipe.ingredients.forEach((ing) => { if (ing.product) ids.push(ing.product.id); });
+    } else if (analysis && !analysis.from_stored_recipe) {
+      analysis.ingredients.forEach((ing) => { if (ing.product) ids.push(ing.product.id); });
+    }
+    return ids;
+  }, [analysis, liveRecipe]);
+  const { alternatives } = useAlternatives(allProductIds);
+  const [selectedAlternatives, setSelectedAlternatives] = useState<Map<string, Product>>(new Map());
+  const { setQty } = useCart();
+
+  const handleSelectAlternative = (originalProductId: string, selectedAlternative: Product) => {
+    setSelectedAlternatives((currentMap) => {
+      const newMap = new Map(currentMap);
+      newMap.set(originalProductId, selectedAlternative);
+      return newMap;
+    });
+    // Swap in cart: remove original, add alternative
+    const currentQty = analysis?.from_stored_recipe
+      ? (recipeQtyById[`r-${liveRecipe?.ingredients.findIndex(i => i.product?.id === originalProductId)}`] ?? 1)
+      : (lineQty[`ing-${analysis?.ingredients.findIndex(i => i.product?.id === originalProductId)}`] ?? 1);
+    setQty(originalProductId, 0);
+    setQty(selectedAlternative.id, currentQty || 1);
+  };
 
   // ── Load from sessionStorage once ────────────────────────────────────────
   useEffect(() => {
@@ -115,9 +144,12 @@ export default function DishResultPage() {
     if (!liveRecipe) return [];
     return liveRecipe.ingredients
       .filter((ing, i) => ing.product && recipeQtyOf(`r-${i}`) > 0)
-      .map((ing, i) => ({ product: ing.product!, qty: recipeQtyOf(`r-${i}`), price: ing.price }));
+      .map((ing, i) => {
+        const current = ing.product ? (selectedAlternatives.get(ing.product.id) || ing.product) : ing.product!;
+        return { product: current, qty: recipeQtyOf(`r-${i}`), price: current.price };
+      });
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [liveRecipe, recipeQtyById]);
+  }, [liveRecipe, recipeQtyById, selectedAlternatives]);
 
   const recipeSelectedCount = recipeSelectedIngredients.reduce((s, i) => s + i.qty, 0);
   const recipeSelectedTotal = recipeSelectedIngredients.reduce((s, i) => s + i.price * i.qty, 0);
@@ -142,13 +174,14 @@ export default function DishResultPage() {
       if (!ing.product || !isSelected(key)) return;
       const q = qtyOf(key);
       if (q <= 0) return;
-      items.push({ product: ing.product, qty: q });
+      const current = selectedAlternatives.get(ing.product.id) || ing.product;
+      items.push({ product: current, qty: q });
       count += q;
-      price += ing.product.price * q;
+      price += current.price * q;
     });
     return { selectedItems: items, totalCount: count, totalPrice: price };
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [analysis, lineQty, selected]);
+  }, [analysis, lineQty, selected, selectedAlternatives]);
 
   // ─── Add to cart ──────────────────────────────────────────────────────────
   const addToCart = () => {
@@ -260,8 +293,14 @@ export default function DishResultPage() {
               const id = ing.product?.id ?? `ingredient-${i}`;
               const qty = ing.product ? recipeQtyOf(key) : 0;
               const off = ing.product ? qty <= 0 : false;
+              const brand = ing.product?.brand ?? "";
+              const currentProduct = ing.product ? (selectedAlternatives.get(ing.product.id) || ing.product) : undefined;
+              const alt = ing.product ? alternatives.get(ing.product.id) : undefined;
+              const alreadySelected = ing.product ? selectedAlternatives.has(ing.product.id) : false;
+              const savings = alt && currentProduct ? currentProduct.price - alt.price : 0;
               return (
-                <div key={key} className="flex items-center gap-2.5 py-2.5">
+                <div key={key}>
+                <div className="flex items-center gap-2.5 py-2.5">
                   {ing.product && (
                     <button
                       onClick={() => setRecipeLineQty(key, off ? 1 : 0)}
@@ -274,21 +313,22 @@ export default function DishResultPage() {
                     </button>
                   )}
                   <div className={`h-11 w-11 rounded-lg bg-paper grid place-items-center overflow-hidden shrink-0 ${off ? "opacity-40" : ""}`}>
-                    {ing.product?.image ? (
+                    {currentProduct?.image ? (
                       // eslint-disable-next-line @next/next/no-img-element
-                      <img src={ing.product.image} alt="" className="h-[85%] w-[85%] object-contain" />
+                      <img src={currentProduct.image} alt="" className="h-[85%] w-[85%] object-contain" />
                     ) : null}
                   </div>
                   <div className={`flex-1 min-w-0 ${off ? "opacity-40" : ""}`}>
                     <div className="flex items-center gap-1">
-                      {ing.product && <VegMark product={ing.product} size={12} />}
-                      <p className="text-[13px] font-semibold truncate">{ing.name}</p>
+                      {currentProduct && <VegMark product={currentProduct} size={12} />}
+                      <p className="text-[12px] font-semibold truncate">{ing.name}</p>
                     </div>
+                    <p className="text-[9px] text-ink2">{currentProduct?.brand}</p>
                     <p className="text-[11px] text-ink2">{ing.display_qty}</p>
                   </div>
                   <div className={`shrink-0 flex flex-col items-end gap-1 ${off ? "opacity-50" : ""}`}>
                     <span className={`text-[12px] font-bold ${off ? "line-through" : ""}`}>
-                      {rupee(ing.price * Math.max(0, qty || 1))}
+                      {rupee((currentProduct?.price ?? ing.price) * Math.max(0, qty || 1))}
                     </span>
                     {ing.product && (
                       <div className="h-7 w-[78px] rounded-lg bg-amzn-green text-white text-[12px] font-bold flex items-center justify-between px-1">
@@ -309,6 +349,30 @@ export default function DishResultPage() {
                     )}
                   </div>
                 </div>
+                {alt && !alreadySelected && (
+                  <div className="pl-8 pb-1">
+                    <button
+                      onClick={() => ing.product && handleSelectAlternative(ing.product.id, alt)}
+                      className="flex items-center gap-2 p-1.5 rounded-xl border border-line bg-paper hover:border-amzn-green transition-colors w-full"
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={alt.image} alt={alt.name} className="h-8 w-8 object-contain shrink-0" />
+                      <div className="flex-1 min-w-0 text-left">
+                        <p className="text-[10px] font-semibold truncate">{alt.name}</p>
+                        <p className="text-[9px] text-ink2">{alt.brand}</p>
+                      </div>
+                      <div className="flex flex-col items-end shrink-0">
+                        <p className="text-[10px] font-bold text-amzn-green">{rupee(alt.price)}</p>
+                        {savings > 0 && (
+                          <p className="text-[8px] font-bold text-amzn-green bg-amzn-greenlite px-1 rounded-full">
+                            Save {rupee(savings)}
+                          </p>
+                        )}
+                      </div>
+                    </button>
+                  </div>
+                )}
+                </div>
               );
             })}
 
@@ -319,8 +383,13 @@ export default function DishResultPage() {
               const sel = isSelected(key);
               const dimmed = !sel;
               const scaledLabel = scaleDisplayQty(ing, ing.qty, servings, analysis.base_servings);
+              const currentProduct = ing.product ? (selectedAlternatives.get(ing.product.id) || ing.product) : undefined;
+              const alt = ing.product ? alternatives.get(ing.product.id) : undefined;
+              const alreadySelected = ing.product ? selectedAlternatives.has(ing.product.id) : false;
+              const savings = alt && currentProduct ? currentProduct.price - alt.price : 0;
               return (
-                <div key={key} className="flex items-center gap-2.5 py-2.5">
+                <div key={key}>
+                <div className="flex items-center gap-2.5 py-2.5">
                   {ing.available ? (
                     <button
                       onClick={() => toggleSelect(key)}
@@ -335,20 +404,21 @@ export default function DishResultPage() {
                     <span className="h-5 w-5 shrink-0" />
                   )}
                   <div className={`h-11 w-11 rounded-lg bg-paper grid place-items-center overflow-hidden shrink-0 ${dimmed ? "opacity-40" : ""}`}>
-                    {ing.product?.image ? (
+                    {currentProduct?.image ? (
                       // eslint-disable-next-line @next/next/no-img-element
-                      <img src={ing.product.image} alt="" className="h-[85%] w-[85%] object-contain" />
+                      <img src={currentProduct.image} alt="" className="h-[85%] w-[85%] object-contain" />
                     ) : (
                       <span className="text-[9px] text-ink2 font-semibold text-center px-1 leading-tight">N/A</span>
                     )}
                   </div>
                   <div className={`flex-1 min-w-0 ${dimmed ? "opacity-40" : ""}`}>
                     <div className="flex items-center gap-1">
-                      {ing.product && <VegMark product={ing.product} size={12} />}
-                      <p className="text-[13px] font-semibold truncate">
-                        {ing.product?.name ?? ing.name}
+                      {currentProduct && <VegMark product={currentProduct} size={12} />}
+                      <p className="text-[12px] font-semibold truncate">
+                        {currentProduct?.name ?? ing.name}
                       </p>
                     </div>
+                    <p className="text-[9px] text-ink2">{currentProduct?.brand}</p>
                     <p className="text-[11px] text-ink2">{scaledLabel}</p>
                     {!ing.available && (
                       <span className="inline-flex items-center gap-0.5 text-[10px] text-ink2 font-semibold mt-0.5">
@@ -358,7 +428,7 @@ export default function DishResultPage() {
                   </div>
                   <div className={`shrink-0 flex flex-col items-end gap-1 ${dimmed ? "opacity-50" : ""}`}>
                     <span className={`text-[12px] font-bold ${!sel && ing.available ? "line-through" : ""}`}>
-                      {ing.product ? rupee(ing.product.price * Math.max(1, qty)) : "—"}
+                      {currentProduct ? rupee(currentProduct.price * Math.max(1, qty)) : "—"}
                     </span>
                     {ing.available && (
                       <div className="h-7 w-[78px] rounded-lg bg-amzn-green text-white text-[12px] font-bold flex items-center justify-between px-1">
@@ -368,6 +438,30 @@ export default function DishResultPage() {
                       </div>
                     )}
                   </div>
+                </div>
+                {alt && !alreadySelected && (
+                  <div className="pl-8 pb-1">
+                    <button
+                      onClick={() => ing.product && handleSelectAlternative(ing.product.id, alt)}
+                      className="flex items-center gap-2 p-1.5 rounded-xl border border-line bg-paper hover:border-amzn-green transition-colors w-full"
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={alt.image} alt={alt.name} className="h-8 w-8 object-contain shrink-0" />
+                      <div className="flex-1 min-w-0 text-left">
+                        <p className="text-[10px] font-semibold truncate">{alt.name}</p>
+                        <p className="text-[9px] text-ink2">{alt.brand}</p>
+                      </div>
+                      <div className="flex flex-col items-end shrink-0">
+                        <p className="text-[10px] font-bold text-amzn-green">{rupee(alt.price)}</p>
+                        {savings > 0 && (
+                          <p className="text-[8px] font-bold text-amzn-green bg-amzn-greenlite px-1 rounded-full">
+                            Save {rupee(savings)}
+                          </p>
+                        )}
+                      </div>
+                    </button>
+                  </div>
+                )}
                 </div>
               );
             })}

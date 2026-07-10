@@ -4,7 +4,7 @@ import { useCart } from "@/lib/cart";
 import { rupee } from "@/lib/format";
 import type { Product } from "@/lib/types";
 import Stepper from "./Stepper";
-import VegMark, { AllergenBadge, DietaryTags } from "./VegMark";
+import { AllergenBadge, DietaryTags } from "./VegMark";
 
 export function ProductCard({ product }: { product: Product }) {
   const { qtyOf, add, setQty } = useCart();
@@ -18,7 +18,7 @@ export function ProductCard({ product }: { product: Product }) {
       <div className="flex items-center gap-1 mt-2">
         <span className="text-[10px] text-ink2 truncate">{product.brand}</span>
       </div>
-      <p className="text-[13px] font-semibold leading-tight line-clamp-2 min-h-[34px] mt-0.5">
+      <p className="text-[12px] font-semibold leading-tight line-clamp-2 min-h-[34px] mt-0.5">
         {product.name}
       </p>
       <div className="flex items-center gap-1 text-[10px] text-ink2 mt-0.5">
@@ -62,11 +62,10 @@ export function ProductRow({
       </div>
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-1">
-          <p className="text-[13px] font-semibold leading-tight truncate">{product.name}</p>
+          <p className="text-[12px] font-semibold leading-tight truncate">{product.name}</p>
         </div>
         <p className="text-[11px] text-ink2">
-          {product.size}
-          {qty && qty > 1 ? ` · ×${qty}` : ""}
+          {product.brand}{qty && qty > 1 ? ` · ×${qty}` : ""}
         </p>
         {reason && <p className="text-[11px] text-ink2 mt-0.5 truncate">{reason}</p>}
         <div className="flex flex-wrap gap-1 mt-1">

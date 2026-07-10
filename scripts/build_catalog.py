@@ -84,6 +84,13 @@ NONFOOD = {
     "coconut water": [U("1561668045-21d96075905d")],
     "balloons": [U("1519758245394-bc2396a0cfcc"), U("1590228192057-24bbf703a65f")],
     "vaporub": [U("1618086883601-e88a3d62b7e6")],
+    "toothpaste": [U("1556228578-8c89e6adf883"), U("1600857544200-b2f666a9a2ec")],
+    "deodorant": [U("1556228578-8c89e6adf883"), U("1600857544200-b2f666a9a2ec")],
+    "lotion": [U("1556228578-8c89e6adf883"), U("1600857544200-b2f666a9a2ec")],
+    "floor-cleaner": [U("1528459801416-a93a3070b6de"), U("1610557892470-55d9e80c0bce")],
+    "toilet-cleaner": [U("1528459801416-a93a3070b6de"), U("1610557892470-55d9e80c0bce")],
+    "garbage-bags": [U("1583947581924-860bda6a26df"), U("1515488042361-ee00e0ddd4e4")],
+    "cake": [U("1603006905003-be475563bc64")],
 }
 
 # Catalog rows. img is either ("m", "<MealDB ingredient>") or ("n", "<NONFOOD key>")
@@ -116,7 +123,7 @@ PRODUCTS = [
     # ---- fresh_produce ----
     ("onion-1kg", "Onion", "Fresho", 39, "1 kg", "fresh_produce", ("m", "Onion"), [VG, GF], [], 4.1, "Fresh red onions."),
     ("tomato-500g", "Tomato", "Fresho", 25, "500 g", "fresh_produce", ("m", "Tomatoes"), [VG, GF], [], 4.0, "Ripe red tomatoes."),
-    ("potato-1kg", "Potato", "Fresho", 32, "1 kg", "fresh_produce", ("m", "Potatoes"), [VG, GF], [], 4.1, "Everyday cooking potatoes."),
+    ("potato-1kg", "Potato", "Fresho", 32, "1 kg", "fresh_produce", ("m", "Potato"), [VG, GF], [], 4.1, "Everyday cooking potatoes."),
     ("garlic-200g", "Garlic", "Fresho", 38, "200 g", "fresh_produce", ("m", "Garlic"), [VG, GF], [], 4.2, "Fresh garlic bulbs."),
     ("ginger-150g", "Ginger", "Fresho", 28, "150 g", "fresh_produce", ("m", "Ginger"), [VG, GF], [], 4.2, "Fresh ginger root."),
     ("spinach", "Palak / Spinach", "Fresho", 22, "250 g", "fresh_produce", ("m", "Spinach"), [VG, GF], [], 4.1, "Tender green spinach."),
@@ -140,7 +147,7 @@ PRODUCTS = [
     ("sugar-1kg", "Sugar", "Madhur", 48, "1 kg", "staples_grocery", ("m", "Sugar"), [VG, GF], [], 4.3, "Fine white sugar."),
     ("salt-1kg", "Iodised Salt", "Tata Salt", 28, "1 kg", "staples_grocery", ("m", "Salt"), [VG, GF], [], 4.7, "Vacuum-evaporated iodised salt."),
     ("olive-oil-500ml", "Extra Virgin Olive Oil", "Figaro", 480, "500 ml", "staples_grocery", ("m", "Olive Oil"), [VG, GF], [], 4.5, "Cold-pressed olive oil."),
-    ("sunflower-oil-1l", "Sunflower Oil", "Fortune", 140, "1 L", "staples_grocery", ("m", "Vegetable Oil"), [VG, GF], [], 4.3, "Refined sunflower cooking oil."),
+    ("sunflower-oil-1l", "Sunflower Oil", "Fortune", 140, "1 L", "staples_grocery", ("m", "Sunflower Oil"), [VG, GF], [], 4.3, "Refined sunflower cooking oil."),
     ("maida-1kg", "Maida / Refined Flour", "Aashirvaad", 52, "1 kg", "staples_grocery", ("m", "Plain Flour"), [VG], ["gluten"], 4.2, "Refined wheat flour."),
     ("besan-500g", "Besan / Gram Flour", "Rajdhani", 70, "500 g", "staples_grocery", ("m", "Flour"), [VG, GF], [], 4.3, "Stone-ground gram flour."),
     ("black-pepper-100g", "Black Pepper", "Tata Sampann", 130, "100 g", "staples_grocery", ("m", "Black Pepper"), [VG, GF], [], 4.5, "Whole black peppercorns."),
@@ -169,36 +176,37 @@ PRODUCTS = [
     ("beer-6", "Lager Beer (6-pack)", "Bira 91", 600, "6 x 330 ml", "beverages", ("n", "beer"), [VG, GF], ["gluten"], 4.4, "Crisp white lager."),
 
     # ---- snacks ----
-    ("chips-classic", "Potato Chips (Salted)", "Lay's", 30, "90 g", "snacks", ("m", "Potatoes"), [V, GF], [], 4.3, "Classic salted crisps."),
+    ("chips-classic", "Potato Chips (Salted)", "Lay's", 30, "90 g", "snacks", ("m", "Potato Chips"), [V, GF], [], 4.3, "Classic salted crisps."),
     ("digestive-biscuits", "Digestive Biscuits", "McVitie's", 80, "250 g", "snacks", ("m", "Digestive Biscuits"), [V], ["gluten"], 4.4, "Wholewheat digestive biscuits."),
-    ("namkeen", "Aloo Bhujia", "Haldiram's", 55, "200 g", "snacks", ("m", "Flour"), [V], [], 4.5, "Spicy potato sev namkeen."),
+    ("namkeen", "Aloo Bhujia", "Haldiram's", 55, "200 g", "snacks", ("m", "Namkeen"), [V], [], 4.5, "Spicy potato sev namkeen."),
     ("dark-chocolate", "Dark Chocolate 70%", "Amul", 90, "150 g", "snacks", ("m", "Dark Chocolate"), [V, GF], ["dairy"], 4.5, "Intense 70% cocoa chocolate."),
     ("milk-chocolate", "Milk Chocolate", "Cadbury Dairy Milk", 80, "110 g", "snacks", ("m", "Chocolate"), [V], ["dairy"], 4.6, "Creamy milk chocolate."),
     ("popcorn", "Microwave Popcorn", "Act II", 45, "99 g", "snacks", ("m", "Sweetcorn"), [V, GF], [], 4.2, "Butter-flavour popcorn."),
-    ("cashews-200g", "Roasted Cashews", "Happilo", 220, "200 g", "snacks", ("m", "Cashew Nuts"), [VG, GF], ["nuts"], 4.5, "Premium roasted & salted cashews."),
+    ("cashews-200g", "Roasted Cashews", "Happilo", 220, "200 g", "snacks", ("m", "Cashews"), [VG, GF], ["nuts"], 4.5, "Premium roasted & salted cashews."),
     ("almonds-200g", "California Almonds", "Happilo", 240, "200 g", "snacks", ("m", "Almonds"), [VG, GF], ["nuts"], 4.6, "Whole raw almonds."),
 
     # ---- frozen ----
     ("frozen-peas", "Frozen Green Peas", "Safal", 75, "500 g", "frozen", ("m", "Peas"), [VG, GF], [], 4.3, "Farm-fresh frozen peas."),
-    ("french-fries", "Frozen French Fries", "McCain", 110, "420 g", "frozen", ("m", "Potatoes"), [VG], [], 4.3, "Crispy classic fries."),
+    ("french-fries", "Frozen French Fries", "McCain", 110, "420 g", "frozen", ("m", "French Fries"), [VG], [], 4.3, "Crispy classic fries."),
     ("ice-cream", "Vanilla Ice Cream Tub", "Amul", 180, "1 L", "frozen", ("m", "Ice Cream"), [V, GF], ["dairy"], 4.5, "Rich vanilla ice cream."),
-    ("frozen-paratha", "Frozen Malabar Paratha", "ID", 99, "5 pcs", "frozen", ("m", "Flour"), [VG], ["gluten"], 4.3, "Ready-to-cook flaky parathas."),
+    ("frozen-paratha", "Frozen Malabar Paratha", "ID", 99, "5 pcs", "frozen", ("m", "Paratha"), [VG], ["gluten"], 4.3, "Ready-to-cook flaky parathas."),
+    ("frozen-samosa-6", "Frozen Samosa (Potato Filled)", "Safal", 89, "300 g", "frozen", ("m", "Samosa"), [V], ["gluten"], 4.4, "Crispy frozen samosas with spiced potato filling, 6 pcs."),
 
     # ---- personal_care ----
     ("shampoo", "Anti-Hairfall Shampoo", "Dove", 220, "340 ml", "personal_care", ("n", "shampoo"), [V], [], 4.3, "Nourishing daily shampoo."),
     ("soap-4", "Moisturising Soap (4-pack)", "Dove", 200, "4 x 100 g", "personal_care", ("n", "soap"), [V], [], 4.5, "Cream beauty bar."),
-    ("toothpaste", "Cavity-Protection Toothpaste", "Colgate", 95, "150 g", "personal_care", ("n", "facewash"), [V], [], 4.5, "Fluoride toothpaste."),
+    ("toothpaste", "Cavity-Protection Toothpaste", "Colgate", 95, "150 g", "personal_care", ("n", "toothpaste"), [V], [], 4.5, "Fluoride toothpaste."),
     ("facewash", "Foaming Face Wash", "Cetaphil", 320, "150 ml", "personal_care", ("n", "facewash"), [V], [], 4.4, "Gentle daily face wash."),
     ("sanitary-pads", "Ultra-Thin Sanitary Pads", "Whisper", 199, "30 pcs", "personal_care", ("n", "pads"), [V], [], 4.5, "Overnight protection pads."),
-    ("deodorant", "Body Spray Deodorant", "Nivea", 210, "150 ml", "personal_care", ("n", "soap"), [V], [], 4.3, "Long-lasting freshness."),
+    ("deodorant", "Body Spray Deodorant", "Nivea", 210, "150 ml", "personal_care", ("n", "deodorant"), [V], [], 4.3, "Long-lasting freshness."),
 
     # ---- household_cleaning ----
     ("dishwasher-tabs", "Dishwasher Tablets", "Finish", 540, "60 pcs", "household_cleaning", ("n", "dishwash"), [VG], [], 4.5, "All-in-1 dishwasher tablets."),
     ("dishwash-liquid", "Dishwash Liquid Gel", "Vim", 110, "750 ml", "household_cleaning", ("n", "dishwash"), [VG], [], 4.4, "Lemon dishwash gel."),
     ("detergent", "Matic Liquid Detergent", "Surf Excel", 320, "2 L", "household_cleaning", ("n", "detergent"), [VG], [], 4.5, "Front-load liquid detergent."),
-    ("floor-cleaner", "Floor Cleaner Disinfectant", "Lizol", 185, "975 ml", "household_cleaning", ("n", "detergent"), [VG], [], 4.4, "Kills 99.9% germs."),
-    ("toilet-cleaner", "Toilet Cleaner", "Harpic", 99, "1 L", "household_cleaning", ("n", "detergent"), [VG], [], 4.4, "Power-plus toilet cleaner."),
-    ("garbage-bags", "Garbage Bags (Medium)", "Origami", 160, "90 pcs", "household_cleaning", ("n", "detergent"), [VG], [], 4.3, "Oxo-biodegradable bin bags."),
+    ("floor-cleaner", "Floor Cleaner Disinfectant", "Lizol", 185, "975 ml", "household_cleaning", ("n", "floor-cleaner"), [VG], [], 4.4, "Kills 99.9% germs."),
+    ("toilet-cleaner", "Toilet Cleaner", "Harpic", 99, "1 L", "household_cleaning", ("n", "toilet-cleaner"), [VG], [], 4.4, "Power-plus toilet cleaner."),
+    ("garbage-bags", "Garbage Bags (Medium)", "Origami", 160, "90 pcs", "household_cleaning", ("n", "garbage-bags"), [VG], [], 4.3, "Oxo-biodegradable bin bags."),
     ("tissue-box", "Facial Tissues", "Origami", 70, "100 pulls", "household_cleaning", ("n", "tissue"), [VG], [], 4.3, "2-ply soft facial tissues."),
 
     # ---- medicine_health ----
@@ -215,7 +223,7 @@ PRODUCTS = [
     ("diapers-m", "Baby Diaper Pants (M)", "Pampers", 699, "62 pcs", "baby_care", ("n", "diapers"), [VG], [], 4.6, "12-hr dry pant-style diapers."),
     ("baby-wipes", "Baby Wipes", "Pampers", 199, "72 pcs", "baby_care", ("n", "wipes"), [VG], [], 4.5, "Fragrance-free gentle wipes."),
     ("baby-formula", "Infant Formula Stage 1", "Nan Pro", 750, "400 g", "baby_care", ("n", "formula"), [V], ["dairy"], 4.5, "Spray-dried infant milk formula."),
-    ("baby-lotion", "Baby Lotion", "Johnson's", 199, "200 ml", "baby_care", ("n", "soap"), [V], [], 4.5, "Mild moisturising baby lotion."),
+    ("baby-lotion", "Baby Lotion", "Johnson's", 199, "200 ml", "baby_care", ("n", "lotion"), [V], [], 4.5, "Mild moisturising baby lotion."),
 # ---- missing food items for the 7 scenarios ----
     ("besan-1kg", "Organic Besan (Gram Flour)", "Rajdhani", 120, "1 kg", "staples_grocery", ("m", "Flour"), [VG, GF], [], 4.5, "Premium fine-ground chana dal flour for frying."),
     ("eno-fruit-salt", "Eno Regular Fruit Salt Sachet", "Eno", 10, "5 g", "medicine_health", ("n", "pills"), [VG, GF], [], 4.8, "Fast-acting relief from acidity and stomach gas."),
@@ -230,22 +238,21 @@ PRODUCTS = [
 
     # ---- party_festive ----
     ("red-plastic-cups", "Red Party Plastic Cups", "Origami", 85, "25 pcs", "party_festive", ("n", "cups"), [VG, GF], [], 4.2, "Disposable premium red cups for cold beverages."),
-    ("soan-papdi-500g", "Premium Soan Papdi Sweet Box", "Haldiram's", 160, "500 g", "party_festive", ("m", "Flour"), [V], ["gluten", "nuts", "dairy"], 4.5, "Flaky traditional sweet made with ghee and dry fruits."),
+    ("soan-papdi-500g", "Premium Soan Papdi Sweet Box", "Haldiram's", 160, "500 g", "party_festive", ("m", "Soan Papdi"), [V], ["gluten", "nuts", "dairy"], 4.5, "Flaky traditional sweet made with ghee and dry fruits."),
     ("gift-bag", "Elegant Birthday Gift Bag", "Paperkraft", 60, "1 unit", "party_festive", ("n", "gift_bag"), [VG, GF], [], 4.3, "Thick glossy gift wrapping bag with ribbon handles."),
 
     # ---- updated extra accessories ----
     ("colin-spray", "Colin Glass and Surface Cleaner", "Colin", 105, "500 ml", "household_cleaning", ("n", "cleaner"), [VG], [], 4.5, "Shine and disinfection booster spray for glass tables."),
     ("hand-sanitizer-wipe", "Dettol Anti-Bacterial Wet Wipes", "Dettol", 75, "15 wipes", "personal_care", ("n", "wipes"), [VG], [], 4.6, "Skin-safe disinfecting travel wet tissues."),
 
-    ("whole-bay-leaf", "Whole Bay Leaf / Tejpatta", "Catch", 45, "20 g", "staples_grocery", ("m", "Bay Leaf"), [VG, GF], [], 4.5, "Aromatically fragrant whole dried bay leaves."),
+    ("whole-bay-leaf", "Whole Bay Leaf / Tejpatta", "Catch", 45, "20 g", "staples_grocery", ("m", "Bay Leaves"), [VG, GF], [], 4.5, "Aromatically fragrant whole dried bay leaves."),
     ("cinnamon-sticks", "Dalchini / Cinnamon Sticks", "Catch", 65, "50 g", "staples_grocery", ("m", "Cinnamon"), [VG, GF], [], 4.6, "Premium sweet-aroma cinnamon whole sticks."),
     ("whole-cloves", "Laung / Whole Cloves", "Catch", 55, "50 g", "staples_grocery", ("m", "Cloves"), [VG, GF], [], 4.4, "Handpicked premium pungent whole cloves."),
     ("green-cardamom", "Hari Elaichi / Green Cardamom", "Catch", 120, "50 g", "staples_grocery", ("m", "Cardamom"), [VG, GF], [], 4.7, "Whole aromatic green cardamom pods."),
-    ("chocolate-cake", "Rich Chocolate Cake Slice", "Bombay Baking", 120, "1 slice", "party_festive", ("n", "candle"), [V], ["gluten", "dairy"], 4.6, "Moist layered chocolate cake with chocolate ganache."),
+    ("chocolate-cake", "Rich Chocolate Cake Slice", "Bombay Baking", 120, "1 slice", "party_festive", ("n", "cake"), [V], ["gluten", "dairy"], 4.6, "Moist layered chocolate cake with chocolate ganache."),
     ("latex-balloons", "Colourful Latex Balloons", "Party Supplies", 60, "12 pcs", "party_festive", ("n", "balloons"), [VG, GF], [], 4.3, "Assorted bright-coloured 12-inch latex balloons."),
     ("ready-to-eat-soup", "Mixed Vegetable Soup", "Knorr", 50, "65 g", "staples_grocery", ("m", "Soup"), [V, GF], [], 4.2, "Instant cup-of-soup mix, just add hot water."),
-    ("vaporub", "Vicks VapoRub", "Vicks", 135, "25 ml", "medicine_health", ("n", "vaporub"), [VG], [], 4.7, "Ayurvedic balm for cold, cough and headache relief."),
-    ("honey", "Pure Honey", "Dabur", 195, "500 g", "staples_grocery", ("m", "Honey"), [VG], [], 4.6, "100% pure natural honey for tea and home remedies."),
+    ("honey", "Pure Honey", "Dabur", 195, "500 g", "staples_grocery", ("m", "Honey"), [VG, GF], [], 4.6, "100% pure natural honey for tea and home remedies."),
 ]
 
 
@@ -275,7 +282,7 @@ def build():
             "size": size,
             "category": cat,
             "image": f"/products/{pid}.png" if ok else "",
-            "match_key": key.lower() if kind == "m" else "",
+            "match_key": key.lower(),
             "dietary_tags": diet,
             "allergen_tags": allergens,
             "rating": rating,

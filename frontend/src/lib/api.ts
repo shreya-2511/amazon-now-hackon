@@ -52,6 +52,11 @@ export const api = {
     get<{ recipes: RecipeSummary[] }>(`/api/recipes?show_excluded=${showExcluded}`),
   recipe: (id: string, servings: number) =>
     get<Recipe>(`/api/recipe/${id}?servings=${servings}`),
+  productAlternatives: (pid: string) =>
+    get<{ alternative: Product | null }>(`/api/product/${encodeURIComponent(pid)}/alternatives`),
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  batchAlternatives: (pids: string[]) =>
+    post<{ alternatives: { [key: string]: Product | null } }>("/api/alternatives", { pids }),
   speakStarters: () => get<{ chips: string[] }>("/api/speaknow/starters"),
   speak: (q: string) => get<SpeakResult>(`/api/speaknow?q=${encodeURIComponent(q)}`),
   coupons: (items: { product_id: string; qty: number }[], payment = "upi") =>

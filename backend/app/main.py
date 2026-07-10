@@ -97,6 +97,38 @@ def product(pid: str):
     return data.decorate(p) if p else {"error": "not found"}
 
 
+@app.get("/api/product/{pid}/alternatives")
+def product_alternatives(pid: str) -> dict:
+    """Returns the single cheapest alternative for a given product ID.
+
+    Args:
+        pid: The ID of the original product.
+
+    Returns:
+        A dictionary with an "alternative" key containing the product or null.
+    """
+    alternative = data.find_alternatives(pid)
+    return {"alternative": alternative}
+
+
+class AlternativesBatchRequest(BaseModel):
+    pids: list[str]
+
+
+@app.post("/api/alternatives")
+def alternatives_batch(req: AlternativesBatchRequest) -> dict:
+    """Returns the single cheapest alternative for each of the given product IDs.
+
+    Args:
+        req: A list of product IDs.
+
+    Returns:
+        A dictionary mapping each pid to its alternative product or null.
+    """
+    results = data.find_alternatives_batch(req.pids)
+    return {"alternatives": results}
+
+
 @app.get("/api/recipes")
 def recipes():
     return {"recipes": engine.recipe_list()}

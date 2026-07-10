@@ -424,7 +424,7 @@ _SYNONYMS = {
     "mango juice": ["juice", "mango drink"],
     "roasted peanuts": ["peanuts", "peanut"],
 
-    "samosa": ["snack", "frozen snack"],
+
 
     "flowers": ["roses", "bouquet"],
 
@@ -539,10 +539,11 @@ def _score(p: dict, terms: list[str]) -> int:
 
 
 def compact(p: dict) -> dict:
-    """Token-lean product view for the LLM tool result (no description/image)."""
+    """Token-lean product view for the LLM tool result."""
     return {"id": p["id"], "name": p["name"], "brand": p["brand"],
             "price": p["price"], "size": p.get("size", ""),
-            "category": p["category"], "rating": p["rating"],
+            "category": p["category"], "image": p.get("image", ""),
+            "rating": p["rating"],
             "dietary_tags": p.get("dietary_tags", []),
             "allergen_tags": p.get("allergen_tags", [])}
 
@@ -622,6 +623,120 @@ def retrieve(query: str, category: str = "", limit: int = 8,
 
     scored.sort(key=lambda x: (-x[0], -x[1]["rating"], -x[1].get("rating_count", 0)))
     return [compact(p) for _, p in scored[:limit]]
+
+
+
+
+def find_alternatives(pid: str, user_id: str | None = None) -> dict | None:
+    """Finds the single cheapest alternative for a given product ID with the same match_key.
+
+    Args:
+        pid: The ID of the original product.
+        user_id: Optional user ID; if not provided, active_user() is used.
+
+    Returns:
+        A compact decorated product dict, or None if no cheaper alternative exists.
+    """
+    original_product = product(pid)
+    if not original_product:
+        return None
+
+    user = active_user() if user_id is None else next((u for u in personas()["users"] if u["id"] == user_id), None)
+    if not user:
+        user = active_user()
+
+    prefs = user.get("dietary", {}).get("preferences", [])
+    block = user.get("dietary", {}).get("allergens", [])
+
+    orig_match = original_product.get("match_key", "")
+    if not orig_match:
+        return None
+
+    best = None
+    for p in catalog():
+        if (p.get("match_key") == orig_match and
+                p["price"] < original_product["price"] and
+                p["id"] != original_product["id"]):
+
+            if allergen_conflict(p, block):
+                continue
+            if _is_diet_excluded(p, prefs):
+                continue
+
+            if best is None or p["price"] < best["price"]:
+                best = p
+
+    return compact(decorate(best, user)) if best else None
+
+
+def find_alternatives_batch(pids: list[str], user_id: str | None = None) -> dict[str, dict | None]:
+    """Finds the single cheapest alternative for multiple product IDs in one pass.
+
+    Args:
+        pids: List of product IDs to find alternatives for.
+        user_id: Optional user ID; if not provided, active_user() is used.
+
+    Returns:
+        A dict mapping each pid to its alternative product dict (or None).
+    """
+    user = active_user() if user_id is None else next((u for u in personas()["users"] if u["id"] == user_id), None)
+    if not user:
+        user = active_user()
+
+    prefs = user.get("dietary", {}).get("preferences", [])
+    block = user.get("dietary", {}).get("allergens", [])
+
+    originals: dict[str, dict] = {}
+    for pid in pids:
+        p = product(pid)
+        if p:
+            originals[pid] = p
+
+    match_keys: dict[str, list[dict]] = {}
+    for p in catalog():
+        mk = p.get("match_key", "")
+        if mk:
+            match_keys.setdefault(mk, []).append(p)
+
+    results: dict[str, dict | None] = {}
+    for pid, orig in originals.items():
+        mk = orig.get("match_key", "")
+        if not mk:
+            results[pid] = None
+            continue
+
+        best = None
+        for p in match_keys.get(mk, []):
+            if (p["price"] < orig["price"] and p["id"] != orig["id"]):
+                if allergen_conflict(p, block):
+                    continue
+                if _is_diet_excluded(p, prefs):
+                    continue
+                if best is None or p["price"] < best["price"]:
+                    best = p
+
+        results[pid] = compact(decorate(best, user)) if best else None
+
+    return results
+
+
+def most_expensive_in_group(pid: str) -> dict | None:
+    """Return the most expensive product with the same match_key as the given pid.
+
+    Useful for calendar signals — show the premium version so that Saver mode
+    in checkout can swap to a cheaper alternative.
+    """
+    p = product(pid)
+    if not p:
+        return None
+    mk = p.get("match_key", "")
+    if not mk:
+        return p
+    best = p
+    for candidate in catalog():
+        if candidate.get("match_key") == mk and candidate["price"] > best["price"]:
+            best = candidate
+    return best
 
 
 CATEGORIES = [
