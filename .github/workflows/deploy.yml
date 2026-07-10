@@ -25,7 +25,7 @@ jobs:
             git reset --hard origin/main
 
             # Migrate deduplicated catalog to DynamoDB
-            uv run python3 scripts/migrate_to_dynamodb.py
+            backend/.venv/bin/python3 scripts/migrate_to_dynamodb.py
 
             cd frontend
             pnpm install
