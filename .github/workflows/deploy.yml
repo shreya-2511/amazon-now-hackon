@@ -20,6 +20,7 @@ jobs:
             set -e
 
             cd /opt/amazonNow
+            python3 scripts/migrate_to_dynamodb.py
 
             git fetch origin main
             git reset --hard origin/main
