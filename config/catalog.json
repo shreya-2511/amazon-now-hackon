@@ -1,14 +1,31 @@
 {
   "products": [
     {
-      "id": "diapers-m",
-      "name": "Baby Diaper Pants (M)",
-      "brand": "Pampers",
-      "price": 699,
-      "size": "62 pcs",
+      "id": "diapers",
+      "name": "Huggies Adjustable Dry Tape Style Diapers, Small (S) Size",
+      "brand": "Huggies",
+      "price": 610,
+      "size": "68 pcs",
       "category": "baby_care",
-      "image": "/products/diapers-m.png",
-      "match_key": "",
+      "image": "/products/huggies-diaper.png",
+      "match_key": "diaper",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "allergen_tags": [],
+      "rating": 4.6,
+      "rating_count": 558,
+      "description": "12-hr dry pant-style diapers."
+    },
+    {
+      "id": "diapers-m",
+      "name": "Pampers Premium Care Pants Baby Diapers (M) Size",
+      "brand": "Pampers",
+      "price": 544,
+      "size": "40 pcs",
+      "category": "baby_care",
+      "image": "/products/pampers-diaper.png",
+      "match_key": "diaper",
       "dietary_tags": [
         "vegan"
       ],
@@ -19,12 +36,29 @@
     },
     {
       "id": "baby-wipes",
-      "name": "Baby Wipes",
+      "name": "Pampers Baby Gentle wet wipes",
       "brand": "Pampers",
-      "price": 199,
+      "price": 211,
       "size": "72 pcs",
       "category": "baby_care",
-      "image": "/products/baby-wipes.png",
+      "image": "/products/pampers-baby-wipes.png",
+      "match_key": "",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 2885,
+      "description": "Fragrance-free gentle wipes."
+    },
+    {
+      "id": "baby-wipe",
+      "name": "MamyPoko Extra-Clean Wipes for Baby",
+      "brand": "MamyPoko",
+      "price": 143,
+      "size": "72 pcs",
+      "category": "baby_care",
+      "image": "/products/mamypoko-baby-wipes.png",
       "match_key": "",
       "dietary_tags": [
         "vegan"
@@ -36,9 +70,9 @@
     },
     {
       "id": "baby-formula",
-      "name": "Infant Formula Stage 1",
+      "name": "Stage 1 Infant Formula",
       "brand": "Nan Pro",
-      "price": 750,
+      "price": 775,
       "size": "400 g",
       "category": "baby_care",
       "image": "/products/baby-formula.png",
@@ -54,10 +88,29 @@
       "description": "Spray-dried infant milk formula."
     },
     {
+      "id": "baby-formula-1",
+      "name": "Aptamil Premium Infant Formula Stage 1",
+      "brand": "Aptamil",
+      "price": 750,
+      "size": "400 g",
+      "category": "baby_care",
+      "image": "/products/aptamil-baby-formula.png",
+      "match_key": "",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [
+        "dairy"
+      ],
+      "rating": 4.5,
+      "rating_count": 4765,
+      "description": "Spray-dried infant milk formula."
+    },
+    {
       "id": "baby-lotion",
-      "name": "Baby Lotion",
+      "name": "Johnson's baby Lotion ",
       "brand": "Johnson's",
-      "price": 199,
+      "price": 210,
       "size": "200 ml",
       "category": "baby_care",
       "image": "/products/baby-lotion.png",
@@ -71,13 +124,30 @@
       "description": "Mild moisturising baby lotion."
     },
     {
-      "id": "wet-wipes",
-      "name": "Wet Wipes (Travel Pack)",
-      "brand": "Dettol",
-      "price": 85,
-      "size": "50 pcs",
+      "id": "meemee-baby-lotion",
+      "name": "Mee Mee Soft Baby Lotion",
+      "brand": "Mee Mee",
+      "price": 139,
+      "size": "200 ml",
       "category": "baby_care",
-      "image": "/products/wet-wipes.png",
+      "image": "/products/meemee-baby-lotion.png",
+      "match_key": "",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 3388,
+      "description": "Mild moisturising baby lotion."
+    },
+    {
+      "id": "wet-wipes",
+      "name": "Mee Mee Baby Wet Wipes(Travel Pack)",
+      "brand": "Mee Mee",
+      "price": 138,
+      "size": "72 pcs",
+      "category": "baby_care",
+      "image": "/products/meemee-baby-wet-wipes.png",
       "match_key": "wet wipes",
       "dietary_tags": [],
       "allergen_tags": [],
@@ -86,13 +156,47 @@
       "description": "Antibacterial wet wipes for on-the-go freshness."
     },
     {
-      "id": "brown-bread",
-      "name": "Whole Wheat Brown Bread",
-      "brand": "Britannia",
-      "price": 45,
-      "size": "400 g",
+      "id": "wet-wipe",
+      "name": "Babyhug Premium 98% Water Baby Wet Wipes",
+      "brand": "Babyhug",
+      "price": 75,
+      "size": "72 pcs",
+      "category": "baby_care",
+      "image": "/products/babyhug-baby-wet-wipes.png",
+      "match_key": "wet wipes",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.4,
+      "rating_count": 3400,
+      "description": "Antibacterial wet wipes for on-the-go freshness."
+    },
+    {
+      "id": "brown-bread-1",
+      "name": "Harvest Gold Whole Wheat Brown Bread",
+      "brand": "Harvest Gold",
+      "price": 65,
+      "size": "450 g",
       "category": "bakery",
-      "image": "/products/brown-bread.png",
+      "image": "/products/harvest-gold-brown-bread.png",
+      "match_key": "bread",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [
+        "gluten"
+      ],
+      "rating": 4.3,
+      "rating_count": 2969,
+      "description": "Soft whole-wheat sandwich bread."
+    },
+    {
+      "id": "brown-bread",
+      "name": "Britannia Whole Wheat Brown Bread",
+      "brand": "Britannia",
+      "price": 52,
+      "size": "450 g",
+      "category": "bakery",
+      "image": "/products/britania-brown-bread.png",
       "match_key": "bread",
       "dietary_tags": [
         "vegetarian"
@@ -106,12 +210,31 @@
     },
     {
       "id": "white-bread",
-      "name": "White Sandwich Bread",
-      "brand": "Modern",
-      "price": 40,
+      "name": "Britannia Breakfast Slice White Bread",
+      "brand": "Britannia",
+      "price": 35,
       "size": "350 g",
       "category": "bakery",
-      "image": "/products/white-bread.png",
+      "image": "/products/Britannia-White-Bread.png",
+      "match_key": "bread",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [
+        "gluten"
+      ],
+      "rating": 4.2,
+      "rating_count": 3292,
+      "description": "Classic soft white bread."
+    },
+    {
+      "id": "white-bread-1",
+      "name": "English Oven Premium White bread",
+      "brand": "English Oven",
+      "price": 33,
+      "size": "350 g",
+      "category": "bakery",
+      "image": "/products/English-Oven-White-bread.png",
       "match_key": "bread",
       "dietary_tags": [
         "vegetarian"
@@ -125,12 +248,31 @@
     },
     {
       "id": "pav-buns",
-      "name": "Ladi Pav",
+      "name": "Britannia Pav",
       "brand": "Britannia",
-      "price": 35,
-      "size": "6 pcs",
+      "price": 40,
+      "size": "1 pack (6 pcs)",
       "category": "bakery",
-      "image": "/products/pav-buns.png",
+      "image": "/products/britannia-pav.png",
+      "match_key": "bread",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [
+        "gluten"
+      ],
+      "rating": 4.3,
+      "rating_count": 1376,
+      "description": "Soft pav buns for misal & vada pav."
+    },
+    {
+      "id": "pav-bun",
+      "name": "Modern Wow Pav",
+      "brand": "Modern",
+      "price": 35,
+      "size": "1 pack (6 pcs)",
+      "category": "bakery",
+      "image": "/products/modern-pav.png",
       "match_key": "bread",
       "dietary_tags": [
         "vegetarian"
@@ -144,12 +286,32 @@
     },
     {
       "id": "burger-buns",
-      "name": "Burger Buns",
-      "brand": "The Health Factory",
-      "price": 60,
+      "name": "Britannia Burger Bun with Sesame Seed",
+      "brand": "Britannia",
+      "price": 45,
       "size": "4 pcs",
       "category": "bakery",
-      "image": "/products/burger-buns.png",
+      "image": "/products/britannia-burger-bun.png",
+      "match_key": "bread",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [
+        "gluten",
+        "eggs"
+      ],
+      "rating": 4.2,
+      "rating_count": 2746,
+      "description": "Sesame-topped burger buns."
+    },
+    {
+      "id": "burger-bun",
+      "name": "Bonn Sesame Burger Buns",
+      "brand": "Bonn",
+      "price": 36,
+      "size": "4 pcs",
+      "category": "bakery",
+      "image": "/products/bonn-burger-bun.png",
       "match_key": "bread",
       "dietary_tags": [
         "vegetarian"
@@ -164,10 +326,31 @@
     },
     {
       "id": "croissant",
-      "name": "Butter Croissant",
-      "brand": "Theobroma",
-      "price": 90,
+      "name": "Butter Croissant (Large)",
+      "brand": "Meatigo",
+      "price": 89,
       "size": "2 pcs",
+      "category": "bakery",
+      "image": "/products/meatigo-croissant.png",
+      "match_key": "bread",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [
+        "gluten",
+        "dairy",
+        "eggs"
+      ],
+      "rating": 4.5,
+      "rating_count": 3279,
+      "description": "Flaky all-butter croissants."
+    },
+    {
+      "id": "croissant-1",
+      "name": "Britannia Treat Croissant",
+      "brand": "Britannia",
+      "price": 70,
+      "size": "5 packs",
       "category": "bakery",
       "image": "/products/croissant.png",
       "match_key": "bread",
@@ -204,14 +387,54 @@
       "description": "Soft vanilla buttercream cupcakes."
     },
     {
-      "id": "vanilla-cake",
-      "name": "Vanilla Cake Slice",
+      "id": "cupcakes",
+      "name": "Vanilla Cupcakes",
+      "brand": "IGP",
+      "price": 350,
+      "size": "6 pcs",
+      "category": "bakery",
+      "image": "/products/cupcakes.png",
+      "match_key": "cupcakes",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [
+        "gluten",
+        "dairy"
+      ],
+      "rating": 4.5,
+      "rating_count": 2100,
+      "description": "Soft vanilla buttercream cupcakes."
+    },
+    {
+      "id": "butterscotch-cake",
+      "name": "Butterscotch Crunch Eggless Cake",
+      "brand": "FNP",
+      "price": 450,
+      "size": "500 g",
+      "category": "bakery",
+      "image": "/products/butterscotch-cake.png",
+      "match_key": "cake",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [
+        "gluten",
+        "dairy"
+      ],
+      "rating": 4.4,
+      "rating_count": 1600,
+      "description": "Light and fluffy vanilla sponge cake."
+    },
+    {
+      "id": "cake",
+      "name": "Vanilla Cake",
       "brand": "Bombay Baking",
-      "price": 100,
-      "size": "1 slice",
+      "price": 380,
+      "size": "500 g",
       "category": "bakery",
       "image": "/products/vanilla-cake.png",
-      "match_key": "vanilla cake",
+      "match_key": "cake",
       "dietary_tags": [
         "vegetarian"
       ],
@@ -258,24 +481,6 @@
       "rating": 4.5,
       "rating_count": 2325,
       "description": "Rich instant coffee granules."
-    },
-    {
-      "id": "tea-500g",
-      "name": "Premium Tea",
-      "brand": "Tata Tea Gold",
-      "price": 290,
-      "size": "500 g",
-      "category": "beverages",
-      "image": "/products/tea-500g.png",
-      "match_key": "tea",
-      "dietary_tags": [
-        "vegan",
-        "gluten-free"
-      ],
-      "allergen_tags": [],
-      "rating": 4.5,
-      "rating_count": 2844,
-      "description": "Assam blend leaf tea."
     },
     {
       "id": "green-tea-25",
@@ -1211,21 +1416,6 @@
       "description": "Fresh tomato purée."
     },
     {
-      "id": "lime",
-      "name": "Lime",
-      "brand": "Fresho",
-      "price": 25,
-      "size": "1 unit",
-      "category": "fresh_produce",
-      "image": "/products/lime.png",
-      "match_key": "lime",
-      "dietary_tags": [],
-      "allergen_tags": [],
-      "rating": 4.1,
-      "rating_count": 1495,
-      "description": "Fresh lime."
-    },
-    {
       "id": "cayenne-pepper",
       "name": "Cayenne Pepper",
       "brand": "Fresho",
@@ -1442,10 +1632,45 @@
       "description": "Farm-fresh frozen peas."
     },
     {
+      "id": "frozen-pea",
+      "name": "Daily Good Frozen Green Peas",
+      "brand": "Daily Good",
+      "price": 72,
+      "size": "500 g",
+      "category": "frozen",
+      "image": "/products/daily-good-frozen-peas.png",
+      "match_key": "peas",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.3,
+      "rating_count": 2349,
+      "description": "Farm-fresh frozen peas."
+    },
+    {
       "id": "french-fries",
+      "name": "Safal Frozen French Fries",
+      "brand": "Safal",
+      "price": 86,
+      "size": "420 g",
+      "category": "frozen",
+      "image": "/products/safal-french-fries.png",
+      "match_key": "potatoes",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "allergen_tags": [],
+      "rating": 4.3,
+      "rating_count": 3062,
+      "description": "Crispy classic fries."
+    },
+    {
+      "id": "french-fries-1",
       "name": "Frozen French Fries",
       "brand": "McCain",
-      "price": 110,
+      "price": 83,
       "size": "420 g",
       "category": "frozen",
       "image": "/products/french-fries.png",
@@ -1460,12 +1685,12 @@
     },
     {
       "id": "ice-cream",
-      "name": "Vanilla Ice Cream Tub",
+      "name": "Amul Vanilla Ice Cream Tub",
       "brand": "Amul",
       "price": 180,
       "size": "1 L",
       "category": "frozen",
-      "image": "/products/ice-cream.png",
+      "image": "/products/Amul-Vanilla-Ice-Cream.png",
       "match_key": "ice cream",
       "dietary_tags": [
         "vegetarian",
@@ -1479,11 +1704,50 @@
       "description": "Rich vanilla ice cream."
     },
     {
+      "id": "ice-cream-tub",
+      "name": "FruBon French Vanilla Ice Cream Tub",
+      "brand": "FruBon French",
+      "price": 130,
+      "size": "1 L",
+      "category": "frozen",
+      "image": "/products/FruBon-Vanilla-Ice-Cream.png",
+      "match_key": "ice cream",
+      "dietary_tags": [
+        "vegetarian",
+        "gluten-free"
+      ],
+      "allergen_tags": [
+        "dairy"
+      ],
+      "rating": 4.5,
+      "rating_count": 726,
+      "description": "Rich vanilla ice cream."
+    },
+    {
+      "id": "frozen-parathas",
+      "name": "Frozen Wheat Lachha Paratha",
+      "brand": "iD Fresh",
+      "price": 115,
+      "size": "6 pcs",
+      "category": "frozen",
+      "image": "/products/id-frozen-paratha.png",
+      "match_key": "flour",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "allergen_tags": [
+        "gluten"
+      ],
+      "rating": 4.3,
+      "rating_count": 3955,
+      "description": "Ready-to-cook flaky parathas."
+    },
+    {
       "id": "frozen-paratha",
-      "name": "Frozen Malabar Paratha",
-      "brand": "ID",
-      "price": 99,
-      "size": "5 pcs",
+      "name": "Aashirvaad Frozen Malabar Paratha",
+      "brand": "Aashirvaad",
+      "price": 107,
+      "size": "6 pcs",
       "category": "frozen",
       "image": "/products/frozen-paratha.png",
       "match_key": "flour",
@@ -1498,11 +1762,30 @@
       "description": "Ready-to-cook flaky parathas."
     },
     {
+      "id": "buffet-frozen-samosa",
+      "name": "Buffet Chicken Cocktail Samosa",
+      "brand": "Buffet",
+      "price": 252,
+      "size": "460 g",
+      "category": "frozen",
+      "image": "/products/buffet-frozen-samosa.png",
+      "match_key": "frozen samosa",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [
+        "gluten"
+      ],
+      "rating": 4.4,
+      "rating_count": 2900,
+      "description": "Crispy frozen potato-filled samosas."
+    },
+    {
       "id": "frozen-samosa",
-      "name": "Frozen Samosa",
-      "brand": "Safal",
-      "price": 120,
-      "size": "600 g",
+      "name": "Haldiram's Frozen Samosa",
+      "brand": "Haldiram's",
+      "price": 171,
+      "size": "460 g",
       "category": "frozen",
       "image": "/products/frozen-samosa.png",
       "match_key": "frozen samosa",
@@ -1517,14 +1800,14 @@
       "description": "Crispy frozen potato-filled samosas."
     },
     {
-      "id": "red-roses-bouquet",
-      "name": "Fresh Premium Red Roses Bouquet",
-      "brand": "Ferns N Petals",
-      "price": 399,
+      "id": "red-rose-bouquet",
+      "name": "Real Fresh Red Roses Bouquet",
+      "brand": "The FloralMart",
+      "price": 445,
       "size": "1 bunch",
       "category": "home_decor_lifestyle",
-      "image": "/products/red-roses-bouquet.png",
-      "match_key": "",
+      "image": "/products/red-rose-floral-bouquet.png",
+      "match_key": "flower",
       "dietary_tags": [
         "vegan",
         "gluten-free"
@@ -1535,14 +1818,32 @@
       "description": "A bunch of 6 elegant, freshly-cut red roses."
     },
     {
-      "id": "scented-candle",
-      "name": "Aromatic Lavender Scented Candle",
-      "brand": "Miniso",
-      "price": 249,
-      "size": "1 unit",
+      "id": "red-roses-bouquet",
+      "name": "6 Red Roses Bouquet",
+      "brand": "Ferns N Petals",
+      "price": 399,
+      "size": "1 bunch",
       "category": "home_decor_lifestyle",
-      "image": "/products/scented-candle.png",
-      "match_key": "",
+      "image": "/products/red-rose-bouquet.png",
+      "match_key": "flower",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.6,
+      "rating_count": 1148,
+      "description": "A bunch of 6 elegant, freshly-cut red roses."
+    },
+    {
+      "id": "aromatic-scented-candle",
+      "name": "Sleep & Destress Aromatherapy Scented Candle",
+      "brand": "EM5",
+      "price": 259,
+      "size": "100 g",
+      "category": "home_decor_lifestyle",
+      "image": "/products/aromatic-scented-candle.png",
+      "match_key": "candle",
       "dietary_tags": [
         "vegan",
         "gluten-free"
@@ -1553,14 +1854,79 @@
       "description": "Soothing hand-poured wax jar candle for ambience."
     },
     {
+      "id": "scented-candle",
+      "name": "Aromatic Lavender Scented Candle",
+      "brand": "Miniso",
+      "price": 230,
+      "size": "150 g",
+      "category": "home_decor_lifestyle",
+      "image": "/products/scented-candle.png",
+      "match_key": "candle",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.4,
+      "rating_count": 344,
+      "description": "Soothing hand-poured wax jar candle for ambience."
+    },
+    {
+      "id": "indoor-plant",
+      "name": "ATIRDA Original Monstera Deliciosa Live Plant",
+      "brand": "ATIRDA",
+      "price": 239,
+      "size": "1 Count",
+      "category": "home_decor_lifestyle",
+      "image": "/products/indoor-plants-monstera.png",
+      "match_key": "indoor plants",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 463,
+      "description": "Air-Purifying Lush Green Foliage With Grow Bag & pot"
+    },
+    {
+      "id": "indoor-plants",
+      "name": "Indoor Peace Lily White Flowers Plant",
+      "brand": "Generic",
+      "price": 157,
+      "size": "1 Count",
+      "category": "home_decor_lifestyle",
+      "image": "/products/lily-indoor-plants.png",
+      "match_key": "indoor plants",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 463,
+      "description": "Perfect for Living Room & Bedroom Office | Healthy Airpurifying Plant"
+    },
+    {
       "id": "dishwasher-tabs",
-      "name": "Dishwasher Tablets",
-      "brand": "Finish",
-      "price": 540,
-      "size": "60 pcs",
+      "name": "Bosch Dishwasher Tablets",
+      "brand": "Bosch",
+      "price": 495,
+      "size": "25 tablets",
       "category": "household_cleaning",
-      "image": "/products/dishwasher-tabs.png",
-      "match_key": "",
+      "image": "/products/bosch-dishwasher-tablets.png",
+      "match_key": "dishwasher tablets",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 3934,
+      "description": "All-in-1 dishwasher tablets."
+    },
+    {
+      "id": "dishwasher-tablet",
+      "name": "Finish Dishwasher Tablets",
+      "brand": "Finish",
+      "price": 432,
+      "size": "23 tablets",
+      "category": "household_cleaning",
+      "image": "/products/finish-dishwasher-tablets.png",
+      "match_key": "dishwasher tablets",
       "dietary_tags": [
         "vegan"
       ],
@@ -1573,11 +1939,11 @@
       "id": "dishwash-liquid",
       "name": "Dishwash Liquid Gel",
       "brand": "Vim",
-      "price": 110,
-      "size": "750 ml",
+      "price": 20,
+      "size": "140 ml",
       "category": "household_cleaning",
-      "image": "/products/dishwash-liquid.png",
-      "match_key": "",
+      "image": "/products/vim-dishwash-gel.png",
+      "match_key": "dishwash",
       "dietary_tags": [
         "vegan"
       ],
@@ -1587,14 +1953,82 @@
       "description": "Lemon dishwash gel."
     },
     {
-      "id": "detergent",
-      "name": "Matic Liquid Detergent",
-      "brand": "Surf Excel",
-      "price": 320,
-      "size": "2 L",
+      "id": "dishwash-liquid-gel",
+      "name": "Dishwash Liquid Gel",
+      "brand": "Pril",
+      "price": 18,
+      "size": "140 ml",
       "category": "household_cleaning",
-      "image": "/products/detergent.png",
-      "match_key": "",
+      "image": "/products/pril-dishwash-gel.png",
+      "match_key": "dishwash",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "allergen_tags": [],
+      "rating": 4.4,
+      "rating_count": 4168,
+      "description": "Lemon dishwash gel."
+    },
+    {
+      "id": "liquid-detergent",
+      "name": "Ezee Liquid Detergent",
+      "brand": "Ezee",
+      "price": 125,
+      "size": "500 ml",
+      "category": "household_cleaning",
+      "image": "/products/ezee-liquid-detergent.png",
+      "match_key": "detergent",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 2891,
+      "description": "Front-load liquid detergent."
+    },
+    {
+      "id": "liquid-detergent-1",
+      "name": "Surf Excel Easy Wash Liquid Detergent",
+      "brand": "Surf Excel",
+      "price": 93,
+      "size": "500 ml",
+      "category": "household_cleaning",
+      "image": "/products/surf-excel-liquid-detergent.png",
+      "match_key": "detergent",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 2891,
+      "description": "Front-load liquid detergent."
+    },
+    {
+      "id": "powder-detergent",
+      "name": "Sunlight Detergent Powder Pouch",
+      "brand": "Sunlight",
+      "price": 41,
+      "size": "500 g",
+      "category": "household_cleaning",
+      "image": "/products/sunlight-powder-detergent.png",
+      "match_key": "detergent",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 2891,
+      "description": "Front-load liquid detergent."
+    },
+    {
+      "id": "powder-detergent-1",
+      "name": "Surf Excel Quick Wash Detergent",
+      "brand": "Surf Excel",
+      "price": 95,
+      "size": "500 g",
+      "category": "household_cleaning",
+      "image": "/products/surf-excel-powder-detergent.png",
+      "match_key": "detergent",
       "dietary_tags": [
         "vegan"
       ],
@@ -1605,13 +2039,30 @@
     },
     {
       "id": "floor-cleaner",
-      "name": "Floor Cleaner Disinfectant",
-      "brand": "Lizol",
-      "price": 185,
+      "name": "Vim Floor Cleaner Ultra Pro Lemon",
+      "brand": "Vim",
+      "price": 210,
       "size": "975 ml",
       "category": "household_cleaning",
-      "image": "/products/floor-cleaner.png",
-      "match_key": "",
+      "image": "/products/vim-floor-cleaner.png",
+      "match_key": "floor cleaner",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "allergen_tags": [],
+      "rating": 4.4,
+      "rating_count": 2971,
+      "description": "Kills 99.9% germs."
+    },
+    {
+      "id": "floor-cleaner-1",
+      "name": "Lizol Disinfectant Floor Cleaner",
+      "brand": "Lizol",
+      "price": 196,
+      "size": "975 ml",
+      "category": "household_cleaning",
+      "image": "/products/lizol-floor-cleaner.png",
+      "match_key": "floor cleaner",
       "dietary_tags": [
         "vegan"
       ],
@@ -1622,13 +2073,30 @@
     },
     {
       "id": "toilet-cleaner",
-      "name": "Toilet Cleaner",
-      "brand": "Harpic",
-      "price": 99,
+      "name": "Disinfectant Toilet Cleaner|with Free Odonil",
+      "brand": "Sanifresh",
+      "price": 188,
       "size": "1 L",
       "category": "household_cleaning",
-      "image": "/products/toilet-cleaner.png",
-      "match_key": "",
+      "image": "/products/sani-fresh-toilet-cleaner.png",
+      "match_key": "toilet cleaner",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "allergen_tags": [],
+      "rating": 4.4,
+      "rating_count": 515,
+      "description": "Power-plus toilet cleaner."
+    },
+    {
+      "id": "toilet-cleaner-1",
+      "name": "Harpic Toilet Cleaner",
+      "brand": "Harpic",
+      "price": 165,
+      "size": "1 L",
+      "category": "household_cleaning",
+      "image": "/products/harpic-toilet-cleaner.png",
+      "match_key": "toilet cleaner",
       "dietary_tags": [
         "vegan"
       ],
@@ -1639,13 +2107,30 @@
     },
     {
       "id": "garbage-bags",
-      "name": "Garbage Bags (Medium)",
-      "brand": "Origami",
-      "price": 160,
-      "size": "90 pcs",
+      "name": "Beco Biofriendly Medium Garbage Bags-19x21 Inch",
+      "brand": "Beco",
+      "price": 85,
+      "size": "1 pack (30 pcs)",
       "category": "household_cleaning",
-      "image": "/products/garbage-bags.png",
-      "match_key": "",
+      "image": "/products/Beco-Garbage-Bags.png",
+      "match_key": "garbage bags",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "allergen_tags": [],
+      "rating": 4.3,
+      "rating_count": 2640,
+      "description": "Oxo-biodegradable bin bags."
+    },
+    {
+      "id": "garbage-bag",
+      "name": "Ezee Biofriendly Medium Garbage Bags-19x21 Inch",
+      "brand": "Ezee",
+      "price": 75,
+      "size": "1 pack (30 pcs)",
+      "category": "household_cleaning",
+      "image": "/products/Ezee-Garbage-Bags.png",
+      "match_key": "garbage bags",
       "dietary_tags": [
         "vegan"
       ],
@@ -1656,13 +2141,13 @@
     },
     {
       "id": "tissue-box",
-      "name": "Facial Tissues",
-      "brand": "Origami",
-      "price": 70,
+      "name": "Beco Super Soft Facial Tissue paper|Carbox",
+      "brand": "Beco",
+      "price": 86,
       "size": "100 pulls",
       "category": "household_cleaning",
-      "image": "/products/tissue-box.png",
-      "match_key": "",
+      "image": "/products/Beco-Tissue-box.png",
+      "match_key": "tissue",
       "dietary_tags": [
         "vegan"
       ],
@@ -1672,6 +2157,40 @@
       "description": "2-ply soft facial tissues."
     },
     {
+      "id": "tissues-box",
+      "name": "Origami Soft Facial Tissues Box",
+      "brand": "Origami",
+      "price": 79,
+      "size": "100 pulls",
+      "category": "household_cleaning",
+      "image": "/products/Origami-Tissues-Box.png",
+      "match_key": "tissue",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "allergen_tags": [],
+      "rating": 4.3,
+      "rating_count": 3777,
+      "description": "2-ply soft facial tissues."
+    },
+    {
+      "id": "glass-spray",
+      "name": "Dew Fresh Glass Cleaner",
+      "brand": "Dew Fresh",
+      "price": 110,
+      "size": "500 ml",
+      "category": "household_cleaning",
+      "image": "/products/Dew-Fresh-Glass-Cleaner.png",
+      "match_key": "glass cleaner",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 2657,
+      "description": "Shine and disinfection booster spray for glass tables."
+    },
+    {
       "id": "colin-spray",
       "name": "Colin Glass and Surface Cleaner",
       "brand": "Colin",
@@ -1679,7 +2198,7 @@
       "size": "500 ml",
       "category": "household_cleaning",
       "image": "/products/colin-spray.png",
-      "match_key": "",
+      "match_key": "glass cleaner",
       "dietary_tags": [
         "vegan"
       ],
@@ -1707,13 +2226,49 @@
       "description": "Multipurpose paper napkins for dining and cleaning."
     },
     {
+      "id": "paper-napkin",
+      "name": "Softouch Tissues Paper Napkins",
+      "brand": "Softouch Tissues",
+      "price": 45,
+      "size": "100 pcs",
+      "category": "household_cleaning",
+      "image": "/products/Softouch-Tissues-Paper-Napkins.png",
+      "match_key": "napkins",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.4,
+      "rating_count": 3200,
+      "description": "Multipurpose paper napkins for dining and cleaning."
+    },
+    {
       "id": "pocket-tissues",
-      "name": "Pocket Tissues",
+      "name": "Origami Pocket Tissues",
       "brand": "Origami",
       "price": 45,
       "size": "10 pcs",
       "category": "household_cleaning",
       "image": "/products/pocket-tissues.png",
+      "match_key": "tissue napkins",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 4500,
+      "description": "Soft pocket tissues for on-the-go use."
+    },
+    {
+      "id": "pocket-tissue",
+      "name": "10'ON Pocket Tissues | Travel Pack",
+      "brand": "10'ON",
+      "price": 39,
+      "size": "10 pcs",
+      "category": "household_cleaning",
+      "image": "/products/Pocket-Tissues-Travel-Pack.png",
       "match_key": "tissue napkins",
       "dietary_tags": [
         "vegan",
@@ -1831,21 +2386,6 @@
       "description": "Smoked streaky bacon."
     },
     {
-      "id": "fish-sauce",
-      "name": "Fish Sauce",
-      "brand": "Fresho",
-      "price": 175,
-      "size": "1 unit",
-      "category": "meat_seafood",
-      "image": "/products/fish-sauce.png",
-      "match_key": "fish sauce",
-      "dietary_tags": [],
-      "allergen_tags": [],
-      "rating": 4.4,
-      "rating_count": 1493,
-      "description": "Fresh fish sauce."
-    },
-    {
       "id": "pork-chops",
       "name": "Pork Chops",
       "brand": "Fresho",
@@ -1934,21 +2474,6 @@
       "rating": 4.6,
       "rating_count": 1513,
       "description": "Fresh doner meat."
-    },
-    {
-      "id": "italian-fennel-sausages",
-      "name": "Italian Fennel Sausages",
-      "brand": "Fresho",
-      "price": 185,
-      "size": "1 unit",
-      "category": "meat_seafood",
-      "image": "/products/italian-fennel-sausages.png",
-      "match_key": "italian fennel sausages",
-      "dietary_tags": [],
-      "allergen_tags": [],
-      "rating": 4.6,
-      "rating_count": 2043,
-      "description": "Fresh italian fennel sausages."
     },
     {
       "id": "parma-ham",
@@ -2065,7 +2590,25 @@
       "size": "15 tablets",
       "category": "medicine_health",
       "image": "/products/paracetamol.png",
-      "match_key": "",
+      "match_key": "paracetamol",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.7,
+      "rating_count": 1201,
+      "description": "Fever & pain relief tablets."
+    },
+    {
+      "id": "paracetamol-calpol",
+      "name": "Paracetamol 500mg",
+      "brand": "Calpol 500",
+      "price": 14,
+      "size": "15 tablets",
+      "category": "medicine_health",
+      "image": "/products/paracetamol-calpol.png",
+      "match_key": "paracetamol",
       "dietary_tags": [
         "vegan",
         "gluten-free"
@@ -2077,13 +2620,13 @@
     },
     {
       "id": "ors",
-      "name": "ORS Electrolyte (Orange)",
+      "name": "ORS Powder|for Replenishing Body Fluids & Electrolytes",
       "brand": "Electral",
       "price": 22,
       "size": "21.8 g",
       "category": "medicine_health",
-      "image": "/products/ors.png",
-      "match_key": "",
+      "image": "/products/ors-electral.png",
+      "match_key": "ORS",
       "dietary_tags": [
         "vegan",
         "gluten-free"
@@ -2094,14 +2637,50 @@
       "description": "Rehydration salts sachet."
     },
     {
-      "id": "tea-500g",
-      "name": "Premium Tea",
-      "brand": "Tata Tea Gold",
-      "price": 290,
-      "size": "500 g",
-      "category": "beverages",
-      "image": "/products/eco-tea.png",
-      "match_key": "tea",
+      "id": "ors-cipla",
+      "name": "Prolyte ORS for Restoring Body Fluids & Electrolytes",
+      "brand": "Prolyte",
+      "price": 11,
+      "size": "21 g",
+      "category": "medicine_health",
+      "image": "/products/ors-cipla.png",
+      "match_key": "ORS",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.6,
+      "rating_count": 1477,
+      "description": "Rehydration salts sachet."
+    },
+    {
+      "id": "thermometer",
+      "name": "Hicks Oval Thermometer",
+      "brand": "HICKS",
+      "price": 186,
+      "size": "1 Pc",
+      "category": "medicine_health",
+      "image": "/products/hicks-thermometer.png",
+      "match_key": "thermometer",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.4,
+      "rating_count": 974,
+      "description": "Fast-read digital thermometer."
+    },
+    {
+      "id": "d-thermometer",
+      "name": "Control D Digital Thermometer",
+      "brand": "Control D",
+      "price": 109,
+      "size": "1 Pc",
+      "category": "medicine_health",
+      "image": "/products/control-D-thermometer.png",
+      "match_key": "thermometer",
       "dietary_tags": [
         "vegan",
         "gluten-free"
@@ -2113,13 +2692,31 @@
     },
     {
       "id": "cough-syrup",
-      "name": "Cough Syrup",
-      "brand": "Benadryl",
-      "price": 120,
+      "name": "Zedex SF Cough Syrup",
+      "brand": "Zedex",
+      "price": 168,
       "size": "100 ml",
       "category": "medicine_health",
-      "image": "/products/cough-syrup.png",
-      "match_key": "",
+      "image": "/products/zedex-cough-syrup.png",
+      "match_key": "Cough Syrup",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.3,
+      "rating_count": 516,
+      "description": "Relief for dry cough."
+    },
+    {
+      "id": "dry-cough-syrup",
+      "name": "Benadryl Dry Cough Syrup",
+      "brand": "Benadryl",
+      "price": 138,
+      "size": "100 ml",
+      "category": "medicine_health",
+      "image": "/products/benadryl-cough-syrup.png",
+      "match_key": "Cough Syrup",
       "dietary_tags": [
         "vegan",
         "gluten-free"
@@ -2131,13 +2728,31 @@
     },
     {
       "id": "antacid",
-      "name": "Antacid Liquid (Mint)",
+      "name": "Digene Mint Syrup | Antacid",
       "brand": "Digene",
-      "price": 95,
+      "price": 145,
       "size": "200 ml",
       "category": "medicine_health",
-      "image": "/products/antacid.png",
-      "match_key": "",
+      "image": "/products/digene-antacid.png",
+      "match_key": "antacid",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.4,
+      "rating_count": 3738,
+      "description": "Fast acidity & gas relief."
+    },
+    {
+      "id": "eno-antacid",
+      "name": "Eno Fruit Salt Sachets|Antacid",
+      "brand": "Eno",
+      "price": 50,
+      "size": "200 ml",
+      "category": "medicine_health",
+      "image": "/products/eno-antacid.png",
+      "match_key": "antacid",
       "dietary_tags": [
         "vegan",
         "gluten-free"
@@ -2149,13 +2764,13 @@
     },
     {
       "id": "bandaid",
-      "name": "Adhesive Bandages",
-      "brand": "Band-Aid",
-      "price": 85,
-      "size": "40 pcs",
+      "name": "Hansaplast Washproof Bandages",
+      "brand": "Hansaplast",
+      "price": 55,
+      "size": "20 pcs",
       "category": "medicine_health",
-      "image": "/products/bandaid.png",
-      "match_key": "",
+      "image": "/products/hansaplast-bandaid.png",
+      "match_key": "Band aid",
       "dietary_tags": [
         "vegan",
         "gluten-free"
@@ -2166,14 +2781,50 @@
       "description": "Assorted washproof bandages."
     },
     {
-      "id": "sanitizer",
-      "name": "Hand Sanitizer",
+      "id": "band-aid",
+      "name": "Cipladine Antiseptic Bandage",
+      "brand": "Cipladine",
+      "price": 47,
+      "size": "20 pcs",
+      "category": "medicine_health",
+      "image": "/products/cipladine-bandaid.png",
+      "match_key": "Band aid",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 3218,
+      "description": "Assorted washproof bandages."
+    },
+    {
+      "id": "dettol-sanitizer",
+      "name": "Dettol Hand Sanitizer",
       "brand": "Dettol",
-      "price": 99,
-      "size": "200 ml",
+      "price": 33,
+      "size": "50 ml",
+      "category": "medicine_health",
+      "image": "/products/dettol-sanitizer.png",
+      "match_key": "Sanitizer",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.4,
+      "rating_count": 4273,
+      "description": "70% alcohol germ protection."
+    },
+    {
+      "id": "sanitizer",
+      "name": "Bisleri Hand Sanitizer",
+      "brand": "Bisleri",
+      "price": 24,
+      "size": "50 ml",
       "category": "medicine_health",
       "image": "/products/sanitizer.png",
-      "match_key": "",
+      "match_key": "Sanitizer",
       "dietary_tags": [
         "vegan",
         "gluten-free"
@@ -2185,13 +2836,13 @@
     },
     {
       "id": "vitamin-c",
-      "name": "Vitamin C Effervescent",
+      "name": "Limcee 500Mg Vitamin C Chewable Tablets",
       "brand": "Limcee",
-      "price": 110,
-      "size": "20 tablets",
+      "price": 25,
+      "size": "15 tablets",
       "category": "medicine_health",
       "image": "/products/vitamin-c.png",
-      "match_key": "",
+      "match_key": "vitamin C",
       "dietary_tags": [
         "vegan",
         "gluten-free"
@@ -2202,32 +2853,49 @@
       "description": "Immunity-boosting vitamin C."
     },
     {
-      "id": "eno-fruit-salt",
-      "name": "Eno Regular Fruit Salt Sachet",
-      "brand": "Eno",
-      "price": 10,
-      "size": "5 g",
+      "id": "sanfe-vitamin-c",
+      "name": "Sanfe Effervescent Tablets,Vitamin C + L Glutathione",
+      "brand": "Sanfe",
+      "price": 215,
+      "size": "10 tablets",
       "category": "medicine_health",
-      "image": "/products/eno-fruit-salt.png",
-      "match_key": "",
+      "image": "/products/sanfe-vitamin-c.png",
+      "match_key": "vitamin C",
       "dietary_tags": [
         "vegan",
         "gluten-free"
       ],
       "allergen_tags": [],
-      "rating": 4.8,
-      "rating_count": 1084,
-      "description": "Fast-acting relief from acidity and stomach gas."
+      "rating": 4.4,
+      "rating_count": 4544,
+      "description": "Immunity-boosting vitamin C."
     },
     {
       "id": "vaporub",
       "name": "Vicks VapoRub",
       "brand": "Vicks",
-      "price": 135,
+      "price": 83,
       "size": "25 ml",
       "category": "medicine_health",
       "image": "/products/vaporub.png",
-      "match_key": "",
+      "match_key": "vaporub",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "allergen_tags": [],
+      "rating": 4.7,
+      "rating_count": 3475,
+      "description": "Ayurvedic balm for cold, cough and headache relief."
+    },
+    {
+      "id": "coldrub",
+      "name": "Amrutanjan Cold Rub",
+      "brand": "Amrutanjan",
+      "price": 47,
+      "size": "30 g",
+      "category": "medicine_health",
+      "image": "/products/cold-rub.png",
+      "match_key": "vaporub",
       "dietary_tags": [
         "vegan"
       ],
@@ -2293,11 +2961,53 @@
       "rating_count": 4399,
       "description": "Thick glossy gift wrapping bag with ribbon handles."
     },
+    
+    {
+      "id": "cake-1",
+      "name": "Vanilla Cake",
+      "brand": "Bombay Baking",
+      "price": 380,
+      "size": "500 g",
+      "category": "party_festive",
+      "image": "/products/vanilla-cake.png",
+      "match_key": "cake",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [
+        "gluten",
+        "dairy"
+      ],
+      "rating": 4.4,
+      "rating_count": 1600,
+      "description": "Light and fluffy vanilla sponge cake."
+    },
+    
+    {
+      "id": "butterscotch-cake-1",
+      "name": "Butterscotch Crunch Eggless Cake",
+      "brand": "FNP",
+      "price": 450,
+      "size": "500 g",
+      "category": "party_festive",
+      "image": "/products/butterscotch-cake.png",
+      "match_key": "cake",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [
+        "gluten",
+        "dairy"
+      ],
+      "rating": 4.4,
+      "rating_count": 1600,
+      "description": "Light and fluffy vanilla sponge cake."
+    },
     {
       "id": "chocolate-cake",
       "name": "Rich Chocolate Cake Slice",
       "brand": "Bombay Baking",
-      "price": 120,
+      "price": 270,
       "size": "1 slice",
       "category": "party_festive",
       "image": "/products/chocolate-cake.png",
@@ -2515,30 +3225,64 @@
     },
     {
       "id": "shampoo",
-      "name": "Anti-Hairfall Shampoo",
-      "brand": "Dove",
-      "price": 220,
-      "size": "340 ml",
+      "name": "Bare Anatomy Anti-Hairfall Shampoo",
+      "brand": "Bare Anatomy",
+      "price": 420,
+      "size": "250 ml",
       "category": "personal_care",
-      "image": "/products/shampoo.png",
-      "match_key": "",
+      "image": "/products/anti-hairfall-shampoo.png",
+      "match_key": "shampoo",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [],
+      "rating": 4.4,
+      "rating_count": 1510,
+      "description": "Nourishing daily shampoo."
+    },
+    {
+      "id": "wishcare-shampoo",
+      "name": "WishCare Anti Hairfall Shampoo",
+      "brand": "WishCare",
+      "price": 349,
+      "size": "250 ml",
+      "category": "personal_care",
+      "image": "/products/wishcare-anti-hairfall-shampoo.png",
+      "match_key": "shampoo",
       "dietary_tags": [
         "vegetarian"
       ],
       "allergen_tags": [],
       "rating": 4.3,
-      "rating_count": 1510,
+      "rating_count": 1470,
       "description": "Nourishing daily shampoo."
     },
     {
-      "id": "soap-4",
-      "name": "Moisturising Soap (4-pack)",
-      "brand": "Dove",
-      "price": 200,
-      "size": "4 x 100 g",
+      "id": "soap-5",
+      "name": "Fiama Moisturising Soap (5 bars)",
+      "brand": "Fiama",
+      "price": 222,
+      "size": "5 x 125 g",
       "category": "personal_care",
-      "image": "/products/soap-4.png",
-      "match_key": "",
+      "image": "/products/fiama-soap.png",
+      "match_key": "soap",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 3037,
+      "description": "Cream beauty bar."
+    },
+    {
+      "id": "soap",
+      "name": "Pears Moisturising Soap",
+      "brand": "Pears",
+      "price": 90,
+      "size": "125 g",
+      "category": "personal_care",
+      "image": "/products/pears-soap.png",
+      "match_key": "soap",
       "dietary_tags": [
         "vegetarian"
       ],
@@ -2550,12 +3294,29 @@
     {
       "id": "toothpaste",
       "name": "Cavity-Protection Toothpaste",
-      "brand": "Colgate",
+      "brand": "Sensodyne",
       "price": 95,
-      "size": "150 g",
+      "size": "100 g",
       "category": "personal_care",
       "image": "/products/toothpaste.png",
-      "match_key": "",
+      "match_key": "toothpaste",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 4141,
+      "description": "Fluoride toothpaste."
+    },
+    {
+      "id": "colgate-toothpaste",
+      "name": "Strong Teeth Anticavity Toothpaste",
+      "brand": "Colgate",
+      "price": 70,
+      "size": "100 g",
+      "category": "personal_care",
+      "image": "/products/colgate-toothpaste.png",
+      "match_key": "toothpaste",
       "dietary_tags": [
         "vegetarian"
       ],
@@ -2572,7 +3333,24 @@
       "size": "150 ml",
       "category": "personal_care",
       "image": "/products/facewash.png",
-      "match_key": "",
+      "match_key": "facewash",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [],
+      "rating": 4.4,
+      "rating_count": 4220,
+      "description": "Gentle daily face wash."
+    },
+    {
+      "id": "simple-facewash",
+      "name": "Simple Refreshing Face Wash",
+      "brand": "Simple",
+      "price": 280,
+      "size": "150 ml",
+      "category": "personal_care",
+      "image": "/products/simple-facewash.png",
+      "match_key": "facewash",
       "dietary_tags": [
         "vegetarian"
       ],
@@ -2583,13 +3361,13 @@
     },
     {
       "id": "sanitary-pads",
-      "name": "Ultra-Thin Sanitary Pads",
-      "brand": "Whisper",
-      "price": 199,
-      "size": "30 pcs",
+      "name": "Advanced Ultra Thin Sanitary Pad",
+      "brand": "Stayfree",
+      "price": 380,
+      "size": "28 pcs",
       "category": "personal_care",
-      "image": "/products/sanitary-pads.png",
-      "match_key": "",
+      "image": "/products/stayfree-pad.png",
+      "match_key": "pad",
       "dietary_tags": [
         "vegetarian"
       ],
@@ -2599,14 +3377,31 @@
       "description": "Overnight protection pads."
     },
     {
-      "id": "deodorant",
-      "name": "Body Spray Deodorant",
-      "brand": "Nivea",
-      "price": 210,
+      "id": "sanitary-pad",
+      "name": "Ultra Sanitary Pads XL Wings",
+      "brand": "Whisper",
+      "price": 320,
+      "size": "30 pcs",
+      "category": "personal_care",
+      "image": "/products/whisper-pad.png",
+      "match_key": "pad",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 2585,
+      "description": "Overnight protection pads."
+    },
+    {
+      "id": "rexona-deodorant",
+      "name": "Aloe Vera Antiperspirant Deodorant",
+      "brand": "Rexona",
+      "price": 180,
       "size": "150 ml",
       "category": "personal_care",
-      "image": "/products/deodorant.png",
-      "match_key": "",
+      "image": "/products/rexona-deodorant.png",
+      "match_key": "deodorant",
       "dietary_tags": [
         "vegetarian"
       ],
@@ -2616,14 +3411,31 @@
       "description": "Long-lasting freshness."
     },
     {
-      "id": "hand-sanitizer-wipe",
+      "id": "deodorant",
+      "name": "Body Spray Deodorant",
+      "brand": "Nivea",
+      "price": 149,
+      "size": "150 ml",
+      "category": "personal_care",
+      "image": "/products/nivea-deodorant.png",
+      "match_key": "deodorant",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "allergen_tags": [],
+      "rating": 4.3,
+      "rating_count": 3280,
+      "description": "Long-lasting freshness."
+    },
+    {
+      "id": "hand-sanitizer-wipes",
       "name": "Dettol Anti-Bacterial Wet Wipes",
       "brand": "Dettol",
-      "price": 75,
-      "size": "15 wipes",
+      "price": 49,
+      "size": "10 wipes",
       "category": "personal_care",
-      "image": "/products/hand-sanitizer-wipe.png",
-      "match_key": "",
+      "image": "/products/dettol-wipes.png",
+      "match_key": "wet wipes",
       "dietary_tags": [
         "vegan"
       ],
@@ -2633,10 +3445,42 @@
       "description": "Skin-safe disinfecting travel wet tissues."
     },
     {
+      "id": "hand-sanitizer-wipe",
+      "name": "Savlon Germ Protection Wet Wipes",
+      "brand": "Savlon",
+      "price": 40,
+      "size": "10 wipes",
+      "category": "personal_care",
+      "image": "/products/savlon-wipes.png",
+      "match_key": "wet wipes",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "allergen_tags": [],
+      "rating": 4.6,
+      "rating_count": 1991,
+      "description": "Skin-safe disinfecting travel wet tissues."
+    },
+    {
+      "id": "liquid-handwash-dove",
+      "name": "Savlon Liquid Handwash",
+      "brand": "Savlon",
+      "price": 90,
+      "size": "250 ml",
+      "category": "personal_care",
+      "image": "/products/savlon-handwash.png",
+      "match_key": "handwash",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 5200,
+      "description": "Antibacterial liquid handwash for daily use."
+    },
+    {
       "id": "liquid-handwash",
-      "name": "Liquid Handwash",
+      "name": "Dettol Liquid Handwash",
       "brand": "Dettol",
-      "price": 120,
+      "price": 85,
       "size": "250 ml",
       "category": "personal_care",
       "image": "/products/liquid-handwash.png",
@@ -2648,14 +3492,29 @@
       "description": "Antibacterial liquid handwash for daily use."
     },
     {
-      "id": "perfume-git-set",
+      "id": "perfume-gift-set-3",
       "name": "Perfume Gift Set",
       "brand": "Fogg",
       "price": 450,
-      "size": "1 unit",
+      "size": "3x30 ml",
       "category": "personal_care",
       "image": "/products/perfume-git-set.png",
-      "match_key": "perfume gift",
+      "match_key": "perfume",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.3,
+      "rating_count": 1200,
+      "description": "Premium perfume gift set for gifting."
+    },
+    {
+      "id": "perfume-gift-set-4",
+      "name": "Bella Vita Luxury Unisex Perfume Gift Set",
+      "brand": "Bella Vita Luxury",
+      "price": 513,
+      "size": "4x20 ml",
+      "category": "personal_care",
+      "image": "/products/bellavita-perfume.png",
+      "match_key": "perfume",
       "dietary_tags": [],
       "allergen_tags": [],
       "rating": 4.3,
@@ -2664,12 +3523,27 @@
     },
     {
       "id": "sunscreen-spf50",
-      "name": "Sunscreen SPF 50",
-      "brand": "Lotus",
-      "price": 250,
-      "size": "100 ml",
+      "name": "Broad Spectrum Sunscreen SPF 50, PA++++",
+      "brand": "Minimalist",
+      "price": 371,
+      "size": "50 g",
       "category": "personal_care",
-      "image": "/products/sunscreen-spf50.png",
+      "image": "/products/minimalist-sunscreen.png",
+      "match_key": "sunscreen spf50",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 3800,
+      "description": "Broad-spectrum sunscreen with SPF 50."
+    },
+    {
+      "id": "sunscreen",
+      "name": "Vitamin C + E Sunscreen SPF 50+ PA++++",
+      "brand": "Dot & Key",
+      "price": 348,
+      "size": "50 g",
+      "category": "personal_care",
+      "image": "/products/dot-and-key-sunscreen.png",
       "match_key": "sunscreen spf50",
       "dietary_tags": [],
       "allergen_tags": [],
@@ -2971,7 +3845,7 @@
       "price": 270,
       "size": "5 kg",
       "category": "staples_grocery",
-      "image": "/products/atta-5kg.png",
+      "image": "/products/aashirvaad-atta.png",
       "match_key": "flour",
       "dietary_tags": [
         "vegan"
@@ -3205,12 +4079,12 @@
     {
       "id": "borges-sunflower-oil-1l",
       "name": "Borges Sunflower Oil",
-      "brand": "Fortune",
+      "brand": "Borges",
       "price": 120,
       "size": "1 L",
       "category": "staples_grocery",
       "image": "/products/borges-sunflower-oil-1l.png",
-      "match_key": "vegetable oil",
+      "match_key": "sunflower oil",
       "dietary_tags": [
         "vegan",
         "gluten-free"
@@ -3219,33 +4093,63 @@
       "rating": 4.3,
       "rating_count": 2671,
       "description": "Refined sunflower cooking oil."
+    },
+    {
+      "id": "ktc-sunflower-oil",
+      "name": "KTC Sunflower Oil",
+      "brand": "KTC",
+      "price": 140,
+      "size": "1 L",
+      "category": "staples_grocery",
+      "image": "/products/sunflower-oil-1l.png",
+      "match_key": "sunflower oil",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.3,
+      "rating_count": 2671,
+      "description": "Fresh sunflower oil."
+    },
+    {
+      "id": "sunflower-oil",
+      "name": "Sunflower Oil",
+      "brand": "Kenza",
+      "price": 60,
+      "size": "1 unit",
+      "category": "staples_grocery",
+      "image": "/products/sunflower-oil.png",
+      "match_key": "sunflower oil",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.8,
+      "rating_count": 1906,
+      "description": "Fresh sunflower oil."
     },
     {
       "id": "sunflower-oil-1l",
       "name": "Sunflower Oil",
       "brand": "Fortune",
-      "price": 140,
-      "size": "1 L",
+      "price": 175,
+      "size": "1 unit",
       "category": "staples_grocery",
-      "image": "/products/sunflower-oil-1l.png",
-      "match_key": "vegetable oil",
-      "dietary_tags": [
-        "vegan",
-        "gluten-free"
-      ],
+      "image": "/products/fortune-sunflower-oil.png",
+      "match_key": "sunflower oil",
+      "dietary_tags": [],
       "allergen_tags": [],
-      "rating": 4.3,
-      "rating_count": 2671,
-      "description": "Refined sunflower cooking oil."
+      "rating": 4.8,
+      "rating_count": 1906,
+      "description": "Fresh sunflower oil."
     },
     {
       "id": "maida-1kg",
-      "name": "Maida / Refined Flour",
-      "brand": "Aashirvaad",
+      "name": "vedaka Maida / Refined Flour",
+      "brand": "vedaka",
       "price": 52,
       "size": "1 kg",
       "category": "staples_grocery",
-      "image": "/products/maida-1kg.png",
+      "image": "/products/vedaka-maida.png",
       "match_key": "plain flour",
       "dietary_tags": [
         "vegan"
@@ -3296,12 +4200,12 @@
     },
     {
       "id": "besan-500g",
-      "name": "Besan / Gram Flour",
-      "brand": "Rajdhani",
+      "name": "vedaka Besan / Gram Flour",
+      "brand": "vedaka",
       "price": 70,
       "size": "500 g",
       "category": "staples_grocery",
-      "image": "/products/besan-500g.png",
+      "image": "/products/vedaka-besan.png",
       "match_key": "flour",
       "dietary_tags": [
         "vegan",
@@ -3473,42 +4377,6 @@
       "rating": 4.5,
       "rating_count": 1622,
       "description": "Premium fine-ground chana dal flour for frying."
-    },
-    {
-      "id": "whole-bay-leaf",
-      "name": "Whole Bay Leaf / Tejpatta",
-      "brand": "Catch",
-      "price": 45,
-      "size": "20 g",
-      "category": "staples_grocery",
-      "image": "/products/whole-bay-leaf.png",
-      "match_key": "bay leaf",
-      "dietary_tags": [
-        "vegan",
-        "gluten-free"
-      ],
-      "allergen_tags": [],
-      "rating": 4.5,
-      "rating_count": 4334,
-      "description": "Aromatically fragrant whole dried bay leaves."
-    },
-    {
-      "id": "cinnamon-sticks",
-      "name": "Dalchini / Cinnamon Sticks",
-      "brand": "Catch",
-      "price": 65,
-      "size": "50 g",
-      "category": "staples_grocery",
-      "image": "/products/cinnamon-sticks.png",
-      "match_key": "cinnamon",
-      "dietary_tags": [
-        "vegan",
-        "gluten-free"
-      ],
-      "allergen_tags": [],
-      "rating": 4.6,
-      "rating_count": 1458,
-      "description": "Premium sweet-aroma cinnamon whole sticks."
     },
     {
       "id": "whole-cloves",
@@ -3740,21 +4608,6 @@
       "description": "Fresh biryani masala."
     },
     {
-      "id": "sunflower-oil",
-      "name": "Sunflower Oil",
-      "brand": "Fresho",
-      "price": 60,
-      "size": "1 unit",
-      "category": "staples_grocery",
-      "image": "/products/sunflower-oil.png",
-      "match_key": "sunflower oil",
-      "dietary_tags": [],
-      "allergen_tags": [],
-      "rating": 4.8,
-      "rating_count": 1906,
-      "description": "Fresh sunflower oil."
-    },
-    {
       "id": "madras-paste",
       "name": "Madras Paste",
       "brand": "Fresho",
@@ -3783,21 +4636,6 @@
       "rating": 4.2,
       "rating_count": 1584,
       "description": "Fresh paprika."
-    },
-    {
-      "id": "tomato-pur-e",
-      "name": "Tomato Purée",
-      "brand": "Fresho",
-      "price": 135,
-      "size": "1 unit",
-      "category": "fresh_produce",
-      "image": "/products/tomato-pur-e.png",
-      "match_key": "tomato purée",
-      "dietary_tags": [],
-      "allergen_tags": [],
-      "rating": 4.5,
-      "rating_count": 221,
-      "description": "Fresh tomato purée."
     },
     {
       "id": "mustard-seeds",
@@ -3843,21 +4681,6 @@
       "rating": 4.1,
       "rating_count": 1495,
       "description": "Fresh lime."
-    },
-    {
-      "id": "cayenne-pepper",
-      "name": "Cayenne Pepper",
-      "brand": "Fresho",
-      "price": 50,
-      "size": "1 unit",
-      "category": "fresh_produce",
-      "image": "/products/cayenne-pepper.png",
-      "match_key": "cayenne pepper",
-      "dietary_tags": [],
-      "allergen_tags": [],
-      "rating": 4.6,
-      "rating_count": 1932,
-      "description": "Fresh cayenne pepper."
     },
     {
       "id": "fish-sauce",
@@ -4085,22 +4908,7 @@
       "description": "Fresh passata."
     },
     {
-      "id": "sunflower-oil",
-      "name": "Sunflower Oil",
-      "brand": "Fortune",
-      "price": 175,
-      "size": "1 unit",
-      "category": "staples_grocery",
-      "image": "/products/fortune-sunflower-oil.png",
-      "match_key": "sunflower oil",
-      "dietary_tags": [],
-      "allergen_tags": [],
-      "rating": 4.8,
-      "rating_count": 1906,
-      "description": "Fresh sunflower oil."
-    },
-    {
-      "id": "madras-paste",
+      "id": "madras-paste-1",
       "name": "Madras Paste",
       "brand": "Patak's",
       "price": 210,
@@ -5015,21 +5823,6 @@
       "description": "Fresh balsamic vinegar."
     },
     {
-      "id": "bay-leaves",
-      "name": "Bay Leaves",
-      "brand": "Fresho",
-      "price": 75,
-      "size": "1 unit",
-      "category": "staples_grocery",
-      "image": "/products/bay-leaves.png",
-      "match_key": "bay leaves",
-      "dietary_tags": [],
-      "allergen_tags": [],
-      "rating": 4.2,
-      "rating_count": 549,
-      "description": "Fresh bay leaves."
-    },
-    {
       "id": "bicarbonate-of-soda",
       "name": "Bicarbonate Of Soda",
       "brand": "Fresho",
@@ -5463,21 +6256,6 @@
       "rating": 4.5,
       "rating_count": 1749,
       "description": "Fresh balsamic vinegar."
-    },
-    {
-      "id": "keya-bay-leaves",
-      "name": "Keya Bay Leaves",
-      "brand": "Keya",
-      "price": 95,
-      "size": "1 unit",
-      "category": "staples_grocery",
-      "image": "/products/keya-bay-leaves.png",
-      "match_key": "bay leaves",
-      "dietary_tags": [],
-      "allergen_tags": [],
-      "rating": 4.2,
-      "rating_count": 549,
-      "description": "Fresh bay leaves."
     },
     {
       "id": "weikfield-baking-soda",
@@ -6711,10 +7489,10 @@
     },
     {
       "id": "rigatoni",
-      "name": "Rigatoni",
-      "brand": "Fresho",
-      "price": 175,
-      "size": "1 unit",
+      "name": "Barilla Rigatoni",
+      "brand": "Barilla",
+      "price": 221,
+      "size": "500 g",
       "category": "staples_grocery",
       "image": "/products/rigatoni.png",
       "match_key": "rigatoni",
@@ -6725,11 +7503,26 @@
       "description": "Fresh rigatoni."
     },
     {
+      "id": "finosta-rigatoni",
+      "name": "Rigatoni",
+      "brand": "Finosta",
+      "price": 138,
+      "size": "500 g",
+      "category": "staples_grocery",
+      "image": "/products/finosta-rigatoni.png",
+      "match_key": "rigatoni",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.4,
+      "rating_count": 520,
+      "description": "Fresh rigatoni."
+    },
+    {
       "id": "rocket",
-      "name": "Rocket",
+      "name": "Rocket leaves",
       "brand": "Fresho",
       "price": 125,
-      "size": "1 unit",
+      "size": "100 g",
       "category": "staples_grocery",
       "image": "/products/rocket.png",
       "match_key": "rocket",
@@ -6740,11 +7533,26 @@
       "description": "Fresh rocket."
     },
     {
+      "id": "hydroponic-rocket",
+      "name": "Hydroponic Rocket Leaves",
+      "brand": "OnlyHydroponics",
+      "price": 99,
+      "size": "100 g",
+      "category": "staples_grocery",
+      "image": "/products/hydroponic-rocket-leaves.png",
+      "match_key": "rocket",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.3,
+      "rating_count": 223,
+      "description": "Fresh rocket."
+    },
+    {
       "id": "rolled-oats",
       "name": "Rolled Oats",
       "brand": "Fresho",
       "price": 75,
-      "size": "1 unit",
+      "size": "400 g",
       "category": "staples_grocery",
       "image": "/products/rolled-oats.png",
       "match_key": "rolled oats",
@@ -6755,26 +7563,71 @@
       "description": "Fresh rolled oats."
     },
     {
-      "id": "sake",
-      "name": "Sake",
-      "brand": "Fresho",
-      "price": 65,
-      "size": "1 unit",
+      "id": "yoga-bar-rolled-oats",
+      "name": "Yoga Bar 100% Rolled Oats",
+      "brand": "Yoga Bar",
+      "price": 94,
+      "size": "400 g",
       "category": "staples_grocery",
-      "image": "/products/sake.png",
-      "match_key": "sake",
+      "image": "/products/yoga-bar-rolled-oats.png",
+      "match_key": "rolled oats",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.7,
+      "rating_count": 109,
+      "description": "Fresh rolled oats."
+    },
+    {
+      "id": "Cooking Sake",
+      "name": "Cooking Sake",
+      "brand": "Urban Platter",
+      "price": 340,
+      "size": "500 ML",
+      "category": "staples_grocery",
+      "image": "/products/cooking-sake.png",
+      "match_key": "cooking sake",
       "dietary_tags": [],
       "allergen_tags": [],
       "rating": 4.0,
-      "rating_count": 1959,
-      "description": "Fresh sake."
+      "rating_count": 96,
+      "description": "Premium Japanese cooking sake."
+    },
+    {
+      "id": "Umai Cooking Sake",
+      "name": "Cooking Sake",
+      "brand": "Umai",
+      "price": 375,
+      "size": "500 ML",
+      "category": "staples_grocery",
+      "image": "/products/umai-cooking-sake.png",
+      "match_key": "cooking sake",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.3,
+      "rating_count": 179,
+      "description": "Premium Japanese cooking sake."
     },
     {
       "id": "shallots",
       "name": "Shallots",
+      "brand": "CooPany",
+      "price": 140,
+      "size": "500 g",
+      "category": "staples_grocery",
+      "image": "/products/shallots-image.png",
+      "match_key": "shallots",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.2,
+      "rating_count": 78,
+      "description": "Fresh shallots."
+    },
+    {
+      "id": "shallots-1",
+      "name": "Shallots",
       "brand": "Fresho",
       "price": 120,
-      "size": "1 unit",
+      "size": "500 g",
       "category": "staples_grocery",
       "image": "/products/shallots.png",
       "match_key": "shallots",
@@ -6786,10 +7639,10 @@
     },
     {
       "id": "squash",
-      "name": "Squash",
-      "brand": "Fresho",
-      "price": 45,
-      "size": "1 unit",
+      "name": "Butternut Squash",
+      "brand": "Zama Organics",
+      "price": 85,
+      "size": "1 Pc (500g)",
       "category": "staples_grocery",
       "image": "/products/squash.png",
       "match_key": "squash",
@@ -6800,13 +7653,43 @@
       "description": "Fresh squash."
     },
     {
-      "id": "stir-fry-vegetables",
-      "name": "Stir-Fry Vegetables",
+      "id": "squash-1",
+      "name": "Butternut Squash",
       "brand": "Fresho",
-      "price": 55,
-      "size": "1 unit",
+      "price": 58,
+      "size": "1 Pc (Approx 500g)",
       "category": "staples_grocery",
-      "image": "/products/stir-fry-vegetables.png",
+      "image": "/products/squash-image.png",
+      "match_key": "squash",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 195,
+      "description": "Fresh squash."
+    },
+    {
+      "id": "stir-fry-vegetables",
+      "name": "Hortex Stir-Fry Vegetables",
+      "brand": "Hortex",
+      "price": 155,
+      "size": "250 g",
+      "category": "staples_grocery",
+      "image": "/products/hortex-stir-fry-vegetable.png",
+      "match_key": "stir-fry vegetables",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.7,
+      "rating_count": 451,
+      "description": "Fresh stir-fry vegetables."
+    },
+    {
+      "id": "stir-fry-vegetable",
+      "name": "Birds Eye Stir-Fry Veggies & Sauce",
+      "brand": "Birds Eye",
+      "price": 124,
+      "size": "250 g",
+      "category": "staples_grocery",
+      "image": "/products/birds-eye-stir-fry-vegetable.png",
       "match_key": "stir-fry vegetables",
       "dietary_tags": [],
       "allergen_tags": [],
@@ -6819,10 +7702,10 @@
       "name": "Strawberries",
       "brand": "Fresho",
       "price": 190,
-      "size": "1 unit",
+      "size": "200 g",
       "category": "staples_grocery",
       "image": "/products/strawberries.png",
-      "match_key": "strawberries",
+      "match_key": "strawberry",
       "dietary_tags": [],
       "allergen_tags": [],
       "rating": 4.7,
@@ -6830,11 +7713,41 @@
       "description": "Fresh strawberries."
     },
     {
+      "id": "strawberry",
+      "name": "Strawberries",
+      "brand": "Happy Fruits",
+      "price": 119,
+      "size": "200 g",
+      "category": "staples_grocery",
+      "image": "/products/strawberry.png",
+      "match_key": "strawberry",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.7,
+      "rating_count": 1039,
+      "description": "Fresh strawberries."
+    },
+    {
+      "id": "sultanas-1",
+      "name": "Sultanas",
+      "brand": "Buy Whole Foods",
+      "price": 190,
+      "size": "350 g",
+      "category": "staples_grocery",
+      "image": "/products/sultanas-image.png",
+      "match_key": "sultanas",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.2,
+      "rating_count": 1343,
+      "description": "Fresh sultanas."
+    },
+    {
       "id": "sultanas",
       "name": "Sultanas",
       "brand": "Fresho",
       "price": 160,
-      "size": "1 unit",
+      "size": "350 g",
       "category": "staples_grocery",
       "image": "/products/sultanas.png",
       "match_key": "sultanas",
@@ -6845,14 +7758,29 @@
       "description": "Fresh sultanas."
     },
     {
+      "id": "tamarind",
+      "name": "Daily Good Tamarind/Imli",
+      "brand": "Daily Good",
+      "price": 64,
+      "size": "100 g",
+      "category": "staples_grocery",
+      "image": "/products/tamarind.png",
+      "match_key": "tamarind",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.9,
+      "rating_count": 1089,
+      "description": "Fresh tamarind ball."
+    },
+    {
       "id": "tamarind-ball",
-      "name": "Tamarind Ball",
+      "name": "Tamarind/Imli",
       "brand": "Fresho",
       "price": 60,
-      "size": "1 unit",
+      "size": "100 g",
       "category": "staples_grocery",
       "image": "/products/tamarind-ball.png",
-      "match_key": "tamarind ball",
+      "match_key": "tamarind",
       "dietary_tags": [],
       "allergen_tags": [],
       "rating": 4.8,
@@ -6860,11 +7788,26 @@
       "description": "Fresh tamarind ball."
     },
     {
+      "id": "thai-green-curry-paste-1l",
+      "name": "Moi Soi Thai Green Curry Paste",
+      "brand": "Moi Soi",
+      "price": 170,
+      "size": "250 g",
+      "category": "staples_grocery",
+      "image": "/products/Moi-Soi-Green-Thai-Curry-Paste.png",
+      "match_key": "thai green curry paste",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.6,
+      "rating_count": 1632,
+      "description": "Fresh thai green curry paste."
+    },
+    {
       "id": "thai-green-curry-paste",
       "name": "Thai Green Curry Paste",
       "brand": "Fresho",
       "price": 135,
-      "size": "1 unit",
+      "size": "250 g",
       "category": "staples_grocery",
       "image": "/products/thai-green-curry-paste.png",
       "match_key": "thai green curry paste",
@@ -6876,12 +7819,12 @@
     },
     {
       "id": "thai-red-curry-paste",
-      "name": "Thai Red Curry Paste",
-      "brand": "Fresho",
-      "price": 150,
-      "size": "1 unit",
+      "name": "Real Thai Red Curry Paste",
+      "brand": "Real Thai",
+      "price": 170,
+      "size": "225 g",
       "category": "staples_grocery",
-      "image": "/products/thai-red-curry-paste.png",
+      "image": "/products/Real-Thai-Red-Curry-Paste.png",
       "match_key": "thai red curry paste",
       "dietary_tags": [],
       "allergen_tags": [],
@@ -6890,14 +7833,29 @@
       "description": "Fresh thai red curry paste."
     },
     {
-      "id": "turnips",
-      "name": "Turnips",
+      "id": "thai-red-curry-paste-1",
+      "name": "Thai Red Curry Paste",
       "brand": "Fresho",
-      "price": 170,
-      "size": "1 unit",
+      "price": 150,
+      "size": "225 g",
+      "category": "staples_grocery",
+      "image": "/products/thai-red-curry-paste.png",
+      "match_key": "thai red curry paste",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.8,
+      "rating_count": 1276,
+      "description": "Fresh thai red curry paste."
+    },
+    {
+      "id": "turnip",
+      "name": "Turnip (Shalgam)",
+      "brand": "Fresho",
+      "price": 50,
+      "size": "250 g",
       "category": "staples_grocery",
       "image": "/products/turnips.png",
-      "match_key": "turnips",
+      "match_key": "turnip",
       "dietary_tags": [],
       "allergen_tags": [],
       "rating": 4.3,
@@ -6905,11 +7863,26 @@
       "description": "Fresh turnips."
     },
     {
+      "id": "turnips",
+      "name": "Turnip (Shalgam)",
+      "brand": "Fresh",
+      "price": 44,
+      "size": "250 g",
+      "category": "staples_grocery",
+      "image": "/products/turnip-image.png",
+      "match_key": "turnip",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.4,
+      "rating_count": 576,
+      "description": "Fresh turnips."
+    },
+    {
       "id": "vanilla",
-      "name": "Vanilla",
+      "name": "Vanilla Beans",
       "brand": "Fresho",
       "price": 75,
-      "size": "1 unit",
+      "size": "1 Pod(14-16cm)",
       "category": "staples_grocery",
       "image": "/products/vanilla.png",
       "match_key": "vanilla",
@@ -6920,28 +7893,73 @@
       "description": "Fresh vanilla."
     },
     {
+      "id": "vanilla-beans",
+      "name": "Vanilla Beans",
+      "brand": "Hindustan Spices",
+      "price": 65,
+      "size": "1 Pod(14-16cm)",
+      "category": "staples_grocery",
+      "image": "/products/vanilla-beans.png",
+      "match_key": "vanilla",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.2,
+      "rating_count": 1579,
+      "description": "Fresh vanilla."
+    },
+    {
       "id": "veal",
-      "name": "Veal",
-      "brand": "Fresho",
-      "price": 135,
-      "size": "1 unit",
+      "name": "Veal Meat Boneless",
+      "brand": "Fresh",
+      "price": 445,
+      "size": "500 g",
       "category": "staples_grocery",
       "image": "/products/veal.png",
       "match_key": "veal",
       "dietary_tags": [],
       "allergen_tags": [],
-      "rating": 4.5,
-      "rating_count": 1753,
+      "rating": 4.7,
+      "rating_count": 1756,
+      "description": "Fresh veal."
+    },
+    {
+      "id": "veal-meat",
+      "name": "Veal Meat With Bone",
+      "brand": "Fresho",
+      "price": 380,
+      "size": "500 g",
+      "category": "staples_grocery",
+      "image": "/products/veal-image.png",
+      "match_key": "veal",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.6,
+      "rating_count": 1750,
       "description": "Fresh veal."
     },
     {
       "id": "vinaigrette-dressing",
       "name": "Vinaigrette Dressing",
       "brand": "Fresho",
-      "price": 85,
-      "size": "1 unit",
+      "price": 125,
+      "size": "250 g",
       "category": "staples_grocery",
       "image": "/products/vinaigrette-dressing.png",
+      "match_key": "vinaigrette dressing",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.4,
+      "rating_count": 1679,
+      "description": "Fresh vinaigrette dressing."
+    },
+    {
+      "id": "vinaigrette-dressing-1",
+      "name": "Veeba Zesty Vinaigrette Dressing",
+      "brand": "Veeba",
+      "price": 115,
+      "size": "250 g",
+      "category": "staples_grocery",
+      "image": "/products/Vinaigrette-Dressing-image.png",
       "match_key": "vinaigrette dressing",
       "dietary_tags": [],
       "allergen_tags": [],
@@ -6960,16 +7978,46 @@
       "match_key": "vine leaves",
       "dietary_tags": [],
       "allergen_tags": [],
+      "rating": 4.3,
+      "rating_count": 1593,
+      "description": "Fresh vine leaves."
+    },
+    {
+      "id": "vine-leave-1l",
+      "name": "Vine Leaves",
+      "brand": "Fresh",
+      "price": 155,
+      "size": "1 unit",
+      "category": "staples_grocery",
+      "image": "/products/vine-leaves-image.png",
+      "match_key": "vine leaves",
+      "dietary_tags": [],
+      "allergen_tags": [],
       "rating": 4.2,
       "rating_count": 1583,
       "description": "Fresh vine leaves."
+    },
+    {
+      "id": "white-vinegar-1",
+      "name": "Annapurna White Vinegar",
+      "brand": "Annapurna",
+      "price": 30,
+      "size": "300 ml",
+      "category": "staples_grocery",
+      "image": "/products/white-vinegar-image.png",
+      "match_key": "white vinegar",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.0,
+      "rating_count": 950,
+      "description": "Fresh white vinegar."
     },
     {
       "id": "white-vinegar",
       "name": "White Vinegar",
       "brand": "Fresho",
       "price": 20,
-      "size": "1 unit",
+      "size": "300 ml",
       "category": "staples_grocery",
       "image": "/products/white-vinegar.png",
       "match_key": "white vinegar",
@@ -6982,9 +8030,24 @@
     {
       "id": "whole-wheat",
       "name": "Whole Wheat",
+      "brand": "Fresh",
+      "price": 40,
+      "size": "1 kg",
+      "category": "staples_grocery",
+      "image": "/products/whole-wheat-image.png",
+      "match_key": "whole wheat",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.2,
+      "rating_count": 1003,
+      "description": "Fresh whole wheat."
+    },
+    {
+      "id": "whole-wheat-1k",
+      "name": "Whole Wheat",
       "brand": "Fresho",
-      "price": 25,
-      "size": "1 unit",
+      "price": 30,
+      "size": "1 kg",
       "category": "staples_grocery",
       "image": "/products/whole-wheat.png",
       "match_key": "whole wheat",
@@ -6995,13 +8058,13 @@
       "description": "Fresh whole wheat."
     },
     {
-      "id": "zucchini",
-      "name": "Zucchini",
+      "id": "green-zucchini",
+      "name": "Fresho! Green Zucchini",
       "brand": "Fresho",
-      "price": 105,
-      "size": "1 unit",
+      "price": 82,
+      "size": "1 Pc",
       "category": "staples_grocery",
-      "image": "/products/zucchini.png",
+      "image": "/products/fresho-green-zucchini.png",
       "match_key": "zucchini",
       "dietary_tags": [],
       "allergen_tags": [],
@@ -7010,13 +8073,73 @@
       "description": "Fresh zucchini."
     },
     {
+      "id": "green-zucchini-1",
+      "name": "Organic Green Zucchini",
+      "brand": "fresh India Organics",
+      "price": 73,
+      "size": "1 Pc",
+      "category": "staples_grocery",
+      "image": "/products/zucchini.png",
+      "match_key": "zucchini",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.8,
+      "rating_count": 1451,
+      "description": "Fresh zucchini."
+    },
+    {
+      "id": "yellow-zucchini",
+      "name": "Fresho! Yellow Zucchini",
+      "brand": "Fresho",
+      "price": 75,
+      "size": "1 Pc",
+      "category": "staples_grocery",
+      "image": "/products/fresho-zucchini.png",
+      "match_key": "courgettes",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.8,
+      "rating_count": 1328,
+      "description": "Fresh courgettes."
+    },
+    {
+      "id": "yellow-zucchini-1",
+      "name": " Yellow Zucchini",
+      "brand": "Pluckk",
+      "price": 65,
+      "size": "1 Pc",
+      "category": "staples_grocery",
+      "image": "/products/yellow-zucchini.png",
+      "match_key": "courgettes",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.8,
+      "rating_count": 1308,
+      "description": "Fresh courgettes."
+    }, 
+    {
       "id": "pretzels",
       "name": "Pretzels",
       "brand": "Fresho",
-      "price": 125,
-      "size": "1 unit",
+      "price": 99,
+      "size": "50 g",
       "category": "staples_grocery",
       "image": "/products/pretzels.png",
+      "match_key": "pretzels",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.3,
+      "rating_count": 1241,
+      "description": "Fresh pretzels."
+    },
+    {
+      "id": "pretzels-himalayan",
+      "name": "4700BC Himalayan Salt Pretzel",
+      "brand": "4700BC",
+      "price": 60,
+      "size": "50 g",
+      "category": "staples_grocery",
+      "image": "/products/4700BC-Himalayan-Salt-Pretzel.png",
       "match_key": "pretzels",
       "dietary_tags": [],
       "allergen_tags": [],
@@ -7029,9 +8152,24 @@
       "name": "Toffee Popcorn",
       "brand": "Fresho",
       "price": 135,
-      "size": "1 unit",
+      "size": "75 g",
       "category": "staples_grocery",
       "image": "/products/toffee-popcorn.png",
+      "match_key": "toffee popcorn",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 1480,
+      "description": "Fresh toffee popcorn."
+    },
+    {
+      "id": "toffee-popcorn-actII",
+      "name": "Act II Caramel Bliss Butter Toffee Popcorn",
+      "brand": "Act II",
+      "price": 90,
+      "size": "75 g",
+      "category": "staples_grocery",
+      "image": "/products/toffee-popcorn-caramel-bliss.png",
       "match_key": "toffee popcorn",
       "dietary_tags": [],
       "allergen_tags": [],
@@ -7040,11 +8178,26 @@
       "description": "Fresh toffee popcorn."
     },
     {
+      "id": "caramel-syrup",
+      "name": "Hershey's Caramel Syrup",
+      "brand": "Hershey's",
+      "price": 176,
+      "size": "600 g",
+      "category": "staples_grocery",
+      "image": "/products/hersheys-caramel-syrup.png",
+      "match_key": "caramel",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.3,
+      "rating_count": 1669,
+      "description": "Fresh caramel."
+    },
+    {
       "id": "caramel",
       "name": "Caramel",
       "brand": "Fresho",
-      "price": 80,
-      "size": "1 unit",
+      "price": 144,
+      "size": "600 g",
       "category": "staples_grocery",
       "image": "/products/caramel.png",
       "match_key": "caramel",
@@ -7058,25 +8211,56 @@
       "id": "tagliatelle",
       "name": "Tagliatelle",
       "brand": "Fresho",
-      "price": 45,
-      "size": "1 unit",
+      "price": 500,
+      "size": "500 g",
       "category": "staples_grocery",
       "image": "/products/tagliatelle.png",
       "match_key": "tagliatelle",
       "dietary_tags": [],
       "allergen_tags": [],
-      "rating": 4.5,
-      "rating_count": 1735,
+      "rating": 4.7,
+      "rating_count": 735,
       "description": "Fresh tagliatelle."
     },
     {
-      "id": "fettuccine",
-      "name": "Fettuccine",
-      "brand": "Fresho",
-      "price": 100,
-      "size": "1 unit",
+      "id": "tagliatelle-1",
+      "name": "Agnesi Tagliatelle Pasta",
+      "brand": "Agnesi",
+      "price": 375,
+      "size": "500 g",
       "category": "staples_grocery",
-      "image": "/products/fettuccine.png",
+      "image": "/products/Agnesi-Tagliatelle-Pasta.png",
+      "match_key": "tagliatelle",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 855,
+      "description": "Fresh tagliatelle."
+    },
+    
+    {
+      "id": "fettuccine-1",
+      "name": "Granoro Fettuccine",
+      "brand": "Granoro",
+      "price": 300,
+      "size": "500 g",
+      "category": "staples_grocery",
+      "image": "/products/granoro-fettuccine.png",
+      "match_key": "fettuccine",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.7,
+      "rating_count": 1473,
+      "description": "Fresh fettuccine."
+    },
+    {
+      "id": "fettuccine",
+      "name": "Riscossa Fettuccine",
+      "brand": "Fresho",
+      "price": 274,
+      "size": "500 g",
+      "category": "staples_grocery",
+      "image": "/products/Riscossa-Fettuccine.png",
       "match_key": "fettuccine",
       "dietary_tags": [],
       "allergen_tags": [],
@@ -7086,10 +8270,25 @@
     },
     {
       "id": "fideo",
+      "name": "Gallo Fideo Fino",
+      "brand": "Gallo",
+      "price": 170,
+      "size": "450 g",
+      "category": "staples_grocery",
+      "image": "/products/Gallo-Fideo-Fino.png",
+      "match_key": "fideo",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.2,
+      "rating_count": 1722,
+      "description": "Fresh fideo."
+    },
+    {
+      "id": "fideo-fino",
       "name": "Fideo",
       "brand": "Fresho",
-      "price": 30,
-      "size": "1 unit",
+      "price": 140,
+      "size": "450 g",
       "category": "staples_grocery",
       "image": "/products/fideo.png",
       "match_key": "fideo",
@@ -7101,12 +8300,12 @@
     },
     {
       "id": "vermicelli-pasta",
-      "name": "Vermicelli Pasta",
-      "brand": "Fresho",
-      "price": 150,
-      "size": "1 unit",
+      "name": "Tata Sampann Vermicelli | Seviyan",
+      "brand": "Tata Sampann",
+      "price": 60,
+      "size": "450 g",
       "category": "staples_grocery",
-      "image": "/products/vermicelli-pasta.png",
+      "image": "/products/Tata-Sampann-Vermicelli.png",
       "match_key": "vermicelli pasta",
       "dietary_tags": [],
       "allergen_tags": [],
@@ -7115,28 +8314,73 @@
       "description": "Fresh vermicelli pasta."
     },
     {
-      "id": "pilchards",
-      "name": "Pilchards",
-      "brand": "Fresho",
-      "price": 80,
-      "size": "1 unit",
+      "id": "vermicelli",
+      "name": "Balian Vermicelli",
+      "brand": "Balian",
+      "price": 46,
+      "size": "450 g",
       "category": "staples_grocery",
-      "image": "/products/pilchards.png",
-      "match_key": "pilchards",
+      "image": "/products/balian-vermicelli.png",
+      "match_key": "vermicelli pasta",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.8,
+      "rating_count": 1306,
+      "description": "Fresh vermicelli pasta."
+    },
+    {
+      "id": "sardine",
+      "name": "Ortiz Sardines",
+      "brand": "Ortiz",
+      "price": 164,
+      "size": "200 g",
+      "category": "staples_grocery",
+      "image": "/products/ortiz-sardines.png",
+      "match_key": "sardines",
       "dietary_tags": [],
       "allergen_tags": [],
       "rating": 4.3,
       "rating_count": 934,
-      "description": "Fresh pilchards."
+      "description": "Fresh pilchards or sardines."
+    },
+    {
+      "id": "sardines",
+      "name": "Golden Prize Sardine",
+      "brand": "Golden Prize",
+      "price": 119,
+      "size": "200 g",
+      "category": "staples_grocery",
+      "image": "/products/golden-prize-sardine.png",
+      "match_key": "sardines",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.3,
+      "rating_count": 934,
+      "description": "Fresh pilchards or sardines."
     },
     {
       "id": "pappardelle-pasta",
-      "name": "Pappardelle Pasta",
-      "brand": "Fresho",
-      "price": 105,
-      "size": "1 unit",
+      "name": "La Molisana Pappardelle Pasta",
+      "brand": "La Molisana",
+      "price": 340,
+      "size": "500 g",
       "category": "staples_grocery",
-      "image": "/products/pappardelle-pasta.png",
+      "image": "/products/La-Molisana-Pappardelle-Pasta.png",
+      "match_key": "pappardelle pasta",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.8,
+      "rating_count": 91,
+      "description": "Fresh pappardelle pasta."
+    },
+    {
+      "id": "pappardelle",
+      "name": "Colavita Pappardelle Pasta",
+      "brand": "Colavita",
+      "price": 295,
+      "size": "500 g",
+      "category": "staples_grocery",
+      "image": "/products/Colavita-Pappardelle-Pasta.png",
       "match_key": "pappardelle pasta",
       "dietary_tags": [],
       "allergen_tags": [],
@@ -7149,7 +8393,7 @@
       "name": "Paccheri Pasta",
       "brand": "Fresho",
       "price": 180,
-      "size": "1 unit",
+      "size": "250 g",
       "category": "staples_grocery",
       "image": "/products/paccheri-pasta.png",
       "match_key": "paccheri pasta",
@@ -7160,16 +8404,31 @@
       "description": "Fresh paccheri pasta."
     },
     {
-      "id": "barbeque-sauce",
-      "name": "Barbeque Sauce",
-      "brand": "Kissan",
-      "price": 95,
-      "size": "500 g",
+      "id": "paccheri",
+      "name": "Gustora Paccheri Pasta",
+      "brand": "Gustora",
+      "price": 148,
+      "size": "250 g",
       "category": "staples_grocery",
-      "image": "/products/barbeque-sauce.png",
-      "match_key": "bbq sauce",
+      "image": "/products/Gustora-Paccheri-Pasta.png",
+      "match_key": "paccheri pasta",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 518,
+      "description": "Fresh paccheri pasta."
+    },
+    {
+      "id": "barbecue-sauce",
+      "name": "Fruitaco Barbeque Sauce",
+      "brand": "Fruitaco",
+      "price": 149,
+      "size": "350 g",
+      "category": "staples_grocery",
+      "image": "/products/Fruitaco-Barbeque-Sauces.png",
+      "match_key": "barbeque sauce",
       "dietary_tags": [
-        "vegan",
+        "vegetarian",
         "gluten-free"
       ],
       "allergen_tags": [],
@@ -7178,13 +8437,33 @@
       "description": "Smoky barbeque sauce for grilling and dipping."
     },
     {
-      "id": "bay-leaf",
-      "name": "Bay Leaf",
-      "brand": "Fresho",
-      "price": 25,
-      "size": "50 g",
+      "id": "barbeque-sauce",
+      "name": "Veeda Barbeque Sauce",
+      "brand": "Veeda",
+      "price": 119,
+      "size": "350 g",
       "category": "staples_grocery",
-      "image": "/products/bay-leaf.png",
+      "image": "/products/Veeda-Barbeque-Sauce.png",
+      "match_key": "barbeque sauce",
+      "dietary_tags": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.3,
+      "rating_count": 2100,
+      "description": "Smoky barbeque sauce for grilling and dipping."
+    },
+    
+    {
+      "id": "bay-leaf",
+      "name": "Bay Leaf / Tejpatta",
+      "brand": "Fresho",
+      "price": 16,
+      "size": "20 g",
+      "category": "staples_grocery",
+      "image": "/products/bay-leaves.png",
       "match_key": "bay leaf",
       "dietary_tags": [
         "vegan",
@@ -7196,6 +8475,72 @@
       "description": "Aromatic dried bay leaves for cooking."
     },
     {
+      "id": "nutritious-bay-leaf",
+      "name": "Nutritious Bay Leaf / Tejpatta",
+      "brand": "Nutritious",
+      "price": 14,
+      "size": "20 g",
+      "category": "staples_grocery",
+      "image": "/products/Nutritious-Bay-Leaf.png",
+      "match_key": "bay leaf",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 3220,
+      "description": "Aromatic dried bay leaves for cooking."
+    },
+    {
+      "id": "keya-bay-leaves",
+      "name": "Keya Bay Leaves | Tejpatta",
+      "brand": "Keya",
+      "price": 28,
+      "size": "50 g",
+      "category": "staples_grocery",
+      "image": "/products/keya-bay-leaves.png",
+      "match_key": "bay leaves",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 549,
+      "description": "Fresh bay leaves."
+    },
+    {
+      "id": "bay-leaves",
+      "name": "Zoff Bay Leaf / Tejpatta",
+      "brand": "Zoff",
+      "price": 23,
+      "size": "50 g",
+      "category": "staples_grocery",
+      "image": "/products/Zoff-Bay-Leaf.png",
+      "match_key": "bay leaves",
+      "dietary_tags": [],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 539,
+      "description": "Fresh bay leaves."
+    },
+    {
+      "id": "habit-capers",
+      "name": "Habit Capers",
+      "brand": "Habit",
+      "price": 120,
+      "size": "100 g",
+      "category": "staples_grocery",
+      "image": "/products/Habit-Capers.png",
+      "match_key": "caper",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.2,
+      "rating_count": 1190,
+      "description": "Pickled caper buds for Mediterranean dishes."
+    },
+    {
       "id": "capers",
       "name": "Capers (Pickled)",
       "brand": "Fresho",
@@ -7203,7 +8548,7 @@
       "size": "100 g",
       "category": "staples_grocery",
       "image": "/products/capers.png",
-      "match_key": "capers",
+      "match_key": "caper",
       "dietary_tags": [
         "vegan",
         "gluten-free"
@@ -7215,12 +8560,30 @@
     },
     {
       "id": "cardamom",
-      "name": "Green Cardamom",
-      "brand": "Fresho",
-      "price": 60,
+      "name": "Tata Sampann Cardamom (Elaichi) Whole",
+      "brand": "Tata Sampann",
+      "price": 264,
       "size": "50 g",
       "category": "staples_grocery",
-      "image": "/products/cardamom.png",
+      "image": "/products/tata-sampann-cardamom.png",
+      "match_key": "cardamom",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.7,
+      "rating_count": 4100,
+      "description": "Aromatic green cardamom pods."
+    },
+    {
+      "id": "vedaka-cardamom",
+      "name": "Vedaka Hari Elaichi / Green Cardamom",
+      "brand": "Vedaka",
+      "price": 250,
+      "size": "50 g",
+      "category": "staples_grocery",
+      "image": "/products/vedaka-green-cardamom.png",
       "match_key": "cardamom",
       "dietary_tags": [
         "vegan",
@@ -7228,17 +8591,35 @@
       ],
       "allergen_tags": [],
       "rating": 4.6,
-      "rating_count": 4100,
-      "description": "Aromatic green cardamom pods."
+      "rating_count": 4097,
+      "description": "Whole aromatic green cardamom pods."
     },
     {
-      "id": "cinnamon",
-      "name": "Cinnamon Sticks",
-      "brand": "Fresho",
-      "price": 45,
+      "id": "cinnamon-stick",
+      "name": "Organic Tattva Organic Cinnamon Whole (Dalchini)",
+      "brand": "Organic Tattva",
+      "price": 65,
       "size": "50 g",
       "category": "staples_grocery",
-      "image": "/products/cinnamon.png",
+      "image": "/products/organic-tattva-cinnamon.png",
+      "match_key": "cinnamon",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.6,
+      "rating_count": 3800,
+      "description": "Whole cinnamon sticks for cooking and tea."
+    },
+    {
+      "id": "cinnamon-sticks",
+      "name": "Catch Cinnamon Whole (Dalchini)",
+      "brand": "Catch",
+      "price": 46,
+      "size": "50 g",
+      "category": "staples_grocery",
+      "image": "/products/catch-cinnamon.png",
       "match_key": "cinnamon",
       "dietary_tags": [
         "vegan",
@@ -7246,35 +8627,71 @@
       ],
       "allergen_tags": [],
       "rating": 4.5,
-      "rating_count": 3800,
-      "description": "Whole cinnamon sticks for cooking and tea."
+      "rating_count": 3758,
+      "description": "Premium sweet-aroma cinnamon whole sticks."
     },
     {
-      "id": "cloves",
-      "name": "Whole Cloves",
-      "brand": "Fresho",
-      "price": 35,
+      "id": "clove",
+      "name": "Aashirvaad Clove | Pure Laung",
+      "brand": "Aashirvaad",
+      "price": 83,
       "size": "50 g",
       "category": "staples_grocery",
-      "image": "/products/cloves.png",
-      "match_key": "cloves",
+      "image": "/products/Aashirvaad-Clove.png",
+      "match_key": "clove",
       "dietary_tags": [
         "vegan",
         "gluten-free"
       ],
       "allergen_tags": [],
-      "rating": 4.5,
-      "rating_count": 3600,
+      "rating": 4.6,
+      "rating_count": 939,
+      "description": "Aromatic whole cloves for cooking."
+    },
+    {
+      "id": "cloves",
+      "name": "Whole Cloves (Laung)",
+      "brand": "Fresho",
+      "price": 65,
+      "size": "50 g",
+      "category": "staples_grocery",
+      "image": "/products/cloves.png",
+      "match_key": "clove",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.6,
+      "rating_count": 1001,
       "description": "Aromatic whole cloves for cooking."
     },
     {
       "id": "couscous",
-      "name": "Couscous",
-      "brand": "Fresho",
-      "price": 95,
+      "name": "Kattus Instant Couscous",
+      "brand": "Kattus",
+      "price": 218,
       "size": "500 g",
       "category": "staples_grocery",
       "image": "/products/couscous.png",
+      "match_key": "couscous",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.4,
+      "rating_count": 1410,
+      "description": "Quick-cook Moroccan couscous."
+    },
+    {
+      "id": "couscous-1",
+      "name": "Freshos Couscous Semolina",
+      "brand": "Fresh's",
+      "price": 176,
+      "size": "500 g",
+      "category": "staples_grocery",
+      "image": "/products/freshos-couscous-semolina.png",
       "match_key": "couscous",
       "dietary_tags": [
         "vegan",
@@ -7289,43 +8706,59 @@
       "id": "goose-fat",
       "name": "Goose Fat",
       "brand": "Fresho",
-      "price": 320,
-      "size": "500 g",
+      "price": 360,
+      "size": "250 g",
       "category": "staples_grocery",
       "image": "/products/goose-fat.png",
       "match_key": "goose fat",
       "dietary_tags": [],
       "allergen_tags": [],
-      "rating": 4.2,
-      "rating_count": 750,
+      "rating": 4.3,
+      "rating_count": 350,
       "description": "Premium rendered goose fat for roasting."
     },
     {
-      "id": "haricot-beans",
-      "name": "Haricot Beans (Dried)",
-      "brand": "Fresho",
-      "price": 85,
-      "size": "500 g",
+      "id": "goose-fat-1",
+      "name": "Bespoke Foods Goose Fat",
+      "brand": "Bespoke Foods",
+      "price": 320,
+      "size": "250 g",
       "category": "staples_grocery",
-      "image": "/products/haricot-beans.png",
-      "match_key": "haricot beans",
-      "dietary_tags": [
-        "vegan",
-        "gluten-free"
-      ],
+      "image": "/products/bespoke-foods-goose-fat.png",
+      "match_key": "goose fat",
+      "dietary_tags": [],
       "allergen_tags": [],
-      "rating": 4.3,
-      "rating_count": 1100,
-      "description": "Dried haricot beans for stews and soups."
+      "rating": 4.2,
+      "rating_count": 360,
+      "description": "Premium rendered goose fat for roasting."
     },
     {
       "id": "linguine-pasta",
-      "name": "Linguine Pasta",
+      "name": "Del Monte Linguine Pasta",
       "brand": "Del Monte",
       "price": 110,
       "size": "500 g",
       "category": "staples_grocery",
       "image": "/products/linguine-pasta.png",
+      "match_key": "linguine",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "allergen_tags": [
+        "gluten"
+      ],
+      "rating": 4.5,
+      "rating_count": 2210,
+      "description": "Premium durum wheat linguine pasta."
+    },
+    {
+      "id": "gustora-linguine-pasta",
+      "name": "Gustora Linguine Pasta",
+      "brand": "Gustora",
+      "price": 84,
+      "size": "500 g",
+      "category": "staples_grocery",
+      "image": "/products/Gustora-Linguine-Pasta.png",
       "match_key": "linguine",
       "dietary_tags": [
         "vegan"
@@ -7339,10 +8772,28 @@
     },
     {
       "id": "maple-syrup",
+      "name": "Maple Joe Maple Syrup",
+      "brand": "Maple Joe",
+      "price": 512,
+      "size": "180 ml",
+      "category": "staples_grocery",
+      "image": "/products/maple-joe-maple-syrup.png",
+      "match_key": "maple syrup",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.5,
+      "rating_count": 600,
+      "description": "Pure Canadian maple syrup for pancakes."
+    },
+    {
+      "id": "pure-maple-syrup",
       "name": "Pure Maple Syrup",
-      "brand": "Maple Gold",
-      "price": 350,
-      "size": "250 ml",
+      "brand": "Clarks",
+      "price": 450,
+      "size": "180 ml",
       "category": "staples_grocery",
       "image": "/products/maple-syrup.png",
       "match_key": "maple syrup",
@@ -7352,14 +8803,32 @@
       ],
       "allergen_tags": [],
       "rating": 4.5,
-      "rating_count": 1600,
+      "rating_count": 589,
       "description": "Pure Canadian maple syrup for pancakes."
+    },
+    {
+      "id": "pinto-bean",
+      "name": "Organic Pinto Beans|Himalayan Rajmah",
+      "brand": "SIKKIM ROOTS",
+      "price": 215,
+      "size": "500 g",
+      "category": "staples_grocery",
+      "image": "/products/sikkim-roots-pinto-beans.png",
+      "match_key": "pinto beans",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.4,
+      "rating_count": 990,
+      "description": "Dried pinto beans for Mexican dishes."
     },
     {
       "id": "pinto-beans",
       "name": "Pinto Beans (Dried)",
       "brand": "Fresho",
-      "price": 90,
+      "price": 190,
       "size": "500 g",
       "category": "staples_grocery",
       "image": "/products/pinto-beans.png",
@@ -7374,14 +8843,14 @@
       "description": "Dried pinto beans for Mexican dishes."
     },
     {
-      "id": "rapeseed-oil",
-      "name": "Rapeseed Oil",
-      "brand": "Fresho",
-      "price": 150,
+      "id": "canola-oil",
+      "name": "Borges Canola Oil",
+      "brand": "Borges",
+      "price": 259,
       "size": "1 L",
       "category": "staples_grocery",
-      "image": "/products/rapeseed-oil.png",
-      "match_key": "rapeseed oil",
+      "image": "/products/canola-oil.png",
+      "match_key": "canola oil",
       "dietary_tags": [
         "vegan",
         "gluten-free"
@@ -7392,13 +8861,49 @@
       "description": "Light rapeseed oil for cooking and frying."
     },
     {
+      "id": "canola-oil-1l",
+      "name": "Jivo Canola Oil",
+      "brand": "Jivo",
+      "price": 229,
+      "size": "1 L",
+      "category": "staples_grocery",
+      "image": "/products/jivo-canola-oil.png",
+      "match_key": "canola oil",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.4,
+      "rating_count": 2080,
+      "description": "Light rapeseed oil for cooking and frying."
+    },
+    {
       "id": "rosemary",
-      "name": "Dried Rosemary",
+      "name": "Hydroponic rosemary",
+      "brand": "OnlyHydroponics",
+      "price": 38,
+      "size": "25 g",
+      "category": "staples_grocery",
+      "image": "/products/hydroponic-rosemary.png",
+      "match_key": "rosemary",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.4,
+      "rating_count": 2905,
+      "description": "Aromatic dried rosemary for cooking."
+    },
+    {
+      "id": "fresh-rosemary",
+      "name": "Fresh Rosemary",
       "brand": "Fresho",
       "price": 35,
-      "size": "30 g",
+      "size": "25 g",
       "category": "staples_grocery",
-      "image": "/products/rosemary.png",
+      "image": "/products/fresh-rosemary.png",
       "match_key": "rosemary",
       "dietary_tags": [
         "vegan",
@@ -8133,6 +9638,24 @@
       "economy_variant": true
     },
     {
+      "id": "tea-500g",
+      "name": "Premium Tea",
+      "brand": "Tata Tea Gold",
+      "price": 290,
+      "size": "500 g",
+      "category": "beverages",
+      "image": "/products/eco-tea.png",
+      "match_key": "tea",
+      "dietary_tags": [
+        "vegan",
+        "gluten-free"
+      ],
+      "allergen_tags": [],
+      "rating": 4.4,
+      "rating_count": 974,
+      "description": "Fast-read digital thermometer."
+    },
+    {
       "id": "economy-tea-500g",
       "name": "Premium Tea",
       "brand": "QuenchBasic",
@@ -8593,7 +10116,7 @@
       "name": "Rich Chocolate Cake Slice",
       "brand": "FestBasic",
       "price": 80,
-      "size": "1 slice",
+      "size": "250 g",
       "category": "party_festive",
       "image": "/products/eco-Rich Chocolate Cake Slice.png",
       "match_key": "",
