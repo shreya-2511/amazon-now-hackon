@@ -49,10 +49,10 @@ function CheckoutContent() {
     setSelected(null);
   }, [economyMode]);
 
-  // Re-evaluate coupons using original item IDs (backend knows their prices).
-  // subtotal from context already reflects eco prices correctly.
+  // Re-evaluate coupons — use original items normally, or eco items in economy mode
+  // so the backend computes the correct discount against actual cart prices.
   useEffect(() => {
-    const couponItems = originalItems.length > 0 ? originalItems : items;
+    const couponItems = economyMode ? items : (originalItems.length > 0 ? originalItems : items);
     if (couponItems.length === 0) return;
     api.coupons(couponItems.map((i) => ({ product_id: i.product.id, qty: i.qty })))
       .then((ev) => {
@@ -60,16 +60,10 @@ function CheckoutContent() {
         setSelected(ev.best_code);
       })
       .catch(() => {});
-  }, [items, originalItems]);
+  }, [items, originalItems, economyMode]);
 
   const selectedCoupon = evalc?.coupons.find((c) => c.code === selected && c.eligible) || null;
-  // In economy mode, recompute discount as a proportion of the new subtotal
-  // so it scales correctly with the cheaper prices.
-  const rawDiscount = selectedCoupon?.discount ?? 0;
-  const originalSubtotal = evalc?.subtotal ?? subtotal;
-  const discount = originalSubtotal > 0 && economyMode
-    ? Math.round((rawDiscount / originalSubtotal) * subtotal)
-    : rawDiscount;
+  const discount = selectedCoupon?.discount ?? 0;
   const total = Math.max(0, subtotal + fee - discount);
   const eligibleCount = evalc?.coupons.filter((c) => c.eligible).length ?? 0;
 
