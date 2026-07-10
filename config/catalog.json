@@ -107,7 +107,7 @@
       "description": "Spray-dried infant milk formula."
     },
     {
-      "id": "baby-formula-1",
+      "id": "baby-formula-1-aptamil",
       "name": "Aptamil Premium Infant Formula Stage 1",
       "brand": "Aptamil",
       "price": 750,
@@ -160,7 +160,7 @@
       "description": "Mild moisturising baby lotion."
     },
     {
-      "id": "meemee-baby-lotion",
+      "id": "meemee-baby-lotion-mee-mee",
       "name": "Mee Mee Soft Baby Lotion",
       "brand": "Mee Mee",
       "price": 139,
@@ -4545,7 +4545,7 @@
       "description": "Fresh rice noodles."
     },
     {
-      "id": "lime",
+      "id": "lime-fresho",
       "name": "Lime",
       "brand": "Fresho",
       "price": 25,
@@ -4785,7 +4785,7 @@
       "description": "Fresh passata."
     },
     {
-      "id": "sunflower-oil",
+      "id": "sunflower-oil-fortune",
       "name": "Sunflower Oil",
       "brand": "Fortune",
       "price": 175,
@@ -4800,7 +4800,7 @@
       "description": "Fresh sunflower oil."
     },
     {
-      "id": "madras-paste",
+      "id": "madras-paste-patak-s",
       "name": "Madras Paste",
       "brand": "Patak's",
       "price": 210,
@@ -8503,7 +8503,7 @@
       "description": "Whole cinnamon sticks for cooking and tea."
     },
     {
-      "id": "cinnamon-sticks",
+      "id": "cinnamon-sticks-catch",
       "name": "Catch Cinnamon Whole (Dalchini)",
       "brand": "Catch",
       "price": 46,
@@ -8820,7 +8820,7 @@
       "description": "Fresh cashew nuts."
     },
     {
-      "id": "amul-milk-500ml",
+      "id": "amul-milk-500ml-freshday",
       "name": "Amul Taaza Toned Milk",
       "brand": "Freshday",
       "price": 20,
@@ -8840,7 +8840,7 @@
       "description": " Homogenised toned milk, 3% fat."
     },
     {
-      "id": "amul-gold-1l",
+      "id": "amul-gold-1l-freshday",
       "name": "Amul Gold Full Cream Milk",
       "brand": "Freshday",
       "price": 50,
@@ -8860,7 +8860,7 @@
       "description": " Rich full-cream milk, 6% fat."
     },
     {
-      "id": "farm-eggs-6",
+      "id": "farm-eggs-6-freshday",
       "name": "Farm Fresh Brown Eggs",
       "brand": "Freshday",
       "price": 55,
@@ -8879,7 +8879,7 @@
       "description": " Cage-free brown eggs, protein-rich."
     },
     {
-      "id": "farm-eggs-12",
+      "id": "farm-eggs-12-freshday",
       "name": "Farm Fresh Eggs",
       "brand": "Freshday",
       "price": 65,
@@ -8898,7 +8898,7 @@
       "description": " A dozen farm-fresh white eggs."
     },
     {
-      "id": "amul-butter-100g",
+      "id": "amul-butter-100g-freshday",
       "name": "Amul Butter",
       "brand": "Freshday",
       "price": 40,
@@ -8918,7 +8918,7 @@
       "description": " Utterly butterly delicious salted butter."
     },
     {
-      "id": "amul-paneer-200g",
+      "id": "amul-paneer-200g-freshday",
       "name": "Amul Malai Paneer",
       "brand": "Freshday",
       "price": 65,
@@ -8938,7 +8938,7 @@
       "description": " Soft fresh cottage cheese."
     },
     {
-      "id": "nestle-curd-400g",
+      "id": "nestle-curd-400g-freshday",
       "name": "Dahi / Curd",
       "brand": "Freshday",
       "price": 30,
@@ -8958,7 +8958,7 @@
       "description": " Thick set fresh curd."
     },
     {
-      "id": "greek-yogurt-100g",
+      "id": "greek-yogurt-100g-freshday",
       "name": "Greek Yogurt",
       "brand": "Freshday",
       "price": 40,
@@ -8978,7 +8978,7 @@
       "description": " High-protein creamy Greek yogurt."
     },
     {
-      "id": "amul-cheese-slices",
+      "id": "amul-cheese-slices-freshday",
       "name": "Cheese Slices",
       "brand": "Freshday",
       "price": 85,
@@ -8997,7 +8997,7 @@
       "description": " Processed cheese slices, 10 pcs."
     },
     {
-      "id": "mozzarella-200g",
+      "id": "mozzarella-200g-freshday",
       "name": "Mozzarella Cheese",
       "brand": "Freshday",
       "price": 130,
@@ -9016,7 +9016,7 @@
       "description": " Stretchy pizza-style mozzarella."
     },
     {
-      "id": "parmesan-150g",
+      "id": "parmesan-150g-freshday",
       "name": "Parmesan Cheese",
       "brand": "Freshday",
       "price": 210,
@@ -9035,7 +9035,7 @@
       "description": " Aged hard cheese, grated."
     },
     {
-      "id": "mascarpone-250g",
+      "id": "mascarpone-250g-freshday",
       "name": "Mascarpone Cheese",
       "brand": "Freshday",
       "price": 250,
@@ -9054,7 +9054,7 @@
       "description": " Italian soft cheese for desserts."
     },
     {
-      "id": "fresh-cream-200ml",
+      "id": "fresh-cream-200ml-freshday",
       "name": "Fresh Cream",
       "brand": "Freshday",
       "price": 50,
@@ -9074,7 +9074,7 @@
       "description": " 25% fat fresh dairy cream."
     },
     {
-      "id": "amul-ghee-500ml",
+      "id": "amul-ghee-500ml-freshday",
       "name": "Pure Ghee",
       "brand": "Freshday",
       "price": 210,
@@ -9094,7 +9094,7 @@
       "description": " Clarified butter, rich aroma."
     },
     {
-      "id": "onion-1kg",
+      "id": "onion-1kg-farmbasket",
       "name": "Onion",
       "brand": "FarmBasket",
       "price": 30,
@@ -9112,7 +9112,7 @@
       "description": " Fresh red onions."
     },
     {
-      "id": "tomato-500g",
+      "id": "tomato-500g-farmbasket",
       "name": "Tomato",
       "brand": "FarmBasket",
       "price": 20,
@@ -9130,7 +9130,7 @@
       "description": " Ripe red tomatoes."
     },
     {
-      "id": "potato-1kg",
+      "id": "potato-1kg-farmbasket",
       "name": "Potato",
       "brand": "FarmBasket",
       "price": 25,
@@ -9148,7 +9148,7 @@
       "description": " Everyday cooking potatoes."
     },
     {
-      "id": "garlic-200g",
+      "id": "garlic-200g-farmbasket",
       "name": "Garlic",
       "brand": "FarmBasket",
       "price": 25,
@@ -9166,7 +9166,7 @@
       "description": " Fresh garlic bulbs."
     },
     {
-      "id": "ginger-150g",
+      "id": "ginger-150g-farmbasket",
       "name": "Ginger",
       "brand": "FarmBasket",
       "price": 20,
@@ -9184,7 +9184,7 @@
       "description": " Fresh ginger root."
     },
     {
-      "id": "spinach",
+      "id": "spinach-farmbasket",
       "name": "Palak / Spinach",
       "brand": "FarmBasket",
       "price": 15,
@@ -9202,7 +9202,7 @@
       "description": " Tender green spinach."
     },
     {
-      "id": "capsicum",
+      "id": "capsicum-farmbasket",
       "name": "Capsicum (Green)",
       "brand": "FarmBasket",
       "price": 20,
@@ -9220,7 +9220,7 @@
       "description": " Crunchy green bell peppers."
     },
     {
-      "id": "mushroom-200g",
+      "id": "mushroom-200g-farmbasket",
       "name": "Button Mushrooms",
       "brand": "FarmBasket",
       "price": 35,
@@ -9238,7 +9238,7 @@
       "description": " Fresh white button mushrooms."
     },
     {
-      "id": "lemon-4",
+      "id": "lemon-4-farmbasket",
       "name": "Lemon",
       "brand": "FarmBasket",
       "price": 20,
@@ -9256,7 +9256,7 @@
       "description": " Juicy lemons."
     },
     {
-      "id": "banana-6",
+      "id": "banana-6-farmbasket",
       "name": "Banana (Robusta)",
       "brand": "FarmBasket",
       "price": 25,
@@ -9274,7 +9274,7 @@
       "description": " Ripe sweet bananas."
     },
     {
-      "id": "apple-4",
+      "id": "apple-4-farmbasket",
       "name": "Royal Gala Apple",
       "brand": "FarmBasket",
       "price": 95,
@@ -9292,7 +9292,7 @@
       "description": " Crisp imported apples."
     },
     {
-      "id": "carrot-500g",
+      "id": "carrot-500g-farmbasket",
       "name": "Carrot",
       "brand": "FarmBasket",
       "price": 25,
@@ -9310,7 +9310,7 @@
       "description": " Sweet orange carrots."
     },
     {
-      "id": "coriander",
+      "id": "coriander-farmbasket",
       "name": "Coriander Leaves",
       "brand": "FarmBasket",
       "price": 10,
@@ -9328,7 +9328,7 @@
       "description": " Fresh dhania for garnish."
     },
     {
-      "id": "green-chilli",
+      "id": "green-chilli-farmbasket",
       "name": "Green Chilli",
       "brand": "FarmBasket",
       "price": 10,
@@ -9346,7 +9346,7 @@
       "description": " Spicy green chillies."
     },
     {
-      "id": "basil",
+      "id": "basil-farmbasket",
       "name": "Fresh Basil",
       "brand": "FarmBasket",
       "price": 35,
@@ -9364,7 +9364,7 @@
       "description": " Aromatic basil leaves."
     },
     {
-      "id": "chicken-breast-500g",
+      "id": "chicken-breast-500g-freshcatch",
       "name": "Chicken Breast (Boneless)",
       "brand": "FreshCatch",
       "price": 150,
@@ -9381,7 +9381,7 @@
       "description": " Antibiotic-free boneless breast."
     },
     {
-      "id": "chicken-currycut-1kg",
+      "id": "chicken-currycut-1kg-freshcatch",
       "name": "Chicken Curry Cut",
       "brand": "FreshCatch",
       "price": 190,
@@ -9398,7 +9398,7 @@
       "description": " Skinless curry-cut with bone."
     },
     {
-      "id": "mutton-500g",
+      "id": "mutton-500g-freshcatch",
       "name": "Mutton Curry Cut",
       "brand": "FreshCatch",
       "price": 300,
@@ -9415,7 +9415,7 @@
       "description": " Tender goat curry cut."
     },
     {
-      "id": "prawns-250g",
+      "id": "prawns-250g-freshcatch",
       "name": "Prawns (Cleaned)",
       "brand": "FreshCatch",
       "price": 210,
@@ -9434,7 +9434,7 @@
       "description": " Deveined medium prawns."
     },
     {
-      "id": "salmon-300g",
+      "id": "salmon-300g-freshcatch",
       "name": "Norwegian Salmon",
       "brand": "FreshCatch",
       "price": 355,
@@ -9453,7 +9453,7 @@
       "description": " Boneless salmon fillet."
     },
     {
-      "id": "bacon-200g",
+      "id": "bacon-200g-freshcatch",
       "name": "Pork Bacon Rashers",
       "brand": "FreshCatch",
       "price": 190,
@@ -9470,7 +9470,7 @@
       "description": " Smoked streaky bacon."
     },
     {
-      "id": "coffee-beans-250g",
+      "id": "coffee-beans-250g-quenchbasic",
       "name": "Roasted Coffee Beans",
       "brand": "QuenchBasic",
       "price": 295,
@@ -9488,7 +9488,7 @@
       "description": " Single-origin medium roast beans."
     },
     {
-      "id": "instant-coffee-100g",
+      "id": "instant-coffee-100g-quenchbasic",
       "name": "Instant Coffee",
       "brand": "QuenchBasic",
       "price": 210,
@@ -9524,7 +9524,7 @@
       "description": "Fast-read digital thermometer."
     },
     {
-      "id": "tea-500g",
+      "id": "tea-500g-quenchbasic",
       "name": "Premium Tea",
       "brand": "QuenchBasic",
       "price": 190,
@@ -9542,7 +9542,7 @@
       "description": " Assam blend leaf tea."
     },
     {
-      "id": "green-tea-25",
+      "id": "green-tea-25-quenchbasic",
       "name": "Green Tea Bags",
       "brand": "QuenchBasic",
       "price": 100,
@@ -9560,7 +9560,7 @@
       "description": " Antioxidant-rich green tea."
     },
     {
-      "id": "orange-juice-1l",
+      "id": "orange-juice-1l-quenchbasic",
       "name": "Orange Juice",
       "brand": "QuenchBasic",
       "price": 85,
@@ -9578,7 +9578,7 @@
       "description": " 100% not-from-concentrate juice."
     },
     {
-      "id": "cola-750ml",
+      "id": "cola-750ml-quenchbasic",
       "name": "Pepsi",
       "brand": "QuenchBasic",
       "price": 30,
@@ -9596,7 +9596,7 @@
       "description": " Chilled cola."
     },
     {
-      "id": "water-1l",
+      "id": "water-1l-quenchbasic",
       "name": "Packaged Drinking Water",
       "brand": "QuenchBasic",
       "price": 15,
@@ -9614,7 +9614,7 @@
       "description": " Mineral water."
     },
     {
-      "id": "white-wine",
+      "id": "white-wine-quenchbasic",
       "name": "Sauvignon Blanc White Wine",
       "brand": "QuenchBasic",
       "price": 555,
@@ -9632,7 +9632,7 @@
       "description": " Crisp dry white wine."
     },
     {
-      "id": "red-wine",
+      "id": "red-wine-quenchbasic",
       "name": "Shiraz Red Wine",
       "brand": "QuenchBasic",
       "price": 600,
@@ -9650,7 +9650,7 @@
       "description": " Bold full-bodied red wine."
     },
     {
-      "id": "beer-6",
+      "id": "beer-6-quenchbasic",
       "name": "Lager Beer (6-pack)",
       "brand": "QuenchBasic",
       "price": 390,
@@ -9670,7 +9670,7 @@
       "description": " Crisp white lager."
     },
     {
-      "id": "chips-classic",
+      "id": "chips-classic-munchmore",
       "name": "Potato Chips (Salted)",
       "brand": "MunchMore",
       "price": 20,
@@ -9688,7 +9688,7 @@
       "description": " Classic salted crisps."
     },
     {
-      "id": "digestive-biscuits",
+      "id": "digestive-biscuits-munchmore",
       "name": "Digestive Biscuits",
       "brand": "MunchMore",
       "price": 55,
@@ -9707,7 +9707,7 @@
       "description": " Wholewheat digestive biscuits."
     },
     {
-      "id": "namkeen",
+      "id": "namkeen-munchmore",
       "name": "Aloo Bhujia",
       "brand": "MunchMore",
       "price": 40,
@@ -9724,7 +9724,7 @@
       "description": " Spicy potato sev namkeen."
     },
     {
-      "id": "dark-chocolate",
+      "id": "dark-chocolate-munchmore",
       "name": "Dark Chocolate 70%",
       "brand": "MunchMore",
       "price": 60,
@@ -9744,7 +9744,7 @@
       "description": " Intense 70% cocoa chocolate."
     },
     {
-      "id": "milk-chocolate",
+      "id": "milk-chocolate-munchmore",
       "name": "Milk Chocolate",
       "brand": "MunchMore",
       "price": 55,
@@ -9763,7 +9763,7 @@
       "description": " Creamy milk chocolate."
     },
     {
-      "id": "popcorn",
+      "id": "popcorn-munchmore",
       "name": "Microwave Popcorn",
       "brand": "MunchMore",
       "price": 30,
@@ -9781,7 +9781,7 @@
       "description": " Butter-flavour popcorn."
     },
     {
-      "id": "cashews-200g",
+      "id": "cashews-200g-munchmore",
       "name": "Roasted Cashews",
       "brand": "MunchMore",
       "price": 145,
@@ -9801,7 +9801,7 @@
       "description": " Premium roasted & salted cashews."
     },
     {
-      "id": "almonds-200g",
+      "id": "almonds-200g-munchmore",
       "name": "California Almonds",
       "brand": "MunchMore",
       "price": 160,
@@ -9821,7 +9821,7 @@
       "description": " Whole raw almonds."
     },
     {
-      "id": "raw-coconut-water",
+      "id": "raw-coconut-water-quenchbasic",
       "name": "Natural Tender Coconut Water",
       "brand": "QuenchBasic",
       "price": 50,
@@ -9839,7 +9839,7 @@
       "description": " 100% pure naturally hydrating electrolyte beverage."
     },
     {
-      "id": "pintola-peanut-butter",
+      "id": "pintola-peanut-butter-munchmore",
       "name": "Unsweetened Creamy Peanut Butter",
       "brand": "MunchMore",
       "price": 110,
@@ -9859,7 +9859,7 @@
       "description": " Pure roasted peanut paste with no added oil or sugars."
     },
     {
-      "id": "epigamia-almond-milk",
+      "id": "epigamia-almond-milk-freshday",
       "name": "Unsweetened Plant Almond Milk",
       "brand": "Freshday",
       "price": 95,
@@ -9879,7 +9879,7 @@
       "description": " Creamy plant-based dairy milk alternative."
     },
     {
-      "id": "ferrero-rocher-4pc",
+      "id": "ferrero-rocher-4pc-munchmore",
       "name": "Ferrero Rocher Premium Chocolates",
       "brand": "MunchMore",
       "price": 100,
@@ -9900,7 +9900,7 @@
       "description": " Crispy hazelnut chocolate truffles."
     },
     {
-      "id": "red-plastic-cups",
+      "id": "red-plastic-cups-festbasic",
       "name": "Red Party Plastic Cups",
       "brand": "FestBasic",
       "price": 60,
@@ -9918,7 +9918,7 @@
       "description": " Disposable premium red cups for cold beverages."
     },
     {
-      "id": "soan-papdi-500g",
+      "id": "soan-papdi-500g-festbasic",
       "name": "Premium Soan Papdi Sweet Box",
       "brand": "FestBasic",
       "price": 105,
@@ -9939,7 +9939,7 @@
       "description": " Flaky traditional sweet made with ghee and dry fruits."
     },
     {
-      "id": "gift-bag",
+      "id": "gift-bag-festbasic",
       "name": "Elegant Birthday Gift Bag",
       "brand": "FestBasic",
       "price": 40,
@@ -9957,7 +9957,7 @@
       "description": " Thick glossy gift wrapping bag with ribbon handles."
     },
     {
-      "id": "chocolate-cake",
+      "id": "chocolate-cake-festbasic",
       "name": "Rich Chocolate Cake Slice",
       "brand": "FestBasic",
       "price": 80,
@@ -9977,7 +9977,7 @@
       "description": " Moist layered chocolate cake with chocolate ganache."
     },
     {
-      "id": "latex-balloons",
+      "id": "latex-balloons-festbasic",
       "name": "Colourful Latex Balloons",
       "brand": "FestBasic",
       "price": 40,
@@ -9995,7 +9995,7 @@
       "description": " Assorted bright-coloured 12-inch latex balloons."
     },
     {
-      "id": "tomato-pur-e",
+      "id": "tomato-pur-e-farmbasket",
       "name": "Tomato Purée",
       "brand": "FarmBasket",
       "price": 90,
@@ -10010,7 +10010,7 @@
       "description": " Fresh tomato purée."
     },
     {
-      "id": "lime",
+      "id": "lime-farmbasket",
       "name": "Lime",
       "brand": "FarmBasket",
       "price": 20,
@@ -10025,7 +10025,7 @@
       "description": " Fresh lime."
     },
     {
-      "id": "cayenne-pepper",
+      "id": "cayenne-pepper-farmbasket",
       "name": "Cayenne Pepper",
       "brand": "FarmBasket",
       "price": 35,
@@ -10040,7 +10040,7 @@
       "description": " Fresh cayenne pepper."
     },
     {
-      "id": "fish-sauce",
+      "id": "fish-sauce-freshcatch",
       "name": "Fish Sauce",
       "brand": "FreshCatch",
       "price": 115,
@@ -10055,7 +10055,7 @@
       "description": " Fresh fish sauce."
     },
     {
-      "id": "pork-chops",
+      "id": "pork-chops-freshcatch",
       "name": "Pork Chops",
       "brand": "FreshCatch",
       "price": 25,
@@ -10070,7 +10070,7 @@
       "description": " Fresh pork chops."
     },
     {
-      "id": "tomato-ketchup",
+      "id": "tomato-ketchup-farmbasket",
       "name": "Tomato Ketchup",
       "brand": "FarmBasket",
       "price": 105,
@@ -10085,7 +10085,7 @@
       "description": " Fresh tomato ketchup."
     },
     {
-      "id": "coconut-cream",
+      "id": "coconut-cream-freshday",
       "name": "Coconut Cream",
       "brand": "Freshday",
       "price": 60,
@@ -10100,7 +10100,7 @@
       "description": " Fresh coconut cream."
     },
     {
-      "id": "beef",
+      "id": "beef-freshcatch",
       "name": "Beef",
       "brand": "FreshCatch",
       "price": 115,
@@ -10115,7 +10115,7 @@
       "description": " Fresh beef."
     },
     {
-      "id": "egg-yolks",
+      "id": "egg-yolks-freshday",
       "name": "Egg Yolks",
       "brand": "Freshday",
       "price": 100,
@@ -10130,7 +10130,7 @@
       "description": " Fresh egg yolks."
     },
     {
-      "id": "celery",
+      "id": "celery-farmbasket",
       "name": "Celery",
       "brand": "FarmBasket",
       "price": 20,
@@ -10145,7 +10145,7 @@
       "description": " Fresh celery."
     },
     {
-      "id": "tomato-puree",
+      "id": "tomato-puree-farmbasket",
       "name": "Tomato Puree",
       "brand": "FarmBasket",
       "price": 130,
@@ -10160,7 +10160,7 @@
       "description": " Fresh tomato puree."
     },
     {
-      "id": "yellow-pepper",
+      "id": "yellow-pepper-farmbasket",
       "name": "Yellow Pepper",
       "brand": "FarmBasket",
       "price": 50,
@@ -10175,7 +10175,7 @@
       "description": " Fresh yellow pepper."
     },
     {
-      "id": "white-fish-fillets",
+      "id": "white-fish-fillets-freshcatch",
       "name": "White Fish Fillets",
       "brand": "FreshCatch",
       "price": 105,
@@ -10190,7 +10190,7 @@
       "description": " Fresh white fish fillets."
     },
     {
-      "id": "leek",
+      "id": "leek-farmbasket",
       "name": "Leek",
       "brand": "FarmBasket",
       "price": 110,
@@ -10205,7 +10205,7 @@
       "description": " Fresh leek."
     },
     {
-      "id": "parsley",
+      "id": "parsley-farmbasket",
       "name": "Parsley",
       "brand": "FarmBasket",
       "price": 60,
@@ -10220,7 +10220,7 @@
       "description": " Fresh parsley."
     },
     {
-      "id": "tomato-sauce",
+      "id": "tomato-sauce-farmbasket",
       "name": "Tomato Sauce",
       "brand": "FarmBasket",
       "price": 110,
@@ -10235,7 +10235,7 @@
       "description": " Fresh tomato sauce."
     },
     {
-      "id": "chorizo",
+      "id": "chorizo-freshcatch",
       "name": "Chorizo",
       "brand": "FreshCatch",
       "price": 65,
@@ -10250,7 +10250,7 @@
       "description": " Fresh chorizo."
     },
     {
-      "id": "turkey-ham",
+      "id": "turkey-ham-freshcatch",
       "name": "Turkey Ham",
       "brand": "FreshCatch",
       "price": 105,
@@ -10265,7 +10265,7 @@
       "description": " Fresh turkey ham."
     },
     {
-      "id": "cucumber",
+      "id": "cucumber-farmbasket",
       "name": "Cucumber",
       "brand": "FarmBasket",
       "price": 115,
@@ -10280,7 +10280,7 @@
       "description": " Fresh cucumber."
     },
     {
-      "id": "chestnut-mushroom",
+      "id": "chestnut-mushroom-farmbasket",
       "name": "Chestnut Mushroom",
       "brand": "FarmBasket",
       "price": 25,
@@ -10295,7 +10295,7 @@
       "description": " Fresh chestnut mushroom."
     },
     {
-      "id": "doner-meat",
+      "id": "doner-meat-freshcatch",
       "name": "Doner Meat",
       "brand": "FreshCatch",
       "price": 65,
@@ -10310,7 +10310,7 @@
       "description": " Fresh doner meat."
     },
     {
-      "id": "egg-plants",
+      "id": "egg-plants-freshday",
       "name": "Egg Plants",
       "brand": "Freshday",
       "price": 105,
@@ -10325,7 +10325,7 @@
       "description": " Fresh egg plants."
     },
     {
-      "id": "egg-rolls",
+      "id": "egg-rolls-freshday",
       "name": "Egg Rolls",
       "brand": "Freshday",
       "price": 110,
@@ -10340,7 +10340,7 @@
       "description": " Fresh egg rolls."
     },
     {
-      "id": "egg-white",
+      "id": "egg-white-freshday",
       "name": "Egg White",
       "brand": "Freshday",
       "price": 70,
@@ -10355,7 +10355,7 @@
       "description": " Fresh egg white."
     },
     {
-      "id": "free-range-egg-beaten",
+      "id": "free-range-egg-beaten-freshday",
       "name": "Free-Range Egg, Beaten",
       "brand": "Freshday",
       "price": 65,
@@ -10370,7 +10370,7 @@
       "description": " Fresh free-range egg, beaten."
     },
     {
-      "id": "heavy-cream",
+      "id": "heavy-cream-freshday",
       "name": "Heavy Cream",
       "brand": "Freshday",
       "price": 15,
@@ -10385,7 +10385,7 @@
       "description": " Fresh heavy cream."
     },
     {
-      "id": "italian-fennel-sausages",
+      "id": "italian-fennel-sausages-freshcatch",
       "name": "Italian Fennel Sausages",
       "brand": "FreshCatch",
       "price": 125,
@@ -10400,7 +10400,7 @@
       "description": " Fresh italian fennel sausages."
     },
     {
-      "id": "lettuce",
+      "id": "lettuce-farmbasket",
       "name": "Lettuce",
       "brand": "FarmBasket",
       "price": 55,
@@ -10415,7 +10415,7 @@
       "description": " Fresh lettuce."
     },
     {
-      "id": "parma-ham",
+      "id": "parma-ham-freshcatch",
       "name": "Parma Ham",
       "brand": "FreshCatch",
       "price": 75,
@@ -10430,7 +10430,7 @@
       "description": " Fresh parma ham."
     },
     {
-      "id": "parmigiano-reggiano",
+      "id": "parmigiano-reggiano-freshday",
       "name": "Parmigiano-Reggiano",
       "brand": "Freshday",
       "price": 55,
@@ -10445,7 +10445,7 @@
       "description": " Fresh parmigiano-reggiano."
     },
     {
-      "id": "potato-starch",
+      "id": "potato-starch-farmbasket",
       "name": "Potato Starch",
       "brand": "FarmBasket",
       "price": 55,
@@ -10460,7 +10460,7 @@
       "description": " Fresh potato starch."
     },
     {
-      "id": "sour-cream",
+      "id": "sour-cream-freshday",
       "name": "Sour Cream",
       "brand": "Freshday",
       "price": 90,
@@ -10475,7 +10475,7 @@
       "description": " Fresh sour cream."
     },
     {
-      "id": "tuna",
+      "id": "tuna-freshcatch",
       "name": "Tuna",
       "brand": "FreshCatch",
       "price": 60,
@@ -10490,7 +10490,7 @@
       "description": " Fresh tuna."
     },
     {
-      "id": "clotted-cream",
+      "id": "clotted-cream-freshday",
       "name": "Clotted Cream",
       "brand": "Freshday",
       "price": 115,
@@ -10505,7 +10505,7 @@
       "description": " Fresh clotted cream."
     },
     {
-      "id": "monkfish",
+      "id": "monkfish-freshcatch",
       "name": "Monkfish",
       "brand": "FreshCatch",
       "price": 105,
@@ -10520,7 +10520,7 @@
       "description": " Fresh monkfish."
     },
     {
-      "id": "fish-stock",
+      "id": "fish-stock-freshcatch",
       "name": "Fish Stock",
       "brand": "FreshCatch",
       "price": 120,
@@ -10535,7 +10535,7 @@
       "description": " Fresh fish stock."
     },
     {
-      "id": "duck",
+      "id": "duck-freshcatch",
       "name": "Duck",
       "brand": "FreshCatch",
       "price": 40,
@@ -10550,7 +10550,7 @@
       "description": " Fresh duck."
     },
     {
-      "id": "party-plates",
+      "id": "party-plates-festbasic",
       "name": "Paper Party Plates",
       "brand": "FestBasic",
       "price": 65,
@@ -10568,7 +10568,7 @@
       "description": " Disposable paper plates for parties and events."
     },
     {
-      "id": "party-cups",
+      "id": "party-cups-festbasic",
       "name": "Paper Party Cups",
       "brand": "FestBasic",
       "price": 50,
@@ -10586,7 +10586,7 @@
       "description": " Disposable paper cups for hot and cold beverages."
     },
     {
-      "id": "apricot",
+      "id": "apricot-farmbasket",
       "name": "Apricot",
       "brand": "FarmBasket",
       "price": 80,
@@ -10604,7 +10604,7 @@
       "description": " Fresh juicy apricots."
     },
     {
-      "id": "balloons-pack",
+      "id": "balloons-pack-festbasic",
       "name": "Colourful Latex Balloons (Value Pack)",
       "brand": "FestBasic",
       "price": 80,
@@ -10622,7 +10622,7 @@
       "description": " Assorted colour latex balloons for decoration."
     },
     {
-      "id": "birthday-banner",
+      "id": "birthday-banner-festbasic",
       "name": "Happy Birthday Banner",
       "brand": "FestBasic",
       "price": 55,
@@ -10640,7 +10640,7 @@
       "description": " Colourful happy birthday party banner."
     },
     {
-      "id": "birthday-candles",
+      "id": "birthday-candles-festbasic",
       "name": "Birthday Candles",
       "brand": "FestBasic",
       "price": 30,
@@ -10658,7 +10658,7 @@
       "description": " Assorted colourful birthday candles."
     },
     {
-      "id": "birthday-card",
+      "id": "birthday-card-festbasic",
       "name": "Birthday Greeting Card",
       "brand": "FestBasic",
       "price": 30,
@@ -10676,7 +10676,7 @@
       "description": " Elegant birthday greeting card with envelope."
     },
     {
-      "id": "brownie-box",
+      "id": "brownie-box-festbasic",
       "name": "Premium Chocolate Brownie Box",
       "brand": "FestBasic",
       "price": 165,
@@ -10696,7 +10696,7 @@
       "description": " Rich fudgy chocolate brownie gift box."
     },
     {
-      "id": "clams",
+      "id": "clams-freshcatch",
       "name": "Fresh Clams",
       "brand": "FreshCatch",
       "price": 120,
@@ -10713,7 +10713,7 @@
       "description": " Fresh cleaned clams for seafood dishes."
     },
     {
-      "id": "fromage-frais",
+      "id": "fromage-frais-freshday",
       "name": "Fromage Frais",
       "brand": "Freshday",
       "price": 80,
@@ -10733,7 +10733,7 @@
       "description": " Smooth and creamy French fromage frais."
     },
     {
-      "id": "ice-cubes-pack",
+      "id": "ice-cubes-pack-quenchbasic",
       "name": "Ice Cubes (Party Pack)",
       "brand": "QuenchBasic",
       "price": 40,
@@ -10751,7 +10751,7 @@
       "description": " Ready-to-use ice cubes in resealable pack."
     },
     {
-      "id": "party-poppers",
+      "id": "party-poppers-festbasic",
       "name": "Party Poppers",
       "brand": "FestBasic",
       "price": 40,
@@ -10769,7 +10769,7 @@
       "description": " Confetti party poppers for celebrations."
     },
     {
-      "id": "party-streamers",
+      "id": "party-streamers-festbasic",
       "name": "Party Streamers",
       "brand": "FestBasic",
       "price": 30,
@@ -10787,7 +10787,7 @@
       "description": " Colourful curled party streamers."
     },
     {
-      "id": "pecan-nuts",
+      "id": "pecan-nuts-munchmore",
       "name": "Pecan Nuts",
       "brand": "MunchMore",
       "price": 185,
@@ -10807,7 +10807,7 @@
       "description": " Premium pecan nut halves."
     },
     {
-      "id": "return-gifts-bag",
+      "id": "return-gifts-bag-festbasic",
       "name": "Return Gifts Goodie Bag",
       "brand": "FestBasic",
       "price": 20,
@@ -10825,7 +10825,7 @@
       "description": " Cute goodie bag for party return gifts."
     },
     {
-      "id": "ricotta",
+      "id": "ricotta-freshday",
       "name": "Ricotta Cheese",
       "brand": "Freshday",
       "price": 95,
@@ -10845,7 +10845,7 @@
       "description": " Smooth Italian ricotta cheese."
     },
     {
-      "id": "turkey-mince",
+      "id": "turkey-mince-freshcatch",
       "name": "Turkey Mince",
       "brand": "FreshCatch",
       "price": 170,
@@ -10860,7 +10860,7 @@
       "description": " Lean turkey mince for healthy cooking."
     },
     {
-      "id": "walnuts",
+      "id": "walnuts-munchmore",
       "name": "Walnuts",
       "brand": "MunchMore",
       "price": 210,

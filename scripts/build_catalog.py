@@ -256,6 +256,30 @@ PRODUCTS = [
 ]
 
 
+def _brand_slug(brand: str) -> str:
+    slug = re.sub(r"[^a-zA-Z0-9]+", "-", brand).strip("-").lower()
+    return slug if slug else "unknown"
+
+
+def _dedup_ids(products: list[dict]) -> list[dict]:
+    seen: dict[str, int] = {}
+    dup_count: dict[str, int] = {}
+    result = []
+    for p in products:
+        pid = p["id"]
+        brand = p.get("brand", "")
+        if pid in seen:
+            slug = _brand_slug(brand)
+            new_id = f"{pid}-{slug}"
+            while new_id in seen:
+                dup_count[pid] = dup_count.get(pid, 0) + 1
+                new_id = f"{pid}-{slug}-{dup_count[pid]}"
+            p["id"] = new_id
+        seen[p["id"]] = True
+        result.append(p)
+    return result
+
+
 def build():
     catalog = []
     failed = []
@@ -290,6 +314,7 @@ def build():
             "description": desc,
         })
         time.sleep(0.05)  # be polite to the source
+    catalog = _dedup_ids(catalog)
     with open(os.path.join(CONFIG_DIR, "catalog.json"), "w") as f:
         json.dump({"products": catalog}, f, indent=2, ensure_ascii=False)
     print(f"catalog: {len(catalog)} products, images ok: {len(catalog)-len(failed)}, failed: {len(failed)}")
