@@ -1,15 +1,16 @@
-"""Config loading + catalog helpers. All demo data lives in repo-root /config."""
-from __future__ import annotations
-
 import json
+import os
 import re
 from datetime import datetime
 from functools import lru_cache
 from pathlib import Path
-import os
 
 import boto3
 from boto3.dynamodb.conditions import Key
+
+from .utils.env import load_env
+
+load_env()
 
 CONFIG_DIR = Path(__file__).resolve().parents[2] / "config"
 
@@ -41,7 +42,7 @@ def personas() -> dict:
             # Reconstruct the original personas format for compatibility
             local_p = _load("personas.json")
             return {
-                "active_user": local_p.get("active_user", "aarav"),
+                "active_user": local_p.get("active_user", "shreya"),
                 "users": items
             }
     except Exception as e:

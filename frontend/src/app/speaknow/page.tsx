@@ -219,7 +219,7 @@ function ResultCard({ result, onAddAll }: { result: SpeakResult; onAddAll: (prod
     <motion.div
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
-      className="ml-9 bg-white border border-line rounded-2xl shadow-card overflow-hidden"
+      className="ml-4 mr-2 bg-white border border-line rounded-2xl shadow-card overflow-hidden"
     >
       {/* Header State 1: Image Recipe Card */}
       {hasRecipe && result.recipe && (

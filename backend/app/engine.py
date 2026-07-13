@@ -4,7 +4,7 @@ from __future__ import annotations
 import json
 import re
 
-from . import bedrock, gemini, azure, data, gcal
+from . import bedrock, azure, data, gcal
 from fastapi.encoders import jsonable_encoder
 
 
@@ -289,6 +289,12 @@ _URL_RE = re.compile(r"https?://\S+")
 _STOP = {"the", "and", "for", "with", "recipe", "how", "make", "cook", "want",
          "need", "tonight", "please", "some", "what", "can", "get", "buy",
          "https", "http", "www", "com", "meal", "recipes"}
+_LIST_SPLIT_RE = re.compile(r"[,\n;]+|\band\b")
+_LEADING_QTY_RE = re.compile(
+    r"^\s*\d+\s*(x|pcs|kg|g|ml|l|packs?)?\s*",
+    re.IGNORECASE,
+)
+_WORD_SPLIT_RE = re.compile(r"[^a-z]+")
 
 
 def _keyword_resolve(query: str) -> dict:
@@ -408,10 +414,10 @@ def _recipe_speak(rec: dict, servings: int, reply: str, note: str) -> dict:
 
 
 def _split_list(text: str) -> list[str]:
-    parts = re.split(r"[,\n;]+|\band\b", text)
+    parts = _LIST_SPLIT_RE.split(text)
     out = []
     for p in parts:
-        t = re.sub(r"^\s*\d+\s*(x|pcs|kg|g|ml|l|packs?)?\s*", "", p.strip(), flags=re.I)
+        t = _LEADING_QTY_RE.sub("", p.strip())
         t = t.strip(" .-•*")
         if t:
             out.append(t)
@@ -428,7 +434,7 @@ def _best_match(term: str):
     for p in data.catalog():
         name = p["name"].lower()
         mk = (p.get("match_key") or "").lower()
-        words = set(re.split(r"[^a-z]+", name))
+        words = set(_WORD_SPLIT_RE.split(name))
         score = 0
         if mk and mk in (t, sing):
             score += 12
@@ -448,10 +454,10 @@ def _best_match(term: str):
 
 
 def _find_recipe_id(text: str) -> str | None:
-    toks = {t for t in re.split(r"[^a-z]+", text.lower()) if len(t) > 3 and t not in _STOP}
+    toks = {t for t in _WORD_SPLIT_RE.split(text.lower()) if len(t) > 3 and t not in _STOP}
     best, best_score = None, 0
     for r in data.recipes():
-        rtoks = {t for t in re.split(r"[^a-z]+", r["name"].lower()) if len(t) > 3 and t not in _STOP}
+        rtoks = {t for t in _WORD_SPLIT_RE.split(r["name"].lower()) if len(t) > 3 and t not in _STOP}
         score = len(toks & rtoks)
         if score > best_score:
             best, best_score = r, score
@@ -796,7 +802,6 @@ def _agent_resolve(query: str, recipe_handled: bool = False,
         runners.append(azure)
     if bedrock.available():
         runners.append(bedrock)
-    runners.append(gemini)
     messages, _calls = [], 0
     for runner in runners:
         try:

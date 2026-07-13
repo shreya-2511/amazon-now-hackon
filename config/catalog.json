@@ -2129,8 +2129,25 @@
       "price": 85,
       "size": "1 pack (30 pcs)",
       "category": "household_cleaning",
-      "image": "/products/garbage-bags.png",
-      "match_key": "",
+      "image": "/products/Beco-Garbage-Bags.png",
+      "match_key": "garbage bags",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "allergen_tags": [],
+      "rating": 4.3,
+      "rating_count": 2640,
+      "description": "Oxo-biodegradable bin bags."
+    },
+    {
+      "id": "garbage-bag",
+      "name": "Ezee Biofriendly Medium Garbage Bags-19x21 Inch",
+      "brand": "Ezee",
+      "price": 75,
+      "size": "1 pack (30 pcs)",
+      "category": "household_cleaning",
+      "image": "/products/Ezee-Garbage-Bags.png",
+      "match_key": "garbage bags",
       "dietary_tags": [
         "vegan"
       ],

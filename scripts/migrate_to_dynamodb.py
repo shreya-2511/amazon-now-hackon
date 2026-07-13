@@ -55,24 +55,24 @@ def migrate_users():
             print(f"  Error adding user {user.get('id')}: {e}")
     print("User migration complete.")
 
-def migrate_products():
-    print(f"Migrating products to {PRODUCTS_TABLE_NAME}...")
-    try:
-        with open(CONFIG_DIR / "catalog.json", "r", encoding="utf-8") as f:
-            catalog_data = json.load(f)
-    except FileNotFoundError:
-        print(f"Error: catalog.json not found at {CONFIG_DIR / 'catalog.json'}")
-        return
+# def migrate_products():
+#     print(f"Migrating products to {PRODUCTS_TABLE_NAME}...")
+#     try:
+#         with open(CONFIG_DIR / "catalog.json", "r", encoding="utf-8") as f:
+#             catalog_data = json.load(f)
+#     except FileNotFoundError:
+#         print(f"Error: catalog.json not found at {CONFIG_DIR / 'catalog.json'}")
+#         return
 
-    for product in catalog_data.get("products", []):
-        try:
-            # Convert float types to Decimal for DynamoDB compatibility
-            product_decimal = _convert_to_decimal(product)
-            products_table.put_item(Item=product_decimal)
-            print(f"  Added product: {product.get('id')}")
-        except Exception as e:
-            print(f"  Error adding product {product.get('id')}: {e}")
-    print("Product migration complete.")
+#     for product in catalog_data.get("products", []):
+#         try:
+#             # Convert float types to Decimal for DynamoDB compatibility
+#             product_decimal = _convert_to_decimal(product)
+#             products_table.put_item(Item=product_decimal)
+#             print(f"  Added product: {product.get('id')}")
+#         except Exception as e:
+#             print(f"  Error adding product {product.get('id')}: {e}")
+#     print("Product migration complete.")
 
 if __name__ == "__main__":
     # Ensure AWS_REGION is set as an environment variable before running this script.
@@ -81,5 +81,5 @@ if __name__ == "__main__":
         # You could exit here if AWS_REGION is critical and unset, but we'll let boto3 error out
 
     migrate_users()
-    migrate_products()
+    # migrate_products()
     print("\nMigration script finished.")

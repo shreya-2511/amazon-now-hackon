@@ -44,8 +44,8 @@
           "qty": 3.0,
           "unit": "sliced thinly",
           "measure": "3 sliced thinly",
-          "image": "/products/eco-onion.png",
-          "price": 30
+          "image": "/products/onion-1kg.png",
+          "price": 39
         },
         {
           "product_id": "garlic-200g",
@@ -54,7 +54,7 @@
           "unit": "tsp",
           "measure": "2 tsp",
           "image": "/products/garlic-200g.png",
-          "price": 25
+          "price": 38
         },
         {
           "product_id": "garlic-200g",
@@ -63,7 +63,7 @@
           "unit": "whole",
           "measure": "4 whole",
           "image": "/products/garlic-200g.png",
-          "price": 25
+          "price": 38
         },
         {
           "product_id": "mint",
@@ -98,8 +98,8 @@
           "qty": 2.0,
           "unit": "tbsp",
           "measure": "2 tbsp",
-          "image": "/products/eco-Pure Ghee.png",
-          "price": 210
+          "image": "/products/amul-ghee-500ml.png",
+          "price": 320
         },
         {
           "product_id": "basmati-rice-1kg",
@@ -116,8 +116,8 @@
           "qty": 0.5,
           "unit": "cup",
           "measure": "½ cup",
-          "image": "/products/eco-curd.png",
-          "price": 30
+          "image": "/products/nestle-curd-400g.png",
+          "price": 45
         },
         {
           "product_id": "everest-cumin-seeds",
@@ -139,12 +139,12 @@
         },
         {
           "product_id": "cinnamon-sticks",
-          "name": "Catch Cinnamon Whole (Dalchini)",
+          "name": "Dalchini / Cinnamon Sticks",
           "qty": 1.0,
           "unit": "thin piece",
           "measure": "1 thin piece",
-          "image": "/products/catch-cinnamon.png",
-          "price": 46
+          "image": "/products/cinnamon-sticks.png",
+          "price": 65
         },
         {
           "product_id": "whole-cloves",
@@ -170,8 +170,8 @@
           "qty": 1.0,
           "unit": "lb",
           "measure": "1 lb",
-          "image": "/products/eco-Mutton Curry Cut.png",
-          "price": 300
+          "image": "/products/mutton-500g.png",
+          "price": 460
         },
         {
           "product_id": "green-chilli",
@@ -179,8 +179,8 @@
           "qty": 1.0,
           "unit": "tsp",
           "measure": "1 tsp",
-          "image": "/products/eco-green-chilli.png",
-          "price": 10
+          "image": "/products/green-chilli.png",
+          "price": 15
         },
         {
           "product_id": "catch-biryani-masala",
@@ -226,8 +226,8 @@
           "qty": 2.0,
           "unit": "quartered",
           "measure": "2 quartered",
-          "image": "/products/eco-onion.png",
-          "price": 30
+          "image": "/products/onion-1kg.png",
+          "price": 39
         },
         {
           "product_id": "borges-sunflower-oil-1l",
@@ -245,7 +245,7 @@
           "unit": "cloves",
           "measure": "4 cloves",
           "image": "/products/garlic-200g.png",
-          "price": 25
+          "price": 38
         },
         {
           "product_id": "ginger-150g",
@@ -253,8 +253,8 @@
           "qty": null,
           "unit": "Thumb sized peeled and very finely grated",
           "measure": "Thumb sized peeled and very finely grated",
-          "image": "/products/ginger.png",
-          "price": 20
+          "image": "/products/ginger-150g.png",
+          "price": 28
         },
         {
           "product_id": "madras-paste",
@@ -262,8 +262,8 @@
           "qty": 2.0,
           "unit": "tbsp",
           "measure": "2 tbsp",
-          "image": "/products/pataks-madras-paste.png",
-          "price": 210
+          "image": "/products/madras-paste.png",
+          "price": 25
         },
         {
           "product_id": "paprika",
@@ -276,12 +276,12 @@
         },
         {
           "product_id": "cinnamon-sticks",
-          "name": "Catch Cinnamon Whole (Dalchini)",
+          "name": "Dalchini / Cinnamon Sticks",
           "qty": 1.0,
           "unit": "",
           "measure": "1",
-          "image": "/products/catch-cinnamon.png",
-          "price": 46
+          "image": "/products/cinnamon-sticks.png",
+          "price": 65
         },
         {
           "product_id": "vedaka-green-cardamom",
@@ -316,8 +316,8 @@
           "qty": 1.0,
           "unit": "tbsp",
           "measure": "1 tbsp",
-          "image": "/products/eco-tomato-pur-e.png",
-          "price": 90
+          "image": "/products/tomato-pur-e.png",
+          "price": 135
         },
         {
           "product_id": "mutton-500g",
@@ -325,8 +325,8 @@
           "qty": 1.0,
           "unit": "kg cubed",
           "measure": "1kg cubed",
-          "image": "/products/eco-Mutton Curry Cut.png",
-          "price": 300
+          "image": "/products/mutton-500g.png",
+          "price": 460
         },
         {
           "product_id": "greek-yogurt-100g",
@@ -334,8 +334,8 @@
           "qty": 150.0,
           "unit": "ml",
           "measure": "150ml",
-          "image": "/products/eco-greek-yogurt.png",
-          "price": 40
+          "image": "/products/greek-yogurt-100g.png",
+          "price": 60
         },
         {
           "product_id": "coriander",
@@ -344,7 +344,7 @@
           "unit": "Garnish chopped",
           "measure": "Garnish chopped",
           "image": "/products/coriander.png",
-          "price": 10
+          "price": 12
         }
       ],
       "steps": [
@@ -386,8 +386,8 @@
           "qty": 2.0,
           "unit": "-1/2 cups",
           "measure": "2-1/2 cups",
-          "image": "/products/eco-water.png",
-          "price": 15
+          "image": "/products/water-1l.png",
+          "price": 20
         },
         {
           "product_id": "salt-1kg",
@@ -413,8 +413,8 @@
           "qty": 3.0,
           "unit": "tbs",
           "measure": "3 tbs",
-          "image": "/products/eco-Pure Ghee.png",
-          "price": 210
+          "image": "/products/amul-ghee-500ml.png",
+          "price": 320
         },
         {
           "product_id": "tomato-500g",
@@ -422,8 +422,8 @@
           "qty": 1.0,
           "unit": "cup",
           "measure": "1 cup",
-          "image": "/products/eco-tomato.png",
-          "price": 20
+          "image": "/products/tomato-500g.png",
+          "price": 25
         },
         {
           "product_id": "everest-cumin-seeds",
@@ -458,8 +458,8 @@
           "qty": 1.0,
           "unit": "tbs chopped",
           "measure": "1 tbs chopped",
-          "image": "/products/eco-green-chilli.png",
-          "price": 10
+          "image": "/products/green-chilli.png",
+          "price": 15
         },
         {
           "product_id": "ginger-150g",
@@ -467,8 +467,8 @@
           "qty": 2.0,
           "unit": "tsp shredded",
           "measure": "2 tsp shredded",
-          "image": "/products/ginger.png",
-          "price": 20
+          "image": "/products/ginger-150g.png",
+          "price": 28
         },
         {
           "product_id": "cilantro",
@@ -486,7 +486,7 @@
           "unit": "tsp",
           "measure": "1/2 tsp",
           "image": "/products/capsicum.png",
-          "price": 20
+          "price": 30
         },
         {
           "product_id": "salt-1kg",
@@ -549,8 +549,8 @@
           "qty": 2.0,
           "unit": "Juice",
           "measure": "2 Juice",
-          "image": "/products/eco-lemon.png",
-          "price": 20
+          "image": "/products/lemon-4.png",
+          "price": 24
         },
         {
           "product_id": "paprika",
@@ -567,8 +567,8 @@
           "qty": 2.0,
           "unit": "finely chopped",
           "measure": "2 finely chopped",
-          "image": "/products/eco-onion.png",
-          "price": 30
+          "image": "/products/onion-1kg.png",
+          "price": 39
         },
         {
           "product_id": "chicken-currycut-1kg",
@@ -576,8 +576,8 @@
           "qty": 16.0,
           "unit": "skinnless",
           "measure": "16 skinnless",
-          "image": "/products/chicken-currycut-1kg.png",
-          "price": 190
+          "image": "/products/eco-Chicken Curry Cut.png",
+          "price": 285
         },
         {
           "product_id": "vegetable-oil",
@@ -594,8 +594,8 @@
           "qty": 300.0,
           "unit": "ml",
           "measure": "300ml",
-          "image": "/products/eco-greek-yogurt.png",
-          "price": 40
+          "image": "/products/greek-yogurt-100g.png",
+          "price": 60
         },
         {
           "product_id": "ginger-150g",
@@ -603,8 +603,8 @@
           "qty": null,
           "unit": "large piece",
           "measure": "large piece",
-          "image": "/products/ginger.png",
-          "price": 20
+          "image": "/products/ginger-150g.png",
+          "price": 28
         },
         {
           "product_id": "garlic-200g",
@@ -613,7 +613,7 @@
           "unit": "",
           "measure": "4",
           "image": "/products/garlic-200g.png",
-          "price": 25
+          "price": 38
         },
         {
           "product_id": "tata-garam-masala",
@@ -639,8 +639,8 @@
           "qty": 0.5,
           "unit": "tsp",
           "measure": "½ tsp",
-          "image": "/products/eco-green-chilli.png",
-          "price": 10
+          "image": "/products/green-chilli.png",
+          "price": 15
         },
         {
           "product_id": "everest-turmeric-200g",
@@ -689,8 +689,8 @@
           "qty": null,
           "unit": "Juice of 3",
           "measure": "Juice of 3",
-          "image": "/products/eco-lime.png",
-          "price": 20
+          "image": "/products/lime.png",
+          "price": 25
         },
         {
           "product_id": "cayenne-pepper",
@@ -699,7 +699,7 @@
           "unit": "teaspoon",
           "measure": "1/2 teaspoon",
           "image": "/products/cayenne-pepper.png",
-          "price": 35
+          "price": 50
         },
         {
           "product_id": "supreme-sugar-1kg",
@@ -716,8 +716,8 @@
           "qty": 2.0,
           "unit": "tablespoons",
           "measure": "2 tablespoons",
-          "image": "/products/fish-sauce.png",
-          "price": 115
+          "image": "/products/eco-fish-sauce.png",
+          "price": 175
         },
         {
           "product_id": "vegetable-oil",
@@ -734,8 +734,8 @@
           "qty": 200.0,
           "unit": "g",
           "measure": "200g",
-          "image": "/products/eco-Prawns (Cleaned).png",
-          "price": 210
+          "image": "/products/prawns-250g.png",
+          "price": 320
         },
         {
           "product_id": "onion-1kg",
@@ -743,8 +743,8 @@
           "qty": 4.0,
           "unit": "finely sliced",
           "measure": "4 finely sliced",
-          "image": "/products/eco-onion.png",
-          "price": 30
+          "image": "/products/onion-1kg.png",
+          "price": 39
         },
         {
           "product_id": "bean-sprouts",
@@ -771,7 +771,7 @@
           "unit": "Handful",
           "measure": "Handful",
           "image": "/products/coriander.png",
-          "price": 10
+          "price": 12
         },
         {
           "product_id": "lime",
@@ -779,8 +779,8 @@
           "qty": 2.0,
           "unit": "",
           "measure": "2",
-          "image": "/products/eco-lime.png",
-          "price": 20
+          "image": "/products/lime.png",
+          "price": 25
         },
         {
           "product_id": "green-chilli",
@@ -788,8 +788,8 @@
           "qty": null,
           "unit": "To serve",
           "measure": "To serve",
-          "image": "/products/eco-green-chilli.png",
-          "price": 10
+          "image": "/products/green-chilli.png",
+          "price": 15
         }
       ],
       "steps": [
@@ -820,8 +820,8 @@
           "qty": 4.0,
           "unit": "",
           "measure": "4",
-          "image": "/products/eco-pork-chops.png",
-          "price": 25
+          "image": "/products/pork-chops.png",
+          "price": 35
         },
         {
           "product_id": "frozen-parathas",
@@ -838,8 +838,8 @@
           "qty": 2.0,
           "unit": "Beaten",
           "measure": "2 Beaten",
-          "image": "/products/eco-brown-eggs.png",
-          "price": 55
+          "image": "/products/farm-eggs-6.png",
+          "price": 84
         },
         {
           "product_id": "brown-bread-1",
@@ -865,8 +865,8 @@
           "qty": 2.0,
           "unit": "tbs",
           "measure": "2 tbs",
-          "image": "/products/eco-tomato-ketchup.png",
-          "price": 105
+          "image": "/products/tomato-ketchup.png",
+          "price": 155
         },
         {
           "product_id": "worcestershire-sauce",
@@ -935,8 +935,8 @@
           "qty": 400.0,
           "unit": "ml can",
           "measure": "400ml can",
-          "image": "/products/eco-coconut-cream.png",
-          "price": 60
+          "image": "/products/coconut-cream.png",
+          "price": 90
         },
         {
           "product_id": "massaman-curry-paste",
@@ -953,8 +953,8 @@
           "qty": 600.0,
           "unit": "g stewing cut into strips",
           "measure": "600g stewing cut into strips",
-          "image": "/products/eco-beef.png",
-          "price": 115
+          "image": "/products/beef.png",
+          "price": 170
         },
         {
           "product_id": "french-fries",
@@ -971,8 +971,8 @@
           "qty": 1.0,
           "unit": "cut thin wedges",
           "measure": "1 cut thin wedges",
-          "image": "/products/eco-onion.png",
-          "price": 30
+          "image": "/products/onion-1kg.png",
+          "price": 39
         },
         {
           "product_id": "lime",
@@ -980,17 +980,17 @@
           "qty": 4.0,
           "unit": "leaves",
           "measure": "4 leaves",
-          "image": "/products/eco-lime.png",
-          "price": 20
+          "image": "/products/lime.png",
+          "price": 25
         },
         {
           "product_id": "cinnamon-sticks",
-          "name": "Catch Cinnamon Whole (Dalchini)",
+          "name": "Dalchini / Cinnamon Sticks",
           "qty": 1.0,
           "unit": "",
           "measure": "1",
-          "image": "/products/catch-cinnamon.png",
-          "price": 46
+          "image": "/products/cinnamon-sticks.png",
+          "price": 65
         },
         {
           "product_id": "tamarind-paste",
@@ -1016,8 +1016,8 @@
           "qty": 1.0,
           "unit": "tbsp",
           "measure": "1 tbsp",
-          "image": "/products/fish-sauce.png",
-          "price": 115
+          "image": "/products/eco-fish-sauce.png",
+          "price": 175
         },
         {
           "product_id": "green-chilli",
@@ -1025,8 +1025,8 @@
           "qty": 1.0,
           "unit": "red deseeded and finely sliced, to serve",
           "measure": "1 red deseeded and finely sliced, to serve",
-          "image": "/products/eco-green-chilli.png",
-          "price": 10
+          "image": "/products/green-chilli.png",
+          "price": 15
         },
         {
           "product_id": "jasmine-rice",
@@ -1076,7 +1076,7 @@
           "unit": "",
           "measure": "6",
           "image": "/products/egg-yolks.png",
-          "price": 100
+          "price": 150
         },
         {
           "product_id": "salt-1kg",
@@ -1093,8 +1093,8 @@
           "qty": 150.0,
           "unit": "g",
           "measure": "150g",
-          "image": "/products/eco-Pork Bacon Rashers.png",
-          "price": 190
+          "image": "/products/bacon-200g.png",
+          "price": 290
         },
         {
           "product_id": "pecorino",
@@ -1158,8 +1158,8 @@
           "qty": 2.0,
           "unit": "",
           "measure": "2",
-          "image": "/products/eco-Pork Bacon Rashers.png",
-          "price": 190
+          "image": "/products/bacon-200g.png",
+          "price": 290
         },
         {
           "product_id": "onion-1kg",
@@ -1167,8 +1167,8 @@
           "qty": 1.0,
           "unit": "finely chopped",
           "measure": "1 finely chopped",
-          "image": "/products/eco-onion.png",
-          "price": 30
+          "image": "/products/onion-1kg.png",
+          "price": 39
         },
         {
           "product_id": "celery",
@@ -1177,7 +1177,7 @@
           "unit": "Stick",
           "measure": "1 Stick",
           "image": "/products/celery.png",
-          "price": 20
+          "price": 25
         },
         {
           "product_id": "carrot-500g",
@@ -1185,8 +1185,8 @@
           "qty": 1.0,
           "unit": "medium",
           "measure": "1 medium",
-          "image": "/products/carrot.png",
-          "price": 25
+          "image": "/products/carrot-500g.png",
+          "price": 35
         },
         {
           "product_id": "garlic-200g",
@@ -1195,7 +1195,7 @@
           "unit": "cloves chopped",
           "measure": "2 cloves chopped",
           "image": "/products/garlic-200g.png",
-          "price": 25
+          "price": 38
         },
         {
           "product_id": "beef",
@@ -1203,8 +1203,8 @@
           "qty": 500.0,
           "unit": "g",
           "measure": "500g",
-          "image": "/products/eco-beef.png",
-          "price": 115
+          "image": "/products/beef.png",
+          "price": 170
         },
         {
           "product_id": "tomato-puree",
@@ -1213,7 +1213,7 @@
           "unit": "tbls",
           "measure": "1 tbls",
           "image": "/products/tomato-puree.png",
-          "price": 130
+          "price": 195
         },
         {
           "product_id": "tomato-500g",
@@ -1221,8 +1221,8 @@
           "qty": 800.0,
           "unit": "g",
           "measure": "800g",
-          "image": "/products/eco-tomato.png",
-          "price": 20
+          "image": "/products/tomato-500g.png",
+          "price": 25
         },
         {
           "product_id": "honey",
@@ -1257,8 +1257,8 @@
           "qty": 125.0,
           "unit": "g",
           "measure": "125g",
-          "image": "/products/eco-Mozzarella Cheese.png",
-          "price": 130
+          "image": "/products/mozzarella-200g.png",
+          "price": 199
         },
         {
           "product_id": "amul-cheese-slices",
@@ -1266,8 +1266,8 @@
           "qty": 50.0,
           "unit": "g",
           "measure": "50g",
-          "image": "/products/eco-cheese-slice.png",
-          "price": 85
+          "image": "/products/amul-cheese-slices.png",
+          "price": 130
         },
         {
           "product_id": "basil",
@@ -1276,7 +1276,7 @@
           "unit": "Topping",
           "measure": "Topping",
           "image": "/products/basil.png",
-          "price": 35
+          "price": 49
         }
       ],
       "steps": [
@@ -1313,8 +1313,8 @@
           "qty": 50.0,
           "unit": "g/2oz",
           "measure": "50g/2oz",
-          "image": "/products/eco-amul-butter.png",
-          "price": 40
+          "image": "/products/amul-butter-100g.png",
+          "price": 56
         },
         {
           "product_id": "onion-1kg",
@@ -1322,8 +1322,8 @@
           "qty": 1.0,
           "unit": "finely chopped",
           "measure": "1 finely chopped",
-          "image": "/products/eco-onion.png",
-          "price": 30
+          "image": "/products/onion-1kg.png",
+          "price": 39
         },
         {
           "product_id": "basmati-rice-1kg",
@@ -1340,8 +1340,8 @@
           "qty": 125.0,
           "unit": "ml",
           "measure": "125ml",
-          "image": "/products/eco-white whine.png",
-          "price": 555
+          "image": "/products/white-wine.png",
+          "price": 850
         },
         {
           "product_id": "vegetable-stock",
@@ -1358,8 +1358,8 @@
           "qty": null,
           "unit": "The juice and zest of one",
           "measure": "The juice and zest of one",
-          "image": "/products/eco-lemon.png",
-          "price": 20
+          "image": "/products/lemon-4.png",
+          "price": 24
         },
         {
           "product_id": "prawns-250g",
@@ -1367,8 +1367,8 @@
           "qty": 240.0,
           "unit": "g large",
           "measure": "240g large",
-          "image": "/products/eco-Prawns (Cleaned).png",
-          "price": 210
+          "image": "/products/prawns-250g.png",
+          "price": 320
         },
         {
           "product_id": "salmon-300g",
@@ -1376,8 +1376,8 @@
           "qty": 150.0,
           "unit": "g",
           "measure": "150g",
-          "image": "/products/eco-Norwegian Salmon.png",
-          "price": 355
+          "image": "/products/salmon-300g.png",
+          "price": 540
         },
         {
           "product_id": "asparagus",
@@ -1403,8 +1403,8 @@
           "qty": 50.0,
           "unit": "g shavings",
           "measure": "50g shavings",
-          "image": "/products/eco-Parmesan Cheese.png",
-          "price": 210
+          "image": "/products/parmesan-150g.png",
+          "price": 320
         }
       ],
       "steps": [
@@ -1438,8 +1438,8 @@
           "qty": 150.0,
           "unit": "ml",
           "measure": "150ml",
-          "image": "/products/eco-water.png",
-          "price": 15
+          "image": "/products/water-1l.png",
+          "price": 20
         },
         {
           "product_id": "supreme-sugar-1kg",
@@ -1501,8 +1501,8 @@
           "qty": 70.0,
           "unit": "g",
           "measure": "70g",
-          "image": "/products/eco-Mozzarella Cheese.png",
-          "price": 130
+          "image": "/products/mozzarella-200g.png",
+          "price": 199
         },
         {
           "product_id": "oregano",
@@ -1520,7 +1520,7 @@
           "unit": "Leaves",
           "measure": "Leaves",
           "image": "/products/basil.png",
-          "price": 35
+          "price": 49
         },
         {
           "product_id": "everest-black-pepper-100g",
@@ -1564,8 +1564,8 @@
           "qty": 2.0,
           "unit": "",
           "measure": "2",
-          "image": "/products/eco-onion.png",
-          "price": 30
+          "image": "/products/onion-1kg.png",
+          "price": 39
         },
         {
           "product_id": "olive-oil-500ml",
@@ -1583,7 +1583,7 @@
           "unit": "clove",
           "measure": "1 clove",
           "image": "/products/garlic-200g.png",
-          "price": 25
+          "price": 38
         },
         {
           "product_id": "beef",
@@ -1591,8 +1591,8 @@
           "qty": 500.0,
           "unit": "g",
           "measure": "500g",
-          "image": "/products/eco-beef.png",
-          "price": 115
+          "image": "/products/beef.png",
+          "price": 170
         },
         {
           "product_id": "mushroom-200g",
@@ -1600,8 +1600,8 @@
           "qty": 90.0,
           "unit": "g",
           "measure": "90g",
-          "image": "/products/mushroom.png",
-          "price": 35
+          "image": "/products/mushroom-200g.png",
+          "price": 49
         },
         {
           "product_id": "oregano",
@@ -1618,8 +1618,8 @@
           "qty": 400.0,
           "unit": "g can",
           "measure": "400g can",
-          "image": "/products/eco-tomato.png",
-          "price": 20
+          "image": "/products/tomato-500g.png",
+          "price": 25
         },
         {
           "product_id": "beef",
@@ -1627,8 +1627,8 @@
           "qty": 300.0,
           "unit": "ml",
           "measure": "300ml",
-          "image": "/products/eco-beef.png",
-          "price": 115
+          "image": "/products/beef.png",
+          "price": 170
         },
         {
           "product_id": "tomato-puree",
@@ -1637,7 +1637,7 @@
           "unit": "tbsp",
           "measure": "1tbsp",
           "image": "/products/tomato-puree.png",
-          "price": 130
+          "price": 195
         },
         {
           "product_id": "worcestershire-sauce",
@@ -1663,8 +1663,8 @@
           "qty": null,
           "unit": "Topping",
           "measure": "Topping",
-          "image": "/products/eco-Parmesan Cheese.png",
-          "price": 210
+          "image": "/products/parmesan-150g.png",
+          "price": 320
         }
       ],
       "steps": [
@@ -1716,8 +1716,8 @@
           "qty": 2.0,
           "unit": "",
           "measure": "2",
-          "image": "/products/eco-yellow-pepper.png",
-          "price": 50
+          "image": "/products/yellow-pepper.png",
+          "price": 75
         },
         {
           "product_id": "tomato-500g",
@@ -1725,8 +1725,8 @@
           "qty": 4.0,
           "unit": "large",
           "measure": "4 large",
-          "image": "/products/eco-tomato.png",
-          "price": 20
+          "image": "/products/tomato-500g.png",
+          "price": 25
         },
         {
           "product_id": "olive-oil-500ml",
@@ -1744,7 +1744,7 @@
           "unit": "Bunch",
           "measure": "Bunch",
           "image": "/products/basil.png",
-          "price": 35
+          "price": 49
         },
         {
           "product_id": "onion-1kg",
@@ -1752,8 +1752,8 @@
           "qty": 1.0,
           "unit": "medium",
           "measure": "1 medium",
-          "image": "/products/eco-onion.png",
-          "price": 30
+          "image": "/products/onion-1kg.png",
+          "price": 39
         },
         {
           "product_id": "garlic-200g",
@@ -1762,7 +1762,7 @@
           "unit": "finely chopped",
           "measure": "3 finely chopped",
           "image": "/products/garlic-200g.png",
-          "price": 25
+          "price": 38
         },
         {
           "product_id": "red-wine-vinegar",
@@ -1828,8 +1828,8 @@
           "qty": 1.0,
           "unit": "tablespoon",
           "measure": "1 tablespoon",
-          "image": "/products/eco-amul-butter.png",
-          "price": 40
+          "image": "/products/amul-butter-100g.png",
+          "price": 56
         },
         {
           "product_id": "amul-cheese-slices",
@@ -1837,8 +1837,8 @@
           "qty": 375.0,
           "unit": "g",
           "measure": "375g",
-          "image": "/products/eco-cheese-slice.png",
-          "price": 85
+          "image": "/products/amul-cheese-slices.png",
+          "price": 130
         },
         {
           "product_id": "farm-eggs-6",
@@ -1846,8 +1846,8 @@
           "qty": 1.0,
           "unit": "",
           "measure": "1",
-          "image": "/products/eco-brown-eggs.png",
-          "price": 55
+          "image": "/products/farm-eggs-6.png",
+          "price": 84
         },
         {
           "product_id": "amul-milk-500ml",
@@ -1855,8 +1855,8 @@
           "qty": 250.0,
           "unit": "ml",
           "measure": "250ml",
-          "image": "/products/eco-toned-milk.png",
-          "price": 20
+          "image": "/products/amul-milk-500ml.png",
+          "price": 28
         },
         {
           "product_id": "onion-1kg",
@@ -1864,8 +1864,8 @@
           "qty": 2.0,
           "unit": "tsp",
           "measure": "2 tsp",
-          "image": "/products/eco-onion.png",
-          "price": 30
+          "image": "/products/onion-1kg.png",
+          "price": 39
         },
         {
           "product_id": "mustard-seeds",
@@ -1883,7 +1883,7 @@
           "unit": "tsp",
           "measure": "1 tsp",
           "image": "/products/capsicum.png",
-          "price": 20
+          "price": 30
         },
         {
           "product_id": "salt-1kg",
@@ -1901,7 +1901,7 @@
           "unit": "tsp",
           "measure": "1/2 tsp",
           "image": "/products/cayenne-pepper.png",
-          "price": 35
+          "price": 50
         },
         {
           "product_id": "brown-bread-1",
@@ -1918,8 +1918,8 @@
           "qty": 2.0,
           "unit": "tsp",
           "measure": "2 tsp",
-          "image": "/products/eco-amul-butter.png",
-          "price": 40
+          "image": "/products/amul-butter-100g.png",
+          "price": 56
         },
         {
           "product_id": "amul-cheese-slices",
@@ -1927,8 +1927,8 @@
           "qty": 2.0,
           "unit": "tablespoons",
           "measure": "2 tablespoons",
-          "image": "/products/eco-cheese-slice.png",
-          "price": 85
+          "image": "/products/amul-cheese-slices.png",
+          "price": 130
         }
       ],
       "steps": [
@@ -1962,7 +1962,7 @@
           "unit": "g",
           "measure": "900g",
           "image": "/products/potato-1kg.png",
-          "price": 25
+          "price": 32
         },
         {
           "product_id": "olive-oil-500ml",
@@ -1979,8 +1979,8 @@
           "qty": 600.0,
           "unit": "ml",
           "measure": "600ml",
-          "image": "/products/eco-toned-milk.png",
-          "price": 20
+          "image": "/products/amul-milk-500ml.png",
+          "price": 28
         },
         {
           "product_id": "white-fish-fillets",
@@ -1988,8 +1988,8 @@
           "qty": 800.0,
           "unit": "g",
           "measure": "800g",
-          "image": "/products/eco-White Fish Fillets.png",
-          "price": 105
+          "image": "/products/white-fish-fillets.png",
+          "price": 160
         },
         {
           "product_id": "maida-1kg",
@@ -2015,8 +2015,8 @@
           "qty": 3.0,
           "unit": "tbsp",
           "measure": "3 tbsp",
-          "image": "/products/eco-fresh-cream.png",
-          "price": 50
+          "image": "/products/fresh-cream-200ml.png",
+          "price": 72
         },
         {
           "product_id": "jerusalem-artichokes",
@@ -2033,8 +2033,8 @@
           "qty": 1.0,
           "unit": "finely sliced",
           "measure": "1 finely sliced",
-          "image": "/products/eco-leek.png",
-          "price": 110
+          "image": "/products/leek.png",
+          "price": 165
         },
         {
           "product_id": "prawns-250g",
@@ -2042,8 +2042,8 @@
           "qty": 200.0,
           "unit": "g peeled raw",
           "measure": "200g peeled raw",
-          "image": "/products/eco-Prawns (Cleaned).png",
-          "price": 210
+          "image": "/products/prawns-250g.png",
+          "price": 320
         },
         {
           "product_id": "parsley",
@@ -2051,8 +2051,8 @@
           "qty": null,
           "unit": "Large handful",
           "measure": "Large handful",
-          "image": "/products/eco-parsley.png",
-          "price": 60
+          "image": "/products/parsley.png",
+          "price": 85
         },
         {
           "product_id": "dill",
@@ -2069,8 +2069,8 @@
           "qty": null,
           "unit": "Grated zest of 1",
           "measure": "Grated zest of 1",
-          "image": "/products/eco-lemon.png",
-          "price": 20
+          "image": "/products/lemon-4.png",
+          "price": 24
         },
         {
           "product_id": "gruy-re",
@@ -2087,8 +2087,8 @@
           "qty": null,
           "unit": "Juice of 1",
           "measure": "Juice of 1",
-          "image": "/products/eco-lemon.png",
-          "price": 20
+          "image": "/products/lemon-4.png",
+          "price": 24
         }
       ],
       "steps": [
@@ -2136,8 +2136,8 @@
           "qty": 1.0,
           "unit": "chopped",
           "measure": "1 chopped",
-          "image": "/products/eco-onion.png",
-          "price": 30
+          "image": "/products/onion-1kg.png",
+          "price": 39
         },
         {
           "product_id": "garlic-200g",
@@ -2146,7 +2146,7 @@
           "unit": "clove peeled crushed",
           "measure": "1 clove peeled crushed",
           "image": "/products/garlic-200g.png",
-          "price": 25
+          "price": 38
         },
         {
           "product_id": "chana-dal",
@@ -2173,7 +2173,7 @@
           "unit": "tsp",
           "measure": "1 tsp",
           "image": "/products/coriander.png",
-          "price": 10
+          "price": 12
         },
         {
           "product_id": "parsley",
@@ -2181,8 +2181,8 @@
           "qty": null,
           "unit": "Handful",
           "measure": "Handful",
-          "image": "/products/eco-parsley.png",
-          "price": 60
+          "image": "/products/parsley.png",
+          "price": 85
         },
         {
           "product_id": "farm-eggs-6",
@@ -2190,8 +2190,8 @@
           "qty": 1.0,
           "unit": "beaten",
           "measure": "1 beaten",
-          "image": "/products/eco-brown-eggs.png",
-          "price": 55
+          "image": "/products/farm-eggs-6.png",
+          "price": 84
         }
       ],
       "steps": [
@@ -2232,8 +2232,8 @@
           "qty": 2.0,
           "unit": "chopped",
           "measure": "2 chopped",
-          "image": "/products/eco-onion.png",
-          "price": 30
+          "image": "/products/onion-1kg.png",
+          "price": 39
         },
         {
           "product_id": "green-chilli",
@@ -2241,8 +2241,8 @@
           "qty": 1.0,
           "unit": "finely chopped",
           "measure": "1 finely chopped",
-          "image": "/products/eco-green-chilli.png",
-          "price": 10
+          "image": "/products/green-chilli.png",
+          "price": 15
         },
         {
           "product_id": "garlic-200g",
@@ -2251,7 +2251,7 @@
           "unit": "clove",
           "measure": "1 clove",
           "image": "/products/garlic-200g.png",
-          "price": 25
+          "price": 38
         },
         {
           "product_id": "coriander",
@@ -2260,7 +2260,7 @@
           "unit": "Chopped",
           "measure": "Chopped",
           "image": "/products/coriander.png",
-          "price": 10
+          "price": 12
         },
         {
           "product_id": "tomato-500g",
@@ -2268,8 +2268,8 @@
           "qty": 800.0,
           "unit": "g",
           "measure": "800g",
-          "image": "/products/eco-tomato.png",
-          "price": 20
+          "image": "/products/tomato-500g.png",
+          "price": 25
         },
         {
           "product_id": "supreme-sugar-1kg",
@@ -2286,8 +2286,8 @@
           "qty": 4.0,
           "unit": "",
           "measure": "4",
-          "image": "/products/eco-brown-eggs.png",
-          "price": 55
+          "image": "/products/farm-eggs-6.png",
+          "price": 84
         },
         {
           "product_id": "feta",
@@ -2336,8 +2336,8 @@
           "qty": 2.0,
           "unit": "large",
           "measure": "2 large",
-          "image": "/products/eco-brown-eggs.png",
-          "price": 55
+          "image": "/products/farm-eggs-6.png",
+          "price": 84
         },
         {
           "product_id": "amul-milk-500ml",
@@ -2345,8 +2345,8 @@
           "qty": 300.0,
           "unit": "ml",
           "measure": "300ml",
-          "image": "/products/eco-toned-milk.png",
-          "price": 20
+          "image": "/products/amul-milk-500ml.png",
+          "price": 28
         },
         {
           "product_id": "borges-sunflower-oil-1l",
@@ -2420,8 +2420,8 @@
           "qty": 450.0,
           "unit": "g",
           "measure": "450g",
-          "image": "/products/eco-tomato-sauce.png",
-          "price": 110
+          "image": "/products/tomato-sauce.png",
+          "price": 165
         },
         {
           "product_id": "chorizo",
@@ -2429,8 +2429,8 @@
           "qty": 225.0,
           "unit": "g",
           "measure": "225g",
-          "image": "/products/eco-chorizo.png",
-          "price": 65
+          "image": "/products/chorizo.png",
+          "price": 100
         },
         {
           "product_id": "turkey-ham",
@@ -2438,8 +2438,8 @@
           "qty": 225.0,
           "unit": "g",
           "measure": "225g",
-          "image": "/products/eco-Turkey Ham.png",
-          "price": 105
+          "image": "/products/turkey-ham.png",
+          "price": 155
         },
         {
           "product_id": "popcorn",
@@ -2447,8 +2447,8 @@
           "qty": 75.0,
           "unit": "g",
           "measure": "75g",
-          "image": "/products/eco-popcorn.png",
-          "price": 30
+          "image": "/products/popcorn.png",
+          "price": 45
         },
         {
           "product_id": "green-olives",
@@ -2474,8 +2474,8 @@
           "qty": 50.0,
           "unit": "g",
           "measure": "50g",
-          "image": "/products/eco-Mozzarella Cheese.png",
-          "price": 130
+          "image": "/products/mozzarella-200g.png",
+          "price": 199
         }
       ],
       "steps": [
@@ -2562,7 +2562,7 @@
           "unit": "",
           "measure": "1",
           "image": "/products/cucumber.png",
-          "price": 115
+          "price": 175
         }
       ],
       "steps": [
@@ -2608,8 +2608,8 @@
           "qty": 10.0,
           "unit": "",
           "measure": "10",
-          "image": "/products/eco-Prawns (Cleaned).png",
-          "price": 210
+          "image": "/products/prawns-250g.png",
+          "price": 320
         },
         {
           "product_id": "parsley",
@@ -2617,8 +2617,8 @@
           "qty": null,
           "unit": "Bunch",
           "measure": "Bunch",
-          "image": "/products/eco-parsley.png",
-          "price": 60
+          "image": "/products/parsley.png",
+          "price": 85
         },
         {
           "product_id": "dry-sherry",
@@ -2653,8 +2653,8 @@
           "qty": 150.0,
           "unit": "g",
           "measure": "150g",
-          "image": "/products/eco-chorizo.png",
-          "price": 65
+          "image": "/products/chorizo.png",
+          "price": 100
         },
         {
           "product_id": "onion-1kg",
@@ -2662,8 +2662,8 @@
           "qty": 1.0,
           "unit": "chopped",
           "measure": "1 chopped",
-          "image": "/products/eco-onion.png",
-          "price": 30
+          "image": "/products/onion-1kg.png",
+          "price": 39
         },
         {
           "product_id": "garlic-200g",
@@ -2672,7 +2672,7 @@
           "unit": "cloves",
           "measure": "3 cloves",
           "image": "/products/garlic-200g.png",
-          "price": 25
+          "price": 38
         },
         {
           "product_id": "squid",
@@ -2689,8 +2689,8 @@
           "qty": 2.0,
           "unit": "",
           "measure": "2",
-          "image": "/products/eco-tomato.png",
-          "price": 20
+          "image": "/products/tomato-500g.png",
+          "price": 25
         },
         {
           "product_id": "paella-rice",
@@ -2716,8 +2716,8 @@
           "qty": 1.0,
           "unit": "",
           "measure": "1",
-          "image": "/products/eco-lemon.png",
-          "price": 20
+          "image": "/products/lemon-4.png",
+          "price": 24
         }
       ],
       "steps": [
@@ -2754,8 +2754,8 @@
           "qty": 1.0,
           "unit": "lb",
           "measure": "1lb",
-          "image": "/products/eco-pork-chops.png",
-          "price": 25
+          "image": "/products/pork-chops.png",
+          "price": 35
         },
         {
           "product_id": "garlic-200g",
@@ -2764,7 +2764,7 @@
           "unit": "chopped",
           "measure": "3 chopped",
           "image": "/products/garlic-200g.png",
-          "price": 25
+          "price": 38
         },
         {
           "product_id": "ginger-150g",
@@ -2772,8 +2772,8 @@
           "qty": 1.0,
           "unit": "tsp",
           "measure": "1 tsp",
-          "image": "/products/ginger.png",
-          "price": 20
+          "image": "/products/ginger-150g.png",
+          "price": 28
         },
         {
           "product_id": "soy-sauce",
@@ -2799,8 +2799,8 @@
           "qty": 3.0,
           "unit": "finely chopped",
           "measure": "3 finely chopped",
-          "image": "/products/carrot.png",
-          "price": 25
+          "image": "/products/carrot-500g.png",
+          "price": 35
         },
         {
           "product_id": "celery",
@@ -2809,7 +2809,7 @@
           "unit": "finely chopped",
           "measure": "3 finely chopped",
           "image": "/products/celery.png",
-          "price": 20
+          "price": 25
         },
         {
           "product_id": "onion-1kg",
@@ -2817,8 +2817,8 @@
           "qty": 6.0,
           "unit": "chopped",
           "measure": "6 chopped",
-          "image": "/products/eco-onion.png",
-          "price": 30
+          "image": "/products/onion-1kg.png",
+          "price": 39
         },
         {
           "product_id": "wonton-skin",
@@ -2844,8 +2844,8 @@
           "qty": null,
           "unit": "Bottle",
           "measure": "Bottle",
-          "image": "/products/eco-water.png",
-          "price": 15
+          "image": "/products/water-1l.png",
+          "price": 20
         }
       ],
       "steps": [

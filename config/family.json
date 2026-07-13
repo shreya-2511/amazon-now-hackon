@@ -2,36 +2,25 @@
   "_comment": "Scripted family members for the group-cart live demo. joins_after = ms from when the shared cart opens; the SSE stream plays these so the cart fills in real-time on screen.",
   "members": [
     {
+      "name": "Shreya",
+      "relation": "Partner",
+      "color": "#F59E0B",
+      "joins_after": 100,
+      "items": [
+        { "product_id": "paneer-tikka", "qty": 1 },
+        { "product_id": "cucumber", "qty": 2 },
+        { "product_id": "cannellini-beans", "qty": 1 }
+      ]
+    },
+    {
       "name": "Diya",
       "relation": "Partner",
       "color": "#7C3AED",
       "joins_after": 1600,
       "items": [
         { "product_id": "amul-paneer-200g", "qty": 1 },
-        { "product_id": "spinach", "qty": 2 },
-        { "product_id": "greek-yogurt-100g", "qty": 2 }
-      ]
-    },
-    {
-      "name": "Mom",
-      "relation": "Mom",
-      "color": "#0EA5E9",
-      "joins_after": 4200,
-      "items": [
         { "product_id": "basmati-rice-1kg", "qty": 1 },
-        { "product_id": "amul-ghee-500ml", "qty": 1 },
-        { "product_id": "toor-dal", "qty": 1 }
-      ]
-    },
-    {
-      "name": "Rohan",
-      "relation": "Brother",
-      "color": "#F59E0B",
-      "joins_after": 6800,
-      "items": [
-        { "product_id": "chips-classic", "qty": 2 },
-        { "product_id": "cola-750ml", "qty": 2 },
-        { "product_id": "dark-chocolate", "qty": 1 }
+        { "product_id": "spinach", "qty": 2 }
       ]
     }
   ]

@@ -1,10 +1,10 @@
 {
-  "active_user": "aarav",
+  "active_user": "shreya",
   "users": [
     {
-      "id": "aarav",
-      "name": "Aarav Mehta",
-      "first_name": "Aarav",
+      "id": "shreya",
+      "name": "Shreya Baidya",
+      "first_name": "Shreya",
       "age": 29,
       "avatar_color": "#FF9900",
       "household": "",
@@ -18,7 +18,7 @@
       "payment": {
         "type": "upi",
         "label": "Amazon Pay UPI",
-        "masked": "aarav@apl"
+        "masked": "shreya@apl"
       },
       "dietary": {
         "preferences": [],
@@ -29,12 +29,12 @@
       }
     },
     {
-      "id": "diya",
-      "name": "Diya Rao",
-      "first_name": "Diya",
+      "id": "varsha",
+      "name": "Varsha",
+      "first_name": "Varsha",
       "age": 28,
       "avatar_color": "#7C3AED",
-      "household": "Aarav's partner",
+      "household": "Shreya's partner",
       "dietary": {
         "preferences": ["vegetarian"],
         "preferences_label": "Vegetarian",

@@ -1,13 +1,13 @@
-"""Amazon Now demo API — config-driven, deterministic, no external LLM at runtime."""
 from __future__ import annotations
 
 import asyncio
 import json
 import os
 import re
+from pathlib import Path
+from .utils.env import load_env
 
-
-
+load_env()
 
 from fastapi import FastAPI, HTTPException, UploadFile, File, Query
 from fastapi.middleware.cors import CORSMiddleware

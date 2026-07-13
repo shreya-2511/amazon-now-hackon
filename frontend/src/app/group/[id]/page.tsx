@@ -177,6 +177,12 @@ export default function GroupCartPage() {
       {/* items */}
       <div className="flex-1 overflow-y-auto no-scrollbar px-3 py-3 pb-40">
         <AnimatePresence initial={false}>
+                  <button
+          onClick={() => setPickerOpen(true)}
+          className="w-full mt-1 mb-2 border-2 border-dashed border-line rounded-2xl py-3 text-[13px] font-semibold text-ink2 flex items-center justify-center gap-1.5"
+        >
+          <Plus size={16} /> Add your items
+        </button>
           {cart.items.map((it) => {
             const lineKey = `${it.product.id}-${it.added_by}`;
             const busy = updatingLine === lineKey;
@@ -236,13 +242,6 @@ export default function GroupCartPage() {
             );
           })}
         </AnimatePresence>
-
-        <button
-          onClick={() => setPickerOpen(true)}
-          className="w-full mt-1 border-2 border-dashed border-line rounded-2xl py-3 text-[13px] font-semibold text-ink2 flex items-center justify-center gap-1.5"
-        >
-          <Plus size={16} /> Add your items
-        </button>
       </div>
 
       {/* checkout bar */}
