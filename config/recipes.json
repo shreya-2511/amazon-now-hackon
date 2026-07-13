@@ -1,215 +1,6 @@
 {
   "recipes": [
     {
-      "id": "lamb-biryani",
-      "name": "Lamb Biryani",
-      "cuisine": "India",
-      "category": "Lamb",
-      "image": "/recipes/lamb-biryani.jpg",
-      "base_servings": 2,
-      "time_min": 75,
-      "dietary_tags": [],
-      "ingredient_count": 20,
-      "ingredients": [
-        {
-          "product_id": "cashew-nuts",
-          "name": "Cashew Nuts",
-          "qty": 12.0,
-          "unit": "",
-          "measure": "12",
-          "image": "/products/cashew-nuts.png",
-          "price": 20
-        },
-        {
-          "product_id": "khus-khus",
-          "name": "Khus Khus",
-          "qty": 0.5,
-          "unit": "tbsp",
-          "measure": "½ tbsp",
-          "image": "/products/khus-khus.png",
-          "price": 195
-        },
-        {
-          "product_id": "everest-cumin-seeds",
-          "name": "Cumin / Jeera",
-          "qty": 0.5,
-          "unit": "tbsp",
-          "measure": "½ tbsp",
-          "image": "/products/everest-cumin-seeds.png",
-          "price": 80
-        },
-        {
-          "product_id": "onion-1kg",
-          "name": "Onion",
-          "qty": 3.0,
-          "unit": "sliced thinly",
-          "measure": "3 sliced thinly",
-          "image": "/products/onion-1kg.png",
-          "price": 39
-        },
-        {
-          "product_id": "garlic-200g",
-          "name": "Garlic",
-          "qty": 2.0,
-          "unit": "tsp",
-          "measure": "2 tsp",
-          "image": "/products/garlic-200g.png",
-          "price": 38
-        },
-        {
-          "product_id": "garlic-200g",
-          "name": "Garlic",
-          "qty": 4.0,
-          "unit": "whole",
-          "measure": "4 whole",
-          "image": "/products/garlic-200g.png",
-          "price": 38
-        },
-        {
-          "product_id": "mint",
-          "name": "Mint",
-          "qty": null,
-          "unit": "Leaves",
-          "measure": "Leaves",
-          "image": "/products/mint.png",
-          "price": 100
-        },
-        {
-          "product_id": "cilantro",
-          "name": "Cilantro",
-          "qty": null,
-          "unit": "Leaves",
-          "measure": "Leaves",
-          "image": "/products/cilantro.png",
-          "price": 145
-        },
-        {
-          "product_id": "saffron",
-          "name": "Saffron",
-          "qty": 0.5,
-          "unit": "tsp dissolved in  0.5 cup warm milk",
-          "measure": "½ tsp dissolved in ½ cup warm milk",
-          "image": "/products/saffron.png",
-          "price": 190
-        },
-        {
-          "product_id": "amul-ghee-500ml",
-          "name": "Pure Ghee",
-          "qty": 2.0,
-          "unit": "tbsp",
-          "measure": "2 tbsp",
-          "image": "/products/amul-ghee-500ml.png",
-          "price": 320
-        },
-        {
-          "product_id": "basmati-rice-1kg",
-          "name": "India Gate Basmati Rice",
-          "qty": 2.0,
-          "unit": "Cups",
-          "measure": "2 Cups",
-          "image": "/products/basmati-rice-1kg.png",
-          "price": 145
-        },
-        {
-          "product_id": "nestle-curd-400g",
-          "name": "Dahi / Curd",
-          "qty": 0.5,
-          "unit": "cup",
-          "measure": "½ cup",
-          "image": "/products/nestle-curd-400g.png",
-          "price": 45
-        },
-        {
-          "product_id": "everest-cumin-seeds",
-          "name": "Cumin / Jeera",
-          "qty": 1.0,
-          "unit": "tbsp",
-          "measure": "1 tbsp",
-          "image": "/products/everest-cumin-seeds.png",
-          "price": 80
-        },
-        {
-          "product_id": "bay-leaf",
-          "name": "Bay Leaf / Tejpatta",
-          "qty": 0.5,
-          "unit": "",
-          "measure": "½",
-          "image": "/products/bay-leaves.png",
-          "price": 16
-        },
-        {
-          "product_id": "cinnamon-sticks",
-          "name": "Dalchini / Cinnamon Sticks",
-          "qty": 1.0,
-          "unit": "thin piece",
-          "measure": "1 thin piece",
-          "image": "/products/cinnamon-sticks.png",
-          "price": 65
-        },
-        {
-          "product_id": "whole-cloves",
-          "name": "Laung / Whole Cloves",
-          "qty": 3.0,
-          "unit": "",
-          "measure": "3",
-          "image": "/products/whole-cloves.png",
-          "price": 55
-        },
-        {
-          "product_id": "vedaka-green-cardamom",
-          "name": "Vedaka Hari Elaichi / Green Cardamom",
-          "qty": 2.0,
-          "unit": "",
-          "measure": "2",
-          "image": "/products/vedaka-green-cardamom.png",
-          "price": 150
-        },
-        {
-          "product_id": "mutton-500g",
-          "name": "Mutton Curry Cut",
-          "qty": 1.0,
-          "unit": "lb",
-          "measure": "1 lb",
-          "image": "/products/mutton-500g.png",
-          "price": 460
-        },
-        {
-          "product_id": "green-chilli",
-          "name": "Green Chilli",
-          "qty": 1.0,
-          "unit": "tsp",
-          "measure": "1 tsp",
-          "image": "/products/green-chilli.png",
-          "price": 15
-        },
-        {
-          "product_id": "catch-biryani-masala",
-          "name": "Catch Biryani Masala",
-          "qty": 1.0,
-          "unit": "tbsp",
-          "measure": "1 tbsp",
-          "image": "/products/catch-biryani-masala.png",
-          "price": 45
-        }
-      ],
-      "steps": [
-        "Grind the cashew, poppy seeds and cumin seeds into a smooth paste, using as little water as possible.",
-        "Deep fry the sliced onions when it is hot.",
-        "Don’t overcrowd the oil.",
-        "When the onions turn light brown, remove from oil and drain on paper towel.",
-        "The fried onion will crisp up as it drains.",
-        "Also fry the cashewnuts till golden brown.",
-        "Wash the rice and soak in water for twenty minutes.",
-        "Meanwhile, take a big wide pan, add oil in medium heat, add the sliced onions, add the blended paste, to it add the green chillies, ginger garlic paste and garlic and fry for a minute.",
-        "Then add the tomatoes and sauté them well till they are cooked and not mushy.",
-        "Then to it add the red chilli powder, biryani powder, mint, coriander leaves and sauté them well.",
-        "Add the yogurt and mix well.",
-        "I always move the skillet away from the heat when adding yogurt which prevents it from curdling.",
-        "Now after returning the skillet back to the stove, add the washed lamb and salt and ½ cup water and mix well.",
-        "Cook for 1 hour and cook it covered in medium low heat or put it in a pressure cooker for 6 whistles."
-      ]
-    },
-    {
       "id": "lamb-rogan-josh",
       "name": "Lamb Rogan josh",
       "cuisine": "India",
@@ -2857,6 +2648,215 @@
         "Pinch the two long outside points together.",
         "Heat oil to 450 degrees and fry 4 to 5 at a time until golden.",
         "Drain and serve with sauce."
+      ]
+    },
+        {
+      "id": "lamb-biryani",
+      "name": "Lamb Biryani",
+      "cuisine": "India",
+      "category": "Lamb",
+      "image": "/recipes/lamb-biryani.jpg",
+      "base_servings": 2,
+      "time_min": 75,
+      "dietary_tags": [],
+      "ingredient_count": 20,
+      "ingredients": [
+        {
+          "product_id": "cashew-nuts",
+          "name": "Cashew Nuts",
+          "qty": 12.0,
+          "unit": "",
+          "measure": "12",
+          "image": "/products/cashew-nuts.png",
+          "price": 20
+        },
+        {
+          "product_id": "khus-khus",
+          "name": "Khus Khus",
+          "qty": 0.5,
+          "unit": "tbsp",
+          "measure": "½ tbsp",
+          "image": "/products/khus-khus.png",
+          "price": 195
+        },
+        {
+          "product_id": "everest-cumin-seeds",
+          "name": "Cumin / Jeera",
+          "qty": 0.5,
+          "unit": "tbsp",
+          "measure": "½ tbsp",
+          "image": "/products/everest-cumin-seeds.png",
+          "price": 80
+        },
+        {
+          "product_id": "onion-1kg",
+          "name": "Onion",
+          "qty": 3.0,
+          "unit": "sliced thinly",
+          "measure": "3 sliced thinly",
+          "image": "/products/onion-1kg.png",
+          "price": 39
+        },
+        {
+          "product_id": "garlic-200g",
+          "name": "Garlic",
+          "qty": 2.0,
+          "unit": "tsp",
+          "measure": "2 tsp",
+          "image": "/products/garlic-200g.png",
+          "price": 38
+        },
+        {
+          "product_id": "garlic-200g",
+          "name": "Garlic",
+          "qty": 4.0,
+          "unit": "whole",
+          "measure": "4 whole",
+          "image": "/products/garlic-200g.png",
+          "price": 38
+        },
+        {
+          "product_id": "mint",
+          "name": "Mint",
+          "qty": null,
+          "unit": "Leaves",
+          "measure": "Leaves",
+          "image": "/products/mint.png",
+          "price": 100
+        },
+        {
+          "product_id": "cilantro",
+          "name": "Cilantro",
+          "qty": null,
+          "unit": "Leaves",
+          "measure": "Leaves",
+          "image": "/products/cilantro.png",
+          "price": 145
+        },
+        {
+          "product_id": "saffron",
+          "name": "Saffron",
+          "qty": 0.5,
+          "unit": "tsp dissolved in  0.5 cup warm milk",
+          "measure": "½ tsp dissolved in ½ cup warm milk",
+          "image": "/products/saffron.png",
+          "price": 190
+        },
+        {
+          "product_id": "amul-ghee-500ml",
+          "name": "Pure Ghee",
+          "qty": 2.0,
+          "unit": "tbsp",
+          "measure": "2 tbsp",
+          "image": "/products/amul-ghee-500ml.png",
+          "price": 320
+        },
+        {
+          "product_id": "basmati-rice-1kg",
+          "name": "India Gate Basmati Rice",
+          "qty": 2.0,
+          "unit": "Cups",
+          "measure": "2 Cups",
+          "image": "/products/basmati-rice-1kg.png",
+          "price": 145
+        },
+        {
+          "product_id": "nestle-curd-400g",
+          "name": "Dahi / Curd",
+          "qty": 0.5,
+          "unit": "cup",
+          "measure": "½ cup",
+          "image": "/products/nestle-curd-400g.png",
+          "price": 45
+        },
+        {
+          "product_id": "everest-cumin-seeds",
+          "name": "Cumin / Jeera",
+          "qty": 1.0,
+          "unit": "tbsp",
+          "measure": "1 tbsp",
+          "image": "/products/everest-cumin-seeds.png",
+          "price": 80
+        },
+        {
+          "product_id": "bay-leaf",
+          "name": "Bay Leaf / Tejpatta",
+          "qty": 0.5,
+          "unit": "",
+          "measure": "½",
+          "image": "/products/bay-leaves.png",
+          "price": 16
+        },
+        {
+          "product_id": "cinnamon-sticks",
+          "name": "Dalchini / Cinnamon Sticks",
+          "qty": 1.0,
+          "unit": "thin piece",
+          "measure": "1 thin piece",
+          "image": "/products/cinnamon-sticks.png",
+          "price": 65
+        },
+        {
+          "product_id": "whole-cloves",
+          "name": "Laung / Whole Cloves",
+          "qty": 3.0,
+          "unit": "",
+          "measure": "3",
+          "image": "/products/whole-cloves.png",
+          "price": 55
+        },
+        {
+          "product_id": "vedaka-green-cardamom",
+          "name": "Vedaka Hari Elaichi / Green Cardamom",
+          "qty": 2.0,
+          "unit": "",
+          "measure": "2",
+          "image": "/products/vedaka-green-cardamom.png",
+          "price": 150
+        },
+        {
+          "product_id": "mutton-500g",
+          "name": "Mutton Curry Cut",
+          "qty": 1.0,
+          "unit": "lb",
+          "measure": "1 lb",
+          "image": "/products/mutton-500g.png",
+          "price": 460
+        },
+        {
+          "product_id": "green-chilli",
+          "name": "Green Chilli",
+          "qty": 1.0,
+          "unit": "tsp",
+          "measure": "1 tsp",
+          "image": "/products/green-chilli.png",
+          "price": 15
+        },
+        {
+          "product_id": "catch-biryani-masala",
+          "name": "Catch Biryani Masala",
+          "qty": 1.0,
+          "unit": "tbsp",
+          "measure": "1 tbsp",
+          "image": "/products/catch-biryani-masala.png",
+          "price": 45
+        }
+      ],
+      "steps": [
+        "Grind the cashew, poppy seeds and cumin seeds into a smooth paste, using as little water as possible.",
+        "Deep fry the sliced onions when it is hot.",
+        "Don’t overcrowd the oil.",
+        "When the onions turn light brown, remove from oil and drain on paper towel.",
+        "The fried onion will crisp up as it drains.",
+        "Also fry the cashewnuts till golden brown.",
+        "Wash the rice and soak in water for twenty minutes.",
+        "Meanwhile, take a big wide pan, add oil in medium heat, add the sliced onions, add the blended paste, to it add the green chillies, ginger garlic paste and garlic and fry for a minute.",
+        "Then add the tomatoes and sauté them well till they are cooked and not mushy.",
+        "Then to it add the red chilli powder, biryani powder, mint, coriander leaves and sauté them well.",
+        "Add the yogurt and mix well.",
+        "I always move the skillet away from the heat when adding yogurt which prevents it from curdling.",
+        "Now after returning the skillet back to the stove, add the washed lamb and salt and ½ cup water and mix well.",
+        "Cook for 1 hour and cook it covered in medium low heat or put it in a pressure cooker for 6 whistles."
       ]
     }
   ]
