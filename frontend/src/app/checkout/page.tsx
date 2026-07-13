@@ -196,7 +196,7 @@ function CheckoutContent() {
                 <img src={i.product.image} alt="" className="h-[85%] w-[85%] object-contain" />
               </div>
               {economyMode && ecoMapping.has(i.product.id) && (
-                <Leaf size={23} className="text-emerald-600 absolute top-2 right-0 bg-emerald-100 p-1 rounded-full"  />
+                <Leaf size={20} className="text-emerald-600 absolute top-1.5 right-0 bg-emerald-100 p-1 rounded-full"  />
               )}
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-1">
